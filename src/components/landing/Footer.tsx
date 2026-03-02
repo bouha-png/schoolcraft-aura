@@ -1,23 +1,21 @@
-const footerLinks = {
-  Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs', 'Sécurité'],
-  Entreprise: ['À propos', 'Contact', 'Partenaires', 'Carrières'],
-  Ressources: ['Documentation', 'Blog', 'Statut', 'Mentions légales'],
-};
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const Footer = () => {
+  const { lang, setLang, t } = useLanguage();
+
   return (
     <footer className="bg-foreground text-muted-foreground pt-20 pb-10">
       <div className="section-container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div>
             <p className="font-display font-bold text-xl text-background mb-3">
-              Synapse
+              Synapse Education
             </p>
             <p className="text-sm leading-relaxed opacity-60">
-              Gestion scolaire intelligente par ScandiTek.
+              {t.footer.tagline}
             </p>
           </div>
-          {Object.entries(footerLinks).map(([title, links]) => (
+          {Object.entries(t.footer.sections).map(([title, links]) => (
             <div key={title}>
               <p className="font-display font-semibold text-sm text-background mb-4 uppercase tracking-wide">
                 {title}
@@ -36,12 +34,21 @@ const Footer = () => {
         </div>
         <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs opacity-50">
-            © 2026 ScandiTek · Scandinavian Tecknologie · Education · Innovation
+            {t.footer.copyright}
           </p>
           <div className="flex gap-4 text-xs">
-            <a href="#" className="opacity-50 hover:opacity-100 transition-opacity">FR</a>
-            <a href="#" className="opacity-50 hover:opacity-100 transition-opacity">AR</a>
-            <a href="#" className="opacity-50 hover:opacity-100 transition-opacity">EN</a>
+            <button
+              onClick={() => setLang('fr')}
+              className={`transition-opacity ${lang === 'fr' ? 'opacity-100 font-semibold text-background' : 'opacity-50 hover:opacity-100'}`}
+            >
+              FR
+            </button>
+            <button
+              onClick={() => setLang('ar')}
+              className={`transition-opacity ${lang === 'ar' ? 'opacity-100 font-semibold text-background' : 'opacity-50 hover:opacity-100'}`}
+            >
+              AR
+            </button>
           </div>
         </div>
       </div>
