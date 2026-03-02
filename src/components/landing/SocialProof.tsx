@@ -12,13 +12,9 @@ const SocialProof = () => {
   const { ref, visible } = useScrollReveal(0.3);
 
   return (
-    <section className="py-20 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
-      <div
-        ref={ref}
-        className={`section-container relative z-10 reveal ${visible ? 'visible' : ''}`}
-      >
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+    <section className="py-16 md:py-24 bg-background">
+      <div ref={ref} className={`section-container reveal ${visible ? 'visible' : ''}`}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {metrics.map((m, i) => (
             <MetricItem key={i} metric={m} active={visible} />
           ))}
@@ -35,11 +31,11 @@ function MetricItem({ metric, active }: { metric: typeof metrics[0]; active: boo
     : `${count}${metric.suffix}`;
 
   return (
-    <div className="text-center">
-      <p className="text-3xl md:text-4xl font-display font-bold text-gradient">
+    <div className="text-center py-6 md:py-8 rounded-2xl" style={{ background: 'var(--gradient-soft)' }}>
+      <p className="text-3xl md:text-4xl font-display font-bold text-gradient mb-2">
         {display}
       </p>
-      <p className="text-caption mt-2">{metric.label}</p>
+      <p className="text-caption">{metric.label}</p>
     </div>
   );
 }

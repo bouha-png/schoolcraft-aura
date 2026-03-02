@@ -21,8 +21,8 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-[60px] flex items-center nav-glass transition-all duration-300 ${
-          scrolled ? 'border-b border-border' : 'border-b border-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 h-[56px] flex items-center nav-glass transition-all duration-300 ${
+          scrolled ? 'border-b border-border shadow-sm' : 'border-b border-transparent'
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
@@ -34,7 +34,7 @@ const Navigation = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-muted-foreground font-normal hover:text-foreground transition-colors duration-200"
+                className="text-sm text-foreground/70 font-medium hover:text-primary transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -42,12 +42,8 @@ const Navigation = () => {
           </div>
           <a
             href="#demo"
-            className="hidden md:inline-flex items-center h-9 px-5 rounded-full text-sm font-medium transition-all duration-200"
-            style={{
-              background: 'var(--gradient-cta)',
-              color: 'white',
-              boxShadow: '0 2px 12px rgba(119,47,159,0.3)',
-            }}
+            className="hidden md:inline-flex items-center h-9 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-all duration-200"
+            style={{ background: 'var(--gradient-cta)', boxShadow: '0 2px 10px rgba(119,47,159,0.2)' }}
           >
             Demander une démo
           </a>
@@ -61,10 +57,9 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Mobile overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
-          <div className="h-[60px] flex items-center justify-between px-6 shrink-0">
+          <div className="h-[56px] flex items-center justify-between px-6 shrink-0">
             <span className="font-display font-bold text-xl text-gradient">Synapse</span>
             <button onClick={() => setMobileOpen(false)} aria-label="Fermer le menu">
               <X className="w-5 h-5 text-foreground" />
@@ -81,11 +76,7 @@ const Navigation = () => {
                 {l.label}
               </a>
             ))}
-            <a
-              href="#demo"
-              onClick={() => setMobileOpen(false)}
-              className="btn-primary mt-4"
-            >
+            <a href="#demo" onClick={() => setMobileOpen(false)} className="btn-primary mt-4">
               Demander une démo
             </a>
           </div>
