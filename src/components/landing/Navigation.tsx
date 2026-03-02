@@ -21,12 +21,12 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-[52px] flex items-center nav-glass transition-[border-color] duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[60px] flex items-center nav-glass transition-all duration-300 ${
           scrolled ? 'border-b border-border' : 'border-b border-transparent'
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
-          <a href="#" className="font-display font-bold text-xl text-primary">
+          <a href="#" className="font-display font-bold text-xl text-gradient">
             Synapse
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -34,7 +34,7 @@ const Navigation = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-foreground font-normal hover:text-primary transition-colors duration-200"
+                className="text-sm text-muted-foreground font-normal hover:text-foreground transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -42,7 +42,12 @@ const Navigation = () => {
           </div>
           <a
             href="#demo"
-            className="hidden md:inline-flex items-center h-9 px-5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-[hsl(var(--purple-hover))] transition-colors duration-200"
+            className="hidden md:inline-flex items-center h-9 px-5 rounded-full text-sm font-medium transition-all duration-200"
+            style={{
+              background: 'var(--gradient-cta)',
+              color: 'white',
+              boxShadow: '0 2px 12px rgba(119,47,159,0.3)',
+            }}
           >
             Demander une démo
           </a>
@@ -59,8 +64,8 @@ const Navigation = () => {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
-          <div className="h-[52px] flex items-center justify-between px-6 shrink-0">
-            <span className="font-display font-bold text-xl text-primary">Synapse</span>
+          <div className="h-[60px] flex items-center justify-between px-6 shrink-0">
+            <span className="font-display font-bold text-xl text-gradient">Synapse</span>
             <button onClick={() => setMobileOpen(false)} aria-label="Fermer le menu">
               <X className="w-5 h-5 text-foreground" />
             </button>
