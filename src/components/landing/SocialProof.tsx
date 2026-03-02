@@ -2,7 +2,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useCountUp } from '@/hooks/useCountUp';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const values = [50, 10000, 34, 5];
+const values = [50, 10000, 7, 5];
 
 const SocialProof = () => {
   const { ref, visible } = useScrollReveal(0.3);

@@ -50,7 +50,7 @@ const fr = {
     metrics: [
       { suffix: '+', label: 'établissements' },
       { suffix: '+', label: 'élèves' },
-      { suffix: '', label: 'modules' },
+      { suffix: '', label: 'univers' },
       { suffix: '', label: "systèmes IA" },
     ],
   },
@@ -89,7 +89,7 @@ const fr = {
   },
   // Modules
   modules: {
-    overline: '34 MODULES',
+    overline: 'MODULES',
     title: 'Tout ce dont votre établissement',
     titleHighlight: 'a besoin.',
     subtitle: 'Sept univers. Une seule plateforme. Des modules activables à la carte selon vos besoins.',
@@ -128,7 +128,7 @@ const fr = {
       },
       {
         label: 'Portails',
-        title: 'Un espace dédié pour chaque acteur éducatif.',
+        title: 'Un espace dédié pour chaque utilisateur.',
         description: "Un portail adapté à chaque rôle au sein de l'établissement.",
         features: ['Portail parents', 'Espace élève', 'Portail personnel', 'Mon Portail'],
       },
@@ -144,9 +144,9 @@ const fr = {
   portals: {
     overline: 'ÉCOSYSTÈME CONNECTÉ',
     title: 'Un espace dédié pour',
-    titleHighlight: 'chaque acteur.',
+    titleHighlight: 'chaque utilisateur.',
     subtitle: "Chaque utilisateur accède à son portail personnalisé — sur web et mobile. Connectés via la communauté scolaire, le chat, les calendriers partagés et la collaboration de groupe.",
-    imgAlt: "Écosystème éducatif connecté montrant les différents acteurs de l'établissement",
+    imgAlt: "Écosystème éducatif connecté montrant les différents utilisateurs de l'établissement",
     roles: [
       { title: 'Direction & Propriétaires', description: 'Pilotage stratégique, tableaux de bord décisionnels, supervision globale de l\'établissement.', icon: 'crown' },
       { title: 'Enseignants', description: 'Gestion de classe, contenus pédagogiques, évaluations et suivi individualisé des élèves.', icon: 'graduationCap' },
