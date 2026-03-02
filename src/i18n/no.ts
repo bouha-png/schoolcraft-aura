@@ -50,7 +50,7 @@ const no = {
     metrics: [
       { suffix: '+', label: 'institusjoner' },
       { suffix: '+', label: 'elever' },
-      { suffix: '', label: 'moduler' },
+      { suffix: '', label: 'univers' },
       { suffix: '', label: 'AI-systemer' },
     ],
   },
@@ -89,7 +89,7 @@ const no = {
   },
   // Modules
   modules: {
-    overline: '34 MODULER',
+    overline: 'MODULER',
     title: 'Alt institusjonen din',
     titleHighlight: 'trenger.',
     subtitle: 'Syv univers. Én plattform. Moduler som kan aktiveres etter behov.',
@@ -128,7 +128,7 @@ const no = {
       },
       {
         label: 'Portaler',
-        title: 'Et dedikert område for hver aktør.',
+        title: 'Et dedikert område for hver bruker.',
         description: 'En portal tilpasset hver rolle i institusjonen.',
         features: ['Foreldreportal', 'Elevområde', 'Ansattportal', 'Min Portal'],
       },
@@ -144,9 +144,9 @@ const no = {
   portals: {
     overline: 'TILKOBLET ØKOSYSTEM',
     title: 'Et dedikert område for',
-    titleHighlight: 'hver aktør.',
+    titleHighlight: 'hver bruker.',
     subtitle: 'Hver bruker får tilgang til sin personlige portal — på web og mobil. Koblet sammen via skolefellesskapet, chat, delte kalendere og gruppesamarbeid.',
-    imgAlt: 'Tilkoblet utdanningsøkosystem som viser de ulike aktørene i institusjonen',
+    imgAlt: 'Tilkoblet utdanningsøkosystem som viser de ulike brukerne i institusjonen',
     roles: [
       { title: 'Ledelse og eiere', description: 'Strategisk styring, beslutningsdashboard, helhetlig oversikt over institusjonen.', icon: 'crown' },
       { title: 'Lærere', description: 'Klasseledelse, pedagogisk innhold, vurderinger og individuell elevoppfølging.', icon: 'graduationCap' },
