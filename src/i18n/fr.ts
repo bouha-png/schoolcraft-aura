@@ -15,7 +15,7 @@ const fr = {
     overline: 'SYNAPSE EDUCATION',
     title1: 'Logiciel de gestion scolaire',
     titleHighlight: 'intelligent.',
-    subtitle: "La plateforme éducative tout-en-un pour piloter votre établissement. 34 modules intégrés, 5 systèmes d'IA, un espace dédié pour chaque acteur éducatif.",
+    subtitle: "La plateforme éducative intelligente tout-en-un qui couvre l'ensemble de l'écosystème de votre établissement.",
     cta: 'Demander une démo',
     discover: 'Découvrir la plateforme',
     imgAlt: 'Élèves utilisant la technologie dans une salle de classe moderne',
