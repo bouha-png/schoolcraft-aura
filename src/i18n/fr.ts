@@ -46,7 +46,7 @@ const fr = {
         overline: 'TOUT-EN-UN',
         title: 'Une seule plateforme. Zéro friction.',
         value: 'Supprimez les outils isolés et les coûts cachés.',
-        description: "34 modules unifiés — pédagogie, finances, RH, communication, services périscolaires — dans un écosystème unique. Fini les intégrations fragiles, les données en silos et les abonnements qui s'accumulent.",
+        description: "Pédagogie, finances, RH, communication, services périscolaires — tous vos modules dans un écosystème unique. Fini les intégrations fragiles, les données en silos et les abonnements qui s'accumulent.",
       },
       {
         overline: 'CONTINUITÉ PÉDAGOGIQUE',
