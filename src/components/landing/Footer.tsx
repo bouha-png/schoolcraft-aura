@@ -5,13 +5,13 @@ const Footer = () => {
   const { lang, setLang, t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-muted-foreground pt-20 pb-10">
+    <footer className="bg-[#1a1a2e] text-white/70 pt-20 pb-10">
       <div className="section-container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div>
             <div className="mb-3">
-              <p className="font-display font-bold text-xl text-background">Synapse</p>
-              <p className="font-display font-light text-xs text-background/40 tracking-[0.08em]">Education</p>
+              <p className="font-display font-bold text-xl text-white">Synapse</p>
+              <p className="font-display font-light text-xs text-white/40 tracking-[0.08em]">Education</p>
             </div>
             <p className="text-sm leading-relaxed opacity-60 mb-5">
               {t.footer.tagline}
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           {Object.entries(t.footer.sections).map(([title, links]) => (
             <div key={title}>
-              <p className="font-display font-semibold text-sm text-background mb-4 uppercase tracking-wide">
+              <p className="font-display font-semibold text-sm text-white mb-4 uppercase tracking-wide">
                 {title}
               </p>
               <ul className="space-y-2.5">
@@ -50,20 +50,20 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs opacity-50">
             {t.footer.copyright}
           </p>
           <div className="flex gap-4 text-xs">
             <button
               onClick={() => setLang('fr')}
-              className={`transition-opacity ${lang === 'fr' ? 'opacity-100 font-semibold text-background' : 'opacity-50 hover:opacity-100'}`}
+              className={`transition-opacity ${lang === 'fr' ? 'opacity-100 font-semibold text-white' : 'opacity-50 hover:opacity-100'}`}
             >
               FR
             </button>
             <button
               onClick={() => setLang('ar')}
-              className={`transition-opacity ${lang === 'ar' ? 'opacity-100 font-semibold text-background' : 'opacity-50 hover:opacity-100'}`}
+              className={`transition-opacity ${lang === 'ar' ? 'opacity-100 font-semibold text-white' : 'opacity-50 hover:opacity-100'}`}
             >
               AR
             </button>
