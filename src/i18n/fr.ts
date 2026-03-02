@@ -13,9 +13,9 @@ const fr = {
   // Hero
   hero: {
     overline: 'SYNAPSE EDUCATION',
-    title1: 'Logiciel de gestion scolaire',
-    titleHighlight: 'tout-en-un.',
-    subtitle: "Plateforme tout-en-un pour piloter la gestion quotidienne de votre établissement scolaire. 34 modules, 5 systèmes d'IA, un espace dédié pour chaque acteur.",
+    title1: 'Gestion scolaire',
+    titleHighlight: 'intelligente.',
+    subtitle: "La seule plateforme dont votre établissement aura jamais besoin. 34 modules unifiés, 5 systèmes d'IA, un espace pour chaque acteur.",
     cta: 'Demander une démo',
     discover: 'Découvrir la plateforme',
     imgAlt: 'Élèves utilisant la technologie dans une salle de classe moderne',
@@ -34,19 +34,19 @@ const fr = {
     overline: 'CE QUI NOUS DIFFÉRENCIE',
     title: 'Trois raisons de choisir',
     titleHighlight: 'Synapse.',
-    subtitle: "Bien plus qu'un simple outil administratif : une solution tout-en-un qui centralise l'ensemble des besoins de votre établissement.",
+    subtitle: "Ce n'est pas juste un logiciel scolaire. C'est un avantage stratégique pour votre établissement.",
     cards: [
       {
         overline: 'INTELLIGENCE ARTIFICIELLE',
         title: "L'IA qui travaille pour vous — pas l'inverse.",
         value: 'Gagnez des heures chaque semaine.',
-        description: "Création de cours, correction, emplois du temps, suivi pédagogique — cinq systèmes d'IA intégrés nativement dans chaque couche de la plateforme. Vos équipes se concentrent sur l'essentiel : les élèves.",
+        description: "Création de cours, correction, emplois du temps, tutorat personnalisé — cinq systèmes d'IA intégrés nativement dans chaque couche de la plateforme. Vos équipes se concentrent sur l'essentiel : les élèves.",
       },
       {
         overline: 'TOUT-EN-UN',
         title: 'Un seul système. Zéro friction.',
-        value: 'Simplifiez la gestion quotidienne.',
-        description: "34 modules — vie scolaire, finances, RH, communication, opérations — dans une seule plateforme. Fini les outils éparpillés et les abonnements qui s'accumulent.",
+        value: 'Éliminez la complexité et les coûts cachés.',
+        description: "34 modules unifiés — académie, finances, RH, communication, opérations — dans une seule plateforme. Fini les intégrations fragiles, les données en silos et les abonnements qui s'accumulent.",
       },
       {
         overline: 'CONTINUITÉ PÉDAGOGIQUE',
@@ -68,38 +68,38 @@ const fr = {
       {
         label: 'Académie',
         title: 'Le cœur pédagogique de votre établissement.',
-        description: "Vie scolaire, suivi pédagogique, évaluations, progression — pilotés par l'IA.",
-        features: ['Programmes & niveaux', 'E-learning intégré', 'Suivi pédagogique IA', 'Emplois du temps intelligents'],
+        description: "Programmes, cours, évaluations, suivi de progression — pilotés par l'IA.",
+        features: ['Programmes & niveaux', 'LMS intégré', 'AI Tutor personnalisé', 'Emploi du temps intelligent'],
       },
       {
         label: 'Finance',
         title: 'Transparence et maîtrise financière.',
-        description: 'Facturation, revenus & dépenses, suivi budgétaire — en temps réel.',
-        features: ['Facturation automatique', 'Paiements & échéancier', 'Reporting & prévisions'],
+        description: 'Facturation, encaissements, suivi budgétaire — en temps réel.',
+        features: ['Facturation automatique', 'Paiements & rappels', 'Reporting & prévisions'],
       },
       {
         label: 'RH & Paie',
         title: "Vos collaborateurs, au centre de l'attention.",
-        description: 'Gérez plus facilement vos employés et leurs temps.',
-        features: ['Gestion du personnel', 'Paie automatisée', 'Pointage & présence', 'Congés & formation'],
+        description: 'Recrutement, gestion administrative, paie, formation.',
+        features: ['Gestion du personnel', 'Paie automatisée', 'Pointage biométrique', 'Congés & formation'],
       },
       {
         label: 'Communication',
         title: 'Chaque conversation, au bon endroit.',
-        description: 'Maîtrisez et centralisez les communications avec les familles.',
-        features: ['Messagerie & e-mailing', 'Visioconférence intégrée', 'Notifications intelligentes', 'Calendrier partagé'],
+        description: 'Chat, email, visioconférence, calendrier — centralisé.',
+        features: ['Messagerie instantanée', 'Visioconférence intégrée', 'Notifications intelligentes', 'Calendrier partagé'],
       },
       {
         label: 'Opérations',
         title: 'La logistique scolaire, simplifiée.',
-        description: 'Transport, cantine, périscolaire, garderie.',
-        features: ['Transport & GPS', 'Cantine & périscolaire', 'Activités parascolaires', 'Documents & partages'],
+        description: 'Transport, restauration, activités parascolaires.',
+        features: ['Transport & GPS', 'Cantine & allergies', 'Activités parascolaires', 'Drive sécurisé'],
       },
       {
         label: 'Portails',
         title: 'Chaque acteur accède à son univers.',
-        description: "Un espace dédié pour chaque utilisateur.",
-        features: ['Portail parents & tuteurs', 'Espace élève', 'Espace enseignant', 'Administration'],
+        description: "Un portail adapté à chaque rôle.",
+        features: ['Portail parents', 'Espace élève', 'Portail personnel', 'Mon Portail individuel'],
       },
       {
         label: 'Administration',
@@ -180,7 +180,7 @@ const fr = {
     title: 'Questions',
     titleHighlight: 'fréquentes.',
     items: [
-      { q: 'Combien de temps prend le déploiement ?', a: "Selon la taille de votre établissement scolaire, le déploiement complet prend entre 2 et 6 semaines, incluant la formation de vos équipes." },
+      { q: 'Combien de temps prend le déploiement ?', a: "Selon la taille de l'établissement, le déploiement complet prend entre 2 et 6 semaines, incluant la formation de vos équipes." },
       { q: 'Comment se passe la migration des données ?', a: 'Notre équipe prend en charge la migration complète : données élèves, historique financier, emplois du temps. Aucune perte de données.' },
       { q: 'Quelle formation est incluse ?', a: 'Chaque plan inclut un onboarding structuré par rôle. Direction, enseignants, personnel administratif — chacun reçoit une formation adaptée.' },
       { q: 'Les données sont-elles sécurisées ?', a: 'Standards scandinaves de protection des données. Hébergement sécurisé, chiffrement de bout en bout, authentification multi-facteurs.' },
@@ -200,7 +200,7 @@ const fr = {
   },
   // Footer
   footer: {
-    tagline: 'Logiciel de gestion scolaire par ScandiTek.',
+    tagline: 'Gestion scolaire intelligente par ScandiTek.',
     sections: {
       Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs', 'Sécurité'],
       Entreprise: ['À propos', 'Contact', 'Partenaires', 'Carrières'],
