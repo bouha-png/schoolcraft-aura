@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import synapseLogo from '@/assets/synapse-logo.png';
 
 const links = [
   { label: 'Plateforme', href: '#platform' },
@@ -26,7 +27,8 @@ const Navigation = () => {
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
-          <a href="#" className="font-display font-bold text-xl text-gradient">
+          <a href="#" className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
+            <img src={synapseLogo} alt="Synapse" className="w-7 h-7 object-contain" />
             Synapse
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -60,7 +62,10 @@ const Navigation = () => {
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
           <div className="h-[56px] flex items-center justify-between px-6 shrink-0">
-            <span className="font-display font-bold text-xl text-gradient">Synapse</span>
+            <span className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
+              <img src={synapseLogo} alt="Synapse" className="w-7 h-7 object-contain" />
+              Synapse
+            </span>
             <button onClick={() => setMobileOpen(false)} aria-label="Fermer le menu">
               <X className="w-5 h-5 text-foreground" />
             </button>

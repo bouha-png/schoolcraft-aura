@@ -30,7 +30,7 @@ const Hero = () => {
             <br />
             <span className="text-gradient">intelligente.</span>
           </h1>
-          <p className="text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px]">
+          <p className="text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px] text-foreground/80 font-medium">
             La seule plateforme dont votre établissement aura jamais besoin.
             34 modules unifiés, 5 systèmes d'IA, un espace pour chaque acteur.
           </p>
