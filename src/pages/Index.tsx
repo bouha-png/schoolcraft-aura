@@ -1,6 +1,5 @@
 import Navigation from '@/components/landing/Navigation';
 import Hero from '@/components/landing/Hero';
-import SocialProof from '@/components/landing/SocialProof';
 import PlatformOverview from '@/components/landing/PlatformOverview';
 import Modules from '@/components/landing/Modules';
 import AISection from '@/components/landing/AISection';
@@ -18,7 +17,6 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <SocialProof />
         <PlatformOverview />
         <Modules />
         <AISection />
