@@ -1,8 +1,8 @@
-import { Pen, GraduationCap, CalendarClock, MessageCircle, Search } from 'lucide-react';
+import { Pen, GraduationCap, CalendarClock, MessageCircle, Search, BarChart3 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const icons = [Pen, GraduationCap, CalendarClock, MessageCircle, Search];
+const icons = [Pen, GraduationCap, CalendarClock, MessageCircle, Search, BarChart3];
 
 const AISection = () => {
   const { ref, visible } = useScrollReveal();

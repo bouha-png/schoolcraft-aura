@@ -146,13 +146,14 @@ const fr = {
     overline: 'INTELLIGENCE ARTIFICIELLE',
     title: "L'IA intégrée qui travaille",
     titleHighlight: 'pour vous.',
-    subtitle: "Cinq systèmes d'IA intégrés nativement dans chaque couche de Synapse. Automatisation intelligente des tâches et génération assistée de contenus pédagogiques.",
+    subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse — et nous en ajoutons de nouveaux chaque semaine. Automatisation intelligente, génération de contenus et analyse prédictive.",
     systems: [
       { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
       { title: 'Tutorat IA personnalisé', description: "Parcours adaptatifs, simulations d'examens calibrées.", badge: 'Élèves' },
       { title: 'Emploi du temps IA', description: 'Contraintes et disponibilités — résolu en minutes.', badge: 'Administration' },
       { title: "Syn'IA — Assistant", description: 'Assistant contextuel intégré dans chaque module.', badge: 'Tous' },
       { title: 'Moteur de connaissances', description: 'Recherche sémantique et intelligence connectée.', badge: 'Plateforme' },
+      { title: 'Finance & Statistiques IA', description: 'Analyse prédictive, tableaux de bord intelligents et reporting financier automatisé.', badge: 'Finance' },
     ],
   },
   // Continuity
