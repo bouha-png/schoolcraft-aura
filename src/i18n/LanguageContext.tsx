@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import fr from './fr';
 import ar from './ar';
+import no from './no';
 
-type Lang = 'fr' | 'ar';
+type Lang = 'fr' | 'ar' | 'no';
 type Translations = {
   dir: 'ltr' | 'rtl';
   nav: typeof fr.nav;
@@ -34,7 +35,7 @@ const LanguageContext = createContext<LanguageContextType>({
   t: fr,
 });
 
-const translations: Record<Lang, Translations> = { fr, ar };
+const translations: Record<Lang, Translations> = { fr, ar, no };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
