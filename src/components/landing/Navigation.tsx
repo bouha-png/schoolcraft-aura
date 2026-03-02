@@ -37,6 +37,7 @@ const Navigation = () => {
     { code: 'fr' as const, label: 'Français', flag: '🇫🇷' },
     { code: 'ar' as const, label: 'العربية', flag: '🇲🇦' },
     { code: 'no' as const, label: 'Norsk', flag: '🇳🇴' },
+    { code: 'en' as const, label: 'English', flag: '🇬🇧' },
   ];
 
   const currentLang = languages.find((l) => l.code === lang)!;

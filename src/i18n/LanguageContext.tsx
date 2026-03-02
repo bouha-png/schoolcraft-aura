@@ -2,8 +2,9 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 import fr from './fr';
 import ar from './ar';
 import no from './no';
+import en from './en';
 
-type Lang = 'fr' | 'ar' | 'no';
+type Lang = 'fr' | 'ar' | 'no' | 'en';
 type Translations = {
   dir: 'ltr' | 'rtl';
   nav: typeof fr.nav;
@@ -35,7 +36,7 @@ const LanguageContext = createContext<LanguageContextType>({
   t: fr,
 });
 
-const translations: Record<Lang, Translations> = { fr, ar, no };
+const translations: Record<Lang, Translations> = { fr, ar, no, en };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
