@@ -5,7 +5,7 @@ const Footer = () => {
   const { lang, setLang, t } = useLanguage();
 
   return (
-    <footer className="bg-[#1a1a2e] text-white/70 pt-20 pb-10">
+    <footer id="contact" className="bg-[#1a1a2e] text-white/70 pt-20 pb-10">
       <div className="section-container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div>
