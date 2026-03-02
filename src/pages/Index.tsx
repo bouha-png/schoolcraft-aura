@@ -19,9 +19,9 @@ const Index = () => {
       <main>
         <Hero />
         <PlatformOverview />
+        <AISection />
         <Modules />
         <UserPortals />
-        <AISection />
         <Continuity />
         <Adoption />
         <ScandiTek />
