@@ -56,14 +56,14 @@ const AISection = () => {
           </div>
 
           {/* Phone mockup with video */}
-          <div className="flex items-center justify-center">
-            <div className="relative mx-auto" style={{ width: '280px' }}>
+          <div className="flex items-center justify-center order-first md:order-none">
+            <div className="relative mx-auto w-[180px] md:w-[280px]">
               {/* Phone frame */}
-              <div className="relative rounded-[2.5rem] border-[6px] border-foreground/90 bg-foreground/90 shadow-2xl overflow-hidden">
+              <div className="relative rounded-[2rem] md:rounded-[2.5rem] border-[4px] md:border-[6px] border-foreground/90 bg-foreground/90 shadow-2xl overflow-hidden">
                 {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-foreground/90 rounded-b-2xl z-10" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-28 h-4 md:h-6 bg-foreground/90 rounded-b-xl md:rounded-b-2xl z-10" />
                 {/* Screen */}
-                <div className="rounded-[2rem] overflow-hidden bg-black">
+                <div className="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-black">
                   <video
                     src="/videos/ai-demo.mp4"
                     autoPlay
@@ -74,10 +74,10 @@ const AISection = () => {
                   />
                 </div>
               </div>
-              {/* Side button */}
-              <div className="absolute top-24 -right-[8px] w-[3px] h-12 bg-foreground/90 rounded-r-sm" />
-              <div className="absolute top-20 -left-[8px] w-[3px] h-8 bg-foreground/90 rounded-l-sm" />
-              <div className="absolute top-32 -left-[8px] w-[3px] h-8 bg-foreground/90 rounded-l-sm" />
+              {/* Side buttons */}
+              <div className="absolute top-16 md:top-24 -right-[6px] md:-right-[8px] w-[2px] md:w-[3px] h-8 md:h-12 bg-foreground/90 rounded-r-sm" />
+              <div className="absolute top-12 md:top-20 -left-[6px] md:-left-[8px] w-[2px] md:w-[3px] h-6 md:h-8 bg-foreground/90 rounded-l-sm" />
+              <div className="absolute top-20 md:top-32 -left-[6px] md:-left-[8px] w-[2px] md:w-[3px] h-6 md:h-8 bg-foreground/90 rounded-l-sm" />
             </div>
           </div>
         </div>
