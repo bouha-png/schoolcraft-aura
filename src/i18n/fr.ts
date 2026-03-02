@@ -236,9 +236,9 @@ const fr = {
   footer: {
     tagline: 'Logiciel de gestion scolaire intelligent par ScandiTek.',
     sections: {
-      Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs', 'Sécurité'],
-      Entreprise: ['À propos', 'Contact', 'Partenaires', 'Carrières'],
-      Ressources: ['Documentation', 'Blog', 'Statut', 'Mentions légales'],
+      Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs'],
+      Entreprise: ['À propos', 'Contact'],
+      Ressources: ['Documentation', 'Sécurité', 'Mentions légales'],
     },
     copyright: '© 2026 ScandiTek · Scandinavian Tecknologie · Education · Innovation',
   },
