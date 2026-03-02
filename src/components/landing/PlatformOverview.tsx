@@ -3,8 +3,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import diffAi from '@/assets/diff-ai.jpg';
 import diffModules from '@/assets/diff-modules.jpg';
 import diffUsers from '@/assets/diff-users.jpg';
+import diffFormation from '@/assets/diff-formation.jpg';
 
-const images = [diffAi, diffModules, diffUsers];
+const images = [diffAi, diffModules, diffUsers, diffFormation];
 
 const PlatformOverview = () => {
   const { ref, visible } = useScrollReveal();
