@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 import moduleAcademie from '@/assets/module-academie.jpg';
 import moduleFinance from '@/assets/module-finance.jpg';
 import moduleRh from '@/assets/module-rh.jpg';
@@ -9,7 +9,7 @@ import moduleOperations from '@/assets/module-operations.jpg';
 import modulePortails from '@/assets/module-portails.jpg';
 import moduleAdmin from '@/assets/module-admin.jpg';
 
-interface ModuleTab {
+interface ModuleCard {
   id: string;
   label: string;
   title: string;
@@ -18,7 +18,7 @@ interface ModuleTab {
   image: string;
 }
 
-const tabs: ModuleTab[] = [
+const modules: ModuleCard[] = [
   {
     id: 'academie', label: 'Académie',
     title: 'Le cœur pédagogique de votre établissement.',
@@ -70,22 +70,67 @@ const tabs: ModuleTab[] = [
   },
 ];
 
+const ModuleCardComponent = ({ module }: { module: ModuleCard }) => (
+  <div className="rounded-2xl overflow-hidden border border-border/50 bg-muted/30 h-full flex flex-col">
+    <div className="relative">
+      <img
+        src={module.image}
+        alt={module.label}
+        className="w-full aspect-[16/10] object-cover"
+      />
+    </div>
+    <div className="p-5 sm:p-6 flex flex-col flex-1">
+      <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">{module.label}</span>
+      <h3 className="font-display text-lg sm:text-xl font-semibold text-foreground mb-2 leading-tight tracking-tight">
+        {module.title}
+      </h3>
+      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+        {module.description}
+      </p>
+      <ul className="space-y-1.5 mt-auto">
+        {module.features.map((f, i) => (
+          <li key={i} className="flex items-center gap-2">
+            <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" />
+            <span className="text-sm text-foreground">{f}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
 const Modules = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [fading, setFading] = useState(false);
   const { ref, visible } = useScrollReveal();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const handleTabChange = (index: number) => {
-    if (index === activeTab) return;
-    setFading(true);
-    setTimeout(() => {
-      setActiveTab(index);
-      setFading(false);
-    }, 200);
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
   };
 
-  const current = tabs[activeTab];
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    checkScroll();
+    el.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el) return;
+    // Scroll by roughly one card width
+    const cardWidth = el.querySelector<HTMLElement>(':scope > div')?.offsetWidth || 400;
+    el.scrollBy({ left: direction === 'right' ? cardWidth : -cardWidth, behavior: 'smooth' });
+  };
 
   return (
     <section id="modules" className="section-padding bg-background">
@@ -100,60 +145,47 @@ const Modules = () => {
           </p>
         </div>
 
-        {/* Scrollable tab bar */}
-        <div className={`reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
+        <div className={`relative reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
+          {/* Navigation arrows */}
+          <button
+            onClick={() => scroll('left')}
+            className={`hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full border border-border bg-background shadow-md transition-opacity duration-300 ${
+              canScrollLeft ? 'opacity-100 hover:bg-muted' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5 text-foreground" />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            className={`hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full border border-border bg-background shadow-md transition-opacity duration-300 ${
+              canScrollRight ? 'opacity-100 hover:bg-muted' : 'opacity-0 pointer-events-none'
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5 text-foreground" />
+          </button>
+
+          {/* Scrollable container */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto gap-2 justify-start md:justify-center pb-4 mb-8 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide"
+            className="flex gap-5 overflow-x-auto pb-4 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scrollbar-hide"
           >
-            {tabs.map((tab, i) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabChange(i)}
-                className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
-                  i === activeTab
-                    ? 'bg-foreground text-background border-foreground shadow-lg'
-                    : 'text-muted-foreground border-border hover:text-foreground hover:border-foreground/30'
-                }`}
+            {modules.map((module) => (
+              <div
+                key={module.id}
+                className="shrink-0 w-[85vw] sm:w-[70vw] md:w-[calc(50%-10px)] snap-start"
               >
-                {tab.label}
-              </button>
+                <ModuleCardComponent module={module} />
+              </div>
             ))}
           </div>
 
-          {/* Bento-style content card */}
-          <div
-            className={`transition-all duration-300 ${fading ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}
-            style={{ transitionTimingFunction: 'var(--ease-apple)' }}
-          >
-            <div className="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden bg-muted/30 border border-border/50">
-              {/* Image */}
-              <div className="relative">
-                <img
-                  src={current.image}
-                  alt={current.label}
-                  className="w-full h-full object-cover aspect-[4/3] md:aspect-auto md:min-h-[400px]"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-3 leading-tight tracking-tight">
-                  {current.title}
-                </h3>
-                <p className="text-muted-foreground text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">
-                  {current.description}
-                </p>
-                <ul className="space-y-2.5">
-                  {current.features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-2.5">
-                      <ChevronRight className="w-4 h-4 text-primary shrink-0" />
-                      <span className="text-sm sm:text-base text-foreground">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          {/* Scroll indicator dots */}
+          <div className="flex justify-center gap-1.5 mt-6 md:hidden">
+            {modules.map((_, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-border" />
+            ))}
           </div>
         </div>
       </div>
