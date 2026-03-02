@@ -109,6 +109,32 @@ const fr = {
       },
     ],
   },
+  // Portals / Users
+  portals: {
+    overline: 'ÉCOSYSTÈME CONNECTÉ',
+    title: 'Un espace dédié pour',
+    titleHighlight: 'chaque acteur.',
+    subtitle: "Chaque utilisateur accède à son portail personnalisé — sur web et mobile. Connectés via la communauté scolaire, le chat, les calendriers partagés et la collaboration de groupe.",
+    imgAlt: "Écosystème éducatif connecté montrant les différents acteurs de l'établissement",
+    roles: [
+      { title: 'Direction & Propriétaires', description: 'Pilotage stratégique, tableaux de bord décisionnels, supervision globale de l\'établissement.', icon: 'crown' },
+      { title: 'Enseignants', description: 'Gestion de classe, contenus pédagogiques, évaluations et suivi individualisé des élèves.', icon: 'graduationCap' },
+      { title: 'Élèves', description: 'Cours, devoirs, emploi du temps, résultats et espace de collaboration entre pairs.', icon: 'bookOpen' },
+      { title: 'Parents', description: 'Suivi de la scolarité, communication avec les enseignants, paiements et notifications.', icon: 'heart' },
+      { title: 'Administration & Secrétariat', description: 'Admissions, inscriptions, gestion documentaire et accueil.', icon: 'clipboardList' },
+      { title: 'Ressources Humaines', description: 'Gestion du personnel, paie, congés, recrutement et évaluation.', icon: 'users' },
+      { title: 'Finance & Comptabilité', description: 'Facturation, encaissements, reporting financier et prévisions budgétaires.', icon: 'wallet' },
+      { title: 'Transport & Chauffeurs', description: 'Itinéraires, suivi GPS en temps réel, pointage et sécurité des élèves.', icon: 'bus' },
+      { title: 'Services Généraux', description: 'Restauration, sécurité, maintenance et gestion des installations.', icon: 'wrench' },
+      { title: 'DSI & IT', description: 'Configuration, intégrations, sécurité des données et administration technique.', icon: 'server' },
+    ],
+    features: [
+      { title: 'App Mobile & Web', description: 'Accès complet depuis tout appareil, partout, à tout moment.' },
+      { title: 'Communauté Scolaire', description: 'Fil d\'actualité, annonces et vie de l\'établissement en temps réel.' },
+      { title: 'Chat & Messagerie', description: 'Canaux de discussion par groupe, classe, département ou rôle.' },
+      { title: 'Collaboration', description: 'Calendriers partagés, groupes de travail et documents collaboratifs.' },
+    ],
+  },
   // AI Section
   ai: {
     overline: 'INTELLIGENCE ARTIFICIELLE',

@@ -2,6 +2,7 @@ import Navigation from '@/components/landing/Navigation';
 import Hero from '@/components/landing/Hero';
 import PlatformOverview from '@/components/landing/PlatformOverview';
 import Modules from '@/components/landing/Modules';
+import UserPortals from '@/components/landing/UserPortals';
 import AISection from '@/components/landing/AISection';
 import Continuity from '@/components/landing/Continuity';
 import Adoption from '@/components/landing/Adoption';
@@ -19,6 +20,7 @@ const Index = () => {
         <Hero />
         <PlatformOverview />
         <Modules />
+        <UserPortals />
         <AISection />
         <Continuity />
         <Adoption />
