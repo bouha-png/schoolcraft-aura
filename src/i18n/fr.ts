@@ -151,7 +151,7 @@ const fr = {
     systems: [
       { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
       { title: 'Tutorat IA personnalisé', description: "Parcours adaptatifs, simulations d'examens calibrées.", badge: 'Élèves' },
-      { title: 'Emploi du temps IA', description: 'Contraintes et disponibilités — résolu en minutes.', badge: 'Administration' },
+      { title: "Génération d'emplois du temps IA", description: 'Contraintes et disponibilités — résolu en minutes.', badge: 'Administration' },
       { title: "Syn'IA — Assistant", description: 'Assistant contextuel intégré dans chaque module.', badge: 'Tous' },
       { title: 'Moteur de connaissances', description: 'Recherche sémantique et intelligence connectée.', badge: 'Plateforme' },
       { title: 'Finance & Statistiques IA', description: 'Analyse prédictive, tableaux de bord intelligents et reporting financier automatisé.', badge: 'Finance' },
