@@ -6,7 +6,7 @@ const ar = {
     modules: 'الوحدات',
     ai: 'الذكاء الاصطناعي',
     pricing: 'الأسعار',
-    contact: 'تواصلوا معنا',
+    contact: 'اتصل بنا',
     cta: 'طلب عرض توضيحي',
     openMenu: 'فتح القائمة',
     closeMenu: 'إغلاق القائمة',
