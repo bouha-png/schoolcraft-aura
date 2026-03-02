@@ -11,7 +11,7 @@ type Translations = {
   platform: { overline: string; title: string; titleHighlight: string; subtitle: string; cards: { overline: string; title: string; value: string; description: string }[] };
   modules: { overline: string; title: string; titleHighlight: string; subtitle: string; swipeHint: string; goToModule: string; items: { label: string; title: string; description: string; features: string[] }[] };
   portals: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; roles: { title: string; description: string; icon: string }[]; features: { title: string; description: string }[] };
-  ai: { overline: string; title: string; titleHighlight: string; subtitle: string; systems: { title: string; description: string; badge: string }[] };
+  ai: { overline: string; title: string; titleHighlight: string; subtitleShort: string; subtitle: string; systems: { title: string; description: string; badge: string }[] };
   continuity: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; cards: { title: string; description: string }[] };
   adoption: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; steps: { number: string; title: string; description: string }[] };
   scanditek: { overline: string; title: string; titleHighlight: string; description: string; quote: string; values: { title: string; description: string }[] };
