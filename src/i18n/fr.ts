@@ -146,6 +146,7 @@ const fr = {
     overline: 'INTELLIGENCE ARTIFICIELLE',
     title: "L'IA intégrée qui travaille",
     titleHighlight: 'pour vous.',
+    subtitleShort: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse.",
     subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse — et nous en ajoutons de nouveaux chaque semaine. Automatisation intelligente, génération de contenus et analyse prédictive.",
     systems: [
       { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },

@@ -44,7 +44,8 @@ const AISection = () => {
         {/* Subtitle as styled heading */}
         <div className={`text-center max-w-[700px] mx-auto mb-12 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
           <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground leading-snug">
-            {t.ai.subtitle}
+            <span className="md:hidden">{t.ai.subtitleShort}</span>
+            <span className="hidden md:inline">{t.ai.subtitle}</span>
           </h3>
         </div>
 
