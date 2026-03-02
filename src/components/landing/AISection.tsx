@@ -41,10 +41,12 @@ const AISection = () => {
           </div>
         </div>
 
-        {/* Subtitle */}
-        <p className={`text-body-lg text-center max-w-[600px] mx-auto mb-10 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
-          {t.ai.subtitle}
-        </p>
+        {/* Subtitle as styled heading */}
+        <div className={`text-center max-w-[700px] mx-auto mb-12 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
+          <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground leading-snug">
+            {t.ai.subtitle}
+          </h3>
+        </div>
 
         {/* Systems list */}
         <div className="max-w-[720px] mx-auto space-y-5">
