@@ -92,14 +92,22 @@ const UserPortals = () => {
           <p className="text-body-lg max-w-[600px] mx-auto mt-4">{t.portals.subtitle}</p>
         </div>
 
-        {/* Icon header */}
-        <div className={`flex justify-center mb-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center"
-            style={{ background: 'var(--gradient-cta)', boxShadow: '0 8px 32px hsla(var(--primary) / 0.2)' }}
-          >
-            <UsersRound className="w-10 h-10 text-primary-foreground" />
-          </div>
+        {/* Connected features strip */}
+        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          {t.portals.features.map((feat, i) => {
+            const Icon = featureIcons[i];
+            return (
+              <div
+                key={i}
+                className={`card-elevated p-5 reveal ${visible ? 'visible' : ''}`}
+                style={{ transitionDelay: visible ? `${0.1 + (i + 1) * 0.1}s` : '0s' }}
+              >
+                <Icon className="w-5 h-5 text-primary mb-3" />
+                <h5 className="font-display text-sm font-semibold text-foreground mb-1">{feat.title}</h5>
+                <p className="text-xs text-muted-foreground leading-relaxed">{feat.description}</p>
+              </div>
+            );
+          })}
         </div>
 
         {/* ===== DESKTOP HUB ===== */}
@@ -320,23 +328,6 @@ const UserPortals = () => {
           </div>
         </div>
 
-        {/* Connected features strip */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.5s' }}>
-          {t.portals.features.map((feat, i) => {
-            const Icon = featureIcons[i];
-            return (
-              <div
-                key={i}
-                className={`card-elevated p-5 reveal ${visible ? 'visible' : ''}`}
-                style={{ transitionDelay: visible ? `${0.5 + (i + 1) * 0.1}s` : '0s' }}
-              >
-                <Icon className="w-5 h-5 text-primary mb-3" />
-                <h5 className="font-display text-sm font-semibold text-foreground mb-1">{feat.title}</h5>
-                <p className="text-xs text-muted-foreground leading-relaxed">{feat.description}</p>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
