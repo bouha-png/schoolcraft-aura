@@ -54,6 +54,12 @@ const fr = {
         value: "Protégez la scolarité, quoi qu'il arrive.",
         description: "Chaque session planifiée est prête pour le présentiel et le distanciel. Crise sanitaire, absence prolongée, situation familiale — basculez en un clic. Aucun jour de cours perdu.",
       },
+      {
+        overline: 'FORMATION & COMPÉTENCES',
+        title: "La qualité commence par la compétence.",
+        value: "Formez, suivez, certifiez — en continu.",
+        description: "Via Mon Portail, chaque enseignant et collaborateur accède à ses parcours e-learning, modules d'onboarding et formations continues. La direction suit en temps réel qui a complété quoi — parce que la qualité éducative dépend directement de la compétence de ceux qui la délivrent.",
+      },
     ],
   },
   // Modules
