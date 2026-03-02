@@ -126,31 +126,29 @@ const Modules = () => {
             className={`transition-all duration-300 ${fading ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}
             style={{ transitionTimingFunction: 'var(--ease-apple)' }}
           >
-            <div className="grid md:grid-cols-5 gap-0 rounded-3xl overflow-hidden bg-muted/30 border border-border/50">
-              {/* Image — 3 cols */}
-              <div className="md:col-span-3 relative">
+            <div className="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden bg-muted/30 border border-border/50">
+              {/* Image */}
+              <div className="relative">
                 <img
                   src={current.image}
                   alt={current.label}
-                  className="w-full h-full object-cover aspect-[16/10] md:aspect-auto md:min-h-[480px]"
+                  className="w-full h-full object-cover aspect-[4/3] md:aspect-auto md:min-h-[400px]"
                 />
-                {/* Subtle gradient on mobile for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden" />
               </div>
 
-              {/* Content — 2 cols */}
-              <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-center">
-                <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 leading-tight tracking-tight">
+              {/* Content */}
+              <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-3 leading-tight tracking-tight">
                   {current.title}
                 </h3>
-                <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
+                <p className="text-muted-foreground text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">
                   {current.description}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {current.features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-3">
+                    <li key={i} className="flex items-center gap-2.5">
                       <ChevronRight className="w-4 h-4 text-primary shrink-0" />
-                      <span className="text-sm md:text-base text-foreground">{f}</span>
+                      <span className="text-sm sm:text-base text-foreground">{f}</span>
                     </li>
                   ))}
                 </ul>
