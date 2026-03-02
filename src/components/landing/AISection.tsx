@@ -56,9 +56,10 @@ const AISection = () => {
             return (
               <div
                 key={i}
-                className={`card-elevated p-5 reveal ${visible ? 'visible' : ''}`}
+                className={`card-elevated p-5 relative overflow-hidden reveal ${visible ? 'visible' : ''}`}
                 style={{ transitionDelay: visible ? `${0.2 + i * 0.08}s` : '0s' }}
               >
+                <span className="absolute top-3 right-3 text-[10px] font-bold tracking-wider text-primary/30 select-none">IA</span>
                 <div className="flex items-center gap-2 mb-3">
                   <div
                     className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
