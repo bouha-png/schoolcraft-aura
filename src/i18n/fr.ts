@@ -40,7 +40,7 @@ const fr = {
         overline: 'INTELLIGENCE ARTIFICIELLE',
         title: "L'IA intégrée qui automatise vos processus.",
         value: 'Gagnez des heures chaque semaine.',
-        description: "Génération de contenus pédagogiques, correction, emplois du temps, tutorat personnalisé — cinq systèmes d'IA intégrés nativement dans chaque couche de la plateforme. Vos équipes se concentrent sur l'essentiel : les élèves.",
+        description: "Génération de contenus pédagogiques, correction, emplois du temps, tutorat personnalisé — des systèmes d'IA intégrés nativement dans chaque couche de la plateforme. Vos équipes se concentrent sur l'essentiel : les élèves.",
       },
       {
         overline: 'TOUT-EN-UN',
