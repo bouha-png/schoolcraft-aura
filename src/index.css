@@ -326,10 +326,28 @@
 /* RTL support for Arabic */
 [dir="rtl"] {
   font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
 }
 
 [dir="rtl"] .font-display {
   font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5 {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] li {
+  font-weight: 500;
+}
+
+[dir="rtl"] .text-xs, [dir="rtl"] .text-sm {
+  font-weight: 500;
+  line-height: 1.9;
 }
 
 [dir="rtl"] .text-left {
