@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { ChevronRight } from 'lucide-react';
 import moduleAcademie from '@/assets/module-academie.jpg';
 import moduleFinance from '@/assets/module-finance.jpg';
 import moduleRh from '@/assets/module-rh.jpg';
@@ -11,7 +12,6 @@ import moduleAdmin from '@/assets/module-admin.jpg';
 interface ModuleTab {
   id: string;
   label: string;
-  overline: string;
   title: string;
   description: string;
   features: string[];
@@ -20,52 +20,52 @@ interface ModuleTab {
 
 const tabs: ModuleTab[] = [
   {
-    id: 'academie', label: 'Académie', overline: 'ACADÉMIE',
+    id: 'academie', label: 'Académie',
     title: 'Le cœur pédagogique de votre établissement.',
-    description: "Programmes, cours, évaluations, suivi de progression — pilotés par l'intelligence artificielle.",
-    features: ['Structure des programmes & niveaux', 'LMS & apprentissage en ligne', 'AI Tutor personnalisé par élève', 'Emploi du temps intelligent'],
+    description: "Programmes, cours, évaluations, suivi de progression — pilotés par l'IA.",
+    features: ['Programmes & niveaux', 'LMS intégré', 'AI Tutor personnalisé', 'Emploi du temps intelligent'],
     image: moduleAcademie,
   },
   {
-    id: 'finance', label: 'Finance', overline: 'FINANCE',
-    title: 'Transparence et maîtrise financière totale.',
+    id: 'finance', label: 'Finance',
+    title: 'Transparence et maîtrise financière.',
     description: 'Facturation, encaissements, suivi budgétaire — en temps réel.',
-    features: ['Facturation automatique', 'Paiements & rappels intelligents', 'Reporting financier & prévisions'],
+    features: ['Facturation automatique', 'Paiements & rappels', 'Reporting & prévisions'],
     image: moduleFinance,
   },
   {
-    id: 'rh', label: 'RH & Paie', overline: 'RH & PAIE',
+    id: 'rh', label: 'RH & Paie',
     title: "Vos collaborateurs, au centre de l'attention.",
-    description: 'Recrutement, gestion administrative, paie, formation — un espace complet.',
-    features: ['Gestion du personnel', 'Paie automatisée', 'Pointage biométrique', 'Congés & formation continue'],
+    description: 'Recrutement, gestion administrative, paie, formation.',
+    features: ['Gestion du personnel', 'Paie automatisée', 'Pointage biométrique', 'Congés & formation'],
     image: moduleRh,
   },
   {
-    id: 'communication', label: 'Communication', overline: 'COMMUNICATION',
+    id: 'communication', label: 'Communication',
     title: 'Chaque conversation, au bon endroit.',
-    description: 'Chat, email, visioconférence, calendrier — fluide et centralisé.',
-    features: ['Chat & messagerie instantanée', 'Visioconférence intégrée (BBB & Jitsi)', 'Email & notifications intelligentes', 'Calendrier partagé'],
+    description: 'Chat, email, visioconférence, calendrier — centralisé.',
+    features: ['Messagerie instantanée', 'Visioconférence intégrée', 'Notifications intelligentes', 'Calendrier partagé'],
     image: moduleCommunication,
   },
   {
-    id: 'operations', label: 'Opérations', overline: 'OPÉRATIONS',
+    id: 'operations', label: 'Opérations',
     title: 'La logistique scolaire, simplifiée.',
-    description: 'Transport, restauration, activités parascolaires, stockage cloud.',
-    features: ['Transport & GPS temps réel', 'Cantine & allergies', 'Activités parascolaires', 'Drive sécurisé'],
+    description: 'Transport, restauration, activités parascolaires.',
+    features: ['Transport & GPS', 'Cantine & allergies', 'Activités parascolaires', 'Drive sécurisé'],
     image: moduleOperations,
   },
   {
-    id: 'portails', label: 'Portails', overline: 'PORTAILS',
+    id: 'portails', label: 'Portails',
     title: 'Chaque acteur accède à son univers.',
-    description: "Un portail adapté à chaque rôle, au bon niveau d'information.",
-    features: ['Portail parents', 'Espace élève & AI Tutor', 'Portail personnel', 'Mon Portail individuel'],
+    description: "Un portail adapté à chaque rôle.",
+    features: ['Portail parents', 'Espace élève', 'Portail personnel', 'Mon Portail individuel'],
     image: modulePortails,
   },
   {
-    id: 'admin', label: 'Administration', overline: 'ADMINISTRATION',
+    id: 'admin', label: 'Administration',
     title: "L'ossature technique de votre plateforme.",
-    description: 'Configuration, gestion des organisations, intégrations, sécurité.',
-    features: ['Console Super Admin', 'Rôles & permissions granulaires', 'API Gateway & webhooks', 'Authentification multi-facteurs'],
+    description: 'Configuration, organisations, intégrations, sécurité.',
+    features: ['Console Super Admin', 'Rôles & permissions', 'API Gateway', 'Auth multi-facteurs'],
     image: moduleAdmin,
   },
 ];
@@ -74,6 +74,7 @@ const Modules = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [fading, setFading] = useState(false);
   const { ref, visible } = useScrollReveal();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleTabChange = (index: number) => {
     if (index === activeTab) return;
@@ -81,7 +82,7 @@ const Modules = () => {
     setTimeout(() => {
       setActiveTab(index);
       setFading(false);
-    }, 150);
+    }, 200);
   };
 
   const current = tabs[activeTab];
@@ -90,88 +91,71 @@ const Modules = () => {
     <section id="modules" className="section-padding bg-background">
       <div ref={ref} className="section-container">
         <div className={`text-center mb-12 md:mb-16 reveal ${visible ? 'visible' : ''}`}>
-          <p className="text-overline mb-4">MODULES</p>
-          <h2 className="text-section">
+          <p className="text-overline mb-4">34 MODULES</p>
+          <h2 className="text-section mb-4">
             Tout ce dont votre établissement <span className="text-gradient">a besoin.</span>
           </h2>
+          <p className="text-body-lg max-w-2xl mx-auto text-muted-foreground">
+            Sept univers. Une seule plateforme. Explorez chaque dimension.
+          </p>
         </div>
 
-        {/* Modern pill tab bar */}
+        {/* Scrollable tab bar */}
         <div className={`reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
-          <div className="flex overflow-x-auto gap-2 justify-start md:justify-center pb-4 mb-10 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-2 justify-start md:justify-center pb-4 mb-8 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide"
+          >
             {tabs.map((tab, i) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(i)}
-                className={`shrink-0 px-6 py-2.5 rounded-full text-[15px] font-medium transition-all duration-300 ${
+                className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
                   i === activeTab
-                    ? 'text-primary-foreground shadow-lg'
-                    : 'text-muted-foreground bg-secondary hover:text-foreground hover:bg-muted'
+                    ? 'bg-foreground text-background border-foreground shadow-lg'
+                    : 'text-muted-foreground border-border hover:text-foreground hover:border-foreground/30'
                 }`}
-                style={i === activeTab ? { background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' } : {}}
               >
                 {tab.label}
               </button>
             ))}
           </div>
 
-          {/* Content: large image card with overlaid text */}
+          {/* Bento-style content card */}
           <div
-            className={`relative rounded-3xl overflow-hidden transition-opacity duration-200 ${
-              fading ? 'opacity-0' : 'opacity-100'
-            }`}
+            className={`transition-all duration-300 ${fading ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}
             style={{ transitionTimingFunction: 'var(--ease-apple)' }}
           >
-            {/* Large image */}
-            <div className="relative aspect-[16/9] md:aspect-[2.4/1]">
-              <img
-                src={current.image}
-                alt={current.label}
-                className="w-full h-full object-cover"
-              />
-              {/* Gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="grid md:grid-cols-5 gap-0 rounded-3xl overflow-hidden bg-muted/30 border border-border/50">
+              {/* Image — 3 cols */}
+              <div className="md:col-span-3 relative">
+                <img
+                  src={current.image}
+                  alt={current.label}
+                  className="w-full h-full object-cover aspect-[16/10] md:aspect-auto md:min-h-[480px]"
+                />
+                {/* Subtle gradient on mobile for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden" />
+              </div>
 
-              {/* Text content overlaid on image */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="p-8 md:p-16 max-w-xl">
-                  <p className="text-xs font-semibold tracking-[0.12em] uppercase text-primary-foreground/70 mb-3">
-                    {current.overline}
-                  </p>
-                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-white mb-4 leading-tight tracking-tight">
-                    {current.title}
-                  </h3>
-                  <p className="text-white/70 text-base md:text-lg mb-6 leading-relaxed">
-                    {current.description}
-                  </p>
-                  <ul className="space-y-2.5">
-                    {current.features.map((f, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                        <span className="text-sm md:text-base text-white/90">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {/* Content — 2 cols */}
+              <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-4 leading-tight tracking-tight">
+                  {current.title}
+                </h3>
+                <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
+                  {current.description}
+                </p>
+                <ul className="space-y-3">
+                  {current.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-sm md:text-base text-foreground">{f}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
-
-          {/* Module card grid below */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6">
-            {tabs.slice(0, 4).map((tab, i) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabChange(i)}
-                className={`group relative rounded-2xl overflow-hidden aspect-[3/2] transition-all duration-300 ${
-                  i === activeTab ? 'ring-2 ring-primary ring-offset-2' : ''
-                }`}
-              >
-                <img src={tab.image} alt={tab.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <span className="absolute bottom-3 left-3 text-white text-sm font-semibold">{tab.label}</span>
-              </button>
-            ))}
           </div>
         </div>
       </div>
