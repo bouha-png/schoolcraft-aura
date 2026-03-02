@@ -59,7 +59,7 @@ const AISection = () => {
                 className={`card-elevated p-5 relative overflow-hidden reveal ${visible ? 'visible' : ''}`}
                 style={{ transitionDelay: visible ? `${0.2 + i * 0.08}s` : '0s' }}
               >
-                <span className="absolute top-3 ltr:left-3 rtl:right-3 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide text-primary-foreground" style={{ background: 'var(--gradient-cta)' }}>
+                <span className="absolute top-3 ltr:right-3 rtl:left-3 flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide text-primary-foreground" style={{ background: 'var(--gradient-cta)' }}>
                   <Sparkles className="w-3 h-3" />
                   IA
                 </span>
