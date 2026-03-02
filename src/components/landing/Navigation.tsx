@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Mail, Phone, MapPin } from 'lucide-react';
 import synapseLogo from '@/assets/synapse-logo.png';
 import { useLanguage } from '@/i18n/LanguageContext';
+import ContactDialog from './ContactDialog';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -50,6 +51,11 @@ const Navigation = () => {
             ))}
           </div>
           <div className="hidden md:flex items-center gap-3">
+            <ContactDialog>
+              <button className="text-sm text-foreground/70 font-medium hover:text-primary transition-colors duration-200">
+                {t.nav.contact}
+              </button>
+            </ContactDialog>
             <button
               onClick={toggleLang}
               className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
@@ -89,6 +95,26 @@ const Navigation = () => {
               <X className="w-5 h-5 text-foreground" />
             </button>
           </div>
+
+          {/* Contact info banner at top */}
+          <div className="mx-6 mb-4 p-4 rounded-xl border border-border/50" style={{ background: 'var(--gradient-soft)' }}>
+            <p className="font-display font-semibold text-sm text-foreground mb-3">{t.contact.info.title}</p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <span>{t.contact.info.email}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <span>{t.contact.info.phone}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary shrink-0" />
+                <span>{t.contact.info.location}</span>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col items-center justify-center flex-1 gap-8">
             {links.map((l) => (
               <a
@@ -100,6 +126,14 @@ const Navigation = () => {
                 {l.label}
               </a>
             ))}
+            <ContactDialog>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="text-2xl font-display font-semibold text-primary"
+              >
+                {t.nav.contact}
+              </button>
+            </ContactDialog>
             <button
               onClick={() => { toggleLang(); setMobileOpen(false); }}
               className="flex items-center gap-2 text-lg font-medium text-foreground/70"
