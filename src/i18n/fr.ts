@@ -147,7 +147,7 @@ const fr = {
     title: "L'IA intégrée qui travaille",
     titleHighlight: 'pour vous.',
     subtitleShort: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse.",
-    subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse — et nous en ajoutons de nouveaux chaque semaine. Automatisation intelligente, génération de contenus et analyse prédictive.",
+    subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse.",
     systems: [
       { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
       { title: 'Tutorat IA personnalisé', description: "Parcours adaptatifs, simulations d'examens calibrées.", badge: 'Élèves' },
