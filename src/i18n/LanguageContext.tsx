@@ -6,6 +6,7 @@ type Lang = 'fr' | 'ar';
 type Translations = {
   dir: 'ltr' | 'rtl';
   nav: typeof fr.nav;
+  contact: typeof fr.contact;
   hero: typeof fr.hero;
   social: { metrics: { suffix: string; label: string }[] };
   platform: { overline: string; title: string; titleHighlight: string; subtitle: string; cards: { overline: string; title: string; value: string; description: string }[] };
