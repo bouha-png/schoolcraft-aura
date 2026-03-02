@@ -28,7 +28,7 @@ const Continuity = () => {
           {/* Text */}
           <div>
             <p className="text-overline mb-4">CONTINUITÉ PÉDAGOGIQUE</p>
-            <h2 className="text-section mb-6">
+            <h2 className="text-section mb-6 text-foreground">
               La scolarité <span className="text-gradient">ne s'arrête jamais.</span>
             </h2>
             <p className="text-body mb-10">

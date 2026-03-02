@@ -21,8 +21,8 @@ const AISection = () => {
           {/* Text + list */}
           <div>
             <p className="text-overline mb-4">INTELLIGENCE ARTIFICIELLE</p>
-            <h2 className="text-section mb-6">
-              L'IA qui travaille <span className="text-gradient">à chaque niveau.</span>
+            <h2 className="text-section mb-6 text-foreground">
+              L'IA qui travaille <span className="text-gradient">pour vous.</span>
             </h2>
             <p className="text-body-lg mb-10">
               Cinq systèmes d'IA intégrés nativement dans chaque couche de Synapse.

@@ -104,12 +104,19 @@ const Modules = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const checkScroll = () => {
     const el = scrollRef.current;
     if (!el) return;
     setCanScrollLeft(el.scrollLeft > 10);
     setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+
+    // Calculate active index based on scroll position
+    const cardWidth = el.querySelector<HTMLElement>(':scope > div')?.offsetWidth || 400;
+    const gap = 20; // gap-5 = 1.25rem = 20px
+    const index = Math.round(el.scrollLeft / (cardWidth + gap));
+    setActiveIndex(Math.min(index, modules.length - 1));
   };
 
   useEffect(() => {
@@ -127,9 +134,16 @@ const Modules = () => {
   const scroll = (direction: 'left' | 'right') => {
     const el = scrollRef.current;
     if (!el) return;
-    // Scroll by roughly one card width
     const cardWidth = el.querySelector<HTMLElement>(':scope > div')?.offsetWidth || 400;
     el.scrollBy({ left: direction === 'right' ? cardWidth : -cardWidth, behavior: 'smooth' });
+  };
+
+  const scrollToIndex = (index: number) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.querySelector<HTMLElement>(':scope > div')?.offsetWidth || 400;
+    const gap = 20;
+    el.scrollTo({ left: index * (cardWidth + gap), behavior: 'smooth' });
   };
 
   return (
@@ -166,6 +180,14 @@ const Modules = () => {
             <ChevronRight className="w-5 h-5 text-foreground" />
           </button>
 
+          {/* Right fade gradient to hint more content */}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-4 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-[5] pointer-events-none" />
+          )}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-4 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-[5] pointer-events-none" />
+          )}
+
           {/* Scrollable container */}
           <div
             ref={scrollRef}
@@ -181,12 +203,33 @@ const Modules = () => {
             ))}
           </div>
 
-          {/* Scroll indicator dots */}
-          <div className="flex justify-center gap-1.5 mt-6 md:hidden">
+          {/* Swipe hint text on mobile */}
+          <p className="text-center text-xs text-muted-foreground mt-2 md:hidden flex items-center justify-center gap-1.5">
+            <ChevronLeft className="w-3 h-3" />
+            Swipez pour explorer les modules
+            <ChevronRight className="w-3 h-3" />
+          </p>
+
+          {/* Progress dots */}
+          <div className="flex justify-center gap-2 mt-4">
             {modules.map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-border" />
+              <button
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === activeIndex
+                    ? 'w-6 h-2 bg-primary'
+                    : 'w-2 h-2 bg-border hover:bg-muted-foreground/40'
+                }`}
+                aria-label={`Aller au module ${i + 1}`}
+              />
             ))}
           </div>
+
+          {/* Counter */}
+          <p className="text-center text-sm text-muted-foreground mt-3 font-medium">
+            {activeIndex + 1} / {modules.length}
+          </p>
         </div>
       </div>
     </section>
