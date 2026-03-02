@@ -31,9 +31,12 @@ const Navigation = () => {
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
+          <a href="#" className="flex items-center gap-2">
             <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
-            Synapse Education
+            <span className="flex flex-col leading-none">
+              <span className="font-display font-bold text-lg text-gradient">Synapse</span>
+              <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
+            </span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
@@ -75,9 +78,12 @@ const Navigation = () => {
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
           <div className="h-[56px] flex items-center justify-between px-6 shrink-0">
-            <span className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
+            <span className="flex items-center gap-2">
               <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
-              Synapse Education
+              <span className="flex flex-col leading-none">
+                <span className="font-display font-bold text-lg text-gradient">Synapse</span>
+                <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
+              </span>
             </span>
             <button onClick={() => setMobileOpen(false)} aria-label={t.nav.closeMenu}>
               <X className="w-5 h-5 text-foreground" />

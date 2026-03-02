@@ -8,9 +8,10 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           <div>
-            <p className="font-display font-bold text-xl text-background mb-3">
-              Synapse Education
-            </p>
+            <div className="mb-3">
+              <p className="font-display font-bold text-xl text-background">Synapse</p>
+              <p className="font-display font-light text-xs text-background/40 tracking-[0.08em]">Education</p>
+            </div>
             <p className="text-sm leading-relaxed opacity-60">
               {t.footer.tagline}
             </p>
