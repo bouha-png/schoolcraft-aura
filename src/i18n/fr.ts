@@ -6,7 +6,7 @@ const fr = {
     modules: 'Modules',
     ai: 'Intelligence IA',
     pricing: 'Tarifs',
-    contact: 'Nous contacter',
+    contact: 'Contact',
     cta: 'Demander une démo',
     openMenu: 'Ouvrir le menu',
     closeMenu: 'Fermer le menu',

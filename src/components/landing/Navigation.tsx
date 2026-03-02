@@ -1,18 +1,20 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
 import synapseLogo from '@/assets/synapse-logo.png';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const { lang, setLang, t } = useLanguage();
 
   const links = [
     { label: t.nav.platform, href: '#platform' },
     { label: t.nav.modules, href: '#modules' },
     { label: t.nav.ai, href: '#ai' },
-    { label: t.nav.pricing, href: '#pricing' },
+    { label: t.nav.contact, href: '#contact' },
   ];
 
   useEffect(() => {
@@ -21,7 +23,22 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toggleLang = () => setLang(lang === 'fr' ? 'ar' : 'fr');
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const languages = [
+    { code: 'fr' as const, label: 'Français', flag: '🇫🇷' },
+    { code: 'ar' as const, label: 'العربية', flag: '🇲🇦' },
+  ];
+
+  const currentLang = languages.find((l) => l.code === lang)!;
 
   return (
     <>
@@ -38,6 +55,8 @@ const Navigation = () => {
               <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
             </span>
           </a>
+
+          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
               <a
@@ -49,20 +68,36 @@ const Navigation = () => {
               </a>
             ))}
           </div>
+
+          {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#contact"
-              className="text-sm text-foreground/70 font-medium hover:text-primary transition-colors duration-200"
-            >
-              {t.nav.contact}
-            </a>
-            <button
-              onClick={toggleLang}
-              className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
-            >
-              <Globe className="w-4 h-4" />
-              {lang === 'fr' ? 'العربية' : 'Français'}
-            </button>
+            <div ref={langRef} className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
+              >
+                <span className="text-base leading-none">{currentLang.flag}</span>
+                <span>{currentLang.label}</span>
+              </button>
+              {langOpen && (
+                <div className="absolute top-full mt-1 ltr:right-0 rtl:left-0 bg-background border border-border rounded-xl shadow-lg overflow-hidden min-w-[140px]">
+                  {languages.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => { setLang(l.code); setLangOpen(false); }}
+                      className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
+                        lang === l.code
+                          ? 'bg-primary/10 text-primary font-semibold'
+                          : 'text-foreground/70 hover:bg-muted'
+                      }`}
+                    >
+                      <span className="text-base leading-none">{l.flag}</span>
+                      <span>{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             <a
               href="#demo"
               className="inline-flex items-center h-9 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-all duration-200"
@@ -71,6 +106,7 @@ const Navigation = () => {
               {t.nav.cta}
             </a>
           </div>
+
           <button
             className="md:hidden p-2"
             onClick={() => setMobileOpen(true)}
@@ -81,6 +117,7 @@ const Navigation = () => {
         </div>
       </nav>
 
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
           <div className="h-[56px] flex items-center justify-between px-6 shrink-0">
@@ -107,20 +144,20 @@ const Navigation = () => {
                 {l.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setMobileOpen(false)}
-              className="text-2xl font-display font-semibold text-primary"
-            >
-              {t.nav.contact}
-            </a>
-            <button
-              onClick={() => { toggleLang(); setMobileOpen(false); }}
-              className="flex items-center gap-2 text-lg font-medium text-foreground/70"
-            >
-              <Globe className="w-5 h-5" />
-              {lang === 'fr' ? 'العربية' : 'Français'}
-            </button>
+            <div className="flex gap-4 mt-2">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => { setLang(l.code); setMobileOpen(false); }}
+                  className={`flex items-center gap-2 text-lg font-medium transition-colors ${
+                    lang === l.code ? 'text-primary font-semibold' : 'text-foreground/50'
+                  }`}
+                >
+                  <span className="text-xl">{l.flag}</span>
+                  <span>{l.label}</span>
+                </button>
+              ))}
+            </div>
             <a href="#demo" onClick={() => setMobileOpen(false)} className="btn-primary mt-4">
               {t.nav.cta}
             </a>
