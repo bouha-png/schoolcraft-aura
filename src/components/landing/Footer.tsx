@@ -1,4 +1,5 @@
 import { useLanguage } from '@/i18n/LanguageContext';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const { lang, setLang, t } = useLanguage();
@@ -12,9 +13,25 @@ const Footer = () => {
               <p className="font-display font-bold text-xl text-background">Synapse</p>
               <p className="font-display font-light text-xs text-background/40 tracking-[0.08em]">Education</p>
             </div>
-            <p className="text-sm leading-relaxed opacity-60">
+            <p className="text-sm leading-relaxed opacity-60 mb-5">
               {t.footer.tagline}
             </p>
+            <div className="space-y-2.5">
+              <a href="mailto:contact@scanditek.ma" className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity">
+                <Mail className="w-3.5 h-3.5 shrink-0" /> contact@scanditek.ma
+              </a>
+              <a href="tel:+2120614615816" className="flex items-center gap-2 text-sm opacity-60 hover:opacity-100 transition-opacity">
+                <Phone className="w-3.5 h-3.5 shrink-0" /> 06 14 61 58 16
+              </a>
+              <div className="flex items-start gap-2 text-sm opacity-60">
+                <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                <span>Technopark, Casablanca, Maroc</span>
+              </div>
+              <div className="flex items-start gap-2 text-sm opacity-60">
+                <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                <span>Oslo, Norway</span>
+              </div>
+            </div>
           </div>
           {Object.entries(t.footer.sections).map(([title, links]) => (
             <div key={title}>
