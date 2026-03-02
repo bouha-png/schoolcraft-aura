@@ -28,8 +28,8 @@ const Navigation = () => {
       >
         <div className="section-container w-full flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
-            <img src={synapseLogo} alt="Synapse" className="w-7 h-7 object-contain" />
-            Synapse
+            <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
+            Synapse Education
           </a>
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
@@ -63,8 +63,8 @@ const Navigation = () => {
         <div className="fixed inset-0 z-[60] bg-background flex flex-col">
           <div className="h-[56px] flex items-center justify-between px-6 shrink-0">
             <span className="flex items-center gap-2 font-display font-bold text-xl text-gradient">
-              <img src={synapseLogo} alt="Synapse" className="w-7 h-7 object-contain" />
-              Synapse
+              <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
+              Synapse Education
             </span>
             <button onClick={() => setMobileOpen(false)} aria-label="Fermer le menu">
               <X className="w-5 h-5 text-foreground" />
