@@ -108,13 +108,42 @@ const Navigation = () => {
             </a>
           </div>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMobileOpen(true)}
-            aria-label={t.nav.openMenu}
-          >
-            <Menu className="w-5 h-5 text-foreground" />
-          </button>
+          {/* Mobile: language + hamburger */}
+          <div className="flex md:hidden items-center gap-2">
+            <div ref={langRef} className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1 h-9 px-2.5 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50"
+              >
+                <span className="text-base leading-none">{currentLang.flag}</span>
+              </button>
+              {langOpen && (
+                <div className="absolute top-full mt-1 ltr:right-0 rtl:left-0 bg-background border border-border rounded-xl shadow-lg overflow-hidden min-w-[140px] z-[70]">
+                  {languages.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => { setLang(l.code); setLangOpen(false); }}
+                      className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
+                        lang === l.code
+                          ? 'bg-primary/10 text-primary font-semibold'
+                          : 'text-foreground/70 hover:bg-muted'
+                      }`}
+                    >
+                      <span className="text-base leading-none">{l.flag}</span>
+                      <span>{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button
+              className="p-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label={t.nav.openMenu}
+            >
+              <Menu className="w-5 h-5 text-foreground" />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -145,20 +174,6 @@ const Navigation = () => {
                 {l.label}
               </a>
             ))}
-            <div className="flex gap-4 mt-2">
-              {languages.map((l) => (
-                <button
-                  key={l.code}
-                  onClick={() => { setLang(l.code); setMobileOpen(false); }}
-                  className={`flex items-center gap-2 text-lg font-medium transition-colors ${
-                    lang === l.code ? 'text-primary font-semibold' : 'text-foreground/50'
-                  }`}
-                >
-                  <span className="text-xl">{l.flag}</span>
-                  <span>{l.label}</span>
-                </button>
-              ))}
-            </div>
             <a href="#demo" onClick={() => setMobileOpen(false)} className="btn-primary mt-4">
               {t.nav.cta}
             </a>
