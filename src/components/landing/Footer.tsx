@@ -55,7 +55,7 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <div className="flex gap-4 text-xs">
-            {([['fr', 'FR'], ['ar', 'AR'], ['no', 'NO']] as const).map(([code, label]) => (
+            {([['fr', 'FR'], ['ar', 'AR'], ['no', 'NO'], ['en', 'EN']] as const).map(([code, label]) => (
               <button
                 key={code}
                 onClick={() => setLang(code)}
