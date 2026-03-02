@@ -9,7 +9,7 @@ const AISection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="ai" className="section-padding bg-background">
+    <section id="ai" className="section-padding bg-background !pt-0">
       <div ref={ref} className="section-container">
         {/* Header */}
         <div className={`text-center mb-12 reveal ${visible ? 'visible' : ''}`}>
