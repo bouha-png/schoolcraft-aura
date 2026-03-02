@@ -327,14 +327,14 @@ const UserPortals = () => {
           {t.portals.features.map((feat, i) => {
             const Icon = featureIcons[i];
             return (
-              <div key={i} className="flex items-start gap-3 p-5 rounded-xl border border-border/50 bg-muted/30">
-                <div className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center bg-primary/10">
-                  <Icon className="w-4.5 h-4.5 text-primary" />
-                </div>
-                <div>
-                  <h5 className="font-display text-sm font-semibold text-foreground mb-0.5">{feat.title}</h5>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{feat.description}</p>
-                </div>
+              <div
+                key={i}
+                className={`card-elevated p-5 reveal ${visible ? 'visible' : ''}`}
+                style={{ transitionDelay: visible ? `${0.5 + (i + 1) * 0.1}s` : '0s' }}
+              >
+                <Icon className="w-5 h-5 text-primary mb-3" />
+                <h5 className="font-display text-sm font-semibold text-foreground mb-1">{feat.title}</h5>
+                <p className="text-xs text-muted-foreground leading-relaxed">{feat.description}</p>
               </div>
             );
           })}
