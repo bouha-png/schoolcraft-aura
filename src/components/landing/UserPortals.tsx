@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useLanguage } from '@/i18n/LanguageContext';
-import sectionPortals from '@/assets/section-portals.jpg';
+
 import {
   Crown, GraduationCap, BookOpen, Heart, ClipboardList,
   Users, Wallet, Bus, Wrench, Server,
@@ -92,15 +92,13 @@ const UserPortals = () => {
           <p className="text-body-lg max-w-[600px] mx-auto mt-4">{t.portals.subtitle}</p>
         </div>
 
-        {/* Hero image */}
-        <div className={`mb-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
-          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: 'var(--shadow-image)' }}>
-            <img
-              src={sectionPortals}
-              alt={t.portals.imgAlt}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
+        {/* Icon header */}
+        <div className={`flex justify-center mb-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          <div
+            className="w-20 h-20 rounded-2xl flex items-center justify-center"
+            style={{ background: 'var(--gradient-cta)', boxShadow: '0 8px 32px hsla(var(--primary) / 0.2)' }}
+          >
+            <UsersRound className="w-10 h-10 text-primary-foreground" />
           </div>
         </div>
 

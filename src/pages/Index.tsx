@@ -4,7 +4,7 @@ import PlatformOverview from '@/components/landing/PlatformOverview';
 import Modules from '@/components/landing/Modules';
 import UserPortals from '@/components/landing/UserPortals';
 import AISection from '@/components/landing/AISection';
-import Continuity from '@/components/landing/Continuity';
+
 import Adoption from '@/components/landing/Adoption';
 import ScandiTek from '@/components/landing/ScandiTek';
 import Pricing from '@/components/landing/Pricing';
@@ -22,7 +22,7 @@ const Index = () => {
         <AISection />
         <Modules />
         <UserPortals />
-        <Continuity />
+        
         <Adoption />
         <ScandiTek />
         <Pricing />
