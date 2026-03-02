@@ -27,25 +27,30 @@ const PlatformOverview = () => {
           {t.platform.cards.map((card, i) => (
             <div
               key={i}
-              className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal ${visible ? 'visible' : ''}`}
+              className={`max-w-4xl mx-auto reveal ${visible ? 'visible' : ''}`}
               style={{ transitionDelay: visible ? `${(i + 1) * 0.15}s` : '0s' }}
             >
-              <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <img
-                    src={images[i]}
-                    alt={card.title}
-                    className="w-full aspect-[16/9] object-cover"
-                  />
-                </div>
-              </div>
-              <div className={`${i % 2 === 1 ? 'md:order-1' : ''}`}>
+              {/* Overline + Title */}
+              <div className="text-center mb-8">
                 <p className="text-overline mb-3">{card.overline}</p>
-                <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-4 leading-tight tracking-tight">
+                <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground leading-tight tracking-tight">
                   {card.title}
                 </h3>
+              </div>
+
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8">
+                <img
+                  src={images[i]}
+                  alt={card.title}
+                  className="w-full aspect-[16/9] object-cover"
+                />
+              </div>
+
+              {/* Value + Description */}
+              <div className="text-center max-w-2xl mx-auto">
                 <p
-                  className="inline-block text-lg md:text-xl font-semibold mb-4 bg-clip-text text-transparent"
+                  className="inline-block text-lg md:text-xl font-semibold mb-3 bg-clip-text text-transparent"
                   style={{ backgroundImage: 'var(--gradient-cta)' }}
                 >
                   {card.value}
