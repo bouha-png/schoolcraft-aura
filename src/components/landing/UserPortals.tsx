@@ -42,6 +42,7 @@ const UserPortals = () => {
   const { ref, visible } = useScrollReveal();
   const { t } = useLanguage();
   const [selectedNode, setSelectedNode] = useState<number | null>(null);
+  const [selectedMobileRole, setSelectedMobileRole] = useState<number | null>(null);
   const [expandedStaff, setExpandedStaff] = useState(false);
 
   const roles = t.portals.roles;
@@ -247,12 +248,12 @@ const UserPortals = () => {
             {STANDALONE_INDICES.map((ri) => {
               const role = roles[ri];
               const Icon = roleIcons[role.icon] || Crown;
-              const isSelected = selectedNode === ri + 100; // offset to avoid collision
+              const isSelected = selectedMobileRole === ri;
 
               return (
                 <button
                   key={ri}
-                  onClick={() => setSelectedNode(isSelected ? null : ri + 100)}
+                  onClick={() => setSelectedMobileRole(isSelected ? null : ri)}
                   className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                     isSelected ? 'border-primary/40 bg-primary/5' : 'border-border bg-card'
                   }`}
