@@ -55,18 +55,15 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <div className="flex gap-4 text-xs">
-            <button
-              onClick={() => setLang('fr')}
-              className={`transition-opacity ${lang === 'fr' ? 'opacity-100 font-semibold text-white' : 'opacity-50 hover:opacity-100'}`}
-            >
-              FR
-            </button>
-            <button
-              onClick={() => setLang('ar')}
-              className={`transition-opacity ${lang === 'ar' ? 'opacity-100 font-semibold text-white' : 'opacity-50 hover:opacity-100'}`}
-            >
-              AR
-            </button>
+            {([['fr', 'FR'], ['ar', 'AR'], ['no', 'NO']] as const).map(([code, label]) => (
+              <button
+                key={code}
+                onClick={() => setLang(code)}
+                className={`transition-opacity ${lang === code ? 'opacity-100 font-semibold text-white' : 'opacity-50 hover:opacity-100'}`}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </div>
       </div>
