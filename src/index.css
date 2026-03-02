@@ -322,3 +322,20 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* RTL support for Arabic */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+[dir="rtl"] .font-display {
+  font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .btn-text span[aria-hidden] {
+  transform: scaleX(-1);
+}

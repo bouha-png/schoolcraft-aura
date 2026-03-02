@@ -1,0 +1,57 @@
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import fr from './fr';
+import ar from './ar';
+
+type Lang = 'fr' | 'ar';
+type Translations = {
+  dir: 'ltr' | 'rtl';
+  nav: typeof fr.nav;
+  hero: typeof fr.hero;
+  social: { metrics: { suffix: string; label: string }[] };
+  platform: { overline: string; title: string; titleHighlight: string; subtitle: string; cards: { overline: string; title: string; value: string; description: string }[] };
+  modules: { overline: string; title: string; titleHighlight: string; subtitle: string; swipeHint: string; goToModule: string; items: { label: string; title: string; description: string; features: string[] }[] };
+  ai: { overline: string; title: string; titleHighlight: string; subtitle: string; systems: { title: string; description: string; badge: string }[] };
+  continuity: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; cards: { title: string; description: string }[] };
+  adoption: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; steps: { number: string; title: string; description: string }[] };
+  scanditek: { overline: string; title: string; titleHighlight: string; description: string; quote: string; values: { title: string; description: string }[] };
+  pricing: { overline: string; title: string; titleHighlight: string; subtitle: string; ctaTitle: string; ctaDescription: string; ctaButton: string };
+  faq: { overline: string; title: string; titleHighlight: string; items: { q: string; a: string }[] };
+  finalCta: { overline: string; title: string; titleHighlight: string; subtitle: string; cta: string };
+  footer: { tagline: string; sections: Record<string, string[]>; copyright: string };
+};
+
+interface LanguageContextType {
+  lang: Lang;
+  setLang: (lang: Lang) => void;
+  t: Translations;
+}
+
+const LanguageContext = createContext<LanguageContextType>({
+  lang: 'fr',
+  setLang: () => {},
+  t: fr,
+});
+
+const translations: Record<Lang, Translations> = { fr, ar };
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [lang, setLang] = useState<Lang>(() => {
+    return (localStorage.getItem('synapse-lang') as Lang) || 'fr';
+  });
+
+  const t = translations[lang];
+
+  useEffect(() => {
+    localStorage.setItem('synapse-lang', lang);
+    document.documentElement.dir = t.dir;
+    document.documentElement.lang = lang;
+  }, [lang, t.dir]);
+
+  return (
+    <LanguageContext.Provider value={{ lang, setLang, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => useContext(LanguageContext);
