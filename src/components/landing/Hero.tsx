@@ -31,7 +31,7 @@ const Hero = () => {
             <br />
             <span className="text-gradient">{t.hero.titleHighlight}</span>
           </h1>
-          <p className="text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px] text-foreground/80 font-medium">
+          <p className="text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px] text-foreground font-medium" style={{ textShadow: '0 1px 8px rgba(255,255,255,0.8)' }}>
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-start gap-4 hero-animate hero-delay-3">
