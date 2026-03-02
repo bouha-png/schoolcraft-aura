@@ -57,7 +57,7 @@ const fr = {
       {
         overline: 'FORMATION & COMPÉTENCES',
         title: "La qualité commence par la compétence.",
-        value: "Formez, suivez, certifiez — en continu.",
+        value: "Formez, suivez, progressez — en continu.",
         description: "Via Mon Portail, chaque enseignant et collaborateur accède à ses parcours e-learning, modules d'onboarding et formations continues. La direction suit en temps réel qui a complété quoi — parce que la qualité éducative dépend directement de la compétence de ceux qui la délivrent.",
       },
     ],
