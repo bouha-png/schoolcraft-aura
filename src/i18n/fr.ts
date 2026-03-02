@@ -32,7 +32,7 @@ const fr = {
   // Platform Overview
   platform: {
     overline: 'CE QUI NOUS DIFFÉRENCIE',
-    title: 'Trois raisons de choisir',
+    title: 'Quatre raisons de choisir',
     titleHighlight: 'Synapse.',
     subtitle: "Bien plus qu'un logiciel scolaire. Un écosystème éducatif intelligent pour piloter votre établissement avec précision.",
     cards: [
