@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useLanguage } from '@/i18n/LanguageContext';
 import sectionPortals from '@/assets/section-portals.jpg';
@@ -5,6 +6,7 @@ import {
   Crown, GraduationCap, BookOpen, Heart, ClipboardList,
   Users, Wallet, Bus, Wrench, Server,
   Smartphone, MessageCircle, Calendar, UsersRound,
+  Network,
 } from 'lucide-react';
 
 const roleIcons: Record<string, React.ElementType> = {
@@ -25,10 +27,10 @@ const featureIcons = [Smartphone, MessageCircle, Calendar, UsersRound];
 const UserPortals = () => {
   const { ref, visible } = useScrollReveal();
   const { t } = useLanguage();
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  // Bento grid: first 2 roles are large, rest are compact
-  const largeRoles = t.portals.roles.slice(0, 2);
-  const smallRoles = t.portals.roles.slice(2);
+  const roles = t.portals.roles;
+  const totalRoles = roles.length;
 
   return (
     <section id="portals" className="section-padding bg-background relative overflow-hidden">
@@ -62,67 +64,167 @@ const UserPortals = () => {
           </div>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          {/* Two large cards */}
-          {largeRoles.map((role, i) => {
-            const Icon = roleIcons[role.icon] || Crown;
-            return (
+        {/* Interactive Hub Diagram */}
+        <div className={`reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          {/* Desktop: circular layout */}
+          <div className="hidden md:block">
+            <div className="relative mx-auto" style={{ width: '600px', height: '600px' }}>
+              {/* Orbit ring */}
               <div
-                key={i}
-                className={`group relative p-8 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all duration-500 reveal ${visible ? 'visible' : ''}`}
-                style={{
-                  transitionDelay: visible ? `${0.15 + i * 0.08}s` : '0s',
-                  boxShadow: 'var(--shadow-card)',
-                }}
-              >
-                <div
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: 'var(--gradient-soft)' }}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'var(--gradient-cta)' }}>
-                    <Icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground mb-2">{role.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{role.description}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                className="absolute inset-[60px] rounded-full border border-border/40"
+                style={{ boxShadow: '0 0 40px hsla(var(--primary) / 0.05)' }}
+              />
 
-        {/* Compact grid for remaining roles */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-16">
-          {smallRoles.map((role, i) => {
-            const Icon = roleIcons[role.icon] || Users;
-            return (
-              <div
-                key={i}
-                className={`group relative p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-all duration-500 reveal ${visible ? 'visible' : ''}`}
-                style={{
-                  transitionDelay: visible ? `${0.3 + i * 0.05}s` : '0s',
-                  boxShadow: 'var(--shadow-card)',
-                }}
-              >
+              {/* Central hub */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <div
-                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ background: 'var(--gradient-soft)' }}
-                />
-                <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'var(--gradient-cta)' }}>
-                    <Icon className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <h4 className="font-display text-sm font-bold text-foreground mb-1">{role.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{role.description}</p>
+                  className="w-24 h-24 rounded-full flex items-center justify-center border-2 border-primary/20 transition-all duration-500"
+                  style={{ background: 'var(--gradient-cta)', boxShadow: '0 0 50px hsla(var(--primary) / 0.25)' }}
+                >
+                  <Network className="w-10 h-10 text-primary-foreground" />
                 </div>
+                {selectedIndex === null && (
+                  <p className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-muted-foreground font-medium">
+                    Cliquez sur un rôle
+                  </p>
+                )}
               </div>
-            );
-          })}
+
+              {/* Role nodes on the circle */}
+              {roles.map((role, i) => {
+                const Icon = roleIcons[role.icon] || Crown;
+                const angle = (i / totalRoles) * 360 - 90; // start from top
+                const rad = (angle * Math.PI) / 180;
+                const radius = 240; // px from center
+                const x = 300 + radius * Math.cos(rad);
+                const y = 300 + radius * Math.sin(rad);
+                const isSelected = selectedIndex === i;
+
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedIndex(isSelected ? null : i)}
+                    className={`absolute flex flex-col items-center gap-1.5 group transition-all duration-300 cursor-pointer`}
+                    style={{
+                      left: `${x}px`,
+                      top: `${y}px`,
+                      transform: 'translate(-50%, -50%)',
+                    }}
+                  >
+                    {/* Connector line */}
+                    <svg
+                      className="absolute pointer-events-none"
+                      style={{
+                        width: '600px',
+                        height: '600px',
+                        left: `${300 - x}px`,
+                        top: `${300 - y}px`,
+                      }}
+                    >
+                      <line
+                        x1={x}
+                        y1={y}
+                        x2="300"
+                        y2="300"
+                        className={`transition-all duration-300 ${isSelected ? 'stroke-primary' : 'stroke-border/30'}`}
+                        strokeWidth={isSelected ? 2 : 1}
+                        strokeDasharray={isSelected ? 'none' : '4 4'}
+                      />
+                    </svg>
+
+                    {/* Icon circle */}
+                    <div
+                      className={`relative z-10 w-14 h-14 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
+                        isSelected
+                          ? 'border-primary scale-110'
+                          : 'border-border bg-card group-hover:border-primary/50 group-hover:scale-105'
+                      }`}
+                      style={isSelected ? { background: 'var(--gradient-cta)', boxShadow: '0 0 20px hsla(var(--primary) / 0.3)' } : { boxShadow: 'var(--shadow-card)' }}
+                    >
+                      <Icon className={`w-6 h-6 transition-colors duration-300 ${isSelected ? 'text-primary-foreground' : 'text-primary'}`} />
+                    </div>
+
+                    {/* Label */}
+                    <span
+                      className={`relative z-10 text-[11px] font-semibold leading-tight text-center max-w-[90px] transition-colors duration-300 ${
+                        isSelected ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'
+                      }`}
+                    >
+                      {role.title}
+                    </span>
+                  </button>
+                );
+              })}
+
+              {/* Detail panel - shown inside the circle */}
+              {selectedIndex !== null && (
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] text-center z-20 mt-16 animate-in fade-in-0 zoom-in-95 duration-300"
+                >
+                  <h4 className="font-display text-base font-bold text-foreground mb-1.5">
+                    {roles[selectedIndex].title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {roles[selectedIndex].description}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Mobile: vertical list with expandable items */}
+          <div className="md:hidden space-y-3">
+            {/* Central hub icon */}
+            <div className="flex justify-center mb-6">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center"
+                style={{ background: 'var(--gradient-cta)', boxShadow: '0 0 30px hsla(var(--primary) / 0.2)' }}
+              >
+                <Network className="w-7 h-7 text-primary-foreground" />
+              </div>
+            </div>
+
+            {roles.map((role, i) => {
+              const Icon = roleIcons[role.icon] || Crown;
+              const isSelected = selectedIndex === i;
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => setSelectedIndex(isSelected ? null : i)}
+                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
+                    isSelected
+                      ? 'border-primary/40 bg-primary/5'
+                      : 'border-border bg-card hover:border-primary/20'
+                  }`}
+                  style={{ boxShadow: isSelected ? '0 0 20px hsla(var(--primary) / 0.1)' : 'var(--shadow-card)' }}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                        isSelected ? '' : 'bg-primary/10'
+                      }`}
+                      style={isSelected ? { background: 'var(--gradient-cta)' } : {}}
+                    >
+                      <Icon className={`w-5 h-5 ${isSelected ? 'text-primary-foreground' : 'text-primary'}`} />
+                    </div>
+                    <span className={`font-display text-sm font-bold ${isSelected ? 'text-foreground' : 'text-foreground'}`}>
+                      {role.title}
+                    </span>
+                  </div>
+                  {isSelected && (
+                    <p className="mt-3 pl-[52px] text-xs text-muted-foreground leading-relaxed animate-in fade-in-0 slide-in-from-top-1 duration-200">
+                      {role.description}
+                    </p>
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Connected features strip */}
-        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.5s' }}>
+        <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 reveal ${visible ? 'visible' : ''}`} style={{ transitionDelay: '0.5s' }}>
           {t.portals.features.map((feat, i) => {
             const Icon = featureIcons[i];
             return (
