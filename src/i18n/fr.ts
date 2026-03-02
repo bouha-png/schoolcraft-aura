@@ -146,7 +146,7 @@ const fr = {
     overline: 'INTELLIGENCE ARTIFICIELLE',
     title: "L'IA intégrée qui travaille",
     titleHighlight: 'pour vous.',
-    subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse — et nous en ajoutons de nouveaux chaque semaine. Automatisation intelligente, génération de contenus et analyse prédictive.",
+    subtitle: "Une plateforme intelligente, tout-en-un, conçue pour l'ensemble de l'écosystème scolaire.",
     systems: [
       { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
       { title: 'Tutorat IA personnalisé', description: "Parcours adaptatifs, simulations d'examens calibrées.", badge: 'Élèves' },
