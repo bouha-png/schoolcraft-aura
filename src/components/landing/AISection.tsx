@@ -49,31 +49,29 @@ const AISection = () => {
           </h3>
         </div>
 
-        {/* Systems list */}
-        <div className="max-w-[720px] mx-auto space-y-5">
+        {/* Systems grid */}
+        <div className="max-w-[900px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
           {t.ai.systems.map((system, i) => {
             const Icon = icons[i];
             return (
               <div
                 key={i}
-                className={`flex items-start gap-4 reveal ${visible ? 'visible' : ''}`}
+                className={`card-elevated p-5 reveal ${visible ? 'visible' : ''}`}
                 style={{ transitionDelay: visible ? `${0.2 + i * 0.08}s` : '0s' }}
               >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: 'var(--gradient-soft)' }}
-                >
-                  <Icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-0.5">
-                    <h3 className="font-display text-base font-semibold text-foreground">{system.title}</h3>
-                    <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold text-primary" style={{ background: 'var(--gradient-soft)' }}>
-                      {system.badge}
-                    </span>
+                <div className="flex items-center gap-2 mb-3">
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: 'var(--gradient-soft)' }}
+                  >
+                    <Icon className="w-4.5 h-4.5 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground">{system.description}</p>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold text-primary" style={{ background: 'var(--gradient-soft)' }}>
+                    {system.badge}
+                  </span>
                 </div>
+                <h5 className="font-display text-sm font-semibold text-foreground mb-1">{system.title}</h5>
+                <p className="text-xs text-muted-foreground leading-relaxed">{system.description}</p>
               </div>
             );
           })}
