@@ -1,6 +1,6 @@
 import { Pen, GraduationCap, CalendarClock, MessageCircle, Search } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import sectionAi from '@/assets/section-ai.jpg';
+
 
 const aiSystems = [
   { icon: Pen, title: 'Création de contenu IA', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
@@ -55,13 +55,30 @@ const AISection = () => {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="feature-image aspect-square">
-            <img
-              src={sectionAi}
-              alt="Enseignante utilisant l'intelligence artificielle de Synapse"
-              className="w-full h-full object-cover"
-            />
+          {/* Phone mockup with video */}
+          <div className="flex items-center justify-center">
+            <div className="relative mx-auto" style={{ width: '280px' }}>
+              {/* Phone frame */}
+              <div className="relative rounded-[2.5rem] border-[6px] border-foreground/90 bg-foreground/90 shadow-2xl overflow-hidden">
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-foreground/90 rounded-b-2xl z-10" />
+                {/* Screen */}
+                <div className="rounded-[2rem] overflow-hidden bg-black">
+                  <video
+                    src="/videos/ai-demo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              {/* Side button */}
+              <div className="absolute top-24 -right-[8px] w-[3px] h-12 bg-foreground/90 rounded-r-sm" />
+              <div className="absolute top-20 -left-[8px] w-[3px] h-8 bg-foreground/90 rounded-l-sm" />
+              <div className="absolute top-32 -left-[8px] w-[3px] h-8 bg-foreground/90 rounded-l-sm" />
+            </div>
           </div>
         </div>
       </div>
