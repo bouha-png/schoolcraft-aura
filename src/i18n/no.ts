@@ -243,7 +243,7 @@ const no = {
   },
   // Footer
   footer: {
-    tagline: 'Intelligent programvare for skoleadministrasjon av ScandiTek.',
+    tagline: 'Intelligent løsning for skoler av ScandiTek.',
     sections: {
       Produkt: ['Funksjoner', 'Moduler', 'AI-intelligens', 'Priser'],
       Selskap: ['Om oss', 'Kontakt'],
