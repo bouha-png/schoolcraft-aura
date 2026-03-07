@@ -7,7 +7,8 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
+  const langDesktopRef = useRef<HTMLDivElement>(null);
+  const langMobileRef = useRef<HTMLDivElement>(null);
   const { lang, setLang, t } = useLanguage();
 
   const links = [
@@ -25,7 +26,10 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const inDesktop = langDesktopRef.current?.contains(target);
+      const inMobile = langMobileRef.current?.contains(target);
+      if (!inDesktop && !inMobile) {
         setLangOpen(false);
       }
     };
@@ -73,7 +77,7 @@ const Navigation = () => {
 
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-3">
-            <div ref={langRef} className="relative">
+            <div ref={langDesktopRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
@@ -111,7 +115,7 @@ const Navigation = () => {
 
           {/* Mobile: language + hamburger */}
           <div className="flex md:hidden items-center gap-2">
-            <div ref={langRef} className="relative">
+            <div ref={langMobileRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1 h-9 px-2.5 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50"
