@@ -233,22 +233,6 @@ const fr = {
     ctaDescription: "Notre équipe vous accompagne pour définir la configuration idéale — modules, nombre d'utilisateurs, intégrations et accompagnement.",
     ctaButton: 'Nous contacter',
   },
-  // FAQ
-  faq: {
-    overline: 'FAQ',
-    title: 'Questions',
-    titleHighlight: 'fréquentes.',
-    items: [
-      { q: 'Combien de temps prend le déploiement ?', a: "Selon la taille de l'établissement, le déploiement complet prend entre 2 et 6 semaines, incluant la configuration, la formation et la mise en production." },
-      { q: 'Comment se passe la migration des données ?', a: 'Notre équipe prend en charge la migration complète : données élèves, historique financier, emplois du temps. Aucune perte de données.' },
-      { q: 'Quelle formation est incluse ?', a: "Chaque plan inclut une formation structurée par rôle. Direction, enseignants, personnel administratif — chacun reçoit un accompagnement adapté." },
-      { q: 'Les données sont-elles sécurisées ?', a: 'Standards scandinaves de protection des données. Hébergement sécurisé, chiffrement de bout en bout, authentification multi-facteurs et sauvegardes continues.' },
-      { q: 'Quelles langues sont supportées ?', a: 'Français, arabe (avec support RTL natif) et anglais. Basculement instantané entre les langues.' },
-      { q: 'Synapse est-il compatible avec MASSAR ?', a: "Oui. Export des données et bulletins au format MASSAR. Intégration complète avec les exigences du ministère de l'Éducation nationale." },
-      { q: "Y a-t-il une application mobile ?", a: "L'ensemble de la plateforme est responsive et accessible depuis tout appareil. Les portails parents et élèves sont optimisés pour mobile." },
-      { q: 'Quel support est disponible ?', a: "Support par chat et email inclus dans tous les plans. Le plan Établissement inclut un interlocuteur dédié et des revues régulières." },
-    ],
-  },
   // Final CTA
   finalCta: {
     overline: 'PRÊT À COMMENCER ?',
