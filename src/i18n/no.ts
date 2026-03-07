@@ -38,8 +38,8 @@ const no = {
   // Hero
   hero: {
     overline: 'SYNAPSE EDUCATION',
-    title1: 'Intelligent',
-    titleHighlight: 'løsning for skoler.',
+    title1: 'En intelligent',
+    titleHighlight: 'plattform for din skole.',
     subtitle: 'Den intelligente alt-i-ett-plattformen designet for å dekke hele økosystemet til din utdanningsinstitusjon.',
     cta: 'Be om en demo',
     discover: 'Utforsk plattformen',
