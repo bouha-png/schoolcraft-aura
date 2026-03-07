@@ -44,7 +44,7 @@ const Navigation = () => {
     { code: 'en' as const, label: 'English', flag: '🇬🇧' },
   ];
 
-  const currentLang = languages.find((l) => l.code === lang)!;
+  const currentLang = languages.find((l) => l.code === lang) ?? languages[0];
 
   return (
     <>

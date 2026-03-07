@@ -38,12 +38,18 @@ const LanguageContext = createContext<LanguageContextType>({
 
 const translations: Record<Lang, Translations> = { fr, ar, no, en };
 
+const defaultLang: Lang = 'fr';
+const isLang = (value: string | null): value is Lang => value === 'fr' || value === 'ar' || value === 'no' || value === 'en';
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
-    return (localStorage.getItem('synapse-lang') as Lang) || 'fr';
+    const savedLang = localStorage.getItem('synapse-lang');
+    if (isLang(savedLang)) return savedLang;
+    localStorage.removeItem('synapse-lang');
+    return defaultLang;
   });
 
-  const t = translations[lang];
+  const t = translations[lang] ?? fr;
 
   useEffect(() => {
     localStorage.setItem('synapse-lang', lang);
