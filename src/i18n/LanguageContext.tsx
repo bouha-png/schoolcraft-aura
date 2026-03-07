@@ -49,7 +49,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return defaultLang;
   });
 
-  const t = translations[lang];
+  const t = translations[lang] ?? fr;
 
   useEffect(() => {
     localStorage.setItem('synapse-lang', lang);
