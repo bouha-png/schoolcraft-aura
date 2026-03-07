@@ -26,20 +26,10 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (
-        langDesktopRef.current && !langDesktopRef.current.contains(e.target as Node) &&
-        langMobileRef.current && !langMobileRef.current.contains(e.target as Node)
-      ) {
-        setLangOpen(false);
-      }
-      if (
-        !langDesktopRef.current && langMobileRef.current && !langMobileRef.current.contains(e.target as Node)
-      ) {
-        setLangOpen(false);
-      }
-      if (
-        langDesktopRef.current && !langDesktopRef.current.contains(e.target as Node) && !langMobileRef.current
-      ) {
+      const target = e.target as Node;
+      const inDesktop = langDesktopRef.current?.contains(target);
+      const inMobile = langMobileRef.current?.contains(target);
+      if (!inDesktop && !inMobile) {
         setLangOpen(false);
       }
     };
