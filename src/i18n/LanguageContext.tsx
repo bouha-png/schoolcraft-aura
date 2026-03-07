@@ -19,7 +19,6 @@ type Translations = {
   adoption: { overline: string; title: string; titleHighlight: string; subtitle: string; imgAlt: string; steps: { number: string; title: string; description: string }[] };
   scanditek: { overline: string; title: string; titleHighlight: string; description: string; quote: string; values: { title: string; description: string }[] };
   pricing: { overline: string; title: string; titleHighlight: string; subtitle: string; ctaTitle: string; ctaDescription: string; ctaButton: string };
-  faq: { overline: string; title: string; titleHighlight: string; items: { q: string; a: string }[] };
   finalCta: { overline: string; title: string; titleHighlight: string; subtitle: string; cta: string };
   footer: { tagline: string; sections: Record<string, string[]>; copyright: string };
 };

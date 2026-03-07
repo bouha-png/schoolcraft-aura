@@ -8,7 +8,6 @@ import AISection from '@/components/landing/AISection';
 import Adoption from '@/components/landing/Adoption';
 import ScandiTek from '@/components/landing/ScandiTek';
 import Pricing from '@/components/landing/Pricing';
-import FAQ from '@/components/landing/FAQ';
 import FinalCTA from '@/components/landing/FinalCTA';
 import Footer from '@/components/landing/Footer';
 
@@ -26,7 +25,6 @@ const Index = () => {
         <Adoption />
         <ScandiTek />
         <Pricing />
-        <FAQ />
         <FinalCTA />
       </main>
       <Footer />

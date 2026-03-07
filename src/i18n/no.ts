@@ -233,22 +233,6 @@ const no = {
     ctaDescription: 'Teamet vårt hjelper deg med å definere den ideelle konfigurasjonen — moduler, antall brukere, integrasjoner og oppfølging.',
     ctaButton: 'Kontakt oss',
   },
-  // FAQ
-  faq: {
-    overline: 'FAQ',
-    title: 'Vanlige',
-    titleHighlight: 'spørsmål.',
-    items: [
-      { q: 'Hvor lang tid tar utrullingen?', a: 'Avhengig av institusjonens størrelse tar full utrulling mellom 2 og 6 uker, inkludert konfigurasjon, opplæring og produksjonssetting.' },
-      { q: 'Hvordan fungerer datamigrering?', a: 'Teamet vårt håndterer hele migreringen: elevdata, økonomisk historikk, timeplaner. Ingen datatap.' },
-      { q: 'Hvilken opplæring er inkludert?', a: 'Alle planer inkluderer strukturert opplæring per rolle. Ledelse, lærere, administrativt personale — alle får tilpasset veiledning.' },
-      { q: 'Er dataene sikre?', a: 'Skandinavisk standard for databeskyttelse. Sikker hosting, ende-til-ende-kryptering, flerfaktor-autentisering og kontinuerlige sikkerhetskopier.' },
-      { q: 'Hvilke språk støttes?', a: 'Fransk, arabisk (med innebygd RTL-støtte), norsk og engelsk. Umiddelbar bytte mellom språk.' },
-      { q: 'Er Synapse kompatibel med MASSAR?', a: 'Ja. Eksport av data og vitnemål i MASSAR-format. Full integrasjon med kravene til utdanningsdepartementet.' },
-      { q: 'Finnes det en mobilapp?', a: 'Hele plattformen er responsiv og tilgjengelig fra alle enheter. Foreldre- og elevportalene er optimalisert for mobil.' },
-      { q: 'Hvilken support er tilgjengelig?', a: 'Chat- og e-poststøtte er inkludert i alle planer. Institusjonsplanen inkluderer en dedikert kontaktperson og regelmessige gjennomganger.' },
-    ],
-  },
   // Final CTA
   finalCta: {
     overline: 'KLAR TIL Å STARTE?',

@@ -221,21 +221,6 @@ const en = {
     ctaDescription: 'Our team helps you define the ideal configuration — modules, number of users, integrations, and support.',
     ctaButton: 'Contact us',
   },
-  faq: {
-    overline: 'FAQ',
-    title: 'Frequently asked',
-    titleHighlight: 'questions.',
-    items: [
-      { q: 'How long does deployment take?', a: 'Depending on the size of the institution, full deployment takes between 2 and 6 weeks, including configuration, training, and go-live.' },
-      { q: 'How does data migration work?', a: 'Our team handles the complete migration: student data, financial history, schedules. Zero data loss.' },
-      { q: 'What training is included?', a: 'Every plan includes structured role-based training. Leadership, teachers, administrative staff — everyone receives tailored support.' },
-      { q: 'Is the data secure?', a: 'Scandinavian data protection standards. Secure hosting, end-to-end encryption, multi-factor authentication, and continuous backups.' },
-      { q: 'What languages are supported?', a: 'French, Arabic (with native RTL support), Norwegian, and English. Instant switching between languages.' },
-      { q: 'Is Synapse compatible with MASSAR?', a: 'Yes. Data and report card export in MASSAR format. Full integration with Ministry of Education requirements.' },
-      { q: 'Is there a mobile app?', a: 'The entire platform is responsive and accessible from any device. Parent and student portals are optimised for mobile.' },
-      { q: 'What support is available?', a: 'Chat and email support included in all plans. The Institution plan includes a dedicated contact and regular reviews.' },
-    ],
-  },
   finalCta: {
     overline: 'READY TO GET STARTED?',
     title: 'See it for',
