@@ -201,7 +201,7 @@ const fr = {
     overline: 'ACCOMPAGNEMENT',
     title: "L'adoption est",
     titleHighlight: 'notre responsabilité.',
-    subtitle: "Le principal facteur d'échec n'est pas le logiciel — c'est la résistance au changement. Nous pilotons cette transition.",
+    subtitle: "Le principal facteur d'échec n'est pas la plateforme — c'est la résistance au changement. Nous pilotons cette transition.",
     imgAlt: 'Équipe accompagnant le déploiement de Synapse',
     steps: [
       { number: '01', title: 'Formation structurée', description: 'Formation personnalisée par rôle. Chaque utilisateur maîtrise ses fonctions dès la mise en production.' },
