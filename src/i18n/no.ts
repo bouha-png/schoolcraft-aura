@@ -64,7 +64,7 @@ const no = {
       {
         overline: 'KUNSTIG INTELLIGENS',
         title: 'Integrert AI som automatiserer prosessene dine.',
-        value: 'Spar timer hver uke.',
+        value: 'Optimaliser tidsforbruket.',
         description: 'Generering av pedagogisk innhold, retting, timeplanlegging, personlig veiledning — AI-systemer innebygd i hvert lag av plattformen. Teamet ditt kan fokusere på det viktigste: elevene.',
       },
       {
