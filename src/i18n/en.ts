@@ -36,7 +36,7 @@ const en = {
   hero: {
     overline: 'SYNAPSE EDUCATION',
     title1: 'Intelligent school',
-    titleHighlight: 'management software.',
+    titleHighlight: 'management platform.',
     subtitle: 'The intelligent all-in-one platform designed to cover the entire ecosystem of your educational institution.',
     cta: 'Request a demo',
     discover: 'Explore the platform',
@@ -54,7 +54,7 @@ const en = {
     overline: 'WHAT SETS US APART',
     title: 'Four reasons to choose',
     titleHighlight: 'Synapse.',
-    subtitle: 'Much more than school software. An intelligent educational ecosystem for precise management of your institution.',
+    subtitle: 'Much more than a school platform. An intelligent educational ecosystem for precise management of your institution.',
     cards: [
       {
         overline: 'ARTIFICIAL INTELLIGENCE',
@@ -191,7 +191,7 @@ const en = {
     overline: 'SUPPORT',
     title: 'Adoption is',
     titleHighlight: 'our responsibility.',
-    subtitle: 'The main cause of failure is not the software — it is resistance to change. We lead this transition.',
+    subtitle: 'The main cause of failure is not the platform — it is resistance to change. We lead this transition.',
     imgAlt: 'Team supporting the deployment of Synapse',
     steps: [
       { number: '01', title: 'Structured training', description: 'Role-based personalised training. Every user masters their features from day one.' },
@@ -229,7 +229,7 @@ const en = {
     cta: 'Request your demonstration',
   },
   footer: {
-    tagline: 'Intelligent school management software by ScandiTek.',
+    tagline: 'Intelligent school management platform by ScandiTek.',
     sections: {
       Product: ['Features', 'Modules', 'AI Intelligence', 'Pricing'],
       Company: ['About', 'Contact'],

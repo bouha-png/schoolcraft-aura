@@ -38,7 +38,7 @@ const fr = {
   // Hero
   hero: {
     overline: 'SYNAPSE EDUCATION',
-    title1: 'Le logiciel Intelligent de',
+    title1: 'La plateforme Intelligente de',
     titleHighlight: 'Gestion Scolaire',
     subtitle: "La plateforme intelligente tout-en-un conçue pour gérer l'intégralité de l'écosystème de votre établissement.",
     cta: 'Demander une démo',
@@ -59,7 +59,7 @@ const fr = {
     overline: 'CE QUI NOUS DIFFÉRENCIE',
     title: 'Quatre raisons pour choisir',
     titleHighlight: 'Synapse.',
-    subtitle: "Bien plus qu'un logiciel scolaire. Un écosystème éducatif intelligent pour se conformer avec précision et en intégralité avec votre établissement.",
+    subtitle: "Bien plus qu'une plateforme scolaire. Un écosystème éducatif intelligent pour se conformer avec précision et en intégralité avec votre établissement.",
     cards: [
       {
         overline: 'INTELLIGENCE ARTIFICIELLE',
@@ -201,7 +201,7 @@ const fr = {
     overline: 'ACCOMPAGNEMENT',
     title: "L'adoption est",
     titleHighlight: 'notre responsabilité.',
-    subtitle: "Le principal facteur d'échec n'est pas le logiciel — c'est la résistance au changement. Nous pilotons cette transition.",
+    subtitle: "Le principal facteur d'échec n'est pas la plateforme — c'est la résistance au changement. Nous pilotons cette transition.",
     imgAlt: 'Équipe accompagnant le déploiement de Synapse',
     steps: [
       { number: '01', title: 'Formation structurée', description: 'Formation personnalisée par rôle. Chaque utilisateur maîtrise ses fonctions dès la mise en production.' },
@@ -243,7 +243,7 @@ const fr = {
   },
   // Footer
   footer: {
-    tagline: 'Logiciel de gestion scolaire intelligent par ScandiTek.',
+    tagline: 'Plateforme de gestion scolaire intelligente par ScandiTek.',
     sections: {
       Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs'],
       Entreprise: ['À propos', 'Contact'],
