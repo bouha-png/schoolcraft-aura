@@ -90,23 +90,23 @@ const fr = {
   // Modules
   modules: {
     overline: 'MODULES',
-    title: 'Tout ce dont votre établissement',
-    titleHighlight: 'a besoin.',
-    subtitle: 'Sept univers. Une seule plateforme. Des modules activables à la carte selon vos besoins.',
+    title: 'Sept modules. Une seule',
+    titleHighlight: 'plateforme.',
+    subtitle: 'Des modules activables à la carte selon vos besoins.',
     swipeHint: 'Swipez pour explorer les modules',
     goToModule: 'Accéder au module',
     items: [
       {
         label: 'Pédagogie',
-        title: 'Le cœur pédagogique de votre établissement.',
-        description: "Programmes, cours, évaluations, suivi pédagogique individualisé — pilotés par l'IA.",
+        title: 'Le noyau pédagogique de votre établissement.',
+        description: "Programmes, cours, évaluations, suivi pédagogique individualisé — assisté par l'IA.",
         features: ['Programmes & niveaux', 'LMS intégré', 'Tutorat IA personnalisé', 'Emploi du temps intelligent'],
       },
       {
         label: 'Finance',
-        title: 'Pilotage financier et transparence totale.',
-        description: 'Facturation, encaissements, suivi budgétaire — en temps réel.',
-        features: ['Facturation automatique', 'Paiements & relances', 'Reporting & prévisions'],
+        title: 'Suivi financier et transparence totale.',
+        description: 'Facturation, encaissements, suivi budgétaire en temps réel.',
+        features: ['Facturations automatiques', 'Paiements & relances', 'Reporting & prévisions'],
       },
       {
         label: 'RH & Paie',
@@ -116,7 +116,7 @@ const fr = {
       },
       {
         label: 'Communication',
-        title: 'Une communication fluide avec les familles.',
+        title: 'Une communication fluide avec les parents.',
         description: 'Messagerie, notifications intelligentes, visioconférence, calendrier — centralisé.',
         features: ['Messagerie instantanée', 'Visioconférence intégrée', 'Notifications intelligentes', 'Calendrier partagé'],
       },
