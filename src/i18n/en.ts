@@ -54,7 +54,7 @@ const en = {
     overline: 'WHAT SETS US APART',
     title: 'Four reasons to choose',
     titleHighlight: 'Synapse.',
-    subtitle: 'Much more than school software. An intelligent educational ecosystem for precise management of your institution.',
+    subtitle: 'Much more than a school platform. An intelligent educational ecosystem for precise management of your institution.',
     cards: [
       {
         overline: 'ARTIFICIAL INTELLIGENCE',
