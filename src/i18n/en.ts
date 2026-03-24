@@ -36,7 +36,7 @@ const en = {
   hero: {
     overline: 'SYNAPSE EDUCATION',
     title1: 'Intelligent school',
-    titleHighlight: 'management software.',
+    titleHighlight: 'management platform.',
     subtitle: 'The intelligent all-in-one platform designed to cover the entire ecosystem of your educational institution.',
     cta: 'Request a demo',
     discover: 'Explore the platform',
