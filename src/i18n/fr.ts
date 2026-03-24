@@ -38,7 +38,7 @@ const fr = {
   // Hero
   hero: {
     overline: 'SYNAPSE EDUCATION',
-    title1: 'Le logiciel Intelligent de',
+    title1: 'La plateforme Intelligente de',
     titleHighlight: 'Gestion Scolaire',
     subtitle: "La plateforme intelligente tout-en-un conçue pour gérer l'intégralité de l'écosystème de votre établissement.",
     cta: 'Demander une démo',
