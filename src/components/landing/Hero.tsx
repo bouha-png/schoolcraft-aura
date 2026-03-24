@@ -2,7 +2,11 @@ import heroSchool from '@/assets/hero-school.jpg';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isRtl = lang === 'ar';
+  const textAlign = isRtl ? 'text-right' : 'text-left';
+  const itemsAlign = isRtl ? 'items-end' : 'items-start';
+  const justifyAlign = isRtl ? 'justify-end' : 'justify-start';
 
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
@@ -22,7 +26,7 @@ const Hero = () => {
       </div>
 
       <div className="section-container relative z-10 pt-[120px] pb-[60px] md:pt-[140px] md:pb-[80px]">
-        <div className="max-w-[680px] mx-auto text-center">
+        <div className={`max-w-[680px] ${textAlign}`}>
           <p className="text-overline hero-animate hero-delay-1 mb-5">
             {t.hero.overline}
           </p>
@@ -31,10 +35,10 @@ const Hero = () => {
             <br />
             <span className="text-gradient">{t.hero.titleHighlight}</span>
           </h1>
-          <p className="text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px] text-foreground font-medium" style={{ textShadow: '0 1px 8px rgba(255,255,255,0.8)' }}>
+          <p className={`text-body-lg hero-animate hero-delay-2 mb-10 max-w-[520px] text-foreground font-medium`} style={{ textShadow: '0 1px 8px rgba(255,255,255,0.8)' }}>
             {t.hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 hero-animate hero-delay-3">
+          <div className={`flex flex-col sm:flex-row ${itemsAlign} ${justifyAlign} gap-4 hero-animate hero-delay-3`}>
             <a href="#demo" className="btn-primary w-full sm:w-auto">
               {t.hero.cta}
             </a>
