@@ -59,7 +59,7 @@ const fr = {
     overline: 'CE QUI NOUS DIFFÉRENCIE',
     title: 'Quatre raisons pour choisir',
     titleHighlight: 'Synapse.',
-    subtitle: "Bien plus qu'un logiciel scolaire. Un écosystème éducatif intelligent pour se conformer avec précision et en intégralité avec votre établissement.",
+    subtitle: "Bien plus qu'une plateforme scolaire. Un écosystème éducatif intelligent pour se conformer avec précision et en intégralité avec votre établissement.",
     cards: [
       {
         overline: 'INTELLIGENCE ARTIFICIELLE',
