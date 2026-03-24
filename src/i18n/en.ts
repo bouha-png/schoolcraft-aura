@@ -191,7 +191,7 @@ const en = {
     overline: 'SUPPORT',
     title: 'Adoption is',
     titleHighlight: 'our responsibility.',
-    subtitle: 'The main cause of failure is not the software — it is resistance to change. We lead this transition.',
+    subtitle: 'The main cause of failure is not the platform — it is resistance to change. We lead this transition.',
     imgAlt: 'Team supporting the deployment of Synapse',
     steps: [
       { number: '01', title: 'Structured training', description: 'Role-based personalised training. Every user masters their features from day one.' },
