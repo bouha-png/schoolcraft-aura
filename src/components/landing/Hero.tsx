@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       <div className="section-container relative z-10 pt-[120px] pb-[60px] md:pt-[140px] md:pb-[80px]">
-        <div className="max-w-[680px]">
+        <div className="max-w-[680px] mx-auto text-center">
           <p className="text-overline hero-animate hero-delay-1 mb-5">
             {t.hero.overline}
           </p>

@@ -169,14 +169,14 @@ const fr = {
   // AI Section
   ai: {
     overline: 'INTELLIGENCE ARTIFICIELLE',
-    title: "L'IA intégrée qui travaille",
-    titleHighlight: 'pour vous.',
-    subtitleShort: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse.",
-    subtitle: "Des systèmes d'IA intégrés nativement dans chaque couche de Synapse.",
+    title: "L'IA intégrée qui",
+    titleHighlight: 'vous assiste.',
+    subtitleShort: "Des systèmes d'IA intégrés dans chaque couche de Synapse.",
+    subtitle: "Des systèmes d'IA intégrés dans chaque couche de Synapse.",
     systems: [
-      { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes.', badge: 'Enseignants' },
+      { title: 'Génération de contenus pédagogiques', description: 'Leçons, exercices, évaluations — générés en minutes', badge: 'Enseignants' },
       { title: 'Tutorat IA personnalisé', description: "Parcours adaptatifs, simulations d'examens calibrées.", badge: 'Élèves' },
-      { title: "Génération d'emplois du temps IA", description: 'Contraintes et disponibilités — résolu en minutes.', badge: 'Administration' },
+      { title: "Génération d'emplois du temps IA", description: 'Toutes les contraintes prises en compte, toutes les optimisations proposées et disponibilités — résolu en minutes', badge: 'Administration' },
       { title: "Syn'IA — Assistant", description: 'Assistant contextuel intégré dans chaque module.', badge: 'Tous' },
       { title: 'Moteur de connaissances', description: 'Recherche sémantique et intelligence connectée.', badge: 'Plateforme' },
       { title: 'Finance & Statistiques IA', description: 'Analyse prédictive, tableaux de bord intelligents et reporting financier automatisé.', badge: 'Finance' },
