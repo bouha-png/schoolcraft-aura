@@ -243,7 +243,7 @@ const fr = {
   },
   // Footer
   footer: {
-    tagline: 'Logiciel de gestion scolaire intelligent par ScandiTek.',
+    tagline: 'Plateforme de gestion scolaire intelligente par ScandiTek.',
     sections: {
       Produit: ['Fonctionnalités', 'Modules', 'Intelligence IA', 'Tarifs'],
       Entreprise: ['À propos', 'Contact'],

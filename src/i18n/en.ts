@@ -229,7 +229,7 @@ const en = {
     cta: 'Request your demonstration',
   },
   footer: {
-    tagline: 'Intelligent school management software by ScandiTek.',
+    tagline: 'Intelligent school management platform by ScandiTek.',
     sections: {
       Product: ['Features', 'Modules', 'AI Intelligence', 'Pricing'],
       Company: ['About', 'Contact'],
