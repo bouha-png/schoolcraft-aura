@@ -10,11 +10,10 @@ const FinalCTA = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Demande de démo — ${form.school || form.name}`);
-    const body = encodeURIComponent(
-      `Nom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\nÉtablissement: ${form.school}\n\nMessage:\n${form.message}`
+    const text = encodeURIComponent(
+      `Demande de démo — ${form.school || form.name}\n\nNom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\nÉtablissement: ${form.school}\n\nMessage:\n${form.message}`
     );
-    window.location.href = `mailto:contact@scanditek.ma?subject=${subject}&body=${body}`;
+    window.open(`https://wa.me/212614615816?text=${text}`, '_blank');
     setSubmitted(true);
   };
 
