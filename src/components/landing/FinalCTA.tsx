@@ -13,7 +13,13 @@ const FinalCTA = () => {
     const text = encodeURIComponent(
       `Demande de démo — ${form.school || form.name}\n\nNom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\nÉtablissement: ${form.school}\n\nMessage:\n${form.message}`
     );
-    window.open(`https://wa.me/212614615816?text=${text}`, '_blank');
+    const whatsappUrl = `https://wa.me/212614615816?text=${text}`;
+    const openedWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    if (!openedWindow) {
+      window.location.href = whatsappUrl;
+    }
+
     setSubmitted(true);
   };
 
