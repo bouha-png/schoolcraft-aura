@@ -357,3 +357,21 @@
 [dir="rtl"] .btn-text span[aria-hidden] {
   transform: scaleX(-1);
 }
+
+/* Legal pages (Privacy Policy / Terms) */
+.prose-legal h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2.25rem 0 0.5rem;
+  scroll-margin-top: 1rem;
+}
+.prose-legal h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.35rem;
+}
+.prose-legal p { margin: 0.75rem 0; line-height: 1.7; }
+.prose-legal ul { margin: 0.75rem 0; padding-left: 1.4rem; list-style: disc; }
+.prose-legal li { margin: 0.35rem 0; line-height: 1.65; }
+.prose-legal a { color: #1f5fbf; }
+.prose-legal a:hover { text-decoration: underline; }

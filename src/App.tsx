@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Confidentialite from "./pages/Confidentialite";
+import CGU from "./pages/CGU";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,10 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/confidentialite" element={<Confidentialite />} />
+            <Route path="/privacy" element={<Confidentialite />} />
+            <Route path="/cgu" element={<CGU />} />
+            <Route path="/terms" element={<CGU />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
