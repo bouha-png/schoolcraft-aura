@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
