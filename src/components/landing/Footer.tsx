@@ -1,5 +1,6 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { lang, setLang, t } = useLanguage();
@@ -54,7 +55,14 @@ const Footer = () => {
           <p className="text-xs opacity-50">
             {t.footer.copyright}
           </p>
-          <div className="flex gap-4 text-xs">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
+            <Link to="/confidentialite" className="opacity-70 hover:opacity-100 transition-opacity">
+              {lang === 'no' ? 'Personvern' : lang === 'en' ? 'Privacy' : lang === 'ar' ? 'الخصوصية' : 'Confidentialité'}
+            </Link>
+            <Link to="/cgu" className="opacity-70 hover:opacity-100 transition-opacity">
+              {lang === 'no' ? 'Vilkår' : lang === 'en' ? 'Terms' : lang === 'ar' ? 'الشروط' : 'CGU'}
+            </Link>
+            <span className="opacity-30">|</span>
             {([['fr', 'FR'], ['ar', 'AR'], ['no', 'NO'], ['en', 'EN']] as const).map(([code, label]) => (
               <button
                 key={code}
