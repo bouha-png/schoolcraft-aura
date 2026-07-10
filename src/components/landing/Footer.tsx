@@ -62,6 +62,9 @@ const Footer = () => {
             <Link to="/cgu" className="opacity-70 hover:opacity-100 transition-opacity">
               {lang === 'no' ? 'Vilkår' : lang === 'en' ? 'Terms' : lang === 'ar' ? 'الشروط' : 'CGU'}
             </Link>
+            <Link to="/synclasse-legal" className="opacity-70 hover:opacity-100 transition-opacity">
+              {lang === 'ar' ? "سين'كلاس قانوني" : "Syn'Classe " + (lang === 'no' ? 'juridisk' : lang === 'fr' ? 'légal' : 'legal')}
+            </Link>
             <span className="opacity-30">|</span>
             {([['fr', 'FR'], ['ar', 'AR'], ['no', 'NO'], ['en', 'EN']] as const).map(([code, label]) => (
               <button
