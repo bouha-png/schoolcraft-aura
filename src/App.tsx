@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
+import PortalChoice from "./pages/PortalChoice";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
