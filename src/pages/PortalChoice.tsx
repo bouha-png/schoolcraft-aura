@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import portalChoice from '@/i18n/portalChoice';
-import educationAsset from '@/assets/portal-education.png.asset.json';
-import associationsAsset from '@/assets/portal-associations.png.asset.json';
+import educationAsset from '@/assets/portal-education-v2.png.asset.json';
+import associationsAsset from '@/assets/portal-associations-v2.png.asset.json';
 
 const languages = [
   { code: 'fr' as const, label: 'FR' },
@@ -68,14 +68,14 @@ const PortalChoice = () => {
           <p className="text-body-lg !text-white/65">{c.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl w-full mx-auto">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl w-full mx-auto">
           {/* Education */}
           <Link
             to="/education"
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25"
             style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
           >
-            <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden">
               <img
                 src={educationAsset.url}
                 alt={c.education.name}
@@ -83,18 +83,18 @@ const PortalChoice = () => {
               />
               <div
                 className="absolute inset-0"
-                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 35%, rgba(7,11,30,0.85) 78%, rgba(7,11,30,0.97) 100%)' }}
+                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
               />
-              <div className={`absolute inset-x-0 bottom-0 p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b79bff] mb-2">
+              <div className={`absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c4aaff] mb-1.5 sm:mb-2">
                   {c.education.tagline}
                 </p>
-                <h2 className="font-display text-2xl md:text-[1.75rem] font-bold text-white mb-3">
+                <h2 className="font-display text-base sm:text-2xl md:text-[1.75rem] font-bold text-white mb-1.5 sm:mb-3 leading-tight">
                   {c.education.name}
                 </h2>
-                <p className="text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
+                <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
                 <span
-                  className="inline-flex items-center gap-2 h-11 px-6 rounded-full text-sm font-semibold text-primary-foreground transition-all duration-300 group-hover:gap-3"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[10px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
                   style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' }}
                 >
                   {c.education.cta}
@@ -109,10 +109,10 @@ const PortalChoice = () => {
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20"
             style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
           >
-            <span className="absolute z-20 top-5 ltr:right-5 rtl:left-5 text-[11px] font-semibold tracking-wide uppercase px-3 py-1 rounded-full bg-white/15 text-white backdrop-blur">
+            <span className="absolute z-20 top-3 sm:top-5 ltr:right-3 sm:ltr:right-5 rtl:left-3 sm:rtl:left-5 text-[9px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur">
               {c.association.badge}
             </span>
-            <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden">
               <img
                 src={associationsAsset.url}
                 alt={c.association.name}
@@ -121,17 +121,17 @@ const PortalChoice = () => {
               />
               <div
                 className="absolute inset-0"
-                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 35%, rgba(7,11,30,0.85) 78%, rgba(7,11,30,0.97) 100%)' }}
+                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
               />
-              <div className={`absolute inset-x-0 bottom-0 p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b79bff] mb-2">
+              <div className={`absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c4aaff] mb-1.5 sm:mb-2">
                   {c.association.tagline}
                 </p>
-                <h2 className="font-display text-2xl md:text-[1.75rem] font-bold text-white mb-3">
+                <h2 className="font-display text-base sm:text-2xl md:text-[1.75rem] font-bold text-white mb-1.5 sm:mb-3 leading-tight">
                   {c.association.name}
                 </h2>
-                <p className="text-sm leading-relaxed text-white/70 mb-6">{c.association.description}</p>
-                <span className="inline-flex items-center gap-2 h-11 px-6 rounded-full text-sm font-semibold border border-white/25 text-white/60">
+                <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.association.description}</p>
+                <span className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[10px] sm:text-sm font-semibold whitespace-nowrap border border-white/25 text-white/60">
                   {c.association.cta}
                   <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </span>
