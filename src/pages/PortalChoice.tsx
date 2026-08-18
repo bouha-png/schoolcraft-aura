@@ -94,7 +94,7 @@ const PortalChoice = () => {
                 </h2>
                 <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
                 <span
-                  className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold text-primary-foreground transition-all duration-300 group-hover:gap-3"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[10px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
                   style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' }}
                 >
                   {c.education.cta}
@@ -131,7 +131,7 @@ const PortalChoice = () => {
                   {c.association.name}
                 </h2>
                 <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.association.description}</p>
-                <span className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold border border-white/25 text-white/60">
+                <span className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[10px] sm:text-sm font-semibold whitespace-nowrap border border-white/25 text-white/60">
                   {c.association.cta}
                   <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
                 </span>
