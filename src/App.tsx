@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
+import PortalChoice from "./pages/PortalChoice";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
@@ -22,7 +23,8 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<PortalChoice />} />
+            <Route path="/education" element={<Index />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
             <Route path="/privacy" element={<Confidentialite />} />
             <Route path="/cgu" element={<CGU />} />

@@ -54,7 +54,7 @@ const Navigation = () => {
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
             <span className="flex flex-col leading-none">
               <span className="font-display font-bold text-lg text-gradient">Synapse</span>
