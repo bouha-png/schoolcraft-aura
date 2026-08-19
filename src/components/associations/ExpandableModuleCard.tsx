@@ -38,7 +38,11 @@ const ExpandableModuleCard = ({ item, open, onToggle, moreLabel, lessLabel, vari
       >
         <span className="flex items-center gap-3.5 md:block md:shrink-0">
           <span
-            className="relative shrink-0 grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-[10px] text-white overflow-hidden bg-[#772F9F]/35 backdrop-blur-xl border border-[#A76CFF]/55 shadow-[0_10px_28px_-12px_rgba(119,47,159,0.55),inset_0_1px_0_rgba(255,255,255,0.12)]"
+            className="relative shrink-0 grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-[10px] text-white overflow-hidden backdrop-blur-xl border border-[#A76CFF]/60 shadow-[0_10px_28px_-12px_rgba(119,47,159,0.55),inset_0_1px_0_rgba(255,255,255,0.12)]"
+            style={{
+              background:
+                'linear-gradient(145deg, rgba(94,37,128,0.78) 0%, rgba(119,47,159,0.65) 45%, rgba(146,71,191,0.55) 100%)',
+            }}
             aria-hidden
           >
             <Icon size={22} strokeWidth={1.75} className="relative" />
