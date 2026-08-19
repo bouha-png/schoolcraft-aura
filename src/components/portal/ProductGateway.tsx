@@ -43,6 +43,7 @@ const ProductGateway = () => {
             imageAlt={c.association.name}
             icon={Users}
             ctaLabel={c.association.cta}
+            ctaShort={c.association.ctaShort}
             href="/associations"
             status="active"
             isRtl={isRtl}
