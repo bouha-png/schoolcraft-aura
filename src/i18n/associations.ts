@@ -46,6 +46,9 @@ export const associations = {
       discover: 'Utforsk plattformen',
       imgAlt: 'Organisasjonsteam i møte på et moderne kontor',
     },
+    showcase: {
+      title: 'Noen av modulene du finner i plattformen',
+    },
   },
   ar: {
     back: 'ScandiTek',
