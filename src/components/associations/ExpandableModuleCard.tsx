@@ -21,10 +21,10 @@ const ExpandableModuleCard = ({ item, open, onToggle, moreLabel, lessLabel, vari
 
   return (
     <div
-      className={`rounded-2xl border transition-shadow duration-300 ${
+      className={`rounded-2xl transition-shadow duration-300 ${
         variant === 'trust'
-          ? 'border-primary/15 bg-gradient-to-br from-[hsl(278,54%,98%)] to-white'
-          : 'border-border-subtle bg-card'
+          ? 'bg-gradient-to-br from-[hsl(278,54%,98%)] to-white'
+          : 'bg-card'
       } ${open ? 'shadow-[0_10px_36px_-18px_rgba(23,10,45,0.28)]' : 'shadow-[0_2px_10px_-6px_rgba(23,10,45,0.18)]'}`}
     >
       <button
