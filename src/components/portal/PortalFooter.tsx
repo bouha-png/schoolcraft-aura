@@ -18,8 +18,8 @@ const PortalFooter = () => {
     <footer dir="ltr" className="relative z-10 mt-20 md:mt-24 border-t border-white/[0.08] bg-[#07091D]">
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-10 md:py-12">
         <div className="grid gap-8 md:grid-cols-3 ltr:text-left rtl:text-right">
-          <div className="flex items-start gap-3">
-            <img src={scanditekLogo.url} alt="" className="w-10 h-10 object-contain shrink-0" />
+          <div className="flex items-start gap-4">
+            <img src={scanditekLogo.url} alt="" className="w-20 h-20 object-contain shrink-0" />
             <div>
               <p className="font-display font-semibold text-sm text-[#F7F7FB]">ScandiTek</p>
               <p className="text-[10px] uppercase tracking-[0.22em] text-[#8D89A0] mt-0.5">Future Technology</p>
