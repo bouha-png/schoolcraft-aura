@@ -46,17 +46,25 @@ const PortalChoice = () => {
       {/* Header: brand + language switcher */}
       <header className="relative z-10 flex items-center justify-between gap-4 px-5 pt-5 md:px-12 md:pt-8 hero-animate hero-delay-1">
         <div className="flex items-center gap-3">
-          <img
-            src={scanditekLogo.url}
-            alt="ScandiTek"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-xl object-cover portal-float"
-            style={{ boxShadow: '0 12px 30px -12px rgba(119,47,159,0.9)' }}
-          />
+          <div
+            className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden portal-float shrink-0"
+            style={{
+              background: 'linear-gradient(150deg, #120a26 0%, #2a1152 55%, #772F9F 100%)',
+              boxShadow: '0 12px 30px -12px rgba(119,47,159,0.9), inset 0 0 0 1px rgba(255,255,255,0.08)',
+            }}
+          >
+            <img
+              src={scanditekLogo.url}
+              alt="ScandiTek"
+              className="absolute inset-0 w-full h-full object-cover mix-blend-screen"
+            />
+          </div>
           <div className="leading-tight">
             <p className="font-display font-bold text-sm md:text-base text-white tracking-wide">ScandiTek</p>
             <p className="text-[9px] md:text-[10px] uppercase tracking-[0.22em] text-white/40">Future Technology</p>
           </div>
         </div>
+
         <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 backdrop-blur px-1.5 py-1">
           {languages.map((l) => (
             <button
