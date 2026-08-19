@@ -80,28 +80,34 @@ const PortalChoice = () => {
             onClick={() => setLangOpen((o) => !o)}
             aria-haspopup="listbox"
             aria-expanded={langOpen}
-            className="flex items-center gap-2 h-10 sm:h-11 px-3.5 sm:px-4 rounded-full border border-white/25 bg-white/10 backdrop-blur-md text-sm font-semibold text-white hover:text-white hover:border-white/40 hover:bg-white/15 transition-all shadow-lg shadow-black/20"
+            className="flex items-center gap-2 h-10 sm:h-11 pl-3.5 pr-4 rounded-full border border-white/30 bg-[#120d24]/80 backdrop-blur-md text-sm font-semibold text-white hover:text-white hover:border-white/50 hover:bg-[#1a1330]/90 transition-all shadow-lg shadow-black/30"
           >
-            <span className="text-lg leading-none">{currentLang.flag}</span>
+            <span className="text-xl leading-none">{currentLang.flag}</span>
             <span className="hidden sm:inline">{currentLang.label}</span>
             <span className="sm:hidden font-bold">{currentLang.short}</span>
             <ChevronDown className={`w-4 h-4 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
           </button>
           {langOpen && (
-            <div className="absolute top-full mt-2.5 ltr:right-0 rtl:left-0 min-w-[180px] rounded-2xl border border-white/20 bg-[#120d24]/98 backdrop-blur-xl shadow-2xl shadow-black/40 overflow-hidden z-50">
-              {languages.map((l) => (
-                <button
-                  key={l.code}
-                  onClick={() => { setLang(l.code); setLangOpen(false); }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
-                    lang === l.code ? 'bg-[#772F9F]/30 text-white font-semibold' : 'text-white/80 hover:bg-white/10 hover:text-white'
-                  }`}
-                >
-                  <span className="text-lg leading-none">{l.flag}</span>
-                  <span>{l.label}</span>
-                </button>
-              ))}
-            </div>
+            <>
+              <div
+                className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+                onClick={() => setLangOpen(false)}
+              />
+              <div className="absolute top-full mt-3 ltr:right-0 rtl:left-0 min-w-[200px] rounded-2xl border border-white/25 bg-[#0d0820] shadow-2xl shadow-black/60 overflow-hidden z-50">
+                {languages.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => { setLang(l.code); setLangOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-3.5 text-sm transition-colors ${
+                      lang === l.code ? 'bg-[#772F9F]/40 text-white font-semibold' : 'text-white/80 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <span className="text-xl leading-none">{l.flag}</span>
+                    <span>{l.label}</span>
+                  </button>
+                ))}
+              </div>
+            </>
           )}
         </div>
 
