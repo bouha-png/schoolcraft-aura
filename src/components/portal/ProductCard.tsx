@@ -26,6 +26,7 @@ const ProductCard = ({
   imageAlt,
   icon: Icon,
   ctaLabel,
+  ctaShort,
   href,
   status = 'active',
   isRtl = false,
