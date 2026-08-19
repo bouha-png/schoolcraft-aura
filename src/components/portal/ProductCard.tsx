@@ -33,8 +33,8 @@ const ProductCard = ({
   const active = status === 'active' && !!href;
 
   const overlay = isRtl
-    ? 'linear-gradient(270deg, rgba(7,9,29,0.98) 0%, rgba(7,9,29,0.90) 35%, rgba(7,9,29,0.50) 62%, rgba(7,9,29,0.12) 100%)'
-    : 'linear-gradient(90deg, rgba(7,9,29,0.98) 0%, rgba(7,9,29,0.90) 35%, rgba(7,9,29,0.50) 62%, rgba(7,9,29,0.12) 100%)';
+    ? 'linear-gradient(270deg, rgba(7,9,29,0.55) 0%, rgba(7,9,29,0.35) 40%, rgba(7,9,29,0.12) 70%, rgba(7,9,29,0.02) 100%)'
+    : 'linear-gradient(90deg, rgba(7,9,29,0.55) 0%, rgba(7,9,29,0.35) 40%, rgba(7,9,29,0.12) 70%, rgba(7,9,29,0.02) 100%)';
 
   const content = (
     <>
@@ -49,7 +49,7 @@ const ProductCard = ({
 
       <div className="relative h-full flex flex-col justify-center p-4 sm:p-6 md:p-8">
         {/* Glass panel */}
-        <div className="max-w-[420px] rounded-[22px] border border-white/15 bg-white/[0.07] backdrop-blur-2xl backdrop-saturate-150 p-5 sm:p-7 ltr:text-left rtl:text-right shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_50px_-30px_rgba(0,0,0,0.9)]">
+        <div className="max-w-[420px] rounded-[22px] border border-white/20 bg-white/[0.06] backdrop-blur-md backdrop-saturate-150 p-5 sm:p-7 ltr:text-left rtl:text-right shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_20px_50px_-30px_rgba(0,0,0,0.7)]">
         <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-white/20 bg-white/[0.12] backdrop-blur-md text-[#C9A9FF]">
           <Icon className="w-5 h-5" aria-hidden />
         </span>
