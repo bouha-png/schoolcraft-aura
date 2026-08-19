@@ -82,7 +82,7 @@ const ExpandableModuleCard = ({ item, open, onToggle, moreLabel, lessLabel, vari
         style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="px-6 md:px-7 pb-7 pt-0 ps-6 md:ps-[6.25rem]">
+          <div className="px-5 md:px-7 pb-6 md:pb-7 pt-0 ps-5 md:ps-[6.25rem]">
             <div className="h-px w-full bg-border-subtle mb-5" />
             {item.expandedParagraphs.map((p, i) => (
               <p key={i} className="text-[15px] leading-[1.75] text-secondary-color mb-3">
