@@ -120,7 +120,7 @@ const PortalChoice = () => {
             aria-expanded={langOpen}
             className="flex items-center gap-2 h-10 sm:h-11 pl-3.5 pr-4 rounded-full border border-white/30 bg-[#120d24]/80 backdrop-blur-md text-sm font-semibold text-white hover:text-white hover:border-white/50 hover:bg-[#1a1330]/90 transition-all shadow-lg shadow-black/30"
           >
-            <span className="text-xl leading-none">{currentLang.flag}</span>
+            <Flag code={currentLang.code} />
             <span className="hidden sm:inline">{currentLang.label}</span>
             <span className="sm:hidden font-bold">{currentLang.short}</span>
             <ChevronDown className={`w-4 h-4 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
@@ -140,7 +140,7 @@ const PortalChoice = () => {
                       lang === l.code ? 'bg-[#772F9F]/40 text-white font-semibold' : 'text-white/80 hover:bg-white/10 hover:text-white'
                     }`}
                   >
-                    <span className="text-xl leading-none">{l.flag}</span>
+                    <Flag code={l.code} />
                     <span>{l.label}</span>
                   </button>
                 ))}
