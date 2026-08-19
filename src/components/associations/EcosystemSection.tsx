@@ -15,7 +15,7 @@ const EcosystemSection = ({ showcaseTitle, isRtl = false }: EcosystemSectionProp
 
   return (
     <section id="platform" className="bg-background">
-      <div className="section-container section-padding">
+      <div className="section-container section-padding pb-0 md:pb-0">
         <div className="max-w-[760px]">
           <p className="text-overline">{section.overline}</p>
           <h2 className="text-section mt-5">
@@ -29,8 +29,12 @@ const EcosystemSection = ({ showcaseTitle, isRtl = false }: EcosystemSectionProp
             </p>
           ))}
         </div>
+      </div>
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-start">
+      <DeviceShowcase title={showcaseTitle} isRtl={isRtl} />
+
+      <div className="section-container pt-8 pb-20 md:pt-12 md:pb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-start">
           {modules.map((m, i) => (
             <ExpandableModuleCard
               key={m.title}
