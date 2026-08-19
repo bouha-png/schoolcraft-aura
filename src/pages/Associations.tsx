@@ -5,7 +5,6 @@ import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
-import mockupAsset from '@/assets/synapse-associations-mockup.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
 const WHATSAPP_NUMBER = '212614615816';
