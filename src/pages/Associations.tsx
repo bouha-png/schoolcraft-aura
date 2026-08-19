@@ -147,6 +147,8 @@ const Associations = () => {
         onClick={handleDemoClick}
         aria-label={c.hero.cta}
         className={`fixed z-50 inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-0.5 ${
+          showFloating ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+        } ${
           isCompact
             ? 'bottom-4 right-4 sm:bottom-6 sm:right-6 h-10 sm:h-11 px-4 sm:px-5 text-[13px] sm:text-sm'
             : 'bottom-5 left-1/2 -translate-x-1/2 sm:bottom-8 h-12 sm:h-[54px] px-6 sm:px-8 text-[14px] sm:text-[16px]'
