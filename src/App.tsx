@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import PortalChoice from "./pages/PortalChoice";
+import Associations from "./pages/Associations";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
@@ -25,6 +26,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<PortalChoice />} />
             <Route path="/education" element={<Index />} />
+            <Route path="/associations" element={<Associations />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
             <Route path="/privacy" element={<Confidentialite />} />
             <Route path="/cgu" element={<CGU />} />

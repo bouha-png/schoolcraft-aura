@@ -42,7 +42,8 @@ const ProductGateway = () => {
             imageAlt={c.association.name}
             icon={Users}
             ctaLabel={c.association.cta}
-            status="disabled"
+            href="/associations"
+            status="active"
             isRtl={isRtl}
           />
         </SpotlightItem>
