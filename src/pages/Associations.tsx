@@ -119,9 +119,9 @@ const Associations = () => {
                 <a
                   href="#demo"
                   onClick={handleDemoClick}
-                  className="group relative inline-flex items-center justify-center h-[54px] px-8 rounded-full text-[16px] font-semibold text-white overflow-hidden transition-all duration-300 hover:-translate-y-0.5 bg-white/[0.06] backdrop-blur-xl border border-[#A76CFF]/30 hover:border-[#A76CFF]/60 hover:bg-[#772F9F]/20"
+                  className="group relative inline-flex items-center justify-center h-[54px] px-8 rounded-full text-[16px] font-semibold text-white overflow-hidden transition-all duration-300 hover:-translate-y-0.5 bg-[#772F9F]/35 backdrop-blur-xl border border-[#A76CFF]/55 hover:border-[#A76CFF]/85 hover:bg-[#772F9F]/55"
                   style={{
-                    boxShadow: '0 8px 28px -10px rgba(119,47,159,0.45), inset 0 1px 0 rgba(255,255,255,0.08)',
+                    boxShadow: '0 10px 34px -12px rgba(119,47,159,0.55), inset 0 1px 0 rgba(255,255,255,0.12)',
                   }}
                 >
                   <span className="relative z-10">{c.hero.cta}</span>
