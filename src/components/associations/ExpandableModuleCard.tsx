@@ -38,16 +38,16 @@ const ExpandableModuleCard = ({ item, open, onToggle, moreLabel, lessLabel, vari
       >
         <span className="flex items-center gap-3.5 md:block md:shrink-0">
           <span
-            className="relative shrink-0 grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-[14px] text-white overflow-hidden backdrop-blur-md shadow-[0_8px_22px_-10px_hsl(278_54%_30%/0.65),inset_0_1px_0_hsl(0_0%_100%/0.15)]"
+            className="relative shrink-0 grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-[14px] text-white overflow-hidden backdrop-blur-lg shadow-[0_10px_28px_-12px_hsl(278_54%_35%/0.55),inset_0_1px_0_hsl(0_0%_100%/0.25)]"
             style={{
               background:
-                'linear-gradient(145deg, hsl(278 54% 22% / 0.92), hsl(270 50% 16% / 0.88) 55%, hsl(260 45% 12% / 0.82))',
+                'linear-gradient(145deg, hsl(278 60% 18% / 0.78), hsl(278 54% 28% / 0.62) 50%, hsl(285 48% 42% / 0.45))',
             }}
             aria-hidden
           >
             <span
-              className="pointer-events-none absolute inset-x-0 -top-1/2 h-full opacity-40"
-              style={{ background: 'linear-gradient(180deg, hsl(0 0% 100% / 0.25), transparent)' }}
+              className="pointer-events-none absolute inset-x-0 -top-1/2 h-full opacity-50"
+              style={{ background: 'linear-gradient(180deg, hsl(0 0% 100% / 0.35), transparent)' }}
             />
             <Icon size={22} strokeWidth={1.75} className="relative" />
           </span>
