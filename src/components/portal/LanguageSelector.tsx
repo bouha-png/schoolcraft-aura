@@ -9,44 +9,6 @@ const languages = [
   { code: 'en' as const, label: 'English', short: 'EN' },
 ];
 
-export const Flag = ({ code }: { code: string }) => {
-  const common = 'w-5 h-5 rounded-full border border-white/15 shrink-0';
-  if (code === 'fr')
-    return (
-      <svg className={common} viewBox="0 0 36 36" aria-hidden>
-        <rect width="12" height="36" fill="#0055A4" />
-        <rect x="12" width="12" height="36" fill="#FFFFFF" />
-        <rect x="24" width="12" height="36" fill="#EF4135" />
-      </svg>
-    );
-  if (code === 'ar')
-    return (
-      <svg className={common} viewBox="0 0 36 36" aria-hidden>
-        <rect width="36" height="36" fill="#C1272D" />
-        <path d="M18 8 l2.5 7.5 h7.5 l-6 4.5 2.5 7.5-6-4.5-6 4.5 2.5-7.5-6-4.5h7.5z" fill="#006233" />
-      </svg>
-    );
-  if (code === 'no')
-    return (
-      <svg className={common} viewBox="0 0 36 36" aria-hidden>
-        <rect width="36" height="36" fill="#EF2B2D" />
-        <rect x="10" width="6" height="36" fill="#FFFFFF" />
-        <rect y="12" width="36" height="6" fill="#FFFFFF" />
-        <rect x="12" width="2" height="36" fill="#002868" />
-        <rect y="14" width="36" height="2" fill="#002868" />
-      </svg>
-    );
-  return (
-    <svg className={common} viewBox="0 0 36 36" aria-hidden>
-      <rect width="36" height="36" fill="#012169" />
-      <path d="M0 0 L36 36 M36 0 L0 36" stroke="#FFFFFF" strokeWidth="6" />
-      <path d="M18 0 V36 M0 18 H36" stroke="#FFFFFF" strokeWidth="10" />
-      <path d="M18 0 V36 M0 18 H36" stroke="#C8102E" strokeWidth="6" />
-      <path d="M0 0 L36 36 M36 0 L0 36" stroke="#C8102E" strokeWidth="4" />
-    </svg>
-  );
-};
-
 const LanguageSelector = () => {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);

@@ -47,15 +47,17 @@ const ProductCard = ({
       />
       <div className="absolute inset-0" style={{ background: overlay }} aria-hidden />
 
-      <div className="relative h-full flex flex-col justify-center p-6 sm:p-8 md:p-10 ltr:text-left rtl:text-right">
-        <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-white/10 bg-white/[0.06] text-[#A76CFF]">
+      <div className="relative h-full flex flex-col justify-center p-4 sm:p-6 md:p-8">
+        {/* Glass panel */}
+        <div className="max-w-[420px] rounded-[22px] border border-white/15 bg-white/[0.07] backdrop-blur-2xl backdrop-saturate-150 p-5 sm:p-7 ltr:text-left rtl:text-right shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_50px_-30px_rgba(0,0,0,0.9)]">
+        <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-white/20 bg-white/[0.12] backdrop-blur-md text-[#C9A9FF]">
           <Icon className="w-5 h-5" aria-hidden />
         </span>
 
-        <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#A76CFF]">{category}</p>
+        <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#A76CFF]">{category}</p>
 
         <p className="mt-3 text-[17px] sm:text-lg font-medium text-[#B8B5C8]">{brand}</p>
-        <h2 className="font-display font-bold tracking-[-0.02em] leading-[1.05] text-[clamp(2.25rem,8vw,3.25rem)] text-[#F7F7FB]">
+        <h2 className="font-display font-bold tracking-[-0.02em] leading-[1.05] text-[clamp(2rem,7vw,3rem)] text-[#F7F7FB]">
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: 'linear-gradient(100deg,#F7F7FB 0%,#C9A9FF 100%)' }}
@@ -66,7 +68,8 @@ const ProductCard = ({
 
         <span className="mt-5 block h-[3px] w-10 rounded-full bg-[#7C4DFF]" aria-hidden />
 
-        <p className="mt-5 max-w-[300px] text-[16px] leading-[1.6] text-[#B8B5C8]">{description}</p>
+        <p className="mt-5 max-w-[300px] text-[15px] leading-[1.6] text-[#CFCDDC]">{description}</p>
+
 
         <span
           className={
