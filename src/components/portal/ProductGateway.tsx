@@ -2,6 +2,7 @@ import { GraduationCap, Users } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import portalChoice from '@/i18n/portalChoice';
 import ProductCard from './ProductCard';
+import SpotlightItem from './SpotlightItem';
 import educationAsset from '@/assets/portal-education-wide.png.asset.json';
 import associationsAsset from '@/assets/portal-associations-wide.png.asset.json';
 

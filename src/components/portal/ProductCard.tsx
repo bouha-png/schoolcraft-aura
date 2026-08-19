@@ -105,7 +105,7 @@ const ProductCard = ({
   );
 
   const base =
-    'group relative block overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1030] min-h-[400px] sm:min-h-[420px] transition-all duration-300 ease-out';
+    'group relative block overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1030]/70 backdrop-blur-sm min-h-[400px] sm:min-h-[420px] transition-all duration-300 ease-out';
 
   if (!active) {
     return (
