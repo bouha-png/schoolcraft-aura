@@ -49,17 +49,11 @@ const PortalChoice = () => {
       {/* Header: brand + language switcher */}
       <header className="relative z-10 flex items-center justify-between gap-4 px-5 pt-5 md:px-12 md:pt-8 hero-animate hero-delay-1">
         <div className="flex items-center gap-3">
-          <div
-            className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden portal-float shrink-0"
-            style={{
-              background: 'linear-gradient(150deg, #05030a 0%, #0c0618 35%, #1a0d32 70%, #3a1a68 100%)',
-              boxShadow: '0 12px 30px -12px rgba(119,47,159,0.9), inset 0 0 0 1px rgba(255,255,255,0.08)',
-            }}
-          >
+          <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden portal-float shrink-0 bg-transparent">
             <img
               src={scanditekLogo.url}
               alt="ScandiTek"
-              className="absolute inset-0 w-full h-full object-cover mix-blend-screen"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
           <div className="leading-tight">
@@ -197,8 +191,8 @@ const PortalChoice = () => {
         <div className="section-container py-8 md:py-10">
           <div className={`grid gap-6 md:grid-cols-3 ${isRtl ? 'text-right' : 'text-left'}`}>
             <div className="flex items-start gap-3">
-              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0" style={{ background: 'linear-gradient(150deg, #05030a 0%, #0c0618 35%, #1a0d32 70%, #3a1a68 100%)' }}>
-                <img src={scanditekLogo.url} alt="ScandiTek" className="absolute inset-0 w-full h-full object-cover mix-blend-screen" />
+              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-transparent">
+                <img src={scanditekLogo.url} alt="ScandiTek" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div>
                 <p className="font-display font-bold text-sm text-white">ScandiTek</p>
