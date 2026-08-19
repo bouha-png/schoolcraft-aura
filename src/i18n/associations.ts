@@ -29,6 +29,9 @@ export const associations = {
       discover: 'Explore the platform',
       imgAlt: 'Association team meeting in a modern office',
     },
+    showcase: {
+      title: 'Some modules you will find in the platform',
+    },
   },
   no: {
     back: 'ScandiTek',
