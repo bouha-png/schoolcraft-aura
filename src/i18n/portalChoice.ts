@@ -2,12 +2,12 @@ export type PortalLang = 'fr' | 'ar' | 'no' | 'en';
 
 export const portalChoice = {
   fr: {
-    overline: 'BIENVENUE CHEZ SYNAPSE',
+    overline: '',
     title: 'Choisissez votre',
     titleHighlight: 'univers',
     subtitle: "Deux plateformes, une même exigence : simplifier la gestion et libérer du temps pour l'essentiel.",
-    educationTitle: 'Pour les écoles',
-    associationTitle: 'Pour les associations',
+    educationTitle: 'Etablissements',
+    associationTitle: 'Associations',
     education: {
       name: 'Synapse Education',
       tagline: 'Pour les établissements scolaires',
@@ -28,12 +28,12 @@ export const portalChoice = {
     footer: 'Une solution ScandiTek — Casablanca & Oslo',
   },
   en: {
-    overline: 'WELCOME TO SYNAPSE',
+    overline: '',
     title: 'Choose your',
     titleHighlight: 'universe',
     subtitle: 'Two platforms, one ambition: simplify management and free up time for what matters.',
-    educationTitle: 'For schools',
-    associationTitle: 'For organizations',
+    educationTitle: 'Institutions',
+    associationTitle: 'Organizations',
     education: {
       name: 'Synapse Education',
       tagline: 'For schools and institutions',
@@ -54,12 +54,12 @@ export const portalChoice = {
     footer: 'A ScandiTek solution — Casablanca & Oslo',
   },
   no: {
-    overline: 'VELKOMMEN TIL SYNAPSE',
+    overline: '',
     title: 'Velg ditt',
     titleHighlight: 'univers',
     subtitle: 'To plattformer, én ambisjon: forenkle driften og frigjøre tid til det som betyr noe.',
-    educationTitle: 'For skoler',
-    associationTitle: 'For organisasjoner',
+    educationTitle: 'Skoler',
+    associationTitle: 'Organisasjoner',
     education: {
       name: 'Synapse Education',
       tagline: 'For skoler og utdanningsinstitusjoner',
@@ -80,12 +80,12 @@ export const portalChoice = {
     footer: 'En ScandiTek-løsning — Casablanca og Oslo',
   },
   ar: {
-    overline: 'مرحبًا بكم في سينابس',
+    overline: '',
     title: 'اختر',
     titleHighlight: 'عالمك',
     subtitle: 'منصتان بطموح واحد: تبسيط التسيير وتوفير الوقت لما هو أهم.',
-    educationTitle: 'للمدارس',
-    associationTitle: 'للمنظمات',
+    educationTitle: 'المؤسسات',
+    associationTitle: 'الجمعيات',
     education: {
       name: 'سينابس للتعليم',
       tagline: 'للمؤسسات التعليمية',
