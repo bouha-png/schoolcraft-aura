@@ -1,5 +1,6 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import portalChoice from '@/i18n/portalChoice';
 import educationAsset from '@/assets/portal-education-v2.png.asset.json';
@@ -7,16 +8,28 @@ import associationsAsset from '@/assets/portal-associations-v2.png.asset.json';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 
 const languages = [
-  { code: 'fr' as const, label: 'FR' },
-  { code: 'ar' as const, label: 'AR' },
-  { code: 'no' as const, label: 'NO' },
-  { code: 'en' as const, label: 'EN' },
+  { code: 'fr' as const, label: 'Français', short: 'FR', flag: '🇫🇷' },
+  { code: 'ar' as const, label: 'العربية', short: 'AR', flag: '🇲🇦' },
+  { code: 'no' as const, label: 'Norsk', short: 'NO', flag: '🇳🇴' },
+  { code: 'en' as const, label: 'English', short: 'EN', flag: '🇬🇧' },
 ];
 
 const PortalChoice = () => {
   const { lang, setLang } = useLanguage();
   const c = portalChoice[lang] ?? portalChoice.fr;
   const isRtl = lang === 'ar';
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+  const currentLang = languages.find((l) => l.code === lang) ?? languages[0];
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (!langRef.current?.contains(e.target as Node)) setLangOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
+
 
   const legal = {
     privacy: lang === 'no' ? 'Personvern' : lang === 'en' ? 'Privacy' : lang === 'ar' ? 'الخصوصية' : 'Confidentialité',
@@ -62,19 +75,36 @@ const PortalChoice = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-1 rounded-full border border-white/15 bg-white/5 backdrop-blur px-1.5 py-1">
-          {languages.map((l) => (
-            <button
-              key={l.code}
-              onClick={() => setLang(l.code)}
-              className={`px-2.5 md:px-3 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200 ${
-                lang === l.code ? 'bg-primary text-primary-foreground' : 'text-white/60 hover:text-white'
-              }`}
-            >
-              {l.label}
-            </button>
-          ))}
+        <div ref={langRef} className="relative">
+          <button
+            onClick={() => setLangOpen((o) => !o)}
+            aria-haspopup="listbox"
+            aria-expanded={langOpen}
+            className="flex items-center gap-1.5 h-9 px-3 rounded-full border border-white/15 bg-white/5 backdrop-blur text-xs font-semibold text-white/80 hover:text-white hover:border-white/30 transition-colors"
+          >
+            <span className="text-base leading-none">{currentLang.flag}</span>
+            <span className="hidden sm:inline">{currentLang.label}</span>
+            <span className="sm:hidden">{currentLang.short}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+          </button>
+          {langOpen && (
+            <div className="absolute top-full mt-2 ltr:right-0 rtl:left-0 min-w-[150px] rounded-xl border border-white/15 bg-[#0d0a1c]/95 backdrop-blur-xl shadow-2xl overflow-hidden z-50">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => { setLang(l.code); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
+                    lang === l.code ? 'bg-primary/25 text-white font-semibold' : 'text-white/70 hover:bg-white/10'
+                  }`}
+                >
+                  <span className="text-base leading-none">{l.flag}</span>
+                  <span>{l.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
+
       </header>
 
       <main className="relative z-10 flex-1 flex flex-col justify-center section-container py-10 md:py-14">
