@@ -63,7 +63,7 @@ const FinalCTA = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-medium text-foreground/70 mb-1.5 block">{ct.name} *</label>
+                  <label className="text-xs font-medium text-muted-foreground mb-1.5 block">{ct.name} *</label>
                   <input
                     required
                     maxLength={100}
@@ -74,7 +74,7 @@ const FinalCTA = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-foreground/70 mb-1.5 block">{ct.phone}</label>
+                  <label className="text-xs font-medium text-muted-foreground mb-1.5 block">{ct.phone}</label>
                   <input
                     type="tel"
                     maxLength={20}
@@ -86,7 +86,7 @@ const FinalCTA = () => {
                 </div>
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1.5 block">{ct.email} *</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1.5 block">{ct.email} *</label>
                 <input
                   required
                   type="email"
@@ -98,7 +98,7 @@ const FinalCTA = () => {
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1.5 block">{ct.school}</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1.5 block">{ct.school}</label>
                 <input
                   maxLength={150}
                   value={form.school}
@@ -108,7 +108,7 @@ const FinalCTA = () => {
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1.5 block">{ct.message}</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1.5 block">{ct.message}</label>
                 <textarea
                   maxLength={1000}
                   rows={4}

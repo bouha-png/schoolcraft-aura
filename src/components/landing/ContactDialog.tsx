@@ -52,7 +52,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
           <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.name} *</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.name} *</label>
                 <input
                   required
                   maxLength={100}
@@ -63,7 +63,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.phone}</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.phone}</label>
                 <input
                   type="tel"
                   maxLength={20}
@@ -75,7 +75,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
               </div>
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.email} *</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.email} *</label>
               <input
                 required
                 type="email"
@@ -87,7 +87,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.school}</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.school}</label>
               <input
                 maxLength={150}
                 value={form.school}
@@ -97,7 +97,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.message}</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.message}</label>
               <textarea
                 maxLength={1000}
                 rows={3}
