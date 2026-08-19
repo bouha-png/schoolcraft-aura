@@ -49,7 +49,7 @@ const PortalChoice = () => {
       {/* Header: brand + language switcher */}
       <header className="relative z-10 flex items-center justify-between gap-4 px-5 pt-5 md:px-12 md:pt-8 hero-animate hero-delay-1">
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden portal-float shrink-0 bg-transparent">
+          <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-2xl overflow-hidden portal-float shrink-0 bg-transparent">
             <img
               src={scanditekLogo.url}
               alt="ScandiTek"
@@ -187,11 +187,14 @@ const PortalChoice = () => {
         </div>
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 bg-white/[0.03] backdrop-blur-sm">
+      <footer
+        className="relative z-10 border-t border-white/10"
+        style={{ background: 'linear-gradient(180deg, #0a0514 0%, #120820 50%, #1a0d2e 100%)' }}
+      >
         <div className="section-container py-8 md:py-10">
           <div className={`grid gap-6 md:grid-cols-3 ${isRtl ? 'text-right' : 'text-left'}`}>
             <div className="flex items-start gap-3">
-              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0 bg-transparent">
+              <div className="relative w-11 h-11 md:w-14 md:h-14 rounded-2xl overflow-hidden shrink-0 bg-transparent">
                 <img src={scanditekLogo.url} alt="ScandiTek" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div>
