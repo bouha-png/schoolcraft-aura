@@ -6,6 +6,7 @@ import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
+import DeviceShowcase from '@/components/associations/DeviceShowcase';
 
 const WHATSAPP_NUMBER = '212614615816';
 
@@ -132,6 +133,7 @@ const Associations = () => {
           </div>
         </section>
 
+        <DeviceShowcase />
         <EcosystemSection />
       </main>
 
