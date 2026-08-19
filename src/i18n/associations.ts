@@ -63,6 +63,9 @@ export const associations = {
       discover: 'اكتشفوا المنصة',
       imgAlt: 'فريق جمعوي في اجتماع بمكتب حديث',
     },
+    showcase: {
+      title: 'بعض الوحدات المتوفرة في المنصة',
+    },
   },
 } as const;
 
