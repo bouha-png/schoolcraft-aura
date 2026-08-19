@@ -38,7 +38,7 @@ const EcosystemSection = () => {
         </div>
       </div>
 
-      <div className="surface-alt border-y border-subtle">
+      <div className="bg-background border-y border-subtle">
         <div className="section-container py-20 md:py-28">
           <div className="max-w-[720px]">
             <h2 className="text-subsection">{trust.title}</h2>
