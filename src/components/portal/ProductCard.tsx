@@ -87,13 +87,8 @@ const ProductCard = ({
         <span
           className={
             active
-              ? 'mt-8 inline-flex w-fit items-center gap-2 h-[52px] px-7 rounded-full text-[16px] font-semibold text-white transition-all duration-300'
+              ? 'mt-8 inline-flex w-fit items-center gap-2 h-[54px] px-7 rounded-full text-[16px] font-medium text-[#F7F7FB] border border-white/15 bg-white/[0.08] backdrop-blur-md transition-colors duration-300 hover:bg-white/[0.14]'
               : 'mt-8 inline-flex w-fit items-center gap-2 h-[52px] px-6 rounded-full text-[15px] font-medium text-[#B8B5C8] border border-white/15 bg-white/[0.10] backdrop-blur-md'
-          }
-          style={
-            active
-              ? { background: 'linear-gradient(100deg,#7C4DFF 0%,#A76CFF 100%)', boxShadow: '0 12px 30px -12px rgba(124,77,255,0.7)' }
-              : undefined
           }
         >
           {active ? (
