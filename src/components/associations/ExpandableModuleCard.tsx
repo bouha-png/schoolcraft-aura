@@ -34,21 +34,35 @@ const ExpandableModuleCard = ({ item, open, onToggle, moreLabel, lessLabel, vari
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={item.title}
-        className="w-full text-start p-6 md:p-7 flex gap-4 md:gap-5 items-start rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        className="w-full text-start p-5 md:p-7 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 md:flex md:gap-5 md:items-start"
       >
-        <span
-          className="shrink-0 grid place-items-center w-12 h-12 rounded-[14px] text-primary"
-          style={{ background: 'linear-gradient(140deg, hsl(278 54% 96%), hsl(266 60% 93%))' }}
-          aria-hidden
-        >
-          <Icon size={24} strokeWidth={1.75} />
-        </span>
-        <span className="flex-1 min-w-0">
-          <span className="block font-display text-[17px] md:text-[19px] font-semibold leading-snug text-foreground">
+        <span className="flex items-center gap-3.5 md:block md:shrink-0">
+          <span
+            className="relative shrink-0 grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-[14px] text-primary overflow-hidden backdrop-blur-md ring-1 ring-inset ring-white/50 shadow-[0_6px_18px_-10px_hsl(278_54%_40%/0.55),inset_0_1px_0_hsl(0_0%_100%/0.7)]"
+            style={{
+              background:
+                'linear-gradient(140deg, hsl(278 60% 96% / 0.85), hsl(266 70% 92% / 0.55) 55%, hsl(0 0% 100% / 0.35))',
+            }}
+            aria-hidden
+          >
+            <span
+              className="pointer-events-none absolute inset-x-0 -top-1/2 h-full opacity-70"
+              style={{ background: 'linear-gradient(180deg, hsl(0 0% 100% / 0.75), transparent)' }}
+            />
+            <Icon size={22} strokeWidth={1.75} className="relative" />
+          </span>
+          <span className="font-display text-[16px] md:hidden font-semibold leading-snug text-foreground">
             {item.title}
           </span>
-          <span className="mt-2 block text-[15px] leading-[1.65] text-secondary-color">{item.shortDescription}</span>
-          <span className="mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-primary">
+        </span>
+        <span className="block flex-1 min-w-0 mt-3 md:mt-0">
+          <span className="hidden md:block font-display text-[19px] font-semibold leading-snug text-foreground">
+            {item.title}
+          </span>
+          <span className="md:mt-2 block text-[14.5px] md:text-[15px] leading-[1.65] text-secondary-color">
+            {item.shortDescription}
+          </span>
+          <span className="mt-3.5 md:mt-4 inline-flex items-center gap-2 text-[14px] font-semibold text-primary">
             {open ? lessLabel : item.cta ?? moreLabel}
             <ChevronDown
               size={18}
