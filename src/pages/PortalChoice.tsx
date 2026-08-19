@@ -27,10 +27,13 @@ const PortalChoice = () => {
   return (
     <div
       className="relative min-h-screen overflow-hidden flex flex-col"
-      style={{ background: 'linear-gradient(160deg, #070b1e 0%, #10123a 45%, #1d1150 100%)' }}
+      style={{
+        background:
+          'radial-gradient(ellipse 90% 70% at 0% 0%, #020205 0%, #03030a 22%, #050311 40%, #0a0a24 65%, #1d1150 100%)',
+      }}
     >
-      {/* Brand ambience */}
-      <div className="pointer-events-none absolute -top-40 -left-32 w-[620px] h-[620px] rounded-full blur-[140px] opacity-50 bg-[#4b2ecc] portal-drift" />
+      {/* Brand ambience — deep, dark upper-left to match ScandiTek logo background */}
+      <div className="pointer-events-none absolute -top-48 -left-40 w-[720px] h-[720px] rounded-full blur-[160px] opacity-[0.22] bg-[#1a103c]" />
       <div className="pointer-events-none absolute -bottom-52 -right-32 w-[680px] h-[680px] rounded-full blur-[150px] opacity-40 bg-[#772F9F] portal-drift-alt" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
