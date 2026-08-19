@@ -138,7 +138,7 @@ const Associations = () => {
         href="#demo"
         onClick={handleDemoClick}
         aria-label={c.hero.cta}
-        className={`fixed z-50 inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-0.5 ${
+        className={`fixed z-50 inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-0.5 bg-white/[0.07] backdrop-blur-2xl border border-[#A76CFF]/35 hover:border-[#A76CFF]/65 hover:bg-[#772F9F]/25 ${
           showFloating ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
         } ${
           isCompact
@@ -146,8 +146,7 @@ const Associations = () => {
             : 'bottom-5 left-1/2 -translate-x-1/2 sm:bottom-8 h-12 sm:h-[54px] px-6 sm:px-8 text-[14px] sm:text-[16px]'
         }`}
         style={{
-          background: 'linear-gradient(100deg,#772F9F 0%,#5E2580 100%)',
-          boxShadow: '0 14px 34px -14px rgba(119,47,159,0.55)',
+          boxShadow: '0 10px 32px -12px rgba(119,47,159,0.5), inset 0 1px 0 rgba(255,255,255,0.08)',
         }}
       >
         {c.hero.cta}
