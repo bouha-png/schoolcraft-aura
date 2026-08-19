@@ -74,11 +74,10 @@ const LanguageSelector = () => {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={current.label}
-        className="flex items-center gap-2 h-11 pl-3.5 pr-3.5 rounded-full border border-[#7C4DFF]/40 bg-[#0E1030]/70 backdrop-blur-md text-sm font-medium text-[#F7F7FB] hover:border-[#A76CFF]/70 hover:bg-[#25145A]/50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A76CFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#07091D]"
+        className="flex items-center gap-1 h-8 pl-3 pr-2 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-xl text-[12px] font-semibold tracking-wide text-[#F7F7FB] hover:border-[#A76CFF]/60 hover:bg-white/[0.12] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A76CFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#07091D]"
       >
-        <Flag code={current.code} />
         <span>{current.short}</span>
-        <ChevronDown className={`w-4 h-4 text-[#B8B5C8] transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-3.5 h-3.5 text-[#B8B5C8] transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
       </button>
 
       {open && (
@@ -86,7 +85,7 @@ const LanguageSelector = () => {
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
           <ul
             role="listbox"
-            className="absolute z-50 top-[calc(100%+10px)] ltr:right-0 rtl:left-0 min-w-[190px] rounded-2xl border border-white/10 bg-[#0E1030] shadow-2xl shadow-black/60 overflow-hidden origin-top animate-scale-in"
+            className="absolute z-50 top-[calc(100%+8px)] ltr:right-0 rtl:left-0 min-w-[150px] rounded-xl border border-white/12 bg-[#0E1030]/80 backdrop-blur-2xl shadow-2xl shadow-black/60 overflow-hidden origin-top animate-scale-in"
           >
             {languages.map((l) => (
               <li key={l.code}>
@@ -98,13 +97,13 @@ const LanguageSelector = () => {
                     setLang(l.code);
                     setOpen(false);
                   }}
-                  className={`w-full flex items-center gap-3 px-4 min-h-[44px] text-sm transition-colors ${
-                    lang === l.code ? 'bg-[#25145A] text-[#F7F7FB]' : 'text-[#B8B5C8] hover:bg-white/5 hover:text-[#F7F7FB]'
+                  className={`w-full flex items-center gap-3 px-3.5 min-h-[40px] text-[13px] transition-colors ${
+                    lang === l.code ? 'bg-white/10 text-[#F7F7FB]' : 'text-[#B8B5C8] hover:bg-white/5 hover:text-[#F7F7FB]'
                   }`}
                 >
-                  <Flag code={l.code} />
+                  <span className="w-6 text-[11px] font-semibold tracking-wider text-[#8D89A0]">{l.short}</span>
                   <span className="flex-1 ltr:text-left rtl:text-right">{l.label}</span>
-                  {lang === l.code && <Check className="w-4 h-4 text-[#A76CFF]" />}
+                  {lang === l.code && <Check className="w-3.5 h-3.5 text-[#A76CFF]" />}
                 </button>
               </li>
             ))}
@@ -112,6 +111,7 @@ const LanguageSelector = () => {
         </>
       )}
     </div>
+
   );
 };
 
