@@ -14,20 +14,37 @@ const Associations = () => {
   const c = associations[lang as keyof typeof associations] ?? associations.fr;
   const isRtl = lang === 'ar';
   const [isCompact, setIsCompact] = useState(false);
+  const [showFloating, setShowFloating] = useState(false);
 
   useEffect(() => {
+    const heroSection = document.getElementById('hero');
     const platformSection = document.getElementById('platform');
-    if (!platformSection) return;
+    if (!heroSection) return;
 
-    const observer = new IntersectionObserver(
+    const heroObserver = new IntersectionObserver(
       ([entry]) => {
-        setIsCompact(entry.isIntersecting);
+        setShowFloating(!entry.isIntersecting);
       },
-      { threshold: 0.15, rootMargin: '-60px 0px 0px 0px' }
+      { threshold: 0.05, rootMargin: '-80px 0px 0px 0px' }
     );
 
-    observer.observe(platformSection);
-    return () => observer.disconnect();
+    heroObserver.observe(heroSection);
+
+    let platformObserver: IntersectionObserver | null = null;
+    if (platformSection) {
+      platformObserver = new IntersectionObserver(
+        ([entry]) => {
+          setIsCompact(entry.isIntersecting);
+        },
+        { threshold: 0.15, rootMargin: '-60px 0px 0px 0px' }
+      );
+      platformObserver.observe(platformSection);
+    }
+
+    return () => {
+      heroObserver.disconnect();
+      platformObserver?.disconnect();
+    };
   }, []);
 
   const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
