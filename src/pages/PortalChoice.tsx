@@ -92,7 +92,7 @@ const PortalChoice = () => {
               {c.titleHighlight}
             </span>
           </h1>
-          <p className="text-body-lg !text-white/65 hero-animate hero-delay-3">{c.subtitle}</p>
+          <p className="text-[15px] leading-relaxed sm:text-body-lg !text-white/65 hero-animate hero-delay-3">{c.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl w-full mx-auto">
@@ -139,7 +139,7 @@ const PortalChoice = () => {
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hero-animate hero-delay-3"
             style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
           >
-            <span className="absolute z-20 top-3 sm:top-5 ltr:right-3 sm:ltr:right-5 rtl:left-3 sm:rtl:left-5 text-[9px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur">
+            <span className="absolute z-20 top-2.5 sm:top-5 ltr:right-2.5 sm:ltr:right-5 rtl:left-2.5 sm:rtl:left-5 text-[8px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur border border-white/15">
               {c.association.badge}
             </span>
             <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden portal-sheen">
@@ -178,7 +178,9 @@ const PortalChoice = () => {
         <div className="section-container py-8 md:py-10">
           <div className={`grid gap-6 md:grid-cols-3 ${isRtl ? 'text-right' : 'text-left'}`}>
             <div className="flex items-start gap-3">
-              <img src={scanditekLogo.url} alt="ScandiTek" className="w-9 h-9 rounded-lg object-cover shrink-0" />
+              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0" style={{ background: 'linear-gradient(150deg, #120a26 0%, #2a1152 55%, #772F9F 100%)' }}>
+                <img src={scanditekLogo.url} alt="ScandiTek" className="absolute inset-0 w-full h-full object-cover mix-blend-screen" />
+              </div>
               <div>
                 <p className="font-display font-bold text-sm text-white">ScandiTek</p>
                 <p className="text-xs text-white/45 leading-relaxed mt-1">{c.footer}</p>
