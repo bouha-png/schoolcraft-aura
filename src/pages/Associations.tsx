@@ -132,6 +132,7 @@ const Associations = () => {
           </div>
         </section>
 
+        <DeviceShowcase />
         <EcosystemSection />
       </main>
 
