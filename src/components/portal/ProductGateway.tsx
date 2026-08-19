@@ -27,6 +27,7 @@ const ProductGateway = () => {
             imageAlt={c.education.name}
             icon={GraduationCap}
             ctaLabel={c.education.cta}
+            ctaShort={c.education.ctaShort}
             href="/education"
             status="active"
             isRtl={isRtl}
