@@ -12,6 +12,9 @@ export const associations = {
       discover: 'Découvrir la plateforme',
       imgAlt: "Équipe associative en réunion dans un bureau moderne",
     },
+    showcase: {
+      title: 'Quelques modules de la plateforme',
+    },
   },
   en: {
     back: 'ScandiTek',
@@ -25,6 +28,9 @@ export const associations = {
       cta: 'Request a demo',
       discover: 'Explore the platform',
       imgAlt: 'Association team meeting in a modern office',
+    },
+    showcase: {
+      title: 'Some modules you will find in the platform',
     },
   },
   no: {
@@ -40,6 +46,9 @@ export const associations = {
       discover: 'Utforsk plattformen',
       imgAlt: 'Organisasjonsteam i møte på et moderne kontor',
     },
+    showcase: {
+      title: 'Noen av modulene du finner i plattformen',
+    },
   },
   ar: {
     back: 'ScandiTek',
@@ -53,6 +62,9 @@ export const associations = {
       cta: 'طلب عرض توضيحي',
       discover: 'اكتشفوا المنصة',
       imgAlt: 'فريق جمعوي في اجتماع بمكتب حديث',
+    },
+    showcase: {
+      title: 'بعض الوحدات المتوفرة في المنصة',
     },
   },
 } as const;

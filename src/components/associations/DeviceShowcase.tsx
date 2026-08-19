@@ -1,15 +1,27 @@
 import desktopAsset from '@/assets/synapse-dashboard.png.asset.json';
 import mobileAsset from '@/assets/synapse-mobile.png.asset.json';
 
-const DeviceShowcase = () => {
+interface DeviceShowcaseProps {
+  title: string;
+  isRtl?: boolean;
+}
+
+const DeviceShowcase = ({ title, isRtl = false }: DeviceShowcaseProps) => {
   return (
-    <section className="bg-background">
-      <div className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 lg:px-12 pt-14 pb-6 md:pt-20 md:pb-10">
-        <div className="relative flex items-end justify-center">
+    <section className="bg-white">
+      <div className="mx-auto w-full max-w-[1080px] px-5 sm:px-8 lg:px-12 pt-10 pb-2 md:pt-14 md:pb-4">
+        <h2
+          dir={isRtl ? 'rtl' : 'ltr'}
+          className="text-center font-display text-[clamp(1.45rem,4.2vw,2rem)] font-bold leading-[1.2] tracking-[-0.02em] text-[#07091D]"
+        >
+          {title}
+        </h2>
+
+        <div className="relative mt-7 md:mt-9 flex items-end justify-center">
           {/* MacBook */}
-          <div className="w-full max-w-[880px]">
-            <div className="relative rounded-[14px] md:rounded-[18px] bg-[#1c1c1f] p-[0.7%] shadow-[0_30px_70px_-40px_rgba(20,10,40,0.55)]">
-              <div className="rounded-[9px] md:rounded-[12px] overflow-hidden bg-white">
+          <div className="w-full max-w-[580px] md:max-w-[660px]">
+            <div className="relative rounded-[11px] md:rounded-[15px] bg-[#1c1c1f] p-[0.55%] shadow-[0_22px_55px_-34px_rgba(20,10,40,0.42)]">
+              <div className="rounded-[7px] md:rounded-[10px] overflow-hidden bg-white">
                 <img
                   src={desktopAsset.url}
                   alt="Synapse Associations — tableau de bord sur ordinateur"
@@ -19,22 +31,26 @@ const DeviceShowcase = () => {
               </div>
             </div>
             {/* Base */}
-            <div className="relative mx-auto h-[10px] md:h-[14px] w-[106%] max-w-none -ml-[3%] rounded-b-[10px] bg-gradient-to-b from-[#d5d5da] to-[#a9a9b2]">
-              <div className="absolute left-1/2 top-0 h-[4px] md:h-[5px] w-[14%] -translate-x-1/2 rounded-b-full bg-[#8e8e98]" />
+            <div className="relative mx-auto h-[8px] md:h-[11px] w-[103%] max-w-none -ml-[1.5%] rounded-b-[7px] md:rounded-b-[9px] bg-gradient-to-b from-[#d5d5da] to-[#a9a9b2]">
+              <div className="absolute left-1/2 top-0 h-[2.5px] md:h-[3.5px] w-[11%] -translate-x-1/2 rounded-b-full bg-[#8e8e98]" />
             </div>
           </div>
 
           {/* iPhone */}
-          <div className="absolute -bottom-5 md:-bottom-8 -right-1 md:right-2 w-[27%] max-w-[190px] min-w-[92px]">
-            <div className="relative rounded-[16px] md:rounded-[28px] bg-[#1c1c1f] p-[3.5%] shadow-[0_24px_50px_-24px_rgba(20,10,40,0.5)]">
-              <div className="relative rounded-[12px] md:rounded-[22px] overflow-hidden bg-white">
+          <div
+            className={`absolute -bottom-3 md:-bottom-5 ${
+              isRtl ? '-left-1 md:left-4' : '-right-1 md:right-4'
+            } w-[22%] max-w-[140px] min-w-[78px]`}
+          >
+            <div className="relative rounded-[13px] md:rounded-[22px] bg-[#1c1c1f] p-[2.8%] shadow-[0_16px_38px_-18px_rgba(20,10,40,0.42)]">
+              <div className="relative rounded-[9px] md:rounded-[16px] overflow-hidden bg-white">
                 <img
                   src={mobileAsset.url}
                   alt="Synapse Associations — tableau de bord sur mobile"
-                  className="block w-full h-auto"
+                  className="block w-full h-auto object-contain"
                   loading="lazy"
                 />
-                <div className="absolute left-1/2 top-[2%] h-[3.5%] w-[34%] -translate-x-1/2 rounded-full bg-[#1c1c1f]" />
+                <div className="absolute left-1/2 top-[2%] h-[2.8%] w-[28%] -translate-x-1/2 rounded-full bg-[#1c1c1f]" />
               </div>
             </div>
           </div>
