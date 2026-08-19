@@ -161,7 +161,7 @@ const UserPortals = () => {
                 </div>
               )}
               {selectedNode === null && (
-                <p className="text-center text-xs text-muted-foreground/60 font-medium animate-pulse">
+                <p className="text-center text-xs text-muted-foreground font-medium animate-pulse">
                   Cliquez sur un rôle
                 </p>
               )}

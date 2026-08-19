@@ -52,58 +52,58 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
           <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.name} *</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.name} *</label>
                 <input
                   required
                   maxLength={100}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
+                  className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
                   placeholder={ct.namePlaceholder}
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.phone}</label>
+                <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.phone}</label>
                 <input
                   type="tel"
                   maxLength={20}
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
+                  className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
                   placeholder={ct.phonePlaceholder}
                 />
               </div>
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.email} *</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.email} *</label>
               <input
                 required
                 type="email"
                 maxLength={255}
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
+                className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
                 placeholder={ct.emailPlaceholder}
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.school}</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.school}</label>
               <input
                 maxLength={150}
                 value={form.school}
                 onChange={(e) => setForm({ ...form, school: e.target.value })}
-                className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
+                className="w-full h-10 px-3 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all"
                 placeholder={ct.schoolPlaceholder}
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-foreground/70 mb-1 block">{ct.message}</label>
+              <label className="text-xs font-medium text-muted-foreground mb-1 block">{ct.message}</label>
               <textarea
                 maxLength={1000}
                 rows={3}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-3 py-2 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all resize-none"
+                className="w-full px-3 py-2 rounded-lg border border-border/60 bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all resize-none"
                 placeholder={ct.messagePlaceholder}
               />
             </div>

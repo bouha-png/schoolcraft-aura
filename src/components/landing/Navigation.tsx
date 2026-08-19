@@ -63,9 +63,9 @@ const Navigation = () => {
               aria-label="ScandiTek"
               className="group flex items-center gap-1.5 h-8 ltr:pl-1.5 ltr:pr-2.5 rtl:pr-1.5 rtl:pl-2.5 rounded-full border border-border/60 hover:border-primary/40 bg-background/60 transition-colors duration-200"
             >
-              <ArrowLeft className="w-3.5 h-3.5 text-foreground/50 group-hover:text-primary transition-colors rtl:rotate-180" />
+              <ArrowLeft className="w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors rtl:rotate-180" />
               <img src={scanditekLogo.url} alt="" className="w-5 h-5 rounded-md object-cover" />
-              <span className="hidden sm:inline text-xs font-semibold text-foreground/60 group-hover:text-primary transition-colors">
+              <span className="hidden sm:inline text-xs font-semibold text-muted-foreground group-hover:text-primary transition-colors">
                 ScandiTek
               </span>
             </Link>
@@ -74,7 +74,7 @@ const Navigation = () => {
               <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
               <span className="flex flex-col leading-none">
                 <span className="font-display font-bold text-lg text-gradient">Synapse</span>
-                <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
+                <span className="font-display font-light text-[10px] text-muted-foreground tracking-[0.08em]">Education</span>
               </span>
             </Link>
           </div>
@@ -86,7 +86,7 @@ const Navigation = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-foreground/70 font-medium hover:text-primary transition-colors duration-200"
+                className="text-sm text-muted-foreground font-medium hover:text-primary transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -98,7 +98,7 @@ const Navigation = () => {
             <div ref={langDesktopRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
+                className="flex items-center gap-1.5 h-9 px-3 rounded-full text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 border border-border/50 hover:border-primary/30"
               >
                 <span className="text-base leading-none">{currentLang.flag}</span>
                 <span>{currentLang.label}</span>
@@ -112,7 +112,7 @@ const Navigation = () => {
                       className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
                         lang === l.code
                           ? 'bg-primary/10 text-primary font-semibold'
-                          : 'text-foreground/70 hover:bg-muted'
+                          : 'text-muted-foreground hover:bg-muted'
                       }`}
                     >
                       <span className="text-base leading-none">{l.flag}</span>
@@ -136,7 +136,7 @@ const Navigation = () => {
             <div ref={langMobileRef} className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1 h-9 px-2.5 rounded-full text-sm font-medium text-foreground/70 hover:text-primary transition-colors duration-200 border border-border/50"
+                className="flex items-center gap-1 h-9 px-2.5 rounded-full text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 border border-border/50"
               >
                 <span className="text-base leading-none">{currentLang.flag}</span>
               </button>
@@ -149,7 +149,7 @@ const Navigation = () => {
                       className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
                         lang === l.code
                           ? 'bg-primary/10 text-primary font-semibold'
-                          : 'text-foreground/70 hover:bg-muted'
+                          : 'text-muted-foreground hover:bg-muted'
                       }`}
                     >
                       <span className="text-base leading-none">{l.flag}</span>
@@ -178,7 +178,7 @@ const Navigation = () => {
               <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
               <span className="flex flex-col leading-none">
                 <span className="font-display font-bold text-lg text-gradient">Synapse</span>
-                <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
+                <span className="font-display font-light text-[10px] text-muted-foreground tracking-[0.08em]">Education</span>
               </span>
             </span>
             <button onClick={() => setMobileOpen(false)} aria-label={t.nav.closeMenu}>
@@ -203,7 +203,7 @@ const Navigation = () => {
             <Link
               to="/"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 mt-2 text-sm font-medium text-foreground/60"
+              className="flex items-center gap-2 mt-2 text-sm font-medium text-muted-foreground"
             >
               <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
               <img src={scanditekLogo.url} alt="" className="w-5 h-5 rounded-md object-cover" />
