@@ -27,6 +27,7 @@ const ProductGateway = () => {
             imageAlt={c.education.name}
             icon={GraduationCap}
             ctaLabel={c.education.cta}
+            ctaShort={c.education.ctaShort}
             href="/education"
             status="active"
             isRtl={isRtl}
@@ -42,6 +43,7 @@ const ProductGateway = () => {
             imageAlt={c.association.name}
             icon={Users}
             ctaLabel={c.association.cta}
+            ctaShort={c.association.ctaShort}
             href="/associations"
             status="active"
             isRtl={isRtl}

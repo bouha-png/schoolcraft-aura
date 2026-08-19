@@ -10,6 +10,7 @@ export interface ProductCardProps {
   imageAlt: string;
   icon: LucideIcon;
   ctaLabel: string;
+  ctaShort?: string;
   href?: string;
   status?: 'active' | 'disabled';
   isRtl?: boolean;
@@ -25,6 +26,7 @@ const ProductCard = ({
   imageAlt,
   icon: Icon,
   ctaLabel,
+  ctaShort,
   href,
   status = 'active',
   isRtl = false,
@@ -93,7 +95,8 @@ const ProductCard = ({
         >
           {active ? (
             <>
-              {ctaLabel}
+              <span className="hidden sm:inline">{ctaLabel}</span>
+              <span className="inline sm:hidden">{ctaShort ?? ctaLabel}</span>
               <ArrowRight
                 className={`w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`}
                 aria-hidden
