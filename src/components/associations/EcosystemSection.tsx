@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import associationsModules from '@/i18n/associationsModules';
 import ExpandableModuleCard from './ExpandableModuleCard';
+import DeviceShowcase from './DeviceShowcase';
 
-const EcosystemSection = () => {
+interface EcosystemSectionProps {
+  showcaseTitle: string;
+  isRtl?: boolean;
+}
+
+const EcosystemSection = ({ showcaseTitle, isRtl = false }: EcosystemSectionProps) => {
   const { section, modules, trust, trustCards } = associationsModules;
   const [openKey, setOpenKey] = useState<string | null>(null);
   const toggle = (key: string) => setOpenKey((prev) => (prev === key ? null : key));
