@@ -133,7 +133,7 @@ const Associations = () => {
           </div>
         </section>
 
-        <DeviceShowcase />
+        <DeviceShowcase title={c.showcase.title} isRtl={isRtl} />
         <EcosystemSection />
       </main>
 
