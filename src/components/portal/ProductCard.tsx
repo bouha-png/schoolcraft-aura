@@ -10,6 +10,7 @@ export interface ProductCardProps {
   imageAlt: string;
   icon: LucideIcon;
   ctaLabel: string;
+  ctaShort?: string;
   href?: string;
   status?: 'active' | 'disabled';
   isRtl?: boolean;
