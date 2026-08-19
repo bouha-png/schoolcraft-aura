@@ -57,13 +57,28 @@ const Navigation = () => {
         }`}
       >
         <div className="section-container w-full flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
-            <span className="flex flex-col leading-none">
-              <span className="font-display font-bold text-lg text-gradient">Synapse</span>
-              <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
-            </span>
-          </a>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              to="/"
+              aria-label="ScandiTek"
+              className="group flex items-center gap-1.5 h-8 ltr:pl-1.5 ltr:pr-2.5 rtl:pr-1.5 rtl:pl-2.5 rounded-full border border-border/60 hover:border-primary/40 bg-background/60 transition-colors duration-200"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 text-foreground/50 group-hover:text-primary transition-colors rtl:rotate-180" />
+              <img src={scanditekLogo.url} alt="" className="w-5 h-5 rounded-md object-cover" />
+              <span className="hidden sm:inline text-xs font-semibold text-foreground/60 group-hover:text-primary transition-colors">
+                ScandiTek
+              </span>
+            </Link>
+            <span className="h-5 w-px bg-border/70" />
+            <Link to="/education" className="flex items-center gap-2">
+              <img src={synapseLogo} alt="Synapse Education" className="w-7 h-7 object-contain" />
+              <span className="flex flex-col leading-none">
+                <span className="font-display font-bold text-lg text-gradient">Synapse</span>
+                <span className="font-display font-light text-[10px] text-foreground/50 tracking-[0.08em]">Education</span>
+              </span>
+            </Link>
+          </div>
+
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
