@@ -23,7 +23,7 @@ const ProductGateway = () => {
             category={c.education.category}
             productName={c.education.shortName}
             description={c.education.description}
-            image={educationAsset.url}
+            image={educationImage}
             imageAlt={c.education.name}
             icon={GraduationCap}
             ctaLabel={c.education.cta}
@@ -38,7 +38,7 @@ const ProductGateway = () => {
             category={c.association.category}
             productName={c.association.shortName}
             description={c.association.description}
-            image={associationsAsset.url}
+            image={associationsImage}
             imageAlt={c.association.name}
             icon={Users}
             ctaLabel={c.association.cta}
