@@ -56,6 +56,10 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
+            <Link to="/" className="opacity-70 hover:opacity-100 transition-opacity font-semibold text-white">
+              ← ScandiTek
+            </Link>
+
             <Link to="/confidentialite" className="opacity-70 hover:opacity-100 transition-opacity">
               {lang === 'no' ? 'Personvern' : lang === 'en' ? 'Privacy' : lang === 'ar' ? 'الخصوصية' : 'Confidentialité'}
             </Link>
