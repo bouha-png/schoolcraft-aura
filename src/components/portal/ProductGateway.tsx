@@ -14,7 +14,7 @@ const ProductGateway = () => {
   return (
     <section className="relative z-10 mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
-        <div className="hero-animate hero-delay-3">
+        <SpotlightItem className="hero-animate hero-delay-3">
           <ProductCard
             category={c.education.category}
             productName={c.education.shortName}
@@ -28,8 +28,8 @@ const ProductGateway = () => {
             isRtl={isRtl}
             eager
           />
-        </div>
-        <div className="hero-animate hero-delay-3">
+        </SpotlightItem>
+        <SpotlightItem className="hero-animate hero-delay-3">
           <ProductCard
             category={c.association.category}
             productName={c.association.shortName}
@@ -41,9 +41,10 @@ const ProductGateway = () => {
             status="disabled"
             isRtl={isRtl}
           />
-        </div>
+        </SpotlightItem>
       </div>
     </section>
+
   );
 };
 
