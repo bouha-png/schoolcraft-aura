@@ -101,6 +101,7 @@ const Associations = () => {
               <div className={`hero-animate hero-delay-3 mt-10 flex flex-col sm:flex-row gap-4 ${isRtl ? 'sm:justify-end items-stretch sm:items-center' : 'items-stretch sm:items-center'}`}>
                 <a
                   href="#demo"
+                  onClick={handleDemoClick}
                   className="inline-flex items-center justify-center h-[54px] px-8 rounded-full text-[16px] font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
                   style={{
                     background: 'linear-gradient(100deg,#7C4DFF 0%,#A76CFF 100%)',
