@@ -1,4 +1,4 @@
-import mockupAsset from '@/assets/synapse-mockup-transparent.png.asset.json';
+import mockupAsset from '@/assets/synapse-mockup-office.png.asset.json';
 
 interface DeviceShowcaseProps {
   title: string;
@@ -20,7 +20,7 @@ const DeviceShowcase = ({ title, isRtl = false }: DeviceShowcaseProps) => {
           <img
             src={mockupAsset.url}
             alt="Synapse Associations — tableau de bord sur ordinateur et mobile"
-            className="w-full max-w-[860px] h-auto object-contain drop-shadow-[0_28px_60px_rgba(7,9,29,0.18)]"
+            className="w-full max-w-[920px] h-auto object-contain rounded-[12px] md:rounded-[16px]"
             loading="lazy"
           />
         </div>
