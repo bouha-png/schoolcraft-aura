@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
@@ -6,10 +7,36 @@ import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
+const WHATSAPP_NUMBER = '212614615816';
+
 const Associations = () => {
   const { lang } = useLanguage();
   const c = associations[lang as keyof typeof associations] ?? associations.fr;
   const isRtl = lang === 'ar';
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const platformSection = document.getElementById('platform');
+    if (!platformSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsCompact(entry.isIntersecting);
+      },
+      { threshold: 0.15, rootMargin: '-60px 0px 0px 0px' }
+    );
+
+    observer.observe(platformSection);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const text = encodeURIComponent(`Demande de démo — Synapse Associations`);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) window.location.href = url;
+  };
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07091D]">
