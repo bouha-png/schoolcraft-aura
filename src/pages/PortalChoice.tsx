@@ -126,7 +126,7 @@ const PortalChoice = () => {
           {/* Associations */}
           <div
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hero-animate hero-delay-3"
-            style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)', animationDelay: '0.75s' }}
+            style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
           >
             <span className="absolute z-20 top-3 sm:top-5 ltr:right-3 sm:ltr:right-5 rtl:left-3 sm:rtl:left-5 text-[9px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur">
               {c.association.badge}
