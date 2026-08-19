@@ -3,7 +3,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
-import heroAsset from '@/assets/assoc-hero.png.asset.json';
+import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
 const Associations = () => {
