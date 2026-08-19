@@ -98,7 +98,7 @@ export const portalChoice = {
     trust: 'آمن. موثوق. مصمم لما هو أهم.',
     education: {
       name: 'سينابس للتعليم',
-      category: 'للمدارس',
+      category: 'للمؤسسات',
       tagline: 'للمؤسسات التعليمية',
       description: 'منصة متكاملة لتسيير مؤسستكم والتدريس والتواصل داخلها.',
       cta: 'ادخل',
