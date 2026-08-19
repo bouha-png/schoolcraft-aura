@@ -3,7 +3,7 @@ import LanguageSelector from './LanguageSelector';
 
 const PortalHeader = () => (
   <header dir="ltr" className="relative z-30 w-full">
-    <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 h-28 md:h-32 flex items-center justify-between gap-4">
+    <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 h-20 md:h-24 flex items-center justify-between gap-4">
       <div className="flex items-center gap-4">
         <img src={scanditekLogo.url} alt="ScandiTek" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
         <div className="leading-tight">
