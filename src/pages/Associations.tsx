@@ -147,8 +147,8 @@ const Associations = () => {
             : 'bottom-5 left-1/2 -translate-x-1/2 sm:bottom-8 h-12 sm:h-[54px] px-6 sm:px-8 text-[14px] sm:text-[16px]'
         }`}
         style={{
-          background: 'linear-gradient(100deg,#7C4DFF 0%,#A76CFF 100%)',
-          boxShadow: '0 14px 34px -14px rgba(124,77,255,0.75)',
+          background: 'linear-gradient(100deg,#772F9F 0%,#5E2580 100%)',
+          boxShadow: '0 14px 34px -14px rgba(119,47,159,0.55)',
         }}
       >
         {c.hero.cta}
