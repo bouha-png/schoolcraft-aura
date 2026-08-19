@@ -3,7 +3,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
-import heroAsset from '@/assets/assoc-hero.png.asset.json';
+import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
 const Associations = () => {
@@ -33,14 +33,14 @@ const Associations = () => {
               alt={c.hero.imgAlt}
               loading="eager"
               className="w-full h-full object-cover"
-              style={{ objectPosition: isRtl ? 'center left' : 'center right' }}
+              style={{ objectPosition: 'center' }}
             />
             <div
               className="absolute inset-0"
               style={{
                 background: isRtl
-                  ? 'linear-gradient(270deg, rgba(7,9,29,0.94) 0%, rgba(7,9,29,0.82) 38%, rgba(7,9,29,0.45) 68%, rgba(7,9,29,0.25) 100%)'
-                  : 'linear-gradient(90deg, rgba(7,9,29,0.94) 0%, rgba(7,9,29,0.82) 38%, rgba(7,9,29,0.45) 68%, rgba(7,9,29,0.25) 100%)',
+                  ? 'linear-gradient(270deg, rgba(7,9,29,0.96) 0%, rgba(7,9,29,0.75) 30%, rgba(7,9,29,0.45) 55%, rgba(7,9,29,0.15) 100%)'
+                  : 'linear-gradient(90deg, rgba(7,9,29,0.96) 0%, rgba(7,9,29,0.75) 30%, rgba(7,9,29,0.45) 55%, rgba(7,9,29,0.15) 100%)',
               }}
               aria-hidden
             />
