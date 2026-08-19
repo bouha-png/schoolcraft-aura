@@ -42,7 +42,8 @@ const ProductCard = ({
         src={image}
         alt={imageAlt}
         loading={eager ? 'eager' : 'lazy'}
-        className="absolute inset-0 w-full h-full object-cover ltr:object-right rtl:object-left transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+        style={{ objectPosition: isRtl ? 'center left' : 'center right' }}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
       <div className="absolute inset-0" style={{ background: overlay }} aria-hidden />
 
