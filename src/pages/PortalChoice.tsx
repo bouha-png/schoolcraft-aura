@@ -35,7 +35,7 @@ const PortalChoice = () => (
     <PortalHeader />
 
     <main className="relative flex-1">
-      <div className="pt-10 md:pt-16 lg:pt-20 pb-14 md:pb-20">
+      <div className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-16">
         <PortalHero />
       </div>
       <ProductGateway />
