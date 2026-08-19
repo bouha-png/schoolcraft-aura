@@ -70,7 +70,7 @@ const Associations = () => {
       </header>
 
       <main dir={isRtl ? 'rtl' : 'ltr'}>
-        <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+        <section id="hero" className="relative min-h-[92vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroAsset.url}
