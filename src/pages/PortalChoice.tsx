@@ -49,7 +49,7 @@ const PortalChoice = () => {
           <div
             className="relative w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden portal-float shrink-0"
             style={{
-              background: 'linear-gradient(150deg, #120a26 0%, #2a1152 55%, #772F9F 100%)',
+              background: 'linear-gradient(150deg, #05030a 0%, #0c0618 35%, #1a0d32 70%, #3a1a68 100%)',
               boxShadow: '0 12px 30px -12px rgba(119,47,159,0.9), inset 0 0 0 1px rgba(255,255,255,0.08)',
             }}
           >
@@ -97,78 +97,94 @@ const PortalChoice = () => {
 
         <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl w-full mx-auto">
           {/* Education */}
-          <Link
-            to="/education"
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 hero-animate hero-delay-3"
-            style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
-          >
-            <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden portal-sheen">
-              <img
-                src={educationAsset.url}
-                alt={c.education.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
-              />
-              <div className={`absolute inset-x-0 bottom-0 p-3 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <p className="text-[8px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#c4aaff] mb-1 sm:mb-2 truncate">
-                  {c.education.tagline}
-                </p>
-                <h2 className="font-display font-bold text-white mb-2 sm:mb-3 leading-[1.15]">
-                  <span className="block text-[11px] sm:text-base font-medium text-white/60 tracking-wide">Synapse</span>
-                  <span className="block text-lg sm:text-2xl md:text-[1.75rem]">{c.education.shortName}</span>
-                </h2>
-                <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
-                <span
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
-                  style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' }}
-                >
-                  <span className="sm:hidden">{c.education.ctaShort}</span>
-                  <span className="hidden sm:inline">{c.education.cta}</span>
-                  <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
-                </span>
+          <div className="flex flex-col gap-2 sm:gap-3">
+            <p
+              className={`text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#c4aaff] hero-animate hero-delay-3 ${
+                isRtl ? 'text-right' : 'text-left'
+              }`}
+            >
+              {c.educationTitle}
+            </p>
+            <Link
+              to="/education"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 hero-animate hero-delay-3"
+              style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
+            >
+              <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden portal-sheen">
+                <img
+                  src={educationAsset.url}
+                  alt={c.education.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
+                />
+                <div className={`absolute inset-x-0 bottom-0 p-3 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                  <p className="text-[8px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#c4aaff] mb-1 sm:mb-2 truncate">
+                    {c.education.tagline}
+                  </p>
+                  <h2 className="font-display font-bold text-white mb-2 sm:mb-3 leading-[1.15]">
+                    <span className="block text-[11px] sm:text-base font-medium text-white/60 tracking-wide">Synapse</span>
+                    <span className="block text-lg sm:text-2xl md:text-[1.75rem]">{c.education.shortName}</span>
+                  </h2>
+                  <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
+                  <span
+                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
+                    style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' }}
+                  >
+                    <span className="sm:hidden">{c.education.ctaShort}</span>
+                    <span className="hidden sm:inline">{c.education.cta}</span>
+                    <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
+                  </span>
+                </div>
               </div>
-
-            </div>
-          </Link>
+            </Link>
+          </div>
 
           {/* Associations */}
-          <div
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hero-animate hero-delay-3"
-            style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
-          >
-            <span className="absolute z-20 top-2.5 sm:top-5 ltr:right-2.5 sm:ltr:right-5 rtl:left-2.5 sm:rtl:left-5 text-[8px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur border border-white/15">
-              {c.association.badge}
-            </span>
-            <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden portal-sheen">
-              <img
-                src={associationsAsset.url}
-                alt={c.association.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                loading="lazy"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
-              />
-              <div className={`absolute inset-x-0 bottom-0 p-3 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <p className="text-[8px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#c4aaff] mb-1 sm:mb-2 truncate">
-                  {c.association.tagline}
-                </p>
-                <h2 className="font-display font-bold text-white mb-2 sm:mb-3 leading-[1.15]">
-                  <span className="block text-[11px] sm:text-base font-medium text-white/60 tracking-wide">Synapse</span>
-                  <span className="block text-lg sm:text-2xl md:text-[1.75rem]">{c.association.shortName}</span>
-                </h2>
-                <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.association.description}</p>
-                <span className="inline-flex items-center justify-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold whitespace-nowrap border border-white/25 text-white/60">
-                  <span className="sm:hidden">{c.association.ctaShort}</span>
-                  <span className="hidden sm:inline">{c.association.cta}</span>
-                  <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
-                </span>
+          <div className="flex flex-col gap-2 sm:gap-3">
+            <p
+              className={`text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#c4aaff] hero-animate hero-delay-3 ${
+                isRtl ? 'text-right' : 'text-left'
+              }`}
+            >
+              {c.associationTitle}
+            </p>
+            <div
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hero-animate hero-delay-3"
+              style={{ boxShadow: '0 30px 80px -30px rgba(0,0,0,0.9)' }}
+            >
+              <span className="absolute z-20 top-2.5 sm:top-5 ltr:right-2.5 sm:ltr:right-5 rtl:left-2.5 sm:rtl:left-5 text-[8px] sm:text-[11px] font-semibold tracking-wide uppercase px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/15 text-white backdrop-blur border border-white/15">
+                {c.association.badge}
+              </span>
+              <div className="relative aspect-[3/5] sm:aspect-[3/4] overflow-hidden portal-sheen">
+                <img
+                  src={associationsAsset.url}
+                  alt={c.association.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                  loading="lazy"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
+                />
+                <div className={`absolute inset-x-0 bottom-0 p-3 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                  <p className="text-[8px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#c4aaff] mb-1 sm:mb-2 truncate">
+                    {c.association.tagline}
+                  </p>
+                  <h2 className="font-display font-bold text-white mb-2 sm:mb-3 leading-[1.15]">
+                    <span className="block text-[11px] sm:text-base font-medium text-white/60 tracking-wide">Synapse</span>
+                    <span className="block text-lg sm:text-2xl md:text-[1.75rem]">{c.association.shortName}</span>
+                  </h2>
+                  <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.association.description}</p>
+                  <span className="inline-flex items-center justify-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold whitespace-nowrap border border-white/25 text-white/60">
+                    <span className="sm:hidden">{c.association.ctaShort}</span>
+                    <span className="hidden sm:inline">{c.association.cta}</span>
+                    <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
+                  </span>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -178,7 +194,7 @@ const PortalChoice = () => {
         <div className="section-container py-8 md:py-10">
           <div className={`grid gap-6 md:grid-cols-3 ${isRtl ? 'text-right' : 'text-left'}`}>
             <div className="flex items-start gap-3">
-              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0" style={{ background: 'linear-gradient(150deg, #120a26 0%, #2a1152 55%, #772F9F 100%)' }}>
+              <div className="relative w-9 h-9 rounded-lg overflow-hidden shrink-0" style={{ background: 'linear-gradient(150deg, #05030a 0%, #0c0618 35%, #1a0d32 70%, #3a1a68 100%)' }}>
                 <img src={scanditekLogo.url} alt="ScandiTek" className="absolute inset-0 w-full h-full object-cover mix-blend-screen" />
               </div>
               <div>
