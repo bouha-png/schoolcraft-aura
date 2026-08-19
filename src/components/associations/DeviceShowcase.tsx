@@ -9,7 +9,7 @@ interface DeviceShowcaseProps {
 const DeviceShowcase = ({ title, isRtl = false }: DeviceShowcaseProps) => {
   return (
     <section className="bg-white">
-      <div className="mx-auto w-full max-w-[1080px] px-5 sm:px-8 lg:px-12 pt-10 pb-2 md:pt-14 md:pb-4">
+      <div className="mx-auto w-full max-w-[1080px] px-5 sm:px-8 lg:px-12 pt-8 pb-12 md:pt-10 md:pb-16">
         <h2
           dir={isRtl ? 'rtl' : 'ltr'}
           className="text-center font-display text-[clamp(1.45rem,4.2vw,2rem)] font-bold leading-[1.2] tracking-[-0.02em] text-[#07091D]"
