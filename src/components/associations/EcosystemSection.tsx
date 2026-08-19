@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLanguage } from '@/i18n/LanguageContext';
 import associationsModules from '@/i18n/associationsModules';
 import ExpandableModuleCard from './ExpandableModuleCard';
 import DeviceShowcase from './DeviceShowcase';
@@ -9,7 +10,10 @@ interface EcosystemSectionProps {
 }
 
 const EcosystemSection = ({ showcaseTitle, isRtl = false }: EcosystemSectionProps) => {
-  const { section, modules, trust, trustCards } = associationsModules;
+  const { lang } = useLanguage();
+  const content = associationsModules[lang as keyof typeof associationsModules] ?? associationsModules.fr;
+  const { section, modules, trust, trustCards } = content;
+
   const [openKey, setOpenKey] = useState<string | null>(null);
   const toggle = (key: string) => setOpenKey((prev) => (prev === key ? null : key));
 
