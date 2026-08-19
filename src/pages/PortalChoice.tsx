@@ -1,5 +1,6 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import portalChoice from '@/i18n/portalChoice';
 import educationAsset from '@/assets/portal-education-v2.png.asset.json';
@@ -7,16 +8,28 @@ import associationsAsset from '@/assets/portal-associations-v2.png.asset.json';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 
 const languages = [
-  { code: 'fr' as const, label: 'FR' },
-  { code: 'ar' as const, label: 'AR' },
-  { code: 'no' as const, label: 'NO' },
-  { code: 'en' as const, label: 'EN' },
+  { code: 'fr' as const, label: 'Français', short: 'FR', flag: '🇫🇷' },
+  { code: 'ar' as const, label: 'العربية', short: 'AR', flag: '🇲🇦' },
+  { code: 'no' as const, label: 'Norsk', short: 'NO', flag: '🇳🇴' },
+  { code: 'en' as const, label: 'English', short: 'EN', flag: '🇬🇧' },
 ];
 
 const PortalChoice = () => {
   const { lang, setLang } = useLanguage();
   const c = portalChoice[lang] ?? portalChoice.fr;
   const isRtl = lang === 'ar';
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+  const currentLang = languages.find((l) => l.code === lang) ?? languages[0];
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (!langRef.current?.contains(e.target as Node)) setLangOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
+
 
   const legal = {
     privacy: lang === 'no' ? 'Personvern' : lang === 'en' ? 'Privacy' : lang === 'ar' ? 'الخصوصية' : 'Confidentialité',
