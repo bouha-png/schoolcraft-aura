@@ -4,6 +4,7 @@ import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/assoc-hero.png.asset.json';
+import EcosystemSection from '@/components/associations/EcosystemSection';
 
 const Associations = () => {
   const { lang } = useLanguage();
@@ -92,6 +93,8 @@ const Associations = () => {
             </div>
           </div>
         </section>
+
+        <EcosystemSection />
       </main>
     </div>
   );
