@@ -42,7 +42,7 @@ const ProductCard = ({
         src={image}
         alt={imageAlt}
         loading={eager ? 'eager' : 'lazy'}
-        style={{ objectPosition: isRtl ? 'center left' : 'center right' }}
+        style={{ objectPosition: isRtl ? 'center' : 'center right' }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
       {/* Frosted glass sheet — the whole card is the glass widget */}
