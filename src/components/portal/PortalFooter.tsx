@@ -15,7 +15,7 @@ const PortalFooter = () => {
   };
 
   return (
-    <footer className="relative z-10 mt-20 md:mt-24 border-t border-white/[0.08] bg-[#07091D]">
+    <footer dir="ltr" className="relative z-10 mt-20 md:mt-24 border-t border-white/[0.08] bg-[#07091D]">
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-10 md:py-12">
         <div className="grid gap-8 md:grid-cols-3 ltr:text-left rtl:text-right">
           <div className="flex items-start gap-3">
