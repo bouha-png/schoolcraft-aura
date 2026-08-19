@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
@@ -6,10 +7,36 @@ import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
+const WHATSAPP_NUMBER = '212614615816';
+
 const Associations = () => {
   const { lang } = useLanguage();
   const c = associations[lang as keyof typeof associations] ?? associations.fr;
   const isRtl = lang === 'ar';
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const platformSection = document.getElementById('platform');
+    if (!platformSection) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsCompact(entry.isIntersecting);
+      },
+      { threshold: 0.15, rootMargin: '-60px 0px 0px 0px' }
+    );
+
+    observer.observe(platformSection);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleDemoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const text = encodeURIComponent(`Demande de démo — Synapse Associations`);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    const win = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!win) window.location.href = url;
+  };
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07091D]">
@@ -74,6 +101,7 @@ const Associations = () => {
               <div className={`hero-animate hero-delay-3 mt-10 flex flex-col sm:flex-row gap-4 ${isRtl ? 'sm:justify-end items-stretch sm:items-center' : 'items-stretch sm:items-center'}`}>
                 <a
                   href="#demo"
+                  onClick={handleDemoClick}
                   className="inline-flex items-center justify-center h-[54px] px-8 rounded-full text-[16px] font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
                   style={{
                     background: 'linear-gradient(100deg,#7C4DFF 0%,#A76CFF 100%)',
@@ -96,6 +124,23 @@ const Associations = () => {
 
         <EcosystemSection />
       </main>
+
+      <a
+        href="#demo"
+        onClick={handleDemoClick}
+        aria-label={c.hero.cta}
+        className={`fixed z-50 inline-flex items-center justify-center font-semibold text-white rounded-full transition-all duration-300 ease-out hover:-translate-y-0.5 ${
+          isCompact
+            ? 'bottom-4 right-4 sm:bottom-6 sm:right-6 h-10 sm:h-11 px-4 sm:px-5 text-[13px] sm:text-sm'
+            : 'bottom-5 left-1/2 -translate-x-1/2 sm:bottom-8 h-12 sm:h-[54px] px-6 sm:px-8 text-[14px] sm:text-[16px]'
+        }`}
+        style={{
+          background: 'linear-gradient(100deg,#7C4DFF 0%,#A76CFF 100%)',
+          boxShadow: '0 14px 34px -14px rgba(124,77,255,0.75)',
+        }}
+      >
+        {c.hero.cta}
+      </a>
     </div>
   );
 };
