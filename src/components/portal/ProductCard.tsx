@@ -75,7 +75,7 @@ const ProductCard = ({
           className={
             active
               ? 'mt-8 inline-flex w-fit items-center gap-2 h-[52px] px-7 rounded-full text-[16px] font-semibold text-white transition-all duration-300'
-              : 'mt-8 inline-flex w-fit items-center gap-2 h-[52px] px-6 rounded-full text-[15px] font-medium text-[#8D89A0] border border-white/10 bg-white/[0.04]'
+              : 'mt-8 inline-flex w-fit items-center gap-2 h-[52px] px-6 rounded-full text-[15px] font-medium text-[#B8B5C8] border border-white/15 bg-white/[0.10] backdrop-blur-md'
           }
           style={
             active
@@ -98,8 +98,10 @@ const ProductCard = ({
             </>
           )}
         </span>
+        </div>
       </div>
     </>
+
   );
 
   const base =
