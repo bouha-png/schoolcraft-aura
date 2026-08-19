@@ -72,13 +72,8 @@ const ProductCard = ({
         <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#A76CFF]">{category}</p>
 
         <p className="mt-3 text-[17px] sm:text-lg font-medium text-[#B8B5C8]">{brand}</p>
-        <h2 className="font-display font-bold tracking-[-0.02em] leading-[1.05] text-[clamp(2rem,7vw,3rem)] text-[#F7F7FB]">
-          <span
-            className="bg-clip-text text-transparent"
-            style={{ backgroundImage: 'linear-gradient(100deg,#F7F7FB 0%,#C9A9FF 100%)' }}
-          >
-            {productName}
-          </span>
+        <h2 className="font-display font-bold tracking-[-0.02em] leading-[1.05] text-[clamp(2rem,7vw,3rem)] text-white">
+          {productName}
         </h2>
 
         <span className="mt-5 block h-[3px] w-10 rounded-full bg-[#7C4DFF]" aria-hidden />
