@@ -200,6 +200,16 @@ const Navigation = () => {
             <a href="#demo" onClick={() => setMobileOpen(false)} className="btn-primary mt-4">
               {t.nav.cta}
             </a>
+            <Link
+              to="/"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 mt-2 text-sm font-medium text-foreground/60"
+            >
+              <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+              <img src={scanditekLogo.url} alt="" className="w-5 h-5 rounded-md object-cover" />
+              ScandiTek
+            </Link>
+
           </div>
         </div>
       )}
