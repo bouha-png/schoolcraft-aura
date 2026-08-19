@@ -80,24 +80,24 @@ const PortalChoice = () => {
             onClick={() => setLangOpen((o) => !o)}
             aria-haspopup="listbox"
             aria-expanded={langOpen}
-            className="flex items-center gap-1.5 h-9 px-3 rounded-full border border-white/15 bg-white/5 backdrop-blur text-xs font-semibold text-white/80 hover:text-white hover:border-white/30 transition-colors"
+            className="flex items-center gap-2 h-10 sm:h-11 px-3.5 sm:px-4 rounded-full border border-white/25 bg-white/10 backdrop-blur-md text-sm font-semibold text-white hover:text-white hover:border-white/40 hover:bg-white/15 transition-all shadow-lg shadow-black/20"
           >
-            <span className="text-base leading-none">{currentLang.flag}</span>
+            <span className="text-lg leading-none">{currentLang.flag}</span>
             <span className="hidden sm:inline">{currentLang.label}</span>
-            <span className="sm:hidden">{currentLang.short}</span>
-            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+            <span className="sm:hidden font-bold">{currentLang.short}</span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
           </button>
           {langOpen && (
-            <div className="absolute top-full mt-2 ltr:right-0 rtl:left-0 min-w-[150px] rounded-xl border border-white/15 bg-[#0d0a1c]/95 backdrop-blur-xl shadow-2xl overflow-hidden z-50">
+            <div className="absolute top-full mt-2.5 ltr:right-0 rtl:left-0 min-w-[180px] rounded-2xl border border-white/20 bg-[#120d24]/98 backdrop-blur-xl shadow-2xl shadow-black/40 overflow-hidden z-50">
               {languages.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => { setLang(l.code); setLangOpen(false); }}
-                  className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm transition-colors ${
-                    lang === l.code ? 'bg-primary/25 text-white font-semibold' : 'text-white/70 hover:bg-white/10'
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                    lang === l.code ? 'bg-[#772F9F]/30 text-white font-semibold' : 'text-white/80 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <span className="text-base leading-none">{l.flag}</span>
+                  <span className="text-lg leading-none">{l.flag}</span>
                   <span>{l.label}</span>
                 </button>
               ))}
@@ -109,8 +109,7 @@ const PortalChoice = () => {
 
       <main className="relative z-10 flex-1 flex flex-col justify-center section-container py-10 md:py-14">
         <div className={`text-center max-w-2xl mx-auto mb-10 md:mb-14 ${isRtl ? 'rtl' : ''}`}>
-          <p className="text-overline mb-4 text-[#b79bff] hero-animate hero-delay-1">{c.overline}</p>
-          <h1 className="text-section mb-5 !text-white hero-animate hero-delay-2">
+          <h1 className="text-section mb-5 !text-white hero-animate hero-delay-1">
             {c.title}{' '}
             <span
               className="bg-clip-text text-transparent"
@@ -119,14 +118,14 @@ const PortalChoice = () => {
               {c.titleHighlight}
             </span>
           </h1>
-          <p className="text-[15px] leading-relaxed sm:text-body-lg !text-white/65 hero-animate hero-delay-3">{c.subtitle}</p>
+          <p className="text-[15px] leading-relaxed sm:text-body-lg !text-white/65 hero-animate hero-delay-2">{c.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl w-full mx-auto">
           {/* Education */}
           <div className="flex flex-col gap-2 sm:gap-3">
             <p
-              className={`text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#c4aaff] hero-animate hero-delay-3 ${
+              className={`text-sm sm:text-base md:text-lg uppercase tracking-[0.18em] font-bold text-white hero-animate hero-delay-3 ${
                 isRtl ? 'text-right' : 'text-left'
               }`}
             >
@@ -172,7 +171,7 @@ const PortalChoice = () => {
           {/* Associations */}
           <div className="flex flex-col gap-2 sm:gap-3">
             <p
-              className={`text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#c4aaff] hero-animate hero-delay-3 ${
+              className={`text-sm sm:text-base md:text-lg uppercase tracking-[0.18em] font-bold text-white hero-animate hero-delay-3 ${
                 isRtl ? 'text-right' : 'text-left'
               }`}
             >
