@@ -112,22 +112,25 @@ const PortalChoice = () => {
                 className="absolute inset-0"
                 style={{ background: 'linear-gradient(180deg, rgba(7,11,30,0) 30%, rgba(7,11,30,0.45) 60%, rgba(7,11,30,0.85) 100%)' }}
               />
-              <div className={`absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
-                <p className="text-[9px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c4aaff] mb-1.5 sm:mb-2">
+              <div className={`absolute inset-x-0 bottom-0 p-3 sm:p-6 md:p-8 ${isRtl ? 'text-right' : 'text-left'}`}>
+                <p className="text-[8px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#c4aaff] mb-1 sm:mb-2 truncate">
                   {c.education.tagline}
                 </p>
-                <h2 className="font-display text-base sm:text-2xl md:text-[1.75rem] font-bold text-white mb-1.5 sm:mb-3 leading-tight">
-                  {c.education.name}
+                <h2 className="font-display font-bold text-white mb-2 sm:mb-3 leading-[1.15]">
+                  <span className="block text-[11px] sm:text-base font-medium text-white/60 tracking-wide">Synapse</span>
+                  <span className="block text-lg sm:text-2xl md:text-[1.75rem]">{c.education.shortName}</span>
                 </h2>
                 <p className="hidden sm:block text-sm leading-relaxed text-white/70 mb-6">{c.education.description}</p>
                 <span
-                  className="inline-flex items-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3.5 sm:px-6 rounded-full text-[10px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 h-8 sm:h-11 px-3 sm:px-6 rounded-full text-[11px] sm:text-sm font-semibold whitespace-nowrap text-primary-foreground transition-all duration-300 group-hover:gap-3"
                   style={{ background: 'var(--gradient-cta)', boxShadow: 'var(--shadow-btn)' }}
                 >
-                  {c.education.cta}
-                  <ArrowRight className={`w-4 h-4 ${isRtl ? 'rotate-180' : ''}`} />
+                  <span className="sm:hidden">{c.education.ctaShort}</span>
+                  <span className="hidden sm:inline">{c.education.cta}</span>
+                  <ArrowRight className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isRtl ? 'rotate-180' : ''}`} />
                 </span>
               </div>
+
             </div>
           </Link>
 
