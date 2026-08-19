@@ -5,7 +5,6 @@ import associations from '@/i18n/associations';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroAsset from '@/assets/association-header-page1-new.png.asset.json';
-import mockupAsset from '@/assets/synapse-associations-mockup.png.asset.json';
 import EcosystemSection from '@/components/associations/EcosystemSection';
 
 const WHATSAPP_NUMBER = '212614615816';
@@ -128,42 +127,6 @@ const Associations = () => {
                 >
                   {c.hero.cta}
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative overflow-hidden bg-[#07091D]">
-          <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12 py-20 md:py-28">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${isRtl ? 'lg:grid-flow-dense' : ''}`}>
-              <div className={`${isRtl ? 'lg:col-start-2 text-right' : 'text-left'}`}>
-                <p className="text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#A76CFF]">
-                  {c.inAction.overline}
-                </p>
-                <h2 className="mt-5 font-display font-semibold tracking-[-0.02em] leading-[1.1] text-[clamp(1.75rem,4vw,2.75rem)] text-[#F7F7FB]">
-                  {c.inAction.title}
-                </h2>
-                <p className="mt-6 text-[16px] md:text-[17px] leading-[1.7] text-[#CFCDDC]">
-                  {c.inAction.body}
-                </p>
-              </div>
-
-              <div className={`${isRtl ? 'lg:col-start-1' : ''}`}>
-                <div
-                  className="relative rounded-[24px] overflow-hidden border border-white/[0.08] backdrop-blur-sm"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)',
-                    boxShadow: '0 24px 80px -24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)',
-                  }}
-                >
-                  <div className="absolute inset-0 rounded-[24px] pointer-events-none" style={{ boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.04)' }} aria-hidden />
-                  <img
-                    src={mockupAsset.url}
-                    alt={c.inAction.imgAlt}
-                    loading="lazy"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
               </div>
             </div>
           </div>
