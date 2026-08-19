@@ -45,11 +45,24 @@ const ProductCard = ({
         style={{ objectPosition: isRtl ? 'center left' : 'center right' }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
-      <div className="absolute inset-0" style={{ background: overlay }} aria-hidden />
+      {/* Frosted glass sheet — the whole card is the glass widget */}
+      <div
+        className="absolute inset-0 backdrop-blur-[6px] backdrop-saturate-150 bg-white/[0.05]"
+        style={{
+          background: overlay,
+          maskImage: isRtl
+            ? 'linear-gradient(270deg, #000 0%, #000 55%, transparent 92%)'
+            : 'linear-gradient(90deg, #000 0%, #000 55%, transparent 92%)',
+          WebkitMaskImage: isRtl
+            ? 'linear-gradient(270deg, #000 0%, #000 55%, transparent 92%)'
+            : 'linear-gradient(90deg, #000 0%, #000 55%, transparent 92%)',
+        }}
+        aria-hidden
+      />
+      <div className="absolute inset-0 rounded-[28px] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),inset_0_0_60px_rgba(255,255,255,0.04)]" aria-hidden />
 
-      <div className="relative h-full flex flex-col justify-center p-4 sm:p-6 md:p-8">
-        {/* Glass panel */}
-        <div className="max-w-[420px] rounded-[22px] border border-white/20 bg-white/[0.06] backdrop-blur-md backdrop-saturate-150 p-5 sm:p-7 ltr:text-left rtl:text-right shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_20px_50px_-30px_rgba(0,0,0,0.7)]">
+      <div className="relative h-full flex flex-col justify-center p-5 sm:p-7 md:p-9">
+        <div className="max-w-[420px] ltr:text-left rtl:text-right [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
         <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-white/20 bg-white/[0.12] backdrop-blur-md text-[#C9A9FF]">
           <Icon className="w-5 h-5" aria-hidden />
         </span>
