@@ -55,8 +55,8 @@ export const associations = {
     hero: {
       overline: 'SYNAPSE ASSOCIATIONS',
       title1: 'المنصة الذكية',
-      title2: 'لتدبير',
-      titleHighlight: 'الجمعيات والمنظمات',
+      title2: 'لإدارة',
+      titleHighlight: 'الجمعيات',
       subtitle:
         'المنصة الذكية الشاملة المصمّمة لإدارة كامل منظومة منظمتكم.',
       cta: 'طلب عرض توضيحي',
