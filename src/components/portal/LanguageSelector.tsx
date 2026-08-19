@@ -1,0 +1,118 @@
+import { useState, useEffect, useRef } from 'react';
+import { ChevronDown, Check } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
+
+const languages = [
+  { code: 'fr' as const, label: 'Français', short: 'FR' },
+  { code: 'ar' as const, label: 'العربية', short: 'AR' },
+  { code: 'no' as const, label: 'Norsk', short: 'NO' },
+  { code: 'en' as const, label: 'English', short: 'EN' },
+];
+
+export const Flag = ({ code }: { code: string }) => {
+  const common = 'w-5 h-5 rounded-full border border-white/15 shrink-0';
+  if (code === 'fr')
+    return (
+      <svg className={common} viewBox="0 0 36 36" aria-hidden>
+        <rect width="12" height="36" fill="#0055A4" />
+        <rect x="12" width="12" height="36" fill="#FFFFFF" />
+        <rect x="24" width="12" height="36" fill="#EF4135" />
+      </svg>
+    );
+  if (code === 'ar')
+    return (
+      <svg className={common} viewBox="0 0 36 36" aria-hidden>
+        <rect width="36" height="36" fill="#C1272D" />
+        <path d="M18 8 l2.5 7.5 h7.5 l-6 4.5 2.5 7.5-6-4.5-6 4.5 2.5-7.5-6-4.5h7.5z" fill="#006233" />
+      </svg>
+    );
+  if (code === 'no')
+    return (
+      <svg className={common} viewBox="0 0 36 36" aria-hidden>
+        <rect width="36" height="36" fill="#EF2B2D" />
+        <rect x="10" width="6" height="36" fill="#FFFFFF" />
+        <rect y="12" width="36" height="6" fill="#FFFFFF" />
+        <rect x="12" width="2" height="36" fill="#002868" />
+        <rect y="14" width="36" height="2" fill="#002868" />
+      </svg>
+    );
+  return (
+    <svg className={common} viewBox="0 0 36 36" aria-hidden>
+      <rect width="36" height="36" fill="#012169" />
+      <path d="M0 0 L36 36 M36 0 L0 36" stroke="#FFFFFF" strokeWidth="6" />
+      <path d="M18 0 V36 M0 18 H36" stroke="#FFFFFF" strokeWidth="10" />
+      <path d="M18 0 V36 M0 18 H36" stroke="#C8102E" strokeWidth="6" />
+      <path d="M0 0 L36 36 M36 0 L0 36" stroke="#C8102E" strokeWidth="4" />
+    </svg>
+  );
+};
+
+const LanguageSelector = () => {
+  const { lang, setLang } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const current = languages.find((l) => l.code === lang) ?? languages[0];
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    document.addEventListener('mousedown', onClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={current.label}
+        className="flex items-center gap-2 h-11 pl-3.5 pr-3.5 rounded-full border border-[#7C4DFF]/40 bg-[#0E1030]/70 backdrop-blur-md text-sm font-medium text-[#F7F7FB] hover:border-[#A76CFF]/70 hover:bg-[#25145A]/50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A76CFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#07091D]"
+      >
+        <Flag code={current.code} />
+        <span>{current.short}</span>
+        <ChevronDown className={`w-4 h-4 text-[#B8B5C8] transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      {open && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
+          <ul
+            role="listbox"
+            className="absolute z-50 top-[calc(100%+10px)] ltr:right-0 rtl:left-0 min-w-[190px] rounded-2xl border border-white/10 bg-[#0E1030] shadow-2xl shadow-black/60 overflow-hidden origin-top animate-scale-in"
+          >
+            {languages.map((l) => (
+              <li key={l.code}>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={lang === l.code}
+                  onClick={() => {
+                    setLang(l.code);
+                    setOpen(false);
+                  }}
+                  className={`w-full flex items-center gap-3 px-4 min-h-[44px] text-sm transition-colors ${
+                    lang === l.code ? 'bg-[#25145A] text-[#F7F7FB]' : 'text-[#B8B5C8] hover:bg-white/5 hover:text-[#F7F7FB]'
+                  }`}
+                >
+                  <Flag code={l.code} />
+                  <span className="flex-1 ltr:text-left rtl:text-right">{l.label}</span>
+                  {lang === l.code && <Check className="w-4 h-4 text-[#A76CFF]" />}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default LanguageSelector;
