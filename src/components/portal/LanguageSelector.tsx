@@ -47,7 +47,7 @@ const LanguageSelector = () => {
           <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
           <ul
             role="listbox"
-            className="absolute z-50 top-[calc(100%+8px)] ltr:right-0 rtl:left-0 min-w-[150px] rounded-xl border border-white/12 bg-[#0E1030]/80 backdrop-blur-2xl shadow-2xl shadow-black/60 overflow-hidden origin-top animate-scale-in"
+            className="absolute z-50 top-[calc(100%+8px)] right-0 min-w-[150px] max-w-[calc(100vw-2rem)] rounded-xl border border-white/12 bg-[#0E1030]/80 backdrop-blur-2xl shadow-2xl shadow-black/60 overflow-hidden origin-top animate-scale-in"
           >
             {languages.map((l) => (
               <li key={l.code}>
