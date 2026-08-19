@@ -6,6 +6,8 @@ export const portalChoice = {
     title: 'Choisissez votre',
     titleHighlight: 'univers',
     subtitle: "Deux plateformes, une même exigence : simplifier la gestion et libérer du temps pour l'essentiel.",
+    educationTitle: 'Pour les écoles',
+    associationTitle: 'Pour les associations',
     education: {
       name: 'Synapse Education',
       tagline: 'Pour les établissements scolaires',
@@ -30,6 +32,8 @@ export const portalChoice = {
     title: 'Choose your',
     titleHighlight: 'universe',
     subtitle: 'Two platforms, one ambition: simplify management and free up time for what matters.',
+    educationTitle: 'For schools',
+    associationTitle: 'For organizations',
     education: {
       name: 'Synapse Education',
       tagline: 'For schools and institutions',
@@ -54,6 +58,8 @@ export const portalChoice = {
     title: 'Velg ditt',
     titleHighlight: 'univers',
     subtitle: 'To plattformer, én ambisjon: forenkle driften og frigjøre tid til det som betyr noe.',
+    educationTitle: 'For skoler',
+    associationTitle: 'For organisasjoner',
     education: {
       name: 'Synapse Education',
       tagline: 'For skoler og utdanningsinstitusjoner',
@@ -78,6 +84,8 @@ export const portalChoice = {
     title: 'اختر',
     titleHighlight: 'عالمك',
     subtitle: 'منصتان بطموح واحد: تبسيط التسيير وتوفير الوقت لما هو أهم.',
+    educationTitle: 'للمدارس',
+    associationTitle: 'للمنظمات',
     education: {
       name: 'سينابس للتعليم',
       tagline: 'للمؤسسات التعليمية',
