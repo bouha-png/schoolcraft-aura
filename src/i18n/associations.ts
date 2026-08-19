@@ -12,6 +12,9 @@ export const associations = {
       discover: 'Découvrir la plateforme',
       imgAlt: "Équipe associative en réunion dans un bureau moderne",
     },
+    showcase: {
+      title: 'Quelques modules de la plateforme',
+    },
   },
   en: {
     back: 'ScandiTek',
