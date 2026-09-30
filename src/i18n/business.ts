@@ -43,10 +43,10 @@ const fr: BusinessCopy = {
   universes: [
     {
       overline: 'Collaborer & communiquer',
-      title: 'Un espace commun pour travailler ensemble.',
-      text: 'Échangez, partagez, organisez vos réunions et retrouvez vos informations sans changer constamment d’outil.',
-      tags: ['Espaces de travail', 'Collaboration', 'Chat', 'Email', 'Réunions en ligne', 'Calendrier', 'Documents partagés', 'Stockage', 'Communication interne', 'Live'],
-      v: ['équipe-commerciale', 'La proposition pour Atlas est prête, je la partage ici.', 'Parfait, on la revoit à la réunion.', 'Proposition_Atlas.pdf', 'Réunion hebdo', '14:00', 'Rejoindre', 'Aujourd’hui'],
+      title: 'Votre bureau virtuel, pour toute l’équipe.',
+      text: 'Espaces de travail virtuels, fichiers partagés et co-édition en direct sur le même document, avec historique complet. Forum, réunions communes enregistrées et PV générés automatiquement : tout ce dont une équipe a besoin pour atteindre ses résultats ensemble, en toute transparence pour la direction.',
+      tags: ['Bureaux virtuels', 'Espaces de travail', 'Fichiers partagés', 'Co-édition en direct', 'Historique complet', 'Forum', 'Chat', 'Réunions en ligne', 'Enregistrement des réunions', 'PV automatiques', 'Calendrier', 'Transparence direction'],
+      v: ['équipe-commerciale', 'La proposition pour Atlas est prête, je la partage ici.', 'Parfait, on la revoit à la réunion.', 'Proposition_Atlas.pdf', 'Réunion hebdo', '14:00', 'Rejoindre', 'Aujourd’hui', 'Plan_commercial_T4.docx', 'Historique', 'v12 · modifié par Salma il y a 2 min', 'Forum', '3 nouveaux sujets', 'PV automatique', 'Généré après la réunion', 'Enregistrement', '42 min', 'Vue direction', 'Objectif équipe'],
     },
     {
       overline: 'Organiser le travail',
@@ -183,10 +183,10 @@ const en: BusinessCopy = {
   universes: [
     {
       overline: 'Collaborate & communicate',
-      title: 'A shared space to work together.',
-      text: 'Talk, share, run your meetings and find your information without constantly switching tools.',
-      tags: ['Workspaces', 'Collaboration', 'Chat', 'Email', 'Online meetings', 'Calendar', 'Shared documents', 'File storage', 'Internal communication', 'Live'],
-      v: ['sales-team', 'The Atlas proposal is ready, sharing it here.', 'Great, let’s review it in the meeting.', 'Atlas_Proposal.pdf', 'Weekly meeting', '14:00', 'Join', 'Today'],
+      title: 'Your virtual office, for the whole team.',
+      text: 'Virtual workspaces, shared files and live co-editing on the same document, with full history. Forum, recorded team meetings and automatic minutes: everything a team needs to reach its results together, with full transparency for management.',
+      tags: ['Virtual offices', 'Workspaces', 'Shared files', 'Live co-editing', 'Full history', 'Forum', 'Chat', 'Online meetings', 'Meeting recording', 'Automatic minutes', 'Calendar', 'Management visibility'],
+      v: ['sales-team', 'The Atlas proposal is ready, sharing it here.', 'Great, let’s review it in the meeting.', 'Atlas_Proposal.pdf', 'Weekly meeting', '14:00', 'Join', 'Today', 'Q4_Sales_plan.docx', 'History', 'v12 · edited by Salma 2 min ago', 'Forum', '3 new topics', 'Automatic minutes', 'Generated after the meeting', 'Recording', '42 min', 'Management view', 'Team goal'],
     },
     {
       overline: 'Organise the work',
@@ -323,10 +323,10 @@ const no: BusinessCopy = {
   universes: [
     {
       overline: 'Samarbeide & kommunisere',
-      title: 'Et felles rom for å jobbe sammen.',
-      text: 'Snakk sammen, del, hold møter og finn informasjonen uten å bytte verktøy hele tiden.',
-      tags: ['Arbeidsrom', 'Samarbeid', 'Chat', 'E-post', 'Nettmøter', 'Kalender', 'Delte dokumenter', 'Lagring', 'Intern kommunikasjon', 'Live'],
-      v: ['salgsteamet', 'Tilbudet til Atlas er klart, jeg deler det her.', 'Supert, vi går gjennom det på møtet.', 'Tilbud_Atlas.pdf', 'Ukemøte', '14:00', 'Bli med', 'I dag'],
+      title: 'Det virtuelle kontoret for hele teamet.',
+      text: 'Virtuelle arbeidsområder, delte filer og samtidig redigering i samme dokument, med full historikk. Forum, felles møter med opptak og automatiske referater: alt et team trenger for å nå resultatene sammen, med full åpenhet mot ledelsen.',
+      tags: ['Virtuelle kontorer', 'Arbeidsområder', 'Delte filer', 'Samtidig redigering', 'Full historikk', 'Forum', 'Chat', 'Nettmøter', 'Møteopptak', 'Automatiske referater', 'Kalender', 'Åpenhet mot ledelsen'],
+      v: ['salgsteamet', 'Tilbudet til Atlas er klart, jeg deler det her.', 'Supert, vi går gjennom det på møtet.', 'Tilbud_Atlas.pdf', 'Ukemøte', '14:00', 'Bli med', 'I dag', 'Salgsplan_Q4.docx', 'Historikk', 'v12 · endret av Salma for 2 min siden', 'Forum', '3 nye tråder', 'Automatisk referat', 'Laget etter møtet', 'Opptak', '42 min', 'Ledervisning', 'Teammål'],
     },
     {
       overline: 'Organisere arbeidet',
@@ -463,10 +463,10 @@ const ar: BusinessCopy = {
   universes: [
     {
       overline: 'التعاون والتواصل',
-      title: 'فضاء مشترك للعمل معًا.',
-      text: 'تبادلوا وشاركوا ونظّموا اجتماعاتكم واعثروا على معلوماتكم دون تغيير الأدوات باستمرار.',
-      tags: ['فضاءات العمل', 'التعاون', 'الدردشة', 'البريد', 'اجتماعات عن بعد', 'التقويم', 'وثائق مشتركة', 'التخزين', 'التواصل الداخلي', 'البث المباشر'],
-      v: ['الفريق-التجاري', 'عرض Atlas جاهز، أشاركه هنا.', 'ممتاز، سنراجعه في الاجتماع.', 'عرض_Atlas.pdf', 'الاجتماع الأسبوعي', '14:00', 'انضمام', 'اليوم'],
+      title: 'مكتبكم الافتراضي لكل الفريق.',
+      text: 'فضاءات عمل افتراضية، ملفات مشتركة وتحرير مباشر على نفس الوثيقة مع سجل كامل. منتدى، اجتماعات مشتركة مسجلة ومحاضر تُنشأ تلقائيًا: كل ما يحتاجه الفريق لتحقيق نتائجه معًا، بشفافية تامة أمام الإدارة.',
+      tags: ['مكاتب افتراضية', 'فضاءات العمل', 'ملفات مشتركة', 'تحرير مباشر', 'سجل كامل', 'منتدى', 'الدردشة', 'اجتماعات عن بعد', 'تسجيل الاجتماعات', 'محاضر تلقائية', 'التقويم', 'شفافية للإدارة'],
+      v: ['الفريق-التجاري', 'عرض Atlas جاهز، أشاركه هنا.', 'ممتاز، سنراجعه في الاجتماع.', 'عرض_Atlas.pdf', 'الاجتماع الأسبوعي', '14:00', 'انضمام', 'اليوم', 'خطة_المبيعات_ر4.docx', 'السجل', 'الإصدار 12 · عدّلته سلمى قبل دقيقتين', 'المنتدى', '3 مواضيع جديدة', 'محضر تلقائي', 'أُنشئ بعد الاجتماع', 'التسجيل', '42 د', 'رؤية الإدارة', 'هدف الفريق'],
     },
     {
       overline: 'تنظيم العمل',
