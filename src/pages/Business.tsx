@@ -280,7 +280,7 @@ const Business = () => {
               </div>
             } />
 
-            <Universe cat="reunions-conferences" u={teams} visual={
+            <Universe cat="rh-paie" u={teams} visual={
               <div className={`${panel} p-6`}>
                 <div className="flex items-center gap-3">
                   <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
@@ -407,6 +407,7 @@ const Business = () => {
           <div className={container}>
             <Title overline={c.sell.overline} title={c.sell.title} intro={c.sell.text} center />
             <Reveal delay={100} className="flex justify-center"><div className="max-w-[760px] [&>div]:justify-center"><Tags items={c.sell.tags} /></div></Reveal>
+            <ExploreGroup id="reunions-conferences" lang={lang} center />
 
             <div className="mt-16 grid lg:grid-cols-2 gap-6">
               <Reveal className={`${panel} p-6 md:p-7`}>

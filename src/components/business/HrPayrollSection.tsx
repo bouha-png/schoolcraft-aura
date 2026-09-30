@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ExploreGroup from './ExploreGroup';
 import { Users, UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint, CheckCircle2, ArrowRight } from 'lucide-react';
 
 type Tab = { n: string; h: string; d: string; steps: string[]; rows: [string, string, string][] };
@@ -60,6 +61,7 @@ export default function HrPayrollSection({ lang }: { lang: string }) {
           <span className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-[#A76CFF]"><Users className="w-4 h-4" />{c.o}</span>
           <h2 className="mt-4 font-display text-[30px] md:text-[44px] font-bold leading-tight text-white">{c.t}</h2>
           <p className="mt-4 text-[16px] text-[#B8B5C8]">{c.i}</p>
+          <ExploreGroup id="rh-paie" lang={lang} center />
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
