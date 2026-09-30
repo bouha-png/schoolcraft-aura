@@ -95,7 +95,7 @@ const Business = () => {
         {/* HERO */}
         <section id="hero" className="relative min-h-[94vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={heroImg} alt={c.hero.imgAlt} width={1920} height={1088} className="w-full h-full object-cover" style={{ objectPosition: 'center right', transform: isRtl ? 'scaleX(-1)' : undefined }} />
+            <img src={heroImg} alt={c.hero.imgAlt} width={1376} height={768} className="w-full h-full object-cover" style={{ objectPosition: 'center right', transform: isRtl ? 'scaleX(-1)' : undefined }} />
             <div className="absolute inset-0" style={{ background: `linear-gradient(${isRtl ? 270 : 90}deg, rgba(7,9,29,0.97) 0%, rgba(7,9,29,0.8) 32%, rgba(7,9,29,0.4) 60%, rgba(7,9,29,0.15) 100%)` }} aria-hidden />
             <div className="absolute inset-x-0 bottom-0 h-48" style={{ background: 'linear-gradient(180deg, rgba(7,9,29,0) 0%, #07091D 100%)' }} aria-hidden />
           </div>
