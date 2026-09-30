@@ -13,7 +13,7 @@ import heroImg from '@/assets/business-hero.jpg';
 import shopArgan from '@/assets/shop-argan.jpg';
 import courseOnboarding from '@/assets/course-onboarding-v2.jpg';
 import courseCustomer from '@/assets/course-customer.jpg';
-import courseDigital from '@/assets/course-digital.jpg';
+import courseDigital from '@/assets/course-digital-v2.jpg';
 import liveImg from '@/assets/business-live-podcast-v2.jpg';
 
 const WHATSAPP_NUMBER = '212614615816';
