@@ -4,7 +4,7 @@ type Group = { h: string; items: string[] };
 export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; nodes: string[]; ai: string };
   problem: { t: string; x: string };
-  ai: Sec & { note: string; badge: string; items: { a: string; d: string }[] };
+  ai: Sec & { note: string; badge: string; role: string; chips: string[]; ex: string[] };
   crm: Sec & { points: string[] };
   booking: Sec & { chain: string[] };
   hr: Sec & { life: string[] };
@@ -31,17 +31,10 @@ const fr: BusinessV2 = {
     x: 'Ressaisies, versions multiples, suivi incomplet. Synapse Business assure la continuité de l’information, du premier contact client jusqu’au reporting.',
   },
   ai: {
-    o: 'Syn’IA · Assistant IA', t: 'Un assistant qui fait gagner du temps sur les tâches récurrentes.',
-    x: 'Syn’IA s’appuie sur les informations auxquelles chaque utilisateur a accès pour résumer, rédiger, rechercher et proposer.',
-    note: 'Syn’IA respecte les droits d’accès de chaque utilisateur. Les décisions restent entre les mains de vos équipes.', badge: 'Syn’IA',
-    items: [
-      { a: 'Comptes rendus de réunion', d: 'Synthèse des réunions enregistrées, rédaction du PV et liste des actions.' },
-      { a: 'Rédaction et reformulation', d: 'Préparation d’emails et de documents, reformulation de textes existants.' },
-      { a: 'Recherche documentaire', d: 'Accès rapide aux documents et espaces autorisés.' },
-      { a: 'Réponses sur vos données', d: 'Réponses fondées sur les données disponibles dans la plateforme.' },
-      { a: 'Suggestions d’actions', d: 'Propositions de relances et d’étapes suivantes, soumises à validation.' },
-      { a: 'Création de contenus', d: 'Aide à la préparation d’annonces, de supports et de contenus de formation.' },
-    ],
+    o: "Syn’IA", t: "Votre assistant personnel, intégré à Synapse Business.",
+    x: "Syn’IA vous accompagne dans votre travail quotidien et intervient, lorsque c’est utile, dans différents espaces de la plateforme pour vous aider à gagner du temps, retrouver l’information, préparer vos contenus et simplifier certaines tâches.",
+    note: "Elle s’appuie sur les informations auxquelles vous avez accès et respecte les droits définis dans votre organisation.", badge: 'Syn’IA', role: "Assistant personnel",
+    chips: ["Réunion", "Document", "Recherche", "Projet"], ex: ["Résumer cette réunion", "Retrouver ce document"],
   },
   crm: {
     o: 'Clients & Ventes', t: 'De la prospection au rendez-vous, chaque relation client est suivie.',
@@ -105,17 +98,10 @@ const en: BusinessV2 = {
     x: 'Re-entry, multiple versions, incomplete follow-up. Synapse Business keeps information continuous, from first customer contact to reporting.',
   },
   ai: {
-    o: 'Syn’IA · AI assistant', t: 'An assistant that saves time on recurring tasks.',
-    x: 'Syn’IA works from the information each user has access to, to summarise, draft, search and suggest.',
-    note: 'Syn’IA respects each user’s access rights. Decisions remain with your teams.', badge: 'Syn’IA',
-    items: [
-      { a: 'Meeting minutes', d: 'Summaries of recorded meetings, drafted minutes and action lists.' },
-      { a: 'Drafting and rewording', d: 'Preparing emails and documents, rewording existing text.' },
-      { a: 'Document search', d: 'Fast access to authorised documents and workspaces.' },
-      { a: 'Answers from your data', d: 'Answers based on the data available in the platform.' },
-      { a: 'Action suggestions', d: 'Proposed follow-ups and next steps, subject to approval.' },
-      { a: 'Content creation', d: 'Help preparing announcements, materials and training content.' },
-    ],
+    o: "Syn’IA", t: "Your personal assistant, built into Synapse Business.",
+    x: "Syn’IA supports your day-to-day work and steps in, when useful, across different areas of the platform to help you save time, find information, prepare content and simplify certain tasks.",
+    note: "It relies on the information you have access to and respects the rights defined in your organisation.", badge: 'Syn’IA', role: "Personal assistant",
+    chips: ["Meeting", "Document", "Search", "Project"], ex: ["Summarise this meeting", "Find this document"],
   },
   crm: {
     o: 'Customers & Sales', t: 'From prospect to appointment, every customer relationship is followed up.',
@@ -179,17 +165,10 @@ const no: BusinessV2 = {
     x: 'Dobbeltregistrering, flere versjoner, mangelfull oppfølging. Synapse Business sikrer sammenhengende informasjon, fra første kundekontakt til rapportering.',
   },
   ai: {
-    o: 'Syn’IA · AI-assistent', t: 'En assistent som sparer tid på gjentakende oppgaver.',
-    x: 'Syn’IA bruker informasjonen hver bruker har tilgang til for å oppsummere, skrive, søke og foreslå.',
-    note: 'Syn’IA respekterer hver brukers tilganger. Beslutningene ligger hos teamene dine.', badge: 'Syn’IA',
-    items: [
-      { a: 'Møtereferater', d: 'Oppsummering av innspilte møter, referatutkast og tiltaksliste.' },
-      { a: 'Skriving og omformulering', d: 'Utkast til e-poster og dokumenter, omformulering av tekst.' },
-      { a: 'Dokumentsøk', d: 'Rask tilgang til autoriserte dokumenter og rom.' },
-      { a: 'Svar fra dine data', d: 'Svar basert på data som finnes i plattformen.' },
-      { a: 'Forslag til tiltak', d: 'Forslag til oppfølging og neste steg, til godkjenning.' },
-      { a: 'Innholdsproduksjon', d: 'Hjelp med kunngjøringer, materiell og opplæringsinnhold.' },
-    ],
+    o: "Syn’IA", t: "Din personlige assistent, innebygd i Synapse Business.",
+    x: "Syn’IA følger deg i det daglige arbeidet og bidrar, når det er nyttig, i ulike deler av plattformen for å hjelpe deg å spare tid, finne informasjon, forberede innhold og forenkle enkelte oppgaver.",
+    note: "Den bygger på informasjonen du har tilgang til og respekterer rettighetene som er definert i organisasjonen din.", badge: 'Syn’IA', role: "Personlig assistent",
+    chips: ["Møte", "Dokument", "Søk", "Prosjekt"], ex: ["Oppsummer dette møtet", "Finn dette dokumentet"],
   },
   crm: {
     o: 'Kunder & salg', t: 'Fra prospekt til avtale, hvert kundeforhold følges opp.',
@@ -253,17 +232,10 @@ const ar: BusinessV2 = {
     x: 'إعادة إدخال، ونسخ متعددة، ومتابعة ناقصة. تضمن Synapse Business استمرارية المعلومة، من أول اتصال بالعميل إلى التقارير.',
   },
   ai: {
-    o: 'Syn’IA · مساعد ذكي', t: 'مساعد يوفّر الوقت في المهام المتكررة.',
-    x: 'تعتمد Syn’IA على المعلومات المتاحة لكل مستخدم للتلخيص والصياغة والبحث والاقتراح.',
-    note: 'تحترم Syn’IA صلاحيات الوصول لكل مستخدم. والقرار يبقى بيد فرقكم.', badge: 'Syn’IA',
-    items: [
-      { a: 'محاضر الاجتماعات', d: 'تلخيص الاجتماعات المسجلة وصياغة المحضر وقائمة المهام.' },
-      { a: 'الصياغة وإعادة الصياغة', d: 'إعداد الرسائل والوثائق وإعادة صياغة النصوص.' },
-      { a: 'البحث في الوثائق', d: 'وصول سريع إلى الوثائق والفضاءات المسموح بها.' },
-      { a: 'إجابات من بياناتكم', d: 'إجابات مبنية على البيانات المتاحة في المنصة.' },
-      { a: 'اقتراح الإجراءات', d: 'اقتراح متابعات وخطوات تالية، تخضع للموافقة.' },
-      { a: 'إنشاء المحتوى', d: 'المساعدة في إعداد الإعلانات والمواد ومحتوى التكوين.' },
-    ],
+    o: "Syn’IA", t: "مساعدكم الشخصي، مدمج في Synapse Business.",
+    x: "ترافقكم Syn’IA في عملكم اليومي وتتدخل، عند الحاجة، في مختلف فضاءات المنصة لمساعدتكم على ربح الوقت، والعثور على المعلومات، وإعداد محتوياتكم، وتبسيط بعض المهام.",
+    note: "تعتمد على المعلومات المتاحة لكم وتحترم الصلاحيات المحددة داخل مؤسستكم.", badge: 'Syn’IA', role: "مساعد شخصي",
+    chips: ["اجتماع", "وثيقة", "بحث", "مشروع"], ex: ["لخّص هذا الاجتماع", "ابحث عن هذه الوثيقة"],
   },
   crm: {
     o: 'العملاء والمبيعات', t: 'من الاستقطاب إلى الموعد، كل علاقة عميل متابَعة.',

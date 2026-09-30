@@ -214,21 +214,30 @@ const Business = () => {
           <div className={`relative ${container}`}>
             <Reveal className="flex justify-center"><span className="inline-flex items-center gap-2 rounded-full border border-[#A76CFF]/50 bg-[#772F9F]/25 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E0CCFF]"><Sparkles className="w-4 h-4" />{v.ai.o}</span></Reveal>
             <Title title={v.ai.t} intro={v.ai.x} center />
-            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {v.ai.items.map((it, i) => { const I = aiIcons[i]; return (
-                <Reveal key={it.a} delay={i * 70} className="h-full">
-                  <div className="h-full rounded-[20px] border border-[#A76CFF]/25 bg-gradient-to-b from-[#161238]/90 to-[#0E1030]/80 p-5 md:p-6">
-                    <div className="flex items-center justify-between">
-                      <span className={`${iconBox} w-10 h-10`} style={iconBg}><I className="w-5 h-5" strokeWidth={1.75} /></span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-[#A76CFF]/20 border border-[#A76CFF]/40 px-2.5 py-0.5 text-[11px] font-semibold text-[#E0CCFF]"><Sparkles className="w-3 h-3" />{v.ai.badge}</span>
+            <Reveal className="mt-12">
+              <div className="relative mx-auto max-w-[560px] px-2 sm:px-10 py-10">
+                {v.ai.chips.map((c, i) => (
+                  <span key={c} className={`absolute rounded-full border border-[#A76CFF]/30 bg-[#161238]/80 px-3 py-1 text-[12px] text-[#CFC7E8] backdrop-blur ${['top-0 start-2 sm:start-0','top-0 end-2 sm:end-0','bottom-0 start-4 sm:start-6','bottom-0 end-4 sm:end-6'][i]}`}>{c}</span>
+                ))}
+                <div className="relative rounded-[24px] border border-[#A76CFF]/40 bg-gradient-to-b from-[#1A1442]/95 to-[#0E1030]/90 p-6 md:p-7 shadow-[0_0_60px_-10px_rgba(167,108,255,0.45)]">
+                  <div className="flex items-center gap-3">
+                    <span className="flex w-11 h-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><Sparkles className="w-5 h-5" /></span>
+                    <div>
+                      <p className="font-display text-[17px] font-semibold">{v.ai.badge}</p>
+                      <p className="text-[12.5px] text-[#B8B5C8]">{v.ai.role}</p>
                     </div>
-                    <h3 className="mt-4 font-display text-[18px] font-semibold">{it.a}</h3>
-                    <p className="mt-2 text-[14px] leading-[1.6] text-[#B8B5C8]">{it.d}</p>
                   </div>
-                </Reveal>
-              ); })}
-            </div>
-            <Reveal className="mt-8 mx-auto max-w-[680px] flex items-center justify-center gap-2 text-center text-[13.5px] text-[#B8B5C8]"><ShieldCheck className="w-4 h-4 text-[#7CC8FF] shrink-0" />{v.ai.note}</Reveal>
+                  <div className="mt-5 space-y-2.5">
+                    {v.ai.ex.map((e) => (
+                      <div key={e} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-[#E6E4F0]">
+                        <Sparkles className="w-3.5 h-3.5 text-[#C9A9FF] shrink-0" />{e}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal className="mt-6 mx-auto max-w-[680px] flex items-center justify-center gap-2 text-center text-[13.5px] text-[#B8B5C8]"><ShieldCheck className="w-4 h-4 text-[#7CC8FF] shrink-0" />{v.ai.note}</Reveal>
           </div>
         </section>
 
