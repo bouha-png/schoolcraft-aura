@@ -5,6 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
+import { FolderOpen, Lock, PenLine, ListChecks, Lightbulb, Database } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -119,7 +120,7 @@ const Business = () => {
 
   const nodeIcons = [Contact, CalendarCheck, UserCog, Users, FolderKanban, Wallet];
   const toolIcons = [Mail, MessageSquare, Video, Cloud, FolderKanban, Contact, UserCog, Wallet, GraduationCap, CalendarCheck];
-  const aiIcons = [Contact, Video, FolderKanban, UserCog, Wallet, Search];
+  const aiIcons = [Video, PenLine, Search, Database, ListChecks, Lightbulb];
   const [collab, organise, teams, , , crm] = c.universes;
 
   const Points = ({ items }: { items: string[] }) => (
@@ -240,7 +241,6 @@ const Business = () => {
             </div>
             <Reveal delay={150} className="relative">
               <ClientCard v={crm.v} rtl={rtl} />
-              <AiCue text={v.crm.cue} className="mt-3 lg:mt-0 lg:absolute lg:-bottom-6 lg:-start-6 lg:max-w-[320px]" />
             </Reveal>
           </div>
         </section>
@@ -375,7 +375,6 @@ const Business = () => {
                   <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="90%" tone="cyan" /></div></div>
                 </div>
               </div>
-              <AiCue text={v.hr.cue} className="mt-3" />
             </Reveal>
           </div>
         </section>
@@ -390,6 +389,17 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
               <div className={`${panel} p-5 space-y-3`}>
+                <div className="rounded-2xl border border-[#3FA9F5]/25 bg-[#3FA9F5]/[0.06] p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="flex items-center gap-2 text-[13px] font-semibold"><Database className="w-4 h-4 text-[#7CC8FF]" />{v.collab.store[0]}</p>
+                    <span className="flex items-center gap-1 text-[10.5px] text-[#B8B5C8]"><Lock className="w-3 h-3" />{v.collab.store[5]}</span>
+                  </div>
+                  <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {v.collab.store.slice(1, 5).map((f) => (
+                      <div key={f} className="flex items-center gap-1.5 rounded-lg bg-white/[0.05] border border-white/[0.07] px-2.5 py-2 text-[11.5px] text-[#E6E4F0] min-w-0"><FolderOpen className="w-3.5 h-3.5 text-[#C9A8FF] shrink-0" /><span className="truncate">{f}</span></div>
+                    ))}
+                  </div>
+                </div>
                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-4">
                   <div className="flex items-center justify-between gap-2">
                     <p className="flex items-center gap-2 text-[13px] font-semibold min-w-0"><FileText className="w-4 h-4 text-[#3FA9F5] shrink-0" /><span className="truncate">{collab.v[8]}</span></p>
@@ -478,7 +488,6 @@ const Business = () => {
                   ))}
                 </div>
               </div>
-              <AiCue text={v.projects.cue} className="mt-3" />
             </Reveal>
           </div>
         </section>
@@ -492,7 +501,6 @@ const Business = () => {
             </Reveal>
             <Reveal delay={150} className="mt-12 mx-auto max-w-[900px] relative">
               <PilotDashboard lang={lang} rtl={rtl} />
-              <AiCue text={v.finance.cue} className="mt-3 lg:mt-0 lg:absolute lg:-top-5 lg:-end-8 lg:max-w-[300px]" />
             </Reveal>
           </div>
         </section>
