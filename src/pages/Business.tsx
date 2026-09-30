@@ -405,13 +405,13 @@ const Business = () => {
 
       <main dir={rtl ? 'rtl' : 'ltr'}>
         {/* 1. HERO */}
-        <section id="hero" className="relative md:min-h-[90vh] flex flex-col md:flex-row md:items-center pb-4 md:pb-0 overflow-hidden">
-          <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:absolute md:inset-0 md:aspect-auto">
+        <section id="hero" className="relative lg:min-h-[90vh] flex flex-col lg:flex-row lg:items-center pb-4 lg:pb-0 overflow-hidden">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:absolute lg:inset-0 lg:aspect-auto">
             <img src={heroImg} alt={c.hero.imgAlt} width={1376} height={768} className="w-full h-full object-cover" style={{ objectPosition: '78% 30%', transform: rtl ? 'scaleX(-1)' : undefined }} />
-            <div className="absolute inset-0 hidden md:block" style={{ background: `linear-gradient(${rtl ? 270 : 90}deg, rgba(7,9,29,0.97) 0%, rgba(7,9,29,0.8) 34%, rgba(7,9,29,0.25) 58%, rgba(7,9,29,0) 75%)` }} aria-hidden />
-            <div className="absolute inset-x-0 bottom-0 h-24 md:h-48" style={{ background: 'linear-gradient(180deg, rgba(7,9,29,0) 0%, #07091D 100%)' }} aria-hidden />
+            <div className="absolute inset-0 hidden lg:block" style={{ background: `linear-gradient(${rtl ? 270 : 90}deg, rgba(7,9,29,0.97) 0%, rgba(7,9,29,0.8) 34%, rgba(7,9,29,0.25) 58%, rgba(7,9,29,0) 75%)` }} aria-hidden />
+            <div className="absolute inset-x-0 bottom-0 h-24 lg:h-48" style={{ background: 'linear-gradient(180deg, rgba(7,9,29,0) 0%, #07091D 100%)' }} aria-hidden />
           </div>
-          <div className={`relative z-10 ${container} -mt-6 pt-0 pb-8 md:mt-0 md:pt-40 md:pb-32`}>
+          <div className={`relative z-10 ${container} -mt-6 pt-0 pb-8 lg:mt-0 lg:pt-40 lg:pb-32`}>
             <div className="max-w-[720px]">
               <p className="hero-animate hero-delay-1 text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#A76CFF]">{c.hero.label}</p>
               <h1 className="hero-animate hero-delay-1 mt-6 font-display font-bold tracking-[-0.02em] leading-[1.06] text-[clamp(2.2rem,5.8vw,4rem)] text-[#F7F7FB]">
