@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Users, UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint, CheckCircle2, Clock, FileSignature, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Users, UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint, CheckCircle2, ArrowRight } from 'lucide-react';
 
 type Tab = { n: string; h: string; d: string; steps: string[]; rows: [string, string, string][] };
 type Copy = { o: string; t: string; i: string; save: string; tabs: Tab[] };
@@ -47,13 +47,11 @@ const T: Record<string, Copy> = {
   },
 };
 const icons = [UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint];
-const rowIcons = [FileSignature, CheckCircle2, Clock];
+const slugs = ['recrutement', 'paie', 'performance', 'conges-absences', 'pointage'];
+const more: Record<string, string> = { fr: 'En savoir plus', en: 'Learn more', no: 'Les mer', ar: 'اعرف المزيد' };
 
 export default function HrPayrollSection({ lang }: { lang: string }) {
   const c = T[lang] ?? T.fr;
-  const [a, setA] = useState(0);
-  const tab = c.tabs[a];
-  const I = icons[a];
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
       <div className="absolute -top-20 start-1/3 w-[500px] h-[500px] rounded-full bg-[#772F9F]/20 blur-[120px] pointer-events-none" />
@@ -64,60 +62,23 @@ export default function HrPayrollSection({ lang }: { lang: string }) {
           <p className="mt-4 text-[16px] text-[#B8B5C8]">{c.i}</p>
         </div>
 
-        <div className="mt-10 flex gap-2 overflow-x-auto pb-2 md:justify-center snap-x">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {c.tabs.map((t, k) => {
             const TI = icons[k];
             return (
-              <button key={t.n} onClick={() => setA(k)} className={`snap-start shrink-0 inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-semibold border transition ${a === k ? 'bg-gradient-to-r from-[#772F9F] to-[#A76CFF] border-transparent text-white shadow-[0_8px_30px_-8px_rgba(167,108,255,0.6)]' : 'border-white/12 bg-white/[0.03] text-[#CFCBE0] hover:bg-white/[0.07]'}`}>
-                <TI className="w-4 h-4" />{t.n}
-              </button>
+              <Link key={t.n} to={`/business/${slugs[k]}`} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur p-5 hover:border-[#A76CFF]/45 hover:-translate-y-1 transition">
+                <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><TI className="w-5 h-5 text-white" /></span>
+                <p className="mt-4 font-semibold text-[15px] text-white">{t.n}</p>
+                <p className="mt-1.5 text-[13px] leading-[1.6] text-[#B8B5C8] flex-1">{t.d}</p>
+                <div className="mt-4 flex items-center gap-1.5 text-[11px] text-[#8D89A0]"><CheckCircle2 className="w-3.5 h-3.5 text-[#6EE7A0]" />{t.rows[0][0].split(' · ')[0]} · {t.rows[0][2]}</div>
+                <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-[#C9A8FF]">{more[lang] ?? more.fr}<ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 rtl:rotate-180" /></span>
+              </Link>
             );
           })}
         </div>
-
-        <div key={a} className="mt-8 grid lg:grid-cols-2 gap-8 items-center animate-fade-in">
-          <div>
-            <span className="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><I className="w-6 h-6 text-white" /></span>
-            <h3 className="mt-5 font-display text-[24px] md:text-[30px] font-bold text-white leading-tight">{tab.h}</h3>
-            <p className="mt-3 text-[15px] leading-[1.7] text-[#B8B5C8]">{tab.d}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              {tab.steps.map((s, k) => (
-                <span key={s} className="inline-flex items-center gap-2">
-                  <span className="rounded-full border border-[#A76CFF]/40 bg-[#A76CFF]/10 px-3 py-1.5 text-[12px] font-medium text-[#E0CCFF]">{k + 1}. {s}</span>
-                  {k < tab.steps.length - 1 && <ArrowRight className="w-3.5 h-3.5 text-[#8D89A0] rtl:rotate-180" />}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5 md:p-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)]">
-            <div className="flex items-center justify-between">
-              <p className="flex items-center gap-2 text-[14px] font-semibold text-white"><I className="w-4 h-4 text-[#C9A8FF]" />{tab.n}</p>
-              <span className="flex items-center gap-1.5 text-[11px] text-[#6EE7A0]"><span className="w-1.5 h-1.5 rounded-full bg-[#6EE7A0] animate-pulse" />Auto</span>
-            </div>
-            <div className="mt-4 grid grid-cols-4 gap-1.5">
-              {tab.steps.map((s, k) => <div key={s} className={`h-1.5 rounded-full ${k < 3 ? 'bg-gradient-to-r from-[#772F9F] to-[#A76CFF]' : 'bg-white/10'}`} />)}
-            </div>
-            <div className="mt-5 space-y-2.5">
-              {tab.rows.map(([n, m, s], k) => {
-                const RI = rowIcons[k];
-                return (
-                  <div key={n} className="flex items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-3">
-                    <span className="grid place-items-center w-9 h-9 rounded-xl bg-white/[0.06] shrink-0"><RI className="w-4 h-4 text-[#C9A8FF]" /></span>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold text-white truncate">{n}</p>
-                      <p className="text-[11.5px] text-[#8D89A0] truncate">{m}</p>
-                    </div>
-                    <span className="shrink-0 rounded-full bg-[#A76CFF]/15 px-2.5 py-1 text-[10.5px] font-semibold text-[#E0CCFF]">{s}</span>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-4 flex items-center justify-between rounded-xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/10 px-4 py-3">
-              <span className="text-[12.5px] text-[#CDEBFF]">{c.save}</span>
-              <span className="font-display text-[20px] font-bold text-white">+30 h</span>
-            </div>
-          </div>
+        <div className="mt-6 mx-auto max-w-[420px] flex items-center justify-between rounded-xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/10 px-4 py-3">
+          <span className="text-[12.5px] text-[#CDEBFF]">{c.save}</span>
+          <span className="font-display text-[20px] font-bold text-white">+30 h</span>
         </div>
       </div>
     </section>

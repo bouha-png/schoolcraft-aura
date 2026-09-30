@@ -14,6 +14,7 @@ import LanguageSelector from '@/components/portal/LanguageSelector';
 import ClientCard from '@/components/business/ClientCard';
 import PilotDashboard from '@/components/business/PilotDashboard';
 import SecuritySection from '@/components/business/SecuritySection';
+import ModuleCatalog from '@/components/business/ModuleCatalog';
 import HrPayrollSection from '@/components/business/HrPayrollSection';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
@@ -567,18 +568,7 @@ const Business = () => {
           </div>
         </section>
 
-        {/* MODULES */}
-        <section className="relative py-20 md:py-28">
-          <div className={container}>
-            <Title title={c.modules.title} intro={c.modules.text} center />
-            <Reveal className="mt-12 mx-auto max-w-[920px] flex flex-wrap justify-center gap-2.5">
-              {c.modules.items.map((m, i) => (
-                <span key={m} className={`text-[14px] font-medium px-4 py-2.5 rounded-xl transition-transform hover:-translate-y-0.5 ${i % 4 === 0 ? 'border border-[#A76CFF]/45 bg-[#772F9F]/25 text-white' : 'border border-white/10 bg-white/[0.035] text-[#D6D3E4]'}`}>{m}</span>
-              ))}
-            </Reveal>
-            <p className="mt-6 text-center text-[14px] text-[#8D89A0]">{c.modules.note}</p>
-          </div>
-        </section>
+        <ModuleCatalog lang={lang} />
 
         {/* FINAL */}
         <section className="relative py-24 md:py-36 overflow-hidden">
