@@ -65,6 +65,7 @@ const ProductGateway = () => {
             status="active"
             isRtl={isRtl}
             mirrorImage={isRtl}
+            imagePosition="80% center"
           />
         </SpotlightItem>
       </div>
