@@ -7,7 +7,7 @@ import educationAsset from '@/assets/portal-education-wide.png.asset.json';
 import associationsAsset from '@/assets/portal-associations-wide.png.asset.json';
 import educationAssetAr from '@/assets/portal-education-wide-ar.png.asset.json';
 import associationsAssetAr from '@/assets/portal-associations-wide-ar.png.asset.json';
-import businessImage from '@/assets/business-card-handshake-v2.jpg';
+import businessImage from '@/assets/business-hero-v3.jpg';
 
 const ProductGateway = () => {
   const { lang } = useLanguage();
@@ -65,6 +65,7 @@ const ProductGateway = () => {
             status="active"
             isRtl={isRtl}
             mirrorImage={isRtl}
+            imagePosition="78% 30%"
           />
         </SpotlightItem>
       </div>
