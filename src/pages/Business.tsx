@@ -361,8 +361,8 @@ const Business = () => {
     en: { o: 'Events & Live', t: 'Engage your audience.', x: 'Webinars, podcasts, live streams and events, organised and followed up from the platform, with registrations and attendees linked to your contacts.', items: ['Webinars', 'Podcasts', 'Live streaming', 'Event management', 'Registrations', 'Replays'] },
     no: { o: 'Arrangementer & live', t: 'Engasjer publikummet deres.', x: 'Webinarer, podkaster, direktesendinger og arrangementer, organisert og fulgt opp fra plattformen, med påmeldinger og deltakere koblet til kontaktene deres.', items: ['Webinarer', 'Podkaster', 'Direktesending', 'Arrangementsstyring', 'Påmeldinger', 'Opptak'] },
     ar: { o: 'الفعاليات والبث المباشر', t: 'تفاعلوا مع جمهوركم.', x: 'ندوات عبر الإنترنت، بودكاست، بث مباشر وفعاليات، تُنظَّم وتُتابَع من المنصة، مع ربط التسجيلات والمشاركين بجهات اتصالكم.', items: ['الندوات عبر الإنترنت', 'البودكاست', 'البث المباشر', 'تدبير الفعاليات', 'التسجيلات', 'إعادة المشاهدة'] },
-  }[lang as 'fr'] ?? null;
-  const lv = LIVE!;
+  };
+  const lv = LIVE[lang as keyof typeof LIVE] ?? LIVE.fr;
   const arrow = <ArrowRight className={`w-[18px] h-[18px] ${rtl ? 'rotate-180' : ''}`} />;
 
 
