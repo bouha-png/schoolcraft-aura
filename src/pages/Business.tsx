@@ -7,7 +7,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, FileSpreadsheet } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -204,36 +204,7 @@ const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
     <p className="mt-2.5 text-[11px] md:text-[12.5px] font-medium leading-tight text-white/90">{label}</p>
   </div>
 );
-
-const WS_ICONS = [[MessageSquare, Mail, Rss, Video], [LayoutGrid, Users, Vote], [ListChecks, FolderKanban], [FileText, FileSpreadsheet, Cloud]];
-const WS_ACC = ['#A78BFA', '#7CC8FF', '#5EEAD4', '#C4B5FD'];
-const Workplace = ({ groups, team, sub }: { groups: { t: string; items: [string, string][] }[]; team: string; sub: string }) => (
-  <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12 -mt-6">
-    <div className="rounded-2xl border border-white/[0.08] bg-[#0C0F24]/80 backdrop-blur-md p-4 sm:p-6 lg:p-7 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
-      <div className="flex items-center gap-3 pb-5 mb-5 border-b border-white/[0.06]">
-        <span className="grid place-items-center w-9 h-9 rounded-xl bg-[#772F9F]/25 border border-[#A78BFA]/25 text-[#C4B5FD]"><Users className="w-[18px] h-[18px]" /></span>
-        <div><p className="text-[15px] font-semibold text-white leading-tight">{team}</p><p className="text-[12.5px] text-[#A9A3C4]">{sub}</p></div>
-        <span className="ms-auto hidden sm:inline-flex items-center gap-1.5 text-[11.5px] text-[#A9A3C4]"><span className="w-1.5 h-1.5 rounded-full bg-[#2DD4C4]" />Synapse Business</span>
-      </div>
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-        {groups.map((g, gi) => (
-          <div key={g.t}>
-            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.14em]" style={{ color: WS_ACC[gi] }}>{g.t}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2">
-              {g.items.map(([n, d], i) => { const I = WS_ICONS[gi][i]; return (
-                <div key={n} className="group flex items-center gap-3 rounded-[14px] border border-white/[0.07] bg-white/[0.03] px-3 py-2.5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#A78BFA]/35 hover:bg-white/[0.05]">
-                  <span className="grid place-items-center shrink-0 w-9 h-9 rounded-[10px] border border-white/[0.08]" style={{ background: `${WS_ACC[gi]}1F`, color: WS_ACC[gi] }}><I className="w-[18px] h-[18px]" strokeWidth={1.9} /></span>
-                  <span className="min-w-0"><span className="block text-[14px] font-medium text-white leading-tight">{n}</span><span className="block text-[12.5px] text-[#A9A3C4] leading-snug mt-0.5">{d}</span></span>
-                </div>); })}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-const WideApps = ({ items, icons, photo, children, rtl, bottom }: { items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean; bottom?: ReactNode }) => (
+const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean }) => (
   <div>
     <svg width="0" height="0" className="absolute" aria-hidden>
       <defs>
@@ -252,12 +223,12 @@ const WideApps = ({ items, icons, photo, children, rtl, bottom }: { items: strin
         <div className="max-w-[560px]">{children}</div>
       </div>
     </div>
-    {bottom ?? <div className="relative -mt-4 px-5">
+    <div className="relative -mt-4 px-5">
       <div className="absolute inset-x-10 top-4 h-40 bg-[#5E2580]/35 blur-3xl" aria-hidden />
       <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-3 gap-y-7 md:gap-y-9 max-w-[980px] mx-auto">
         {items.map((o, i) => <GlassTile key={o} Icon={icons[i]} i={i} label={o} />)}
       </div>
-    </div>}
+    </div>
   </div>
 );
 
@@ -428,7 +399,7 @@ const Business = () => {
         {/* 2C. ORGANISEZ LE TRAVAIL */}
         <section id="collaboration" className="relative pb-20 md:pb-28">
           <div>
-            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} bottom={<Workplace groups={v.work.groups} team={v.work.team} sub={v.work.teamSub} />}>
+            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}>
               <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
               <Reveal delay={100}><p className="mt-6 text-[15.5px] md:text-base leading-relaxed text-white/85">{v.work.value}</p></Reveal>
             </WideApps>
