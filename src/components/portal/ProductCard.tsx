@@ -42,13 +42,15 @@ const ProductCard = ({
 
   const content = (
     <>
+      <div className="absolute inset-0" style={mirrorImage ? { transform: 'scaleX(-1)' } : undefined}>
       <img
         src={image}
         alt={imageAlt}
         loading={eager ? 'eager' : 'lazy'}
-        style={{ objectPosition: isRtl ? 'center' : 'center right', transform: mirrorImage ? 'scaleX(-1)' : undefined }}
+        style={{ objectPosition: isRtl ? 'center' : 'center right' }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
+      </div>
       {/* Frosted glass sheet — the whole card is the glass widget */}
       <div
         className="absolute inset-0 backdrop-blur-[6px] backdrop-saturate-150 bg-white/[0.05]"
@@ -93,8 +95,7 @@ const ProductCard = ({
         >
           {active ? (
             <>
-              <span className="hidden sm:inline">{ctaLabel}</span>
-              <span className="inline sm:hidden">{ctaShort ?? ctaLabel}</span>
+              <span>{ctaLabel}</span>
               <ArrowRight
                 className={`w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`}
                 aria-hidden

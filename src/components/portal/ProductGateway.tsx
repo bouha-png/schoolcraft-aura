@@ -4,8 +4,9 @@ import portalChoice from '@/i18n/portalChoice';
 import ProductCard from './ProductCard';
 import SpotlightItem from './SpotlightItem';
 import educationAsset from '@/assets/portal-education-wide.png.asset.json';
-import associationsNew from '@/assets/portal-associations-v2.jpg';
+import associationsAsset from '@/assets/portal-associations-wide.png.asset.json';
 import educationAssetAr from '@/assets/portal-education-wide-ar.png.asset.json';
+import associationsAssetAr from '@/assets/portal-associations-wide-ar.png.asset.json';
 import businessImage from '@/assets/business-card-handshake-v2.jpg';
 
 const ProductGateway = () => {
@@ -13,7 +14,7 @@ const ProductGateway = () => {
   const c = portalChoice[lang] ?? portalChoice.fr;
   const isRtl = lang === 'ar';
   const educationImage = isRtl ? educationAssetAr.url : educationAsset.url;
-  const associationsImage = associationsNew;
+  const associationsImage = isRtl ? associationsAssetAr.url : associationsAsset.url;
 
   return (
     <section className="relative z-10 mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
