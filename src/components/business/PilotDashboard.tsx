@@ -1,10 +1,13 @@
+import salma from '@/assets/avatar-salma.jpg';
+import youssef from '@/assets/avatar-youssef.jpg';
+import karim from '@/assets/avatar-karim.jpg';
 import { MessageSquare, Calendar, Mail, Contact, FolderKanban, Users, Wallet, GraduationCap, ShoppingBag, Video } from 'lucide-react';
 
 const DASH: Record<string, Record<string, string>> = {
-  fr: { title: 'Tableau de bord', today: "Aujourd'hui", leads: 'Leads', meetings: 'Rendez-vous clients', sales: 'Ventes', revenue: 'CA du mois', agenda: 'Réunions du jour', projects: 'Projets en cours', requests: 'Nouvelles demandes', chats: 'Conversations récentes', pipeline: 'Pipeline CRM', new: 'Nouveau', quali: 'Qualifié', prop: 'Proposition', won: 'Gagné' },
-  en: { title: 'Dashboard', today: 'Today', leads: 'Leads', meetings: 'Client meetings', sales: 'Sales', revenue: 'Monthly revenue', agenda: "Today's meetings", projects: 'Ongoing projects', requests: 'New requests', chats: 'Recent chats', pipeline: 'CRM pipeline', new: 'New', quali: 'Qualified', prop: 'Proposal', won: 'Won' },
-  no: { title: 'Dashbord', today: 'I dag', leads: 'Leads', meetings: 'Kundemøter', sales: 'Salg', revenue: 'Omsetning mnd', agenda: 'Dagens møter', projects: 'Pågående prosjekter', requests: 'Nye henvendelser', chats: 'Siste chatter', pipeline: 'CRM-pipeline', new: 'Ny', quali: 'Kvalifisert', prop: 'Tilbud', won: 'Vunnet' },
-  ar: { title: 'لوحة القيادة', today: 'اليوم', leads: 'العملاء المحتملون', meetings: 'مواعيد العملاء', sales: 'المبيعات', revenue: 'رقم المعاملات', agenda: 'اجتماعات اليوم', projects: 'مشاريع جارية', requests: 'طلبات جديدة', chats: 'محادثات حديثة', pipeline: 'مسار CRM', new: 'جديد', quali: 'مؤهل', prop: 'عرض', won: 'مكسوب' },
+  fr: { title: 'Tableau de bord', today: "Aujourd'hui", leads: 'Leads', meetings: 'Rendez-vous clients', sales: 'Ventes', revenue: 'CA du mois', agenda: 'Réunions du jour', projects: 'Projets en cours', requests: 'Approbations en attente', chats: 'Conversations récentes', pipeline: 'Pipeline CRM', new: 'Nouveau', quali: 'Qualifié', prop: 'Proposition', won: 'Gagné' },
+  en: { title: 'Dashboard', today: 'Today', leads: 'Leads', meetings: 'Client meetings', sales: 'Sales', revenue: 'Monthly revenue', agenda: "Today's meetings", projects: 'Ongoing projects', requests: 'Pending approvals', chats: 'Recent chats', pipeline: 'CRM pipeline', new: 'New', quali: 'Qualified', prop: 'Proposal', won: 'Won' },
+  no: { title: 'Dashbord', today: 'I dag', leads: 'Leads', meetings: 'Kundemøter', sales: 'Salg', revenue: 'Omsetning mnd', agenda: 'Dagens møter', projects: 'Pågående prosjekter', requests: 'Venter på godkjenning', chats: 'Siste chatter', pipeline: 'CRM-pipeline', new: 'Ny', quali: 'Kvalifisert', prop: 'Tilbud', won: 'Vunnet' },
+  ar: { title: 'لوحة القيادة', today: 'اليوم', leads: 'العملاء المحتملون', meetings: 'مواعيد العملاء', sales: 'المبيعات', revenue: 'رقم المعاملات', agenda: 'اجتماعات اليوم', projects: 'مشاريع جارية', requests: 'موافقات معلقة', chats: 'محادثات حديثة', pipeline: 'مسار CRM', new: 'جديد', quali: 'مؤهل', prop: 'عرض', won: 'مكسوب' },
 };
 
 export default function PilotDashboard({ lang, rtl }: { lang: string; rtl: boolean }) {
@@ -17,8 +20,8 @@ export default function PilotDashboard({ lang, rtl }: { lang: string; rtl: boole
   ];
   const agenda = [['09:30', 'Atlas Conseil'], ['11:00', 'Maison Atlas'], ['14:30', 'Groupe Nour']];
   const projects: [string, number][] = [['Ouverture agence Rabat', 72], ['Site e-commerce', 45], ['Migration CRM', 88]];
-  const requests = [['Karim B.', 'Devis formation'], ['Sara El M.', 'Démo plateforme']];
-  const chats = [['SI', 'Salma Idrissi', 'Proposition envoyée ✓'], ['YA', 'Youssef A.', 'Réunion à 14h30 ?'], ['ÉC', 'Équipe commerciale', 'Nouveau lead Casablanca']];
+  const requests = [['Devis Atlas Conseil', '45 000 MAD'], ['Congé · Youssef A.', '3 jours'], ['Note de frais', '1 200 MAD']];
+  const chats = [[salma, 'Salma Idrissi', 'Proposition envoyée ✓'], [youssef, 'Youssef A.', 'Réunion à 14h30 ?'], [karim, 'Karim B.', 'Nouveau lead Casablanca']];
   const pipe: [string, number][] = [[t.new, 14], [t.quali, 9], [t.prop, 6], [t.won, 4]];
   const apps = [
     { I: MessageSquare, n: 'Chat' }, { I: Calendar, n: 'Agenda' }, { I: Mail, n: 'Email' }, { I: Contact, n: 'CRM' }, { I: FolderKanban, n: 'Projets' },
@@ -71,7 +74,7 @@ export default function PilotDashboard({ lang, rtl }: { lang: string; rtl: boole
           <div className="mt-2 space-y-2">
             {chats.map(([i, n, m]) => (
               <div key={n} className="flex items-center gap-2">
-                <span className="grid place-items-center w-7 h-7 shrink-0 rounded-full bg-gradient-to-br from-[#772F9F] to-[#A76CFF] text-[9px] font-bold text-white">{i}</span>
+                <img src={i} alt={n} loading="lazy" width={28} height={28} className="w-7 h-7 shrink-0 rounded-full object-cover ring-2 ring-[#A76CFF]/40" />
                 <div className="min-w-0"><p className="text-[10.5px] font-semibold text-white truncate">{n}</p><p className="text-[10px] text-[#8D89A0] truncate">{m}</p></div>
               </div>
             ))}
@@ -79,8 +82,9 @@ export default function PilotDashboard({ lang, rtl }: { lang: string; rtl: boole
           <p className="mt-3 text-[11px] font-semibold text-white">{t.requests}</p>
           <div className="mt-2 space-y-1.5">
             {requests.map(([n, m]) => (
-              <div key={n} className="rounded-lg border border-[#5CE1E6]/20 bg-[#5CE1E6]/[0.06] px-2 py-1.5">
-                <p className="text-[10.5px] text-white truncate">{n}</p><p className="text-[10px] text-[#8D89A0] truncate">{m}</p>
+              <div key={n} className="flex items-center gap-1.5 rounded-lg border border-[#F5B84C]/25 bg-[#F5B84C]/[0.06] px-2 py-1.5">
+                <div className="min-w-0 flex-1"><p className="text-[10.5px] text-white truncate">{n}</p><p className="text-[10px] text-[#8D89A0] truncate">{m}</p></div>
+                <span className="grid place-items-center w-5 h-5 shrink-0 rounded-full bg-[#1F8A4C]/80 text-[10px] text-white">✓</span>
               </div>
             ))}
           </div>
