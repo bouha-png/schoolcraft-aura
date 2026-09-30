@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -90,6 +90,13 @@ const Bar = ({ w, tone = 'violet' }: { w: string; tone?: 'violet' | 'cyan' }) =>
 
 const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-0" />;
 
+const Hub = ({ children, badge }: { children: ReactNode; badge: ReactNode }) => (
+  <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#E2D4FF]/50 bg-gradient-to-br from-[#C9A9FF]/50 to-[#7CC8FF]/25 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_0_55px_-5px_rgba(167,108,255,0.75)]">
+    {children}
+    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-[#1A1442]/90 backdrop-blur text-[#7CC8FF] shadow-lg">{badge}</span>
+  </span>
+);
+
 const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string; dense?: boolean }) => (
   <div className={`relative mx-auto aspect-square w-full ${dense ? 'max-w-[540px]' : 'max-w-[460px]'}`}>
     <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
@@ -104,7 +111,7 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
       const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
       return (
         <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + (dense ? 39 : 36) * Math.cos(ang)}%`, top: `${50 + (dense ? 39 : 36) * Math.sin(ang)}%` }}>
-          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#C9A9FF]/35 bg-gradient-to-br from-[#A76CFF]/35 to-[#772F9F]/15 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_10px_28px_-12px_rgba(167,108,255,0.8)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
+          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#E2D4FF]/45 bg-gradient-to-br from-[#C9A9FF]/45 to-[#7CC8FF]/20 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_28px_-12px_rgba(167,108,255,0.9)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
           <p className={`mt-1.5 text-center ${dense ? "text-[9.5px] md:text-[11px]" : "text-[10.5px] md:text-[11.5px]"} leading-tight text-[#E6E4F0]`}>{o}</p>
         </div>
       );
@@ -201,8 +208,8 @@ const Business = () => {
                 <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
               </div>
               <Reveal delay={150}>
-                <Orbit items={v.grow.orbit} icons={[Users, TrendingUp, BarChart3, FileText, Mail, CalendarCheck, History, Package, Store, MonitorPlay, CalendarDays]}
-                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><Contact className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                <Orbit dense items={v.grow.orbit} icons={[Users, TrendingUp, BarChart3, FileText, Mail, CalendarCheck, History, Package, Store, MonitorPlay, CalendarDays]}
+                  center={<Hub badge={<Handshake className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Contact className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
                   name={v.grow.tag} sub={v.grow.o} />
               </Reveal>
             </div>
@@ -226,10 +233,10 @@ const Business = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
                 <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
-                  center={<span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]">
+                  center={<Hub badge={<IdCard className="w-[18px] h-[18px]" strokeWidth={1.8} />}>
                     <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16"><defs><linearGradient id="empg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#F3EBFF" /><stop offset="1" stopColor="#C9A9FF" /></linearGradient></defs><circle cx="32" cy="22" r="11" fill="url(#empg)" /><path d="M10 56c0-12 10-19 22-19s22 7 22 19z" fill="url(#empg)" opacity="0.9" /><path d="M28 37l4 7 4-7" fill="#772F9F" /></svg>
-                    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#C9A9FF]/40 bg-[#1A1442]/90 backdrop-blur text-[#7CC8FF] shadow-lg"><IdCard className="w-4.5 h-4.5" /></span>
-                  </span>}
+
+                  </Hub>}
                   name={v.team.emp} sub={v.team.o} />
               </Reveal>
               <div className="order-1 lg:order-2">
@@ -250,7 +257,7 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
                 <Orbit dense items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}
-                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]"><Users className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></span>}
+                  center={<Hub badge={<Video className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Users className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
                   name={v.work.team} sub={v.work.teamSub} />
               </Reveal>
             </div>
@@ -267,8 +274,8 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
                 <Orbit items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}
-                  center={<span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]">
-                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16" fill="none" aria-hidden="true">
+
+                  </Hub>}
                       <path d="M8 54h48" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
                       <rect x="12" y="38" width="8" height="14" rx="2" fill="currentColor" fillOpacity="0.35" />
                       <rect x="24" y="30" width="8" height="22" rx="2" fill="currentColor" fillOpacity="0.5" />
