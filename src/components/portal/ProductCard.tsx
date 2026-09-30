@@ -42,7 +42,7 @@ const ProductCard = ({
 
   const content = (
     <>
-      <div className="relative aspect-[16/10] overflow-hidden sm:absolute sm:inset-0 sm:aspect-auto" style={mirrorImage ? { transform: 'scaleX(-1)' } : undefined}>
+      <div className="relative aspect-[16/10] sm:aspect-[2/1] overflow-hidden lg:absolute lg:inset-0 lg:aspect-auto" style={mirrorImage ? { transform: 'scaleX(-1)' } : undefined}>
       <img
         src={image}
         alt={imageAlt}
@@ -53,7 +53,7 @@ const ProductCard = ({
       </div>
       {/* Frosted glass sheet — the whole card is the glass widget */}
       <div
-        className="hidden sm:block absolute inset-0 backdrop-blur-[6px] backdrop-saturate-150 bg-white/[0.05]"
+        className="hidden lg:block absolute inset-0 backdrop-blur-[6px] backdrop-saturate-150 bg-white/[0.05]"
         style={{
           background: overlay,
           maskImage: isRtl
@@ -67,7 +67,7 @@ const ProductCard = ({
       />
       <div className="absolute inset-0 rounded-[28px] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),inset_0_0_60px_rgba(255,255,255,0.04)]" aria-hidden />
 
-      <div className="relative sm:h-full flex flex-col justify-center p-5 sm:p-7 md:p-9">
+      <div className="relative lg:h-full flex flex-col justify-center p-5 sm:p-7 md:p-9">
         <div className="max-w-[420px] ltr:text-left rtl:text-right [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
         <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-white/20 bg-white/[0.12] backdrop-blur-md text-[#C9A9FF]">
           <Icon className="w-5 h-5" aria-hidden />
@@ -115,7 +115,7 @@ const ProductCard = ({
   );
 
   const base =
-    'group relative block overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1030]/70 backdrop-blur-sm sm:min-h-[420px] sm:flex sm:flex-col sm:justify-center transition-all duration-300 ease-out';
+    'group relative block overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1030]/70 backdrop-blur-sm lg:min-h-[420px] lg:flex lg:flex-col lg:justify-center transition-all duration-300 ease-out';
 
   if (!active) {
     return (
