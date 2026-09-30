@@ -1,5 +1,5 @@
 import collabPerson from "@/assets/collab-person.jpg";
-import clientsWide from '@/assets/clients-office-v6.jpg';
+import clientsWide from '@/assets/clients-office-v7.jpg';
 import financeWide from '@/assets/finance-wide.jpg';
 import hrTalk from '@/assets/hr-talk-wide.jpg';
 import collabAsset from "@/assets/collab-office.png.asset.json";
