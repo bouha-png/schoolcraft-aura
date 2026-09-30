@@ -33,7 +33,7 @@ const fr: BusinessV2 = {
     o: 'Équipes & RH', t: 'Gérez vos équipes.',
     x: 'Le cycle collaborateur, du recrutement à la paie, et la montée en compétences.',
     points: ['Dossier salarié et contrats', 'Présence, congés et absences', 'RH & Paie : paie et bulletins', 'Intégration et formation'],
-    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Développement', 'Mon portail'], emp: 'Collaborateur',
+    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Développement', 'Mon portail'], emp: 'Employé',
   },
   work: {
     orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Drive partagé', 'Suite bureautique', 'Gestion de projet', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail.',
@@ -149,7 +149,7 @@ const no: BusinessV2 = {
     o: 'Team & HR', t: 'Led teamene.',
     x: 'Medarbeiderløpet fra rekruttering til lønn, og kompetanseutvikling.',
     points: ['Personalmappe og kontrakter', 'Tilstedeværelse, ferie og fravær', 'HR & lønn: lønn og lønnsslipper', 'Onboarding og opplæring'],
-    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Utvikling', 'Min portal'], emp: 'Medarbeider',
+    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Utvikling', 'Min portal'], emp: 'Ansatt',
   },
   work: {
     orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Delt disk', 'Kontorpakke', 'Prosjektstyring', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeidet.',
@@ -207,7 +207,7 @@ const ar: BusinessV2 = {
     o: 'الفرق والموارد البشرية', t: 'دبّروا فرقكم.',
     x: 'مسار الموظف من التوظيف إلى الأجور، وتطوير الكفاءات.',
     points: ['ملف الموظف والعقود', 'الحضور والعطل والغياب', 'الموارد البشرية والأجور: الأجور وأوراق الأجر', 'الإدماج والتكوين'],
-    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'التطوير', 'بوابتي'], emp: 'الموظف',
+    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'التطوير', 'بوابتي'], emp: 'موظف',
   },
   work: {
     orbit: ['الدردشة', 'البريد', 'آخر المستجدات', 'المجموعات', 'فضاءات العمل', 'اجتماعات عبر الإنترنت', 'التخزين', 'مساحة مشتركة', 'أدوات مكتبية', 'تدبير المشاريع', 'المهام', 'استطلاعات'], team: 'فريقكم', teamSub: 'مكتب افتراضي', o: 'العمل والتعاون', t: 'نظّموا العمل.',

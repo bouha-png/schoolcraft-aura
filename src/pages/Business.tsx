@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -226,7 +226,10 @@ const Business = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
                 <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
-                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><UserRound className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                  center={<span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]">
+                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16"><defs><linearGradient id="empg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#F3EBFF" /><stop offset="1" stopColor="#C9A9FF" /></linearGradient></defs><circle cx="32" cy="22" r="11" fill="url(#empg)" /><path d="M10 56c0-12 10-19 22-19s22 7 22 19z" fill="url(#empg)" opacity="0.9" /><path d="M28 37l4 7 4-7" fill="#772F9F" /></svg>
+                    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#C9A9FF]/40 bg-[#1A1442]/90 backdrop-blur text-[#7CC8FF] shadow-lg"><IdCard className="w-4.5 h-4.5" /></span>
+                  </span>}
                   name={v.team.emp} sub={v.team.o} />
               </Reveal>
               <div className="order-1 lg:order-2">
