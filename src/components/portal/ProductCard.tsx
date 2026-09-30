@@ -15,6 +15,7 @@ export interface ProductCardProps {
   status?: 'active' | 'disabled';
   isRtl?: boolean;
   eager?: boolean;
+  mirrorImage?: boolean;
 }
 
 const ProductCard = ({
@@ -31,6 +32,7 @@ const ProductCard = ({
   status = 'active',
   isRtl = false,
   eager = false,
+  mirrorImage = false,
 }: ProductCardProps) => {
   const active = status === 'active' && !!href;
 
@@ -40,6 +42,7 @@ const ProductCard = ({
 
   const content = (
     <>
+      <div className="absolute inset-0" style={mirrorImage ? { transform: 'scaleX(-1)' } : undefined}>
       <img
         src={image}
         alt={imageAlt}
@@ -47,6 +50,7 @@ const ProductCard = ({
         style={{ objectPosition: isRtl ? 'center' : 'center right' }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
+      </div>
       {/* Frosted glass sheet — the whole card is the glass widget */}
       <div
         className="absolute inset-0 backdrop-blur-[6px] backdrop-saturate-150 bg-white/[0.05]"
