@@ -571,6 +571,7 @@ const Business = () => {
                 </Reveal>
               ))}
             </div>
+            <ExploreGroup id="synia" lang={lang} center />
           </div>
         </section>
 
