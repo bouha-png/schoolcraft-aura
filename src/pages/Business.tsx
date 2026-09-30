@@ -261,27 +261,8 @@ const Business = () => {
               </div>
             } />
 
-            <Universe flip u={pilot} visual={
-              <div className={`${panel} p-6`}>
-                <div className="flex items-center justify-between"><p className="text-[14px] font-semibold">{pilot.v[0]}</p><span className="text-[12px] text-[#8D89A0]">{pilot.v[5]}</span></div>
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  {pilot.v.slice(1, 4).map((k, i) => (
-                    <div key={k} className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-3">
-                      <p className="text-[12px] text-[#B8B5C8]">{k}</p>
-                      <div className="mt-3"><Bar w={`${[72, 54, 81][i]}%`} tone={i === 1 ? 'cyan' : 'violet'} /></div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-5 rounded-xl border border-white/[0.07] bg-white/[0.02] p-4">
-                  <p className="text-[12px] text-[#B8B5C8]">{pilot.v[4]}</p>
-                  <div className="mt-3 h-28 flex items-end gap-2">
-                    {[40, 55, 48, 68, 62, 80, 74, 90].map((h, i) => (
-                      <div key={i} className="flex-1 rounded-t-md" style={{ height: `${h}%`, background: i % 2 ? 'linear-gradient(180deg,#A76CFF,#772F9F55)' : 'linear-gradient(180deg,#5CE1E6,#3FA9F555)' }} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            } />
+            <Universe flip u={pilot} visual={<PilotDashboard lang={lang} rtl={rtl} />} />
+
 
             <Universe u={crm} visual={
               <div className={`${panel} p-6`}>
