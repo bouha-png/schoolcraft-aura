@@ -214,11 +214,11 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
       </defs>
     </svg>
     <div className="relative overflow-hidden min-h-[640px] md:min-h-[620px] lg:min-h-[600px] flex items-end lg:items-center">
-      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={rtl ? { transform: 'scaleX(-1)' } : undefined} />
-      <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] via-[#07091D]/80 lg:via-[#07091D]/55 to-transparent hidden lg:block`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/75 to-transparent lg:hidden" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#07091D] to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07091D] to-transparent" />
+      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={{ filter: 'brightness(1.45) contrast(1.05) saturate(1.1)', ...(rtl ? { transform: 'scaleX(-1)' } : {}) }} />
+      <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] from-5% via-[#07091D]/60 via-35% to-transparent to-60% hidden lg:block`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/70 via-45% to-transparent to-65% lg:hidden" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07091D] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#07091D] to-transparent" />
       <div className="relative w-full mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-72 pb-16 lg:py-24">
         <div className="max-w-[560px]">{children}</div>
       </div>
@@ -401,7 +401,7 @@ const Business = () => {
           <div>
             <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}>
               <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
-              <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
+              <Reveal delay={100}><p className="mt-6 text-[15.5px] md:text-base leading-relaxed text-white/85">{v.work.value}</p></Reveal>
             </WideApps>
           </div>
         </section>
