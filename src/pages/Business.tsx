@@ -23,7 +23,7 @@ import ClientCard from '@/components/business/ClientCard';
 import businessV2 from '@/i18n/businessV2';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
-import heroImg from '@/assets/business-hero.jpg';
+import heroImg from '@/assets/business-hero-v2.jpg';
 import prodOlive from '@/assets/prod-watch.jpg';
 import prodCeramic from '@/assets/prod-art.jpg';
 import prodLeather from '@/assets/prod-bag.jpg';
