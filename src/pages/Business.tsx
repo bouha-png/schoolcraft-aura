@@ -347,6 +347,25 @@ const Business = () => {
           </div>
         </section>
 
+        {/* 6B. PARTNER */}
+        <section id="partenaire" className="relative py-16 md:py-20">
+          <Reveal className={`${container} max-w-[860px] text-center`}>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#2DD4C4]">{v.partner.o}</p>
+            <h2 className="mt-3 font-display text-[26px] md:text-[36px] font-bold tracking-[-0.02em] leading-tight">{v.partner.t}</h2>
+            <p className="mt-4 text-[15px] md:text-[17px] leading-relaxed text-[#B8B5C8]">{v.partner.x}</p>
+            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2">
+              {v.partner.steps.map((st, i) => (
+                <div key={st} className="flex flex-col sm:flex-row items-center gap-3 sm:gap-2">
+                  <span className="inline-flex items-center gap-2.5 rounded-full border border-[#2DD4C4]/35 bg-gradient-to-r from-[#2DD4C4]/15 to-[#7B5CF0]/15 px-4 py-2 text-[13.5px] font-medium text-white whitespace-nowrap">
+                    <span className="grid place-items-center w-6 h-6 rounded-full bg-gradient-to-br from-[#2DD4C4] to-[#7B5CF0] text-[11px] font-bold">{i + 1}</span>{st}
+                  </span>
+                  {i < v.partner.steps.length - 1 && <ChevronRight className={`w-4 h-4 text-[#8D89A0] rotate-90 sm:rotate-0 ${rtl ? 'sm:rotate-180' : ''}`} />}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </section>
+
         {/* 7. FINAL CTA */}
         <section className="relative py-20 md:py-28 overflow-hidden">
           <div className="absolute inset-0" style={{ background: 'radial-gradient(60% 70% at 50% 100%, rgba(119,47,159,0.4) 0%, rgba(7,9,29,0) 70%)' }} aria-hidden />
