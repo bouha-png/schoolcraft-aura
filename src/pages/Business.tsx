@@ -393,13 +393,13 @@ const Business = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07091D] text-white">
-      <header dir="ltr" className="absolute inset-x-0 top-0 z-30">
+      <header dir={rtl ? 'rtl' : 'ltr'} className="absolute inset-x-0 top-0 z-30">
         <div className={`${container} h-24 md:h-28 flex items-center justify-between gap-4`}>
           <Link to="/" className="flex items-center gap-3 group">
             <span className="grid place-items-center rounded-2xl border border-white/15 bg-[#0B0B24]/70 backdrop-blur-md p-1.5 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.7)]">
               <img src={scanditekLogo.url} alt="ScandiTek" className="w-14 h-14 md:w-[72px] md:h-[72px] object-contain" />
             </span>
-            <span className="text-[13px] md:text-sm font-semibold text-white group-hover:text-white transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.55)' }}>← {c.back}</span>
+            <span className="text-[13px] md:text-sm font-semibold text-white group-hover:text-white transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.55)' }}>{rtl ? '→' : '←'} {c.back}</span>
           </Link>
           <LanguageSelector />
         </div>
