@@ -18,9 +18,9 @@ import prodOlive from '@/assets/prod-watch.jpg';
 import prodCeramic from '@/assets/prod-art.jpg';
 import prodLeather from '@/assets/prod-bag.jpg';
 import prodCoffee from '@/assets/prod-sofa.jpg';
-import courseOnboarding from '@/assets/course-onboarding-v2.jpg';
-import courseCustomer from '@/assets/course-customer.jpg';
-import courseDigital from '@/assets/course-digital-v2.jpg';
+import courseOnboarding from '@/assets/learn-onboarding.jpg';
+import courseCustomer from '@/assets/learn-customer.jpg';
+import courseDigital from '@/assets/learn-digital.jpg';
 import liveImg from '@/assets/business-live-podcast-v2.jpg';
 
 const WHATSAPP_NUMBER = '212614615816';
@@ -448,32 +448,32 @@ const Business = () => {
           <div className={`${container} grid lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
             <Reveal delay={150} className="lg:order-2">
               <div className={`${panel} p-5 md:p-6`}>
-                {(() => { const covers = [courseOnboarding, courseCustomer, courseDigital]; const pct = [100, 65, 30]; const t = c.training.v; return (<>
-                  <div className="rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03]">
-                    <div className="relative h-40 md:h-48">
-                      <img src={covers[1]} alt="" loading="lazy" width={992} height={672} className="absolute inset-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D26] via-[#0B0D26]/30 to-transparent" />
-                      <span className="absolute top-3 start-3 rounded-full bg-black/45 backdrop-blur px-2.5 py-1 text-[11px] text-white flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5" />{t[3]}</span>
-                      <span className="absolute bottom-3 end-3 grid place-items-center w-11 h-11 rounded-full bg-[#772F9F]/80 border border-[#A76CFF]/60 backdrop-blur"><PlayCircle className="w-5 h-5 text-white" /></span>
-                    </div>
-                    <div className="p-4">
-                      <p className="text-[15px] font-semibold">{t[1]}</p>
-                      <div className="mt-3 flex items-center gap-3"><Bar w={`${pct[1]}%`} tone="violet" /><span className="text-[12px] font-semibold text-[#C9A8FF] shrink-0">{pct[1]}%</span></div>
-                    </div>
-                  </div>
-                  <div className="mt-3 grid grid-cols-2 gap-3">
-                    {[0, 2].map((i) => (
-                      <div key={i} className="rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03]">
-                        <div className="relative h-24">
-                          <img src={covers[i]} alt="" loading="lazy" width={992} height={672} className="absolute inset-0 w-full h-full object-cover" />
-                          {pct[i] === 100 && <span className="absolute top-2 end-2 grid place-items-center w-6 h-6 rounded-full bg-[#3FA9F5]"><CheckCircle2 className="w-4 h-4 text-white" /></span>}
+                {(() => {
+                  const covers = [courseOnboarding, courseCustomer, courseDigital]; const pct = [100, 65, 0]; const t = c.training.v;
+                  const L = ({ fr: { m: 'modules', h: 'h', go: ['Revoir', 'Continuer', 'Commencer'], s: ['Terminé', 'En cours', 'Nouveau'] }, en: { m: 'modules', h: 'h', go: ['Review', 'Continue', 'Start learning'], s: ['Completed', 'In progress', 'New'] }, no: { m: 'moduler', h: 't', go: ['Se igjen', 'Fortsett', 'Start kurset'], s: ['Fullført', 'Pågår', 'Nytt'] }, ar: { m: 'وحدات', h: 'س', go: ['مراجعة', 'متابعة', 'ابدأ التعلم'], s: ['مكتمل', 'قيد التقدم', 'جديد'] } } as Record<string, { m: string; h: string; go: string[]; s: string[] }>)[lang] ?? { m: 'modules', h: 'h', go: ['Revoir', 'Continuer', 'Commencer'], s: ['Terminé', 'En cours', 'Nouveau'] };
+                  const meta = [[6, 2], [8, 3], [5, 1.5]];
+                  const order = [1, 0, 2];
+                  return (<>
+                  <div className="flex items-center justify-between mb-4"><p className="flex items-center gap-2 text-[14px] font-semibold"><GraduationCap className="w-4 h-4 text-[#C9A8FF]" />{t[3]}</p><span className="text-[11px] text-[#8D89A0]">3 / 12</span></div>
+                  <div className="space-y-3">
+                    {order.map((i, k) => {
+                      const st = pct[i] === 100 ? 0 : pct[i] > 0 ? 1 : 2;
+                      return (
+                        <div key={i} className="flex gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2.5">
+                          <div className="relative w-24 sm:w-32 shrink-0 rounded-xl overflow-hidden">
+                            <img src={covers[i]} alt="" loading="lazy" width={992} height={672} className="absolute inset-0 w-full h-full object-cover" />
+                            {st === 0 && <span className="absolute top-1.5 end-1.5 grid place-items-center w-5 h-5 rounded-full bg-[#3FA9F5]"><CheckCircle2 className="w-3.5 h-3.5 text-white" /></span>}
+                          </div>
+                          <div className="min-w-0 flex-1 py-0.5">
+                            <div className="flex items-center gap-2"><span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${st === 0 ? 'bg-[#3FA9F5]/20 text-[#7CC8FF]' : st === 1 ? 'bg-[#A76CFF]/20 text-[#E0CCFF]' : 'bg-[#1F8A4C]/25 text-[#6EE7A0]'}`}>{L.s[st]}</span></div>
+                            <p className="mt-1.5 text-[13.5px] font-semibold leading-snug">{t[i]}</p>
+                            <p className="mt-0.5 text-[11px] text-[#8D89A0]">{meta[i][0]} {L.m} · {meta[i][1]} {L.h}</p>
+                            <div className="mt-2 flex items-center gap-2"><Bar w={`${pct[i]}%`} tone={st === 0 ? 'cyan' : 'violet'} /><span className="text-[11px] text-[#B8B4CC] shrink-0">{pct[i]}%</span></div>
+                            <button className={`mt-2.5 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11.5px] font-semibold ${k === 0 || st === 2 ? 'bg-gradient-to-r from-[#772F9F] to-[#A76CFF] text-white' : 'border border-white/15 text-[#E6E4F0]'}`}><PlayCircle className="w-3.5 h-3.5" />{L.go[st]}</button>
+                          </div>
                         </div>
-                        <div className="p-3">
-                          <p className="text-[12.5px] font-medium leading-snug min-h-[2.2em]">{t[i]}</p>
-                          <div className="mt-2 flex items-center gap-2"><Bar w={`${pct[i]}%`} tone={pct[i] === 100 ? 'cyan' : 'violet'} /><span className="text-[11px] text-[#B8B4CC] shrink-0">{pct[i]}%</span></div>
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                   <div className="mt-3 flex items-center gap-2 rounded-xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/10 px-4 py-3 text-[13px] text-[#CDEBFF]"><Award className="w-4 h-4" />{t[4]}</div>
                 </>); })()}
