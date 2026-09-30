@@ -22,7 +22,7 @@ const fr: BusinessV2 = {
     ai: 'Avec Syn’IA, votre assistant intégré.', cta2: 'Découvrir la plateforme',
   },
   grow: {
-    orbit: ['Contacts', 'Opportunités', 'Pipeline', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Commandes', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Votre assistant IA personnel, intégré à la plateforme.', sub: 'Assistant IA personnel', orbit: ['PV automatiques', 'Rédaction de textes', 'Publications du fil', 'Traduction dans le chat', 'Suggestions de réponse', 'Rapports', 'Données à la demande', 'Échange vocal ou écrit'], tag: 'CRM', o: 'Clients & Ventes', t: 'Développez votre activité.',
+    orbit: ['Contacts', 'Opportunités', 'Pipeline', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Commandes', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Atlas Distribution', tag: 'CRM', o: 'Clients & Ventes', t: 'Développez votre activité.',
     x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
     points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
@@ -54,7 +54,7 @@ const fr: BusinessV2 = {
     b: ['Collaborateur', 'Contrat', 'Présence', 'Paie', 'Reporting'],
   },
   ai: {
-    o: 'Syn’IA', t: 'Your personal AI assistant, built into the platform.', sub: 'Personal AI assistant', orbit: ['Automatic minutes', 'Text drafting', 'Feed posts', 'Chat translation', 'Reply suggestions', 'Reports', 'Data on demand', 'Voice or text'],
+    o: 'Syn’IA', t: 'Votre assistant IA personnel, intégré à la plateforme.', sub: 'Assistant IA personnel', orbit: ['PV automatiques', 'Rédaction de textes', 'Publications du fil', 'Traduction dans le chat', 'Suggestions de réponse', 'Rapports', 'Données à la demande', 'Échange vocal ou écrit'],
     x: 'Syn’IA accompagne vos équipes dans leur travail quotidien. Intégrée aux différents espaces de Synapse Business, elle intervient lorsque cela apporte une valeur réelle : retrouver une information, préparer ou reformuler un contenu, résumer certains échanges ou simplifier des tâches récurrentes. Elle s’appuie sur les informations auxquelles chaque utilisateur a accès et respecte les droits définis dans l’organisation.',
   },
   modular: {
@@ -113,7 +113,7 @@ const en: BusinessV2 = {
     b: ['Employee', 'Contract', 'Attendance', 'Payroll', 'Reporting'],
   },
   ai: {
-    o: 'Syn’IA', t: 'Din personlige AI-assistent, innebygd i plattformen.', sub: 'Personlig AI-assistent', orbit: ['Automatiske referater', 'Tekstskriving', 'Innlegg i feeden', 'Oversettelse i chat', 'Svarforslag', 'Rapporter', 'Data på forespørsel', 'Tale eller tekst'],
+    o: 'Syn’IA', t: 'Your personal AI assistant, built into the platform.', sub: 'Personal AI assistant', orbit: ['Automatic minutes', 'Text drafting', 'Feed posts', 'Chat translation', 'Reply suggestions', 'Reports', 'Data on demand', 'Voice or text'],
     x: 'Syn’IA supports your teams in their daily work. Integrated across the areas of Synapse Business, it steps in when it adds real value: finding information, preparing or rephrasing content, summarising certain exchanges or simplifying recurring tasks. It relies on the information each user has access to and respects the rights defined in the organisation.',
   },
   modular: {
@@ -172,7 +172,7 @@ const no: BusinessV2 = {
     b: ['Medarbeider', 'Kontrakt', 'Tilstedeværelse', 'Lønn', 'Rapportering'],
   },
   ai: {
-    o: 'Syn’IA', t: 'مساعدكم الشخصي بالذكاء الاصطناعي، مدمج في المنصة.', sub: 'مساعد ذكاء اصطناعي شخصي', orbit: ['محاضر تلقائية', 'صياغة النصوص', 'منشورات الموجز', 'الترجمة في الدردشة', 'اقتراحات الردود', 'التقارير', 'بيانات عند الطلب', 'بالصوت أو الكتابة'],
+    o: 'Syn’IA', t: 'Din personlige AI-assistent, innebygd i plattformen.', sub: 'Personlig AI-assistent', orbit: ['Automatiske referater', 'Tekstskriving', 'Innlegg i feeden', 'Oversettelse i chat', 'Svarforslag', 'Rapporter', 'Data på forespørsel', 'Tale eller tekst'],
     x: 'Syn’IA støtter teamene i det daglige arbeidet. Integrert i de ulike delene av Synapse Business bidrar den når det gir reell verdi: å finne informasjon, forberede eller omformulere innhold, oppsummere enkelte samtaler eller forenkle gjentakende oppgaver. Den bygger på informasjonen hver bruker har tilgang til og respekterer rettighetene som er definert i organisasjonen.',
   },
   modular: {
