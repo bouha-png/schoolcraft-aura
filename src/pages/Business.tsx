@@ -120,7 +120,6 @@ const Business = () => {
 
   const nodeIcons = [Contact, UserCog, Users, Wallet];
   const toolIcons = [Mail, MessageSquare, Video, Cloud, FolderKanban, Contact, UserCog, Wallet, GraduationCap, CalendarCheck];
-  const aiIcons = [Video, PenLine, Search, Database, ListChecks, Lightbulb];
   const [collab, organise, teams, , , crm] = c.universes;
 
   const Points = ({ items }: { items: string[] }) => (
@@ -208,38 +207,6 @@ const Business = () => {
           </div>
         </section>
 
-        {/* C. SYN'IA */}
-        <section id="synia" className="relative py-20 md:py-28 overflow-hidden bg-[#0A0C24]">
-          <div className="absolute -top-32 start-1/2 -translate-x-1/2 w-[720px] h-[520px] rounded-full bg-[#772F9F]/25 blur-[140px] pointer-events-none" aria-hidden />
-          <div className={`relative ${container}`}>
-            <Reveal className="flex justify-center"><span className="inline-flex items-center gap-2 rounded-full border border-[#A76CFF]/50 bg-[#772F9F]/25 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#E0CCFF]"><Sparkles className="w-4 h-4" />{v.ai.o}</span></Reveal>
-            <Title title={v.ai.t} intro={v.ai.x} center />
-            <Reveal className="mt-12">
-              <div className="relative mx-auto max-w-[560px] px-2 sm:px-10 py-10">
-                {v.ai.chips.map((c, i) => (
-                  <span key={c} className={`absolute rounded-full border border-[#A76CFF]/30 bg-[#161238]/80 px-3 py-1 text-[12px] text-[#CFC7E8] backdrop-blur ${['top-0 start-2 sm:start-0','top-0 end-2 sm:end-0','bottom-0 start-4 sm:start-6','bottom-0 end-4 sm:end-6'][i]}`}>{c}</span>
-                ))}
-                <div className="relative rounded-[24px] border border-[#A76CFF]/40 bg-gradient-to-b from-[#1A1442]/95 to-[#0E1030]/90 p-6 md:p-7 shadow-[0_0_60px_-10px_rgba(167,108,255,0.45)]">
-                  <div className="flex items-center gap-3">
-                    <span className="flex w-11 h-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><Sparkles className="w-5 h-5" /></span>
-                    <div>
-                      <p className="font-display text-[17px] font-semibold">{v.ai.badge}</p>
-                      <p className="text-[12.5px] text-[#B8B5C8]">{v.ai.role}</p>
-                    </div>
-                  </div>
-                  <div className="mt-5 space-y-2.5">
-                    {v.ai.ex.map((e) => (
-                      <div key={e} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[14px] text-[#E6E4F0]">
-                        <Sparkles className="w-3.5 h-3.5 text-[#C9A9FF] shrink-0" />{e}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal className="mt-6 mx-auto max-w-[680px] flex items-center justify-center gap-2 text-center text-[13.5px] text-[#B8B5C8]"><ShieldCheck className="w-4 h-4 text-[#7CC8FF] shrink-0" />{v.ai.note}</Reveal>
-          </div>
-        </section>
 
         {/* D1. CLIENTS & VENTES */}
         <section id="clients" className="relative py-20 md:py-28">
@@ -434,6 +401,15 @@ const Business = () => {
               <PilotDashboard lang={lang} rtl={rtl} />
             </Reveal>
           </div>
+        </section>
+
+        {/* L. SYN'IA — short text-only */}
+        <section id="synia" className="relative py-14 md:py-16 border-t border-white/5">
+          <Reveal className={`${container} max-w-[760px] text-center`}>
+            <p className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#C9A9FF]"><Sparkles className="w-3.5 h-3.5" />{v.ai.o}</p>
+            <h2 className="mt-3 font-display text-[22px] md:text-[28px] font-semibold leading-tight">{v.ai.t}</h2>
+            <p className="mt-4 text-[15px] md:text-[16px] leading-relaxed text-[#B8B5C8]">{v.ai.x}</p>
+          </Reveal>
         </section>
 
         {/* M. SECURITY */}
