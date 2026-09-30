@@ -163,9 +163,9 @@ const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users
           const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
           const spacer = i === 5 ? [<div key="sp" className="col-span-2 row-span-2" aria-hidden />] : [];
           return [...spacer, (
-            <div key={o} className="flex flex-col items-center text-center">
-              <span className="grid place-items-center w-14 h-14 rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md" style={{ boxShadow: `inset 0 1px 0 rgba(255,255,255,0.15), 0 0 20px -6px ${c}` }}>
-                <Icon className="w-6 h-6" style={{ color: c }} strokeWidth={1.8} />
+            <div key={o} className="flex flex-col items-center text-center" style={{ transform: `translateY(${({0: 18, 3: 18, 8: -18, 11: -18} as Record<number, number>)[i] ?? 0}px)` }}>
+              <span className="grid place-items-center w-[52px] h-[52px] rounded-[16px] border border-white/50 bg-gradient-to-br from-white/40 to-white/15 backdrop-blur-xl" style={{ boxShadow: `inset 0 1px 1px rgba(255,255,255,0.6), 0 8px 24px -8px rgba(0,0,0,0.5), 0 0 22px -8px ${c}` }}>
+                <Icon className="w-6 h-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" style={{ color: c, filter: "brightness(1.25) saturate(1.2)" }} strokeWidth={2} />
               </span>
               <p className="mt-1.5 text-[10.5px] font-medium leading-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">{o}</p>
             </div>
