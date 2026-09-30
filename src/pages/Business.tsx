@@ -10,6 +10,9 @@ import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
+import shopArgan from '@/assets/shop-argan.jpg';
+import shopRiad from '@/assets/shop-riad.jpg';
+import shopTextile from '@/assets/shop-textile.jpg';
 import liveImg from '@/assets/business-live-podcast-v2.jpg';
 
 const WHATSAPP_NUMBER = '212614615816';
@@ -407,7 +410,7 @@ const Business = () => {
                 <div className="mt-6 grid grid-cols-3 gap-2.5">
                   {c.shop.v.slice(0, 3).map((p, i) => (
                     <div key={p} className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
-                      <div className="h-14 rounded-lg" style={{ background: ['linear-gradient(135deg,#3E1856,#772F9F)', 'linear-gradient(135deg,#123456,#3FA9F5)', 'linear-gradient(135deg,#2A1F4E,#A76CFF)'][i] }} />
+                      <img src={[shopArgan, shopRiad, shopTextile][i]} alt={p} loading="lazy" width={944} height={704} className="h-20 w-full rounded-lg object-cover" />
                       <p className="mt-2 text-[12px] text-[#E6E4F0] leading-snug">{p}</p>
                     </div>
                   ))}
