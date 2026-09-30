@@ -10,7 +10,10 @@ import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
-import shopArgan from '@/assets/shop-argan.jpg';
+import prodOlive from '@/assets/prod-olive.jpg';
+import prodCeramic from '@/assets/prod-ceramic.jpg';
+import prodLeather from '@/assets/prod-leather.jpg';
+import prodCoffee from '@/assets/prod-coffee.jpg';
 import courseOnboarding from '@/assets/course-onboarding-v2.jpg';
 import courseCustomer from '@/assets/course-customer.jpg';
 import courseDigital from '@/assets/course-digital-v2.jpg';
@@ -420,17 +423,20 @@ const Business = () => {
                       </li>
                     ))}
                   </ol>
-                  <div className="relative w-[132px] md:w-[150px] rounded-[26px] p-[5px] bg-gradient-to-b from-[#C9C6D2] via-[#6E6B78] to-[#3A3844] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.7)]">
-                    <div className="relative rounded-[21px] overflow-hidden bg-[#F7F5FA] text-[#1B1830] h-[270px] md:h-[300px] flex flex-col">
+                  <div className="relative w-[150px] md:w-[170px] rounded-[26px] p-[5px] bg-gradient-to-b from-[#C9C6D2] via-[#6E6B78] to-[#3A3844] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.7)]">
+                    <div className="relative rounded-[21px] overflow-hidden bg-[#F7F5FA] text-[#1B1830] h-[300px] md:h-[330px] flex flex-col">
                       <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-12 h-3.5 rounded-full bg-black z-10" />
                       <div className="pt-7 px-3 pb-2 flex items-center justify-between">
                         <span className="text-[10px] font-bold">{c.shop.phone[0]}</span>
                         <ShoppingBag className="w-3.5 h-3.5" />
                       </div>
-                      <img src={shopArgan} alt="" loading="lazy" width={944} height={704} className="mx-2 h-[110px] md:h-[125px] w-[calc(100%-16px)] rounded-xl object-cover" />
-                      <div className="px-3 pt-2">
-                        <p className="text-[10.5px] font-semibold leading-tight">{c.shop.phone[1]}</p>
-                        <div className="mt-1 flex gap-0.5">{[0,1,2,3,4].map(k => <span key={k} className="w-1.5 h-1.5 rounded-full bg-[#F5B83D]" />)}</div>
+                      <div className="px-2 grid grid-cols-2 gap-1.5">
+                        {[prodOlive, prodCeramic, prodLeather, prodCoffee].map((img, k) => (
+                          <div key={k} className={`rounded-lg bg-white p-1 ${k === 0 ? 'ring-2 ring-[#772F9F]' : ''}`}>
+                            <img src={img} alt="" loading="lazy" width={816} height={816} className="w-full aspect-square rounded-md object-cover" />
+                            <p className="mt-1 text-[8.5px] font-semibold leading-tight truncate">{c.shop.phone[5 + k]}</p>
+                          </div>
+                        ))}
                       </div>
                       <div className="mt-auto px-2.5 pb-3 space-y-1.5">
                         <div className="rounded-lg bg-[#772F9F] text-white text-[10px] font-semibold text-center py-1.5">{c.shop.phone[2]}</div>
