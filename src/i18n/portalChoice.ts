@@ -31,7 +31,7 @@ export const portalChoice = {
     business: {
       name: 'Synapse Business',
       category: 'Pour les entreprises',
-      description: 'Pilotez vos équipes, projets, processus et activités dans un environnement de travail unifié.',
+      description: 'Centralisez vos équipes, votre travail et vos services dans un environnement professionnel unifié.',
       cta: 'Découvrir la plateforme',
       ctaShort: 'Découvrir',
       shortName: 'Business',
