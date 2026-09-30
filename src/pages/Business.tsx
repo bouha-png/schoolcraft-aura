@@ -396,7 +396,9 @@ const Business = () => {
       <header dir="ltr" className="absolute inset-x-0 top-0 z-30">
         <div className={`${container} h-24 md:h-28 flex items-center justify-between gap-4`}>
           <Link to="/" className="flex items-center gap-3 group">
-            <img src={scanditekLogo.url} alt="ScandiTek" className="w-16 h-16 md:w-20 md:h-20 object-contain" style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.55)) drop-shadow(0 0 14px rgba(0,0,0,0.35))' }} />
+            <span className="grid place-items-center rounded-2xl border border-white/15 bg-[#0B0B24]/70 backdrop-blur-md p-1.5 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.7)]">
+              <img src={scanditekLogo.url} alt="ScandiTek" className="w-14 h-14 md:w-[72px] md:h-[72px] object-contain" />
+            </span>
             <span className="text-[13px] md:text-sm font-semibold text-white group-hover:text-white transition-colors" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.55)' }}>← {c.back}</span>
           </Link>
           <LanguageSelector />
