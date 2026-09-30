@@ -31,7 +31,7 @@ export const portalChoice = {
     business: {
       name: 'Synapse Business',
       category: 'Pour les entreprises',
-      description: 'Pilotez vos équipes, projets, processus et activités dans un environnement de travail unifié.',
+      description: 'Centralisez vos équipes, votre travail et vos services dans un environnement professionnel unifié.',
       cta: 'Découvrir la plateforme',
       ctaShort: 'Découvrir',
       shortName: 'Business',
@@ -68,7 +68,7 @@ export const portalChoice = {
     business: {
       name: 'Synapse Business',
       category: 'For businesses',
-      description: 'Run your teams, projects, processes and activities in one unified work environment.',
+      description: 'Bring your teams, your work and your services together in one unified professional environment.',
       cta: 'Explore the platform',
       ctaShort: 'Explore',
       shortName: 'Business',
@@ -105,7 +105,7 @@ export const portalChoice = {
     business: {
       name: 'Synapse Business',
       category: 'For bedrifter',
-      description: 'Styr team, prosjekter, prosesser og aktiviteter i ett samlet arbeidsmiljø.',
+      description: 'Samle teamene, arbeidet og tjenestene i ett samlet profesjonelt miljø.',
       cta: 'Utforsk plattformen',
       ctaShort: 'Utforsk',
       shortName: 'Business',
@@ -142,7 +142,7 @@ export const portalChoice = {
     business: {
       name: 'سينابس للأعمال',
       category: 'للمقاولات',
-      description: 'أديروا فرقكم ومشاريعكم ومساطركم وأنشطتكم في بيئة عمل موحدة.',
+      description: 'اجمعوا فرقكم وعملكم وخدماتكم في بيئة مهنية موحدة.',
       cta: 'اكتشفوا المنصة',
       ctaShort: 'اكتشفوا',
       shortName: 'الأعمال',
