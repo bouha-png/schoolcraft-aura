@@ -91,7 +91,7 @@ const Bar = ({ w, tone = 'violet' }: { w: string; tone?: 'violet' | 'cyan' }) =>
 const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-0" />;
 
 const Hub = ({ children, badge }: { children: ReactNode; badge: ReactNode }) => (
-  <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#E2D4FF]/50 bg-gradient-to-br from-[#C9A9FF]/50 to-[#7CC8FF]/25 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_0_55px_-5px_rgba(167,108,255,0.75)]">
+  <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#E2D4FF]/60 bg-gradient-to-br from-[#C08AFF] via-[#8B4FE0] to-[#4F8DFF] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_0_60px_-5px_rgba(167,108,255,0.95)]">
     {children}
     <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-[#1A1442]/90 backdrop-blur text-[#7CC8FF] shadow-lg">{badge}</span>
   </span>
@@ -111,7 +111,7 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
       const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
       return (
         <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + (dense ? 39 : 36) * Math.cos(ang)}%`, top: `${50 + (dense ? 39 : 36) * Math.sin(ang)}%` }}>
-          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#E2D4FF]/45 bg-gradient-to-br from-[#C9A9FF]/45 to-[#7CC8FF]/20 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_28px_-12px_rgba(167,108,255,0.9)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
+          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#D9C2FF]/60 bg-gradient-to-br from-[#B57CFF]/85 via-[#8B4FE0]/75 to-[#5B8CFF]/70 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_-10px_rgba(167,108,255,1)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
           <p className={`mt-1.5 text-center ${dense ? "text-[9.5px] md:text-[11px]" : "text-[10.5px] md:text-[11.5px]"} leading-tight text-[#E6E4F0]`}>{o}</p>
         </div>
       );
