@@ -6,7 +6,7 @@ export type BusinessV2 = {
   grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
   team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string; value: string };
   work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string; value: string };
-  fin: Outcome & { orbit: string[]; center: string };
+  fin: Outcome & { body: string; orbit: string[]; center: string };
   flow: { o: string; t: string; a: string[]; b: string[] };
   ai: { o: string; t: string; x: string; orbit: string[]; sub: string };
   modular: { t: string; x: string; items: string[] };
@@ -47,7 +47,7 @@ const fr: BusinessV2 = {
   fin: {
     orbit: ['Factures', 'Notes de frais', 'Budgets', 'Coûts par projet', 'Validations', 'Paiements en ligne', 'Grand livre', 'Gestion des comptes', 'Audit', 'Reporting', 'Tableaux de bord'], center: 'Finance', o: 'Finance & Pilotage', t: 'Pilotez vos finances.',
     x: 'Les opérations financières au quotidien et une vue de direction consolidée.',
-    points: ['Factures et notes de frais', 'Budgets et coûts par projet', 'Circuits de validation', 'Tableaux de bord de direction'],
+    points: ['Factures et notes de frais', 'Budgets et coûts par projet', 'Circuits de validation', 'Tableaux de bord de direction'], body: 'Factures, notes de frais et paiements sont traités au même endroit. Chaque dépense suit son circuit de validation, les budgets et les coûts par projet se mettent à jour en temps réel, et la direction dispose de tableaux de bord clairs pour décider en toute confiance.',
   },
   flow: {
     o: 'Plateforme connectée', t: 'Une information saisie une fois, disponible là où elle est utile.',
@@ -107,7 +107,7 @@ const en: BusinessV2 = {
   fin: {
     orbit: ['Invoices', 'Expense claims', 'Budgets', 'Project costs', 'Approvals', 'Online payments', 'General ledger', 'Account management', 'Audit', 'Reporting', 'Dashboards'], center: 'Finance', o: 'Finance & Steering', t: 'Steer your finances.',
     x: 'Day-to-day financial operations and a consolidated management view.',
-    points: ['Invoices and expense claims', 'Budgets and project costs', 'Approval workflows', 'Management dashboards'],
+    points: ['Invoices and expense claims', 'Budgets and project costs', 'Approval workflows', 'Management dashboards'], body: 'Invoices, expense claims and payments are handled in one place. Every expense follows its approval workflow, budgets and project costs update in real time, and management gets clear dashboards to make decisions with confidence.',
   },
   flow: {
     o: 'Connected platform', t: 'Information entered once, available wherever it is useful.',
@@ -167,7 +167,7 @@ const no: BusinessV2 = {
   fin: {
     orbit: ['Fakturaer', 'Utlegg', 'Budsjetter', 'Prosjektkostnader', 'Godkjenninger', 'Nettbetaling', 'Hovedbok', 'Kontoforvaltning', 'Revisjon', 'Rapportering', 'Dashboards'], center: 'Økonomi', o: 'Økonomi & styring', t: 'Styr økonomien.',
     x: 'Daglig økonomidrift og en samlet ledervisning.',
-    points: ['Fakturaer og utlegg', 'Budsjetter og prosjektkostnader', 'Godkjenningsflyt', 'Ledelsesdashboards'],
+    points: ['Fakturaer og utlegg', 'Budsjetter og prosjektkostnader', 'Godkjenningsflyt', 'Ledelsesdashboards'], body: 'Fakturaer, utlegg og betalinger håndteres på ett sted. Hver utgift følger sin godkjenningsflyt, budsjetter og prosjektkostnader oppdateres i sanntid, og ledelsen får tydelige dashboards for å ta beslutninger med trygghet.',
   },
   flow: {
     o: 'Sammenkoblet plattform', t: 'Informasjon registreres én gang og er tilgjengelig der den trengs.',
@@ -227,7 +227,7 @@ const ar: BusinessV2 = {
   fin: {
     orbit: ['الفواتير', 'مذكرات المصاريف', 'الميزانيات', 'تكاليف المشاريع', 'الموافقات', 'الأداء الإلكتروني', 'دفتر الأستاذ العام', 'تدبير الحسابات', 'التدقيق', 'التقارير', 'لوحات القيادة'], center: 'المالية', o: 'المالية والقيادة', t: 'قودوا ماليتكم.',
     x: 'العمليات المالية اليومية ورؤية موحّدة للإدارة.',
-    points: ['الفواتير ومذكرات المصاريف', 'الميزانيات وتكاليف المشاريع', 'مسارات الموافقة', 'لوحات قيادة الإدارة'],
+    points: ['الفواتير ومذكرات المصاريف', 'الميزانيات وتكاليف المشاريع', 'مسارات الموافقة', 'لوحات قيادة الإدارة'], body: 'تُعالَج الفواتير ومذكرات المصاريف والمدفوعات في مكان واحد. تمرّ كل نفقة عبر مسار الموافقة الخاص بها، وتُحدَّث الميزانيات وتكاليف المشاريع في الوقت الفعلي، وتحصل الإدارة على لوحات قيادة واضحة لاتخاذ القرارات بثقة.',
   },
   flow: {
     o: 'منصة مترابطة', t: 'معلومة تُدخل مرة واحدة، ومتاحة حيث تكون مفيدة.',

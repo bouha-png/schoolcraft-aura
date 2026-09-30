@@ -458,7 +458,7 @@ const Business = () => {
         <section id="finance" className="relative pb-20 md:pb-28">
           <WideApps rtl={rtl} photo={financeWide} items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BookOpen, Landmark, SearchCheck, BarChart3, LayoutDashboard]}>
             <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
-            <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
+            <Reveal delay={100}><p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-relaxed text-[#C9C6D9]">{v.fin.body}</p></Reveal>
           </WideApps>
         </section>
 
