@@ -10,6 +10,7 @@ import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
+import liveImg from '@/assets/business-live-podcast-v2.jpg';
 
 const WHATSAPP_NUMBER = '212614615816';
 
@@ -423,8 +424,10 @@ const Business = () => {
                 <h3 className="mt-5 font-display text-[22px] font-semibold">{c.events.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.65] text-[#B8B5C8]">{c.events.text}</p>
                 <div className="mt-6 rounded-2xl overflow-hidden border border-white/10">
-                  <div className="relative h-40 bg-gradient-to-br from-[#1B1446] via-[#3E1856] to-[#123456] grid place-items-center">
-                    <PlayCircle className="w-12 h-12 text-white/80" strokeWidth={1.25} />
+                  <div className="relative h-48 md:h-56 grid place-items-center overflow-hidden">
+                    <img src={liveImg} alt="" loading="lazy" width={1376} height={768} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#07091D]/70 via-transparent to-transparent" />
+                    <PlayCircle className="relative w-12 h-12 text-white/85 drop-shadow-lg" strokeWidth={1.25} />
                     <span className="absolute top-3 start-3 inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#E5484D]"><span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />{c.events.v[0]}</span>
                   </div>
                   <div className="p-4 bg-white/[0.03] flex items-center justify-between gap-3">
