@@ -3,7 +3,7 @@ import collabTeam from "@/assets/collab-team-wide.jpg";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
-  ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, Video, Mail, MessageSquare, Cloud, Contact,
+  ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, FileSpreadsheet, Video, Mail, MessageSquare, Cloud, Contact,
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
@@ -204,6 +204,33 @@ const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
     <p className="mt-2.5 text-[11px] md:text-[12.5px] font-medium leading-tight text-white/90">{label}</p>
   </div>
 );
+const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: string }) => {
+  const [a, b] = GLASS_GRADS[i % GLASS_GRADS.length];
+  const stagger = i % 2 === 1 ? 'lg:translate-y-6' : '';
+  return (
+    <div className={`group ${stagger}`}>
+      <div
+        className="relative flex flex-col items-center gap-3 rounded-[26px] px-3 pt-5 pb-4 border border-[#CDB6FF]/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-[#D9C8FF]/60"
+        style={{
+          background: 'linear-gradient(160deg, rgba(120,70,200,0.28) 0%, rgba(52,22,96,0.42) 55%, rgba(22,12,52,0.6) 100%)',
+          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.22), inset 0 0 24px -8px rgba(167,108,255,0.45), 0 20px 40px -18px rgba(0,0,0,0.8), 0 0 34px -12px rgba(140,90,255,0.6)',
+        }}
+      >
+        <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" aria-hidden />
+        <span className="absolute inset-0 rounded-[26px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: `0 0 40px -6px ${b}AA` }} aria-hidden />
+        <span
+          className="relative grid place-items-center w-14 h-14 md:w-16 md:h-16 rounded-[18px] border border-white/25"
+          style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 26px -4px ${b}CC` }}
+        >
+          <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[16px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
+          <Icon className="relative w-7 h-7 md:w-8 md:h-8" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 8px ${b})` }} />
+        </span>
+        <p className="text-[12.5px] md:text-[13px] font-medium leading-tight text-white text-center">{label}</p>
+      </div>
+    </div>
+  );
+};
+
 const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean }) => (
   <div>
     <svg width="0" height="0" className="absolute" aria-hidden>
@@ -223,10 +250,11 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
         <div className="max-w-[560px]">{children}</div>
       </div>
     </div>
-    <div className="relative -mt-4 px-5">
-      <div className="absolute inset-x-10 top-4 h-40 bg-[#5E2580]/35 blur-3xl" aria-hidden />
-      <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-3 gap-y-7 md:gap-y-9 max-w-[980px] mx-auto">
-        {items.map((o, i) => <GlassTile key={o} Icon={icons[i]} i={i} label={o} />)}
+    <div className="relative -mt-6 px-5">
+      <div className="absolute inset-x-6 top-10 h-64 bg-[#5E2580]/30 blur-[90px]" aria-hidden />
+      <div className="absolute right-1/4 top-24 h-40 w-72 bg-[#2DD4C4]/10 blur-[80px]" aria-hidden />
+      <div className="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 max-w-[1100px] mx-auto">
+        {items.map((o, i) => <FloatTile key={o} Icon={icons[i]} i={i} label={o} />)}
       </div>
     </div>
   </div>
@@ -399,7 +427,7 @@ const Business = () => {
         {/* 2C. ORGANISEZ LE TRAVAIL */}
         <section id="collaboration" className="relative pb-20 md:pb-28">
           <div>
-            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}>
+            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, FileText, FileSpreadsheet, FolderKanban, ListChecks, Vote]}>
               <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
               <Reveal delay={100}><p className="mt-6 text-[15.5px] md:text-base leading-relaxed text-white/85">{v.work.value}</p></Reveal>
             </WideApps>

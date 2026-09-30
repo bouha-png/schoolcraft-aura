@@ -37,7 +37,7 @@ const fr: BusinessV2 = {
     life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Suivi', 'Mon portail'], emp: 'Employé',
   },
   work: {
-    orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Drive partagé', 'Suite bureautique', 'Gestion de projet', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail et la collaboration.',
+    orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Documents', 'Suite bureautique', 'Projets', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail et la collaboration.',
     x: 'Communication, documents et projets réunis dans un bureau virtuel structuré par équipe.',
     points: ['Messagerie, email, forum et calendrier', 'Réunions en ligne et co-édition', 'Stockage documentaire, versions et droits d’accès', 'Projets, tâches, jalons et validations'],
     value: 'Vos équipes gagnent du temps au quotidien : chacun retrouve immédiatement les bons échanges, documents et priorités, les décisions avancent plus vite et le travail se poursuit sans rupture, au bureau comme à distance.',
@@ -97,7 +97,7 @@ const en: BusinessV2 = {
     life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training', orbit: ['Payroll', 'Payslips', 'Time tracking', 'Attendance & absence', 'Leave', 'Training', 'Certificates', 'Follow-up', 'My portal'], emp: 'Employee',
   },
   work: {
-    orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Shared drive', 'Productivity suite', 'Project management', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise work and collaboration.',
+    orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Documents', 'Productivity suite', 'Projects', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise work and collaboration.',
     x: 'Communication, documents and projects in a virtual office structured by team.',
     points: ['Messaging, email, forum and calendar', 'Online meetings and co-editing', 'Document storage, versions and access rights', 'Projects, tasks, milestones and approvals'],
     value: 'Your teams save time every day: everyone finds the right conversations, documents and priorities instantly, decisions move faster and work continues seamlessly, in the office or remotely.',
@@ -157,7 +157,7 @@ const no: BusinessV2 = {
     life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Oppfølging', 'Min portal'], emp: 'Ansatt',
   },
   work: {
-    orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Delt disk', 'Kontorpakke', 'Prosjektstyring', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeid og samarbeid.',
+    orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Dokumenter', 'Kontorpakke', 'Prosjekter', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeid og samarbeid.',
     x: 'Kommunikasjon, dokumenter og prosjekter i et virtuelt kontor organisert per team.',
     points: ['Meldinger, e-post, forum og kalender', 'Nettmøter og samtidig redigering', 'Dokumentlagring, versjoner og tilgang', 'Prosjekter, oppgaver, milepæler og godkjenninger'],
     value: 'Teamene sparer tid hver dag: alle finner riktige samtaler, dokumenter og prioriteringer med en gang, beslutninger tas raskere og arbeidet flyter uten brudd, på kontoret eller eksternt.',
