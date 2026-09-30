@@ -1,4 +1,5 @@
 import collabPerson from "@/assets/collab-person.jpg";
+import collabTeam from "@/assets/collab-team-wide.jpg";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
@@ -203,7 +204,7 @@ const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
     <p className="mt-2.5 text-[11px] md:text-[12.5px] font-medium leading-tight text-white/90">{label}</p>
   </div>
 );
-const WideApps = ({ items, icons, photo }: { items: string[]; icons: typeof Users[]; photo: string }) => (
+const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean }) => (
   <div>
     <svg width="0" height="0" className="absolute" aria-hidden>
       <defs>
@@ -212,15 +213,17 @@ const WideApps = ({ items, icons, photo }: { items: string[]; icons: typeof User
         ))}
       </defs>
     </svg>
-    <div className="relative -mx-5 sm:mx-0 aspect-[4/3] md:aspect-[21/8] sm:rounded-3xl overflow-hidden border-y sm:border border-[#A76CFF]/25 shadow-[0_30px_80px_-30px_rgba(119,47,159,0.7)]">
-      <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[center_28%]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#2A0F45]/10 to-[#3E1856]/30" />
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden>
-        <path d="M -5 8 Q 40 -6 105 14" fill="none" stroke="#B98BFF" strokeOpacity="0.7" strokeWidth="0.25" style={{ filter: 'drop-shadow(0 0 1px #A76CFF)' }} />
-        <path d="M -5 36 Q 55 24 105 34" fill="none" stroke="#8FA8FF" strokeOpacity="0.5" strokeWidth="0.2" />
-      </svg>
+    <div className="relative overflow-hidden min-h-[640px] md:min-h-[620px] lg:min-h-[600px] flex items-end lg:items-center">
+      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={rtl ? { transform: 'scaleX(-1)' } : undefined} />
+      <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] via-[#07091D]/80 lg:via-[#07091D]/55 to-transparent hidden lg:block`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/75 to-transparent lg:hidden" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#07091D] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07091D] to-transparent" />
+      <div className="relative w-full mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-72 pb-16 lg:py-24">
+        <div className="max-w-[560px]">{children}</div>
+      </div>
     </div>
-    <div className="relative -mt-10 md:-mt-16 px-1">
+    <div className="relative -mt-4 px-5">
       <div className="absolute inset-x-10 top-4 h-40 bg-[#5E2580]/35 blur-3xl" aria-hidden />
       <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-3 gap-y-7 md:gap-y-9 max-w-[980px] mx-auto">
         {items.map((o, i) => <GlassTile key={o} Icon={icons[i]} i={i} label={o} />)}
@@ -394,15 +397,12 @@ const Business = () => {
         </section>
 
         {/* 2C. ORGANISEZ LE TRAVAIL */}
-        <section id="collaboration" className="relative py-20 md:py-28">
-          <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-10 md:mb-12">
+        <section id="collaboration" className="relative pb-20 md:pb-28">
+          <div>
+            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}>
               <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
               <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
-            </div>
-            <Reveal delay={150}>
-              <WideApps photo={collabPerson} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
-            </Reveal>
+            </WideApps>
           </div>
         </section>
 
