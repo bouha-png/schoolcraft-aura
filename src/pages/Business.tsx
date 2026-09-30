@@ -147,7 +147,7 @@ const AppGrid = ({ items, icons }: { items: string[]; icons: typeof Users[] }) =
               </span>
               <ChevronRight className="w-4 h-4 text-white/50 rtl:rotate-180 transition group-hover:text-white" />
             </div>
-            <p className="mt-3 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{o}</p>
+            <p className="mt-3 min-h-[2.5em] text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{o}</p>
             <span className="mt-2 block h-1 w-2/3 rounded-full" style={{ background: `linear-gradient(90deg, ${c}80, transparent)` }} />
           </div>
         );
