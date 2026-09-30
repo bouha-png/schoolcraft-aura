@@ -9,6 +9,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import PilotDashboard from '@/components/business/PilotDashboard';
+import SecuritySection from '@/components/business/SecuritySection';
+import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
 import prodOlive from '@/assets/prod-watch.jpg';
@@ -500,9 +502,11 @@ const Business = () => {
         <section className="relative py-20 md:py-28 bg-[#0A0C24]">
           <div className={container}>
             <Title overline={c.workspaces.overline} title={c.workspaces.title} intro={c.workspaces.text} center />
-            <Workspaces c={c.workspaces} />
+            <Workspaces c={c.workspaces} lang={lang} />
           </div>
         </section>
+
+        <SecuritySection lang={lang} />
 
         {/* EVERYTHING CONNECTS */}
         <section className="relative py-20 md:py-28 overflow-hidden">
@@ -591,8 +595,9 @@ const Business = () => {
   );
 };
 
-const Workspaces = ({ c }: { c: { names: string[]; inside: string[]; v: string[] } }) => {
+const Workspaces = ({ c, lang }: { c: { names: string[]; inside: string[]; v: string[] }; lang: string }) => {
   const [active, setActive] = useState(0);
+  const role = (WORKSPACE_ROLES[lang as keyof typeof WORKSPACE_ROLES] ?? WORKSPACE_ROLES.fr)[active];
   return (
     <Reveal className="mt-12">
       <div className="flex flex-wrap justify-center gap-2">
@@ -609,10 +614,10 @@ const Workspaces = ({ c }: { c: { names: string[]; inside: string[]; v: string[]
           </div>
         </div>
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          {c.inside.map((x) => <div key={x} className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-[13px] text-[#E6E4F0]">{x}</div>)}
+          {role.tiles.map((x) => <div key={x} className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-[13px] text-[#E6E4F0]">{x}</div>)}
         </div>
         <div className="mt-5 pt-4 border-t border-white/10 grid sm:grid-cols-3 gap-2">
-          {c.v.slice(1).map((a) => <p key={a} className="flex items-center gap-2 text-[12px] text-[#CFCDDC]"><Dot />{a}</p>)}
+          {role.activity.map((a) => <p key={a} className="flex items-center gap-2 text-[12px] text-[#CFCDDC]"><Dot />{a}</p>)}
         </div>
       </div>
     </Reveal>
