@@ -1,4 +1,5 @@
 import collabPerson from "@/assets/collab-person.jpg";
+import hrTalk from '@/assets/hr-talk-wide.jpg';
 import collabTeam from "@/assets/collab-team-wide.jpg";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
@@ -242,7 +243,7 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
     <div className="relative -mt-6 px-5">
       <div className="absolute inset-x-6 top-10 h-64 bg-[#5E2580]/30 blur-[90px]" aria-hidden />
       <div className="absolute right-1/4 top-24 h-40 w-72 bg-[#2DD4C4]/10 blur-[80px]" aria-hidden />
-      <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-2 gap-y-6 md:gap-y-8 max-w-[860px] mx-auto">
+      <div className="relative flex flex-wrap justify-center gap-y-6 md:gap-y-8 max-w-[860px] mx-auto [&>*]:basis-1/4 md:[&>*]:basis-1/6">
         {items.map((o, i) => <FloatTile key={o} Icon={icons[i]} i={i} label={o} />)}
       </div>
     </div>
@@ -394,23 +395,11 @@ const Business = () => {
         </section>
 
         {/* 2B. GÉREZ VOS ÉQUIPES */}
-        <section id="rh" className="relative py-20 md:py-28 overflow-hidden bg-[#0A0C24]">
-          <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <Reveal delay={150} className="order-2 lg:order-1">
-                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
-                  center={<Hub badge={<IdCard className="w-[18px] h-[18px]" strokeWidth={1.8} />}>
-                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16"><defs><linearGradient id="empg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FFFFFF" /><stop offset="1" stopColor="#E0FBF8" /></linearGradient></defs><circle cx="32" cy="22" r="11" fill="url(#empg)" /><path d="M10 56c0-12 10-19 22-19s22 7 22 19z" fill="url(#empg)" opacity="0.9" /><path d="M28 37l4 7 4-7" fill="#1FB5C9" /></svg>
-
-                  </Hub>}
-                  name={v.team.emp} sub={v.team.o} />
-              </Reveal>
-              <div className="order-1 lg:order-2">
-                <Title overline={v.team.o} title={v.team.t} intro={v.team.x} />
-                <Reveal delay={100}><Points items={v.team.points} /></Reveal>
-              </div>
-            </div>
-          </div>
+        <section id="rh" className="relative pb-20 md:pb-28">
+          <WideApps rtl={rtl} photo={hrTalk} items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}>
+            <Title overline={v.team.o} title={v.team.t} intro={v.team.x} />
+            <Reveal delay={100}><p className="mt-6 text-[15.5px] md:text-base leading-relaxed text-white/85">{v.team.value}</p></Reveal>
+          </WideApps>
         </section>
 
         {/* 2C. ORGANISEZ LE TRAVAIL */}

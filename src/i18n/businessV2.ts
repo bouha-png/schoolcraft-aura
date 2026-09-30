@@ -4,7 +4,7 @@ type Opt = { o: string; x: string };
 export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
   grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
-  team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string };
+  team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string; value: string };
   work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string; value: string };
   fin: Outcome & { orbit: string[]; center: string };
   flow: { o: string; t: string; a: string[]; b: string[] };
@@ -34,7 +34,7 @@ const fr: BusinessV2 = {
     o: 'Équipes & RH', t: 'Gérez vos équipes.',
     x: 'Le cycle collaborateur, du recrutement à la paie, et la montée en compétences.',
     points: ['Dossier salarié et contrats', 'Présence, congés et absences', 'RH & Paie : paie et bulletins', 'Intégration et formation'],
-    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Suivi', 'Mon portail'], emp: 'Employé',
+    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Suivi', 'Mon portail'], emp: 'Employé', value: 'Vos managers disposent d’une vision fiable de chaque collaborateur, du recrutement à la paie : moins de tâches administratives, des décisions RH plus sereines et davantage de temps consacré à l’accompagnement des équipes.',
   },
   work: {
     orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Documents', 'Suite bureautique', 'Projets', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail et la collaboration.',
@@ -94,7 +94,7 @@ const en: BusinessV2 = {
     o: 'Teams & HR', t: 'Manage your teams.',
     x: 'The employee lifecycle, from recruitment to payroll, and skills development.',
     points: ['Employee file and contracts', 'Attendance, leave and absence', 'HR & Payroll: payroll and payslips', 'Onboarding and training'],
-    life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training', orbit: ['Payroll', 'Payslips', 'Time tracking', 'Attendance & absence', 'Leave', 'Training', 'Certificates', 'Follow-up', 'My portal'], emp: 'Employee',
+    life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training', orbit: ['Payroll', 'Payslips', 'Time tracking', 'Attendance & absence', 'Leave', 'Training', 'Certificates', 'Follow-up', 'My portal'], emp: 'Employee', value: 'Your managers get a reliable view of every employee, from recruitment to payroll: less administration, more confident HR decisions and more time spent supporting their teams.',
   },
   work: {
     orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Documents', 'Productivity suite', 'Projects', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise work and collaboration.',
@@ -154,7 +154,7 @@ const no: BusinessV2 = {
     o: 'Team & HR', t: 'Led teamene.',
     x: 'Medarbeiderløpet fra rekruttering til lønn, og kompetanseutvikling.',
     points: ['Personalmappe og kontrakter', 'Tilstedeværelse, ferie og fravær', 'HR & lønn: lønn og lønnsslipper', 'Onboarding og opplæring'],
-    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Oppfølging', 'Min portal'], emp: 'Ansatt',
+    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Oppfølging', 'Min portal'], emp: 'Ansatt', value: 'Lederne får et pålitelig bilde av hver ansatt, fra rekruttering til lønn: mindre administrasjon, tryggere HR-beslutninger og mer tid til å følge opp teamene.',
   },
   work: {
     orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Dokumenter', 'Kontorpakke', 'Prosjekter', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeid og samarbeid.',
@@ -214,7 +214,7 @@ const ar: BusinessV2 = {
     o: 'الفرق والموارد البشرية', t: 'دبّروا فرقكم.',
     x: 'مسار الموظف من التوظيف إلى الأجور، وتطوير الكفاءات.',
     points: ['ملف الموظف والعقود', 'الحضور والعطل والغياب', 'الموارد البشرية والأجور: الأجور وأوراق الأجر', 'الإدماج والتكوين'],
-    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'المتابعة', 'بوابتي'], emp: 'موظف',
+    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'المتابعة', 'بوابتي'], emp: 'موظف', value: 'يحصل مديروكم على رؤية موثوقة لكل موظف، من التوظيف إلى الأجور: مهام إدارية أقل، وقرارات موارد بشرية أكثر ثقة، ووقت أكبر لمرافقة الفرق.',
   },
   work: {
     orbit: ['الدردشة', 'البريد', 'آخر المستجدات', 'المجموعات', 'فضاءات العمل', 'اجتماعات عبر الإنترنت', 'التخزين', 'مساحة مشتركة', 'أدوات مكتبية', 'تدبير المشاريع', 'المهام', 'استطلاعات'], team: 'فريقكم', teamSub: 'مكتب افتراضي', o: 'العمل والتعاون', t: 'نظّموا العمل والتعاون.',
