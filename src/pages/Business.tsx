@@ -209,10 +209,10 @@ const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
   return (
     <div className={`group flex flex-col items-center text-center ${i % 2 === 1 ? 'lg:translate-y-4' : ''}`}>
       <span
-        className="relative grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-[15px] md:rounded-[17px] border border-white/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/50"
+        className="relative grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-[12px] md:rounded-[14px] border border-white/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/50"
         style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 22px -4px ${b}CC, 0 10px 20px -10px rgba(0,0,0,0.7)` }}
       >
-        <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[14px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
+        <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[11px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
         <Icon className="relative w-6 h-6 md:w-7 md:h-7" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 6px ${b})` }} />
       </span>
       <p className="mt-2 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{label}</p>
