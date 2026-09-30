@@ -176,7 +176,7 @@ const Business = () => {
 
       <main dir={rtl ? 'rtl' : 'ltr'}>
         {/* 1. HERO */}
-        <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <section id="hero" className="relative md:min-h-[90vh] flex items-center pb-4 md:pb-0 overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImg} alt={c.hero.imgAlt} width={1376} height={768} className="w-full h-full object-cover" style={{ objectPosition: 'center right', transform: rtl ? 'scaleX(-1)' : undefined }} />
             <div className="absolute inset-0" style={{ background: `linear-gradient(${rtl ? 270 : 90}deg, rgba(7,9,29,0.97) 0%, rgba(7,9,29,0.82) 38%, rgba(7,9,29,0.45) 66%, rgba(7,9,29,0.2) 100%)` }} aria-hidden />
@@ -200,7 +200,7 @@ const Business = () => {
         </section>
 
         {/* 2A. DÉVELOPPEZ VOTRE ACTIVITÉ */}
-        <section id="clients" className="relative py-20 md:py-28">
+        <section id="clients" className="relative pt-10 pb-20 md:py-28">
           <div className={container}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
