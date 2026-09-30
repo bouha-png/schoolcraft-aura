@@ -8,6 +8,7 @@ import {
 import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
+import PilotDashboard from '@/components/business/PilotDashboard';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
 import prodOlive from '@/assets/prod-olive.jpg';
