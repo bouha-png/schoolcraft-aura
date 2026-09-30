@@ -132,6 +132,30 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
   );
 };
 
+const APP_TINTS = ['#A78BFA', '#818CF8', '#C084FC', '#38BDF8', '#60A5FA', '#22D3EE', '#2DD4BF', '#FB923C', '#E879F9', '#6366F1', '#34D399', '#F472B6'];
+const AppGrid = ({ items, icons }: { items: string[]; icons: typeof Users[] }) => (
+  <div className="relative">
+    <div className="absolute -inset-10 rounded-full bg-[#5E2580]/30 blur-3xl" aria-hidden />
+    <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-2.5 md:gap-3.5">
+      {items.map((o, i) => {
+        const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
+        return (
+          <div key={o} className="group relative rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md p-3 md:p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_12px_30px_-14px_rgba(0,0,0,0.8)] transition hover:-translate-y-0.5 hover:border-[#A76CFF]/60 hover:bg-white/[0.09]">
+            <div className="flex items-start justify-between">
+              <span className="grid place-items-center w-10 h-10 md:w-11 md:h-11 rounded-xl" style={{ background: `linear-gradient(145deg, ${c}40, ${c}14)`, boxShadow: `0 0 18px -4px ${c}90` }}>
+                <Icon className="w-5 h-5 md:w-6 md:h-6" style={{ color: c }} strokeWidth={1.8} />
+              </span>
+              <ChevronRight className="w-4 h-4 text-white/50 rtl:rotate-180 transition group-hover:text-white" />
+            </div>
+            <p className="mt-3 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{o}</p>
+            <span className="mt-2 block h-1 w-2/3 rounded-full" style={{ background: `linear-gradient(90deg, ${c}80, transparent)` }} />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
 const Business = () => {
   const { lang } = useLanguage();
   const c = business[lang as keyof typeof business] ?? business.fr;
@@ -258,9 +282,7 @@ const Business = () => {
                 <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
               </div>
               <Reveal delay={150}>
-                <Orbit dense items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}
-                  center={<Hub badge={<Video className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Users className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
-                  name={v.work.team} sub={v.work.teamSub} />
+                <AppGrid items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
               </Reveal>
             </div>
           </div>
