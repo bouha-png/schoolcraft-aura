@@ -428,13 +428,6 @@ const Business = () => {
           </WideApps>
         </section>
 
-        {/* 2A2. EVENTS & LIVE */}
-        <section id="live" className="relative pb-20 md:pb-28">
-          <WideApps rtl={rtl} photo={liveImg} items={lv.items} icons={[MonitorPlay, Mic, Radio, CalendarDays, ClipboardCheck, PlayCircle]}>
-            <Title overline={lv.o} title={lv.t} intro={lv.x} />
-          </WideApps>
-        </section>
-
         {/* 2B. GÉREZ VOS ÉQUIPES */}
         <section id="rh" className="relative pb-20 md:pb-28">
           <WideApps rtl={rtl} photo={hrTalk} items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}>
@@ -458,6 +451,13 @@ const Business = () => {
           <WideApps rtl={rtl} photo={financeWide} items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BookOpen, Landmark, SearchCheck, BarChart3, LayoutDashboard]}>
             <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
             <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
+          </WideApps>
+        </section>
+
+        {/* 2A2. EVENTS & LIVE */}
+        <section id="live" className="relative pb-20 md:pb-28">
+          <WideApps rtl={rtl} photo={liveImg} items={lv.items} icons={[MonitorPlay, Mic, Radio, CalendarDays, ClipboardCheck, PlayCircle]}>
+            <Title overline={lv.o} title={lv.t} intro={lv.x} />
           </WideApps>
         </section>
 
