@@ -11,6 +11,7 @@ export type BusinessV2 = {
   ai: { o: string; t: string; x: string };
   modular: { t: string; x: string; items: string[] };
   trust: { o: string; t: string; items: [string, string][] };
+  partner: { o: string; t: string; x: string; steps: string[] };
   final: { t: string; cta: string };
 };
 
@@ -69,6 +70,7 @@ const fr: BusinessV2 = {
       ['Accompagnement', 'Paramétrage et prise en main avec l’équipe ScandiTek.'],
     ],
   },
+  partner: { o: 'ScandiTek', t: 'Votre partenaire de transformation.', x: 'Nous partons de vos besoins et de vos ambitions pour vous accompagner à chaque étape, à votre rythme et dans la direction que vous choisissez.', steps: ['Écoute et diagnostic', 'Déploiement sur mesure', 'Accompagnement dans la durée'] },
   final: { t: 'Découvrez comment Synapse Business peut s’adapter à votre organisation.', cta: 'Demander une démo' },
 };
 
@@ -127,6 +129,7 @@ const en: BusinessV2 = {
       ['Guidance', 'Configuration and onboarding with the ScandiTek team.'],
     ],
   },
+  partner: { o: 'ScandiTek', t: 'Your transformation partner.', x: 'We start from your needs and ambitions and support you at every step, at your pace and in the direction you choose.', steps: ['Listening and assessment', 'Tailored deployment', 'Long-term support'] },
   final: { t: 'See how Synapse Business can adapt to your organisation.', cta: 'Request a demo' },
 };
 
@@ -185,6 +188,7 @@ const no: BusinessV2 = {
       ['Oppfølging', 'Oppsett og opplæring sammen med ScandiTek-teamet.'],
     ],
   },
+  partner: { o: 'ScandiTek', t: 'Deres transformasjonspartner.', x: 'Vi tar utgangspunkt i deres behov og ambisjoner, og følger dere gjennom hvert steg – i deres tempo og i den retningen dere velger.', steps: ['Kartlegging og behov', 'Skreddersydd innføring', 'Oppfølging over tid'] },
   final: { t: 'Se hvordan Synapse Business kan tilpasses deres organisasjon.', cta: 'Be om en demo' },
 };
 
@@ -243,6 +247,7 @@ const ar: BusinessV2 = {
       ['مواكبة', 'إعداد وتملّك المنصة مع فريق ScandiTek.'],
     ],
   },
+  partner: { o: 'ScandiTek', t: 'شريككم في التحول.', x: 'ننطلق من احتياجاتكم وطموحاتكم لنرافقكم في كل مرحلة، وفق وتيرتكم وفي الاتجاه الذي تختارونه.', steps: ['الإصغاء والتشخيص', 'نشر مُكيَّف حسب الحاجة', 'مرافقة على المدى الطويل'] },
   final: { t: 'اكتشفوا كيف يمكن أن تتكيف Synapse Business مع مؤسستكم.', cta: 'اطلب عرضًا توضيحيًا' },
 };
 
