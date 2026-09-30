@@ -91,6 +91,28 @@ const Bar = ({ w, tone = 'violet' }: { w: string; tone?: 'violet' | 'cyan' }) =>
 
 const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-0" />;
 
+const Orbit = ({ items, icons, center, name, sub }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string }) => (
+  <div className="relative mx-auto aspect-square w-full max-w-[460px]">
+    <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
+    <div className="absolute inset-[30%] rounded-full bg-[#772F9F]/20 blur-2xl" aria-hidden />
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center">
+      {center}
+      <p className="mt-3 text-[14px] font-semibold">{name}</p>
+      <p className="text-[11.5px] text-[#B8B5C8]">{sub}</p>
+    </div>
+    {items.map((o, i) => {
+      const Icon = icons[i];
+      const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
+      return (
+        <div key={o} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[84px] md:w-[96px]" style={{ left: `${50 + 36 * Math.cos(ang)}%`, top: `${50 + 36 * Math.sin(ang)}%` }}>
+          <span className="grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]" style={iconBg}><Icon className="w-5 h-5" strokeWidth={1.75} /></span>
+          <p className="mt-1.5 text-center text-[10.5px] md:text-[11.5px] leading-tight text-[#E6E4F0]">{o}</p>
+        </div>
+      );
+    })}
+  </div>
+);
+
 const Business = () => {
   const { lang } = useLanguage();
   const c = business[lang as keyof typeof business] ?? business.fr;
@@ -179,12 +201,10 @@ const Business = () => {
                 <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
                 <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
               </div>
-              <Reveal delay={150} className="relative space-y-3">
-                <ClientCard v={crm.v} rtl={rtl} />
-                <div className="rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.06] p-4">
-                  <p className="flex items-center gap-2 text-[13px] font-semibold"><CalendarCheck className="w-4 h-4 text-[#7CC8FF]" />{v.grow.booking}</p>
-                  <div className="mt-3"><Chain steps={v.grow.chain} rtl={rtl} tone="cyan" /></div>
-                </div>
+              <Reveal delay={150}>
+                <Orbit items={v.grow.orbit} icons={[Users, TrendingUp, BarChart3, FileText, Mail, CalendarCheck, History, ShoppingBag]}
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><svg viewBox="0 0 40 28" className="w-14"><path d="M2 26 L14 8 L22 18 L28 10 L38 26 Z" fill="#1F5F5B" /><path d="M14 8 L22 18 L28 10 L32 16" stroke="#E0A93B" strokeWidth="3" fill="none" /></svg></span>}
+                  name={v.grow.client} sub={v.grow.tag} />
               </Reveal>
             </div>
             <Reveal delay={100} className="mt-10">
@@ -206,28 +226,9 @@ const Business = () => {
           <div className={container}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
-                <div className="relative mx-auto aspect-square w-full max-w-[460px]">
-                  <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
-                  <div className="absolute inset-[30%] rounded-full bg-[#772F9F]/20 blur-2xl" aria-hidden />
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <div className="relative">
-                      <img src={avatarSalma} alt="" className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]" />
-                    </div>
-                    <p className="mt-3 text-[14px] font-semibold">{teams.v[5]}</p>
-                    <p className="text-[11.5px] text-[#B8B5C8]">{v.team.emp}</p>
-                  </div>
-                  {v.team.orbit.map((o, i) => {
-                    const Icon = [Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp][i];
-                    const ang = (i / v.team.orbit.length) * 2 * Math.PI - Math.PI / 2;
-                    const x = 50 + 36 * Math.cos(ang), y = 50 + 36 * Math.sin(ang);
-                    return (
-                      <div key={o} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[84px] md:w-[96px]" style={{ left: `${x}%`, top: `${y}%` }}>
-                        <span className="grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]" style={iconBg}><Icon className="w-5 h-5" strokeWidth={1.75} /></span>
-                        <p className="mt-1.5 text-center text-[10.5px] md:text-[11.5px] leading-tight text-[#E6E4F0]">{o}</p>
-                      </div>
-                    );
-                  })}
-                </div>
+                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp]}
+                  center={<img src={avatarSalma} alt="" className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]" />}
+                  name={teams.v[5]} sub={v.team.emp} />
               </Reveal>
               <div className="order-1 lg:order-2">
                 <Title overline={v.team.o} title={v.team.t} intro={v.team.x} />

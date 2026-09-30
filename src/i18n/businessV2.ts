@@ -3,7 +3,7 @@ type Outcome = { o: string; t: string; x: string; points: string[] };
 type Opt = { o: string; x: string };
 export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
-  grow: Outcome & { booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
+  grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
   team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string };
   work: Outcome & { store: string[]; cue: string };
   fin: Outcome;
@@ -21,7 +21,7 @@ const fr: BusinessV2 = {
     ai: 'Avec Syn’IA, votre assistant intégré.', cta2: 'Découvrir la plateforme',
   },
   grow: {
-    o: 'Clients & Ventes', t: 'Développez votre activité.',
+    orbit: ['Contacts', 'Opportunités', 'Pipeline', 'Devis', 'Relances', 'Rendez-vous', 'Historique', 'Commandes'], client: 'Atlas Distribution', tag: 'Client', o: 'Clients & Ventes', t: 'Développez votre activité.',
     x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
     points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
@@ -79,7 +79,7 @@ const en: BusinessV2 = {
     ai: 'With Syn’IA, your built-in assistant.', cta2: 'Explore the platform',
   },
   grow: {
-    o: 'Customers & Sales', t: 'Grow your business.',
+    orbit: ['Contacts', 'Opportunities', 'Pipeline', 'Quotes', 'Follow-ups', 'Appointments', 'History', 'Orders'], client: 'Atlas Distribution', tag: 'Customer', o: 'Customers & Sales', t: 'Grow your business.',
     x: 'Acquisition, conversion and customer follow-up, shared across the sales team.',
     points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
     booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
@@ -137,7 +137,7 @@ const no: BusinessV2 = {
     ai: 'Med Syn’IA, din innebygde assistent.', cta2: 'Utforsk plattformen',
   },
   grow: {
-    o: 'Kunder & salg', t: 'Utvikle virksomheten.',
+    orbit: ['Kontakter', 'Muligheter', 'Pipeline', 'Tilbud', 'Oppfølging', 'Avtaler', 'Historikk', 'Ordrer'], client: 'Atlas Distribution', tag: 'Kunde', o: 'Kunder & salg', t: 'Utvikle virksomheten.',
     x: 'Kundeanskaffelse, konvertering og oppfølging, delt i hele salgsteamet.',
     points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'],
     booking: 'Timebestilling', chain: ['Nettbestilling', 'Kalender', 'Kundekort'],
@@ -195,7 +195,7 @@ const ar: BusinessV2 = {
     ai: 'مع Syn’IA، مساعدكم المدمج.', cta2: 'اكتشفوا المنصة',
   },
   grow: {
-    o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
+    orbit: ['جهات الاتصال', 'الفرص', 'مسار المبيعات', 'عروض الأسعار', 'المتابعات', 'المواعيد', 'السجل', 'الطلبات'], client: 'Atlas Distribution', tag: 'عميل', o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
     x: 'الاستقطاب والتحويل ومتابعة العملاء، مشتركة داخل فريق المبيعات.',
     points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'],
     booking: 'حجز المواعيد', chain: ['حجز إلكتروني', 'الأجندة', 'بطاقة العميل'],
