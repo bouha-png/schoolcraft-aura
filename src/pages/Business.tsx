@@ -213,7 +213,7 @@ const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
     const el = ref.current;
     if (!el) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setOn(true); return; }
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) setOn(true); else if (e.boundingClientRect.top > 0) setOn(false); }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
     io.observe(el);
     return () => io.disconnect();
   }, []);
