@@ -283,7 +283,13 @@ const Business = () => {
                   <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
                   <div><p className="text-[15px] font-semibold">{teams.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{teams.v[6]}</p></div>
                 </div>
-                <div className="mt-6"><Chain steps={teams.v.slice(0, 5)} rtl={rtl} />
+                <div className="mt-6"><Chain steps={teams.v.slice(0, 5)} rtl={rtl} /></div>
+                <div className="mt-6 rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.07] p-4 flex items-center gap-3">
+                  <Banknote className="w-5 h-5 text-[#7CC8FF]" />
+                  <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="90%" tone="cyan" /></div></div>
+                </div>
+              </div>
+            } />
 
             <Universe flip u={finance} visual={
               <div className={`${panel} p-6`}>
@@ -293,8 +299,8 @@ const Business = () => {
                 </div>
                 <div className="mt-6"><Chain steps={finance.v.slice(0, 5)} rtl={rtl} /></div>
                 <div className="mt-6 rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.07] p-4 flex items-center gap-3">
-                  <Banknote className="w-5 h-5 text-[#7CC8FF]" />
-                  <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="60%" tone="cyan" /></div></div>
+                  <Wallet className="w-5 h-5 text-[#7CC8FF]" />
+                  <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{finance.v[7]}</p><div className="mt-2"><Bar w="68%" tone="cyan" /></div></div>
                 </div>
               </div>
             } />
