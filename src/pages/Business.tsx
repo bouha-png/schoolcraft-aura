@@ -3,8 +3,11 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, Video, Mail, MessageSquare, Cloud, Contact,
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
-  PlayCircle, Calendar, ChevronRight,
+  PlayCircle, Calendar, ChevronRight, History, MessagesSquare, FileCheck2, Eye,
 } from 'lucide-react';
+import avatarSalma from '@/assets/avatar-salma.jpg';
+import avatarYoussef from '@/assets/avatar-youssef.jpg';
+import avatarKarim from '@/assets/avatar-karim.jpg';
 import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
