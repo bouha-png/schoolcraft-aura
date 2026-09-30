@@ -410,7 +410,7 @@ const Business = () => {
         </section>
 
         {/* I. FINANCE + MANAGEMENT */}
-        <section id="finance" className="relative py-20 md:py-28 bg-[#0A0C24]">
+        <section id="finance" className="relative py-20 md:py-28">
           <div className={container}>
             <Title overline={v.finance.o} title={v.finance.t} intro={v.finance.x} center />
             <Reveal delay={80} className="mt-8 mx-auto max-w-[900px] grid sm:grid-cols-2 gap-4">
