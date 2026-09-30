@@ -11,6 +11,7 @@ import LanguageSelector from '@/components/portal/LanguageSelector';
 import ClientCard from '@/components/business/ClientCard';
 import PilotDashboard from '@/components/business/PilotDashboard';
 import SecuritySection from '@/components/business/SecuritySection';
+import HrPayrollSection from '@/components/business/HrPayrollSection';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
@@ -442,6 +443,8 @@ const Business = () => {
             </div>
           </div>
         </section>
+
+        <HrPayrollSection lang={lang} />
 
         {/* TRAINING */}
         <section className="relative py-20 md:py-28">
