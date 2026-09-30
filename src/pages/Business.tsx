@@ -93,7 +93,7 @@ const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-
 const Hub = ({ children, badge }: { children: ReactNode; badge: ReactNode }) => (
   <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#A5F3EC]/60 bg-gradient-to-br from-[#2DD4C4] via-[#1FB5C9] to-[#7B5CF0] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_0_60px_-5px_rgba(45,212,196,0.8)]">
     {children}
-    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-gradient-to-br from-[#8B4FE0] to-[#5B3FC8] text-white shadow-lg">{badge}</span>
+    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#A76CFF]/50 bg-gradient-to-br from-[#3E1856] via-[#5E2580] to-[#772F9F] text-white shadow-lg">{badge}</span>
   </span>
 );
 
