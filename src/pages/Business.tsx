@@ -329,7 +329,7 @@ const Business = () => {
                       </div>
                       <div className="mx-4 mt-2.5 h-1 rounded-full bg-[#E9E7F2] overflow-hidden"><div className="h-full w-2/3 rounded-full bg-[#772F9F]" /></div>
 
-                      <div className="flex-1 overflow-hidden px-4 pt-3 space-y-3">
+                      <div className="flex-1 overflow-hidden px-4 pt-3 space-y-2.5">
                         {/* services */}
                         <div className="space-y-1.5">
                           {c.booking.app.services.map((s, i) => (
@@ -375,11 +375,11 @@ const Business = () => {
                       </div>
 
                       {/* bottom sheet */}
-                      <div className="mt-2 rounded-t-[22px] bg-white px-4 pt-3 pb-6 shadow-[0_-10px_24px_-16px_rgba(20,20,43,0.35)]">
+                      <div className="rounded-t-[22px] bg-white px-4 pt-3 pb-6 shadow-[0_-10px_24px_-16px_rgba(20,20,43,0.35)]">
                         <div className="flex items-center gap-2 text-[11px]">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#1F8A55] shrink-0" />
                           <span className="font-semibold truncate">{c.booking.app.summary}</span>
-                          <span className="ms-auto text-[#8D89A0] shrink-0">45 min</span>
+                          <span className="ms-auto text-[#8D89A0] shrink-0">{c.booking.app.services[0].d.split('·')[0].trim()}</span>
                         </div>
                         <div className="mt-2.5 rounded-2xl text-white text-center text-[13px] font-semibold py-2.5" style={{ background: 'linear-gradient(135deg,#5E2580,#772F9F)' }}>{c.booking.v[3]}</div>
                       </div>
