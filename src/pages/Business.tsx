@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -310,13 +310,20 @@ const Business = () => {
           </div>
         </section>
 
-        {/* 4. SYN'IA — text only */}
-        <section id="synia" className="relative py-14 md:py-16 border-t border-white/5">
-          <Reveal className={`${container} max-w-[760px] text-center`}>
-            <p className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-[#C9A9FF]"><Sparkles className="w-3.5 h-3.5" />{v.ai.o}</p>
-            <h2 className="mt-3 font-display text-[22px] md:text-[28px] font-semibold leading-tight">{v.ai.t}</h2>
-            <p className="mt-4 text-[15px] md:text-[16px] leading-relaxed text-[#B8B5C8]">{v.ai.x}</p>
-          </Reveal>
+        {/* 4. SYN'IA */}
+        <section id="synia" className="relative py-20 md:py-28 border-t border-white/5 overflow-hidden">
+          <div className={container}>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <Title overline={v.ai.o} title={v.ai.t} intro={v.ai.x} />
+              </div>
+              <Reveal delay={150}>
+                <Orbit items={v.ai.orbit} icons={[ClipboardCheck, PenLine, Rss, Languages, MessageSquareReply, BarChart3, Database, Mic]}
+                  center={<Hub badge={<Bot className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Sparkles className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
+                  name="Syn’IA" sub={v.ai.sub} />
+              </Reveal>
+            </div>
+          </div>
         </section>
 
         {/* 5. MODULARITY */}

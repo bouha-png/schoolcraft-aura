@@ -8,7 +8,7 @@ export type BusinessV2 = {
   work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string };
   fin: Outcome & { orbit: string[]; center: string };
   flow: { o: string; t: string; a: string[]; b: string[] };
-  ai: { o: string; t: string; x: string };
+  ai: { o: string; t: string; x: string; orbit: string[]; sub: string };
   modular: { t: string; x: string; items: string[] };
   trust: { o: string; t: string; items: [string, string][] };
   partner: { o: string; t: string; x: string; steps: string[] };
@@ -54,7 +54,7 @@ const fr: BusinessV2 = {
     b: ['Collaborateur', 'Contrat', 'Présence', 'Paie', 'Reporting'],
   },
   ai: {
-    o: 'Syn’IA', t: 'Une assistance intégrée à votre environnement de travail.',
+    o: 'Syn’IA', t: 'Votre assistant IA personnel, intégré à la plateforme.', sub: 'Assistant IA personnel', orbit: ['PV automatiques', 'Rédaction de textes', 'Publications du fil', 'Traduction dans le chat', 'Suggestions de réponse', 'Rapports', 'Données à la demande', 'Échange vocal ou écrit'],
     x: 'Syn’IA accompagne vos équipes dans leur travail quotidien. Intégrée aux différents espaces de Synapse Business, elle intervient lorsque cela apporte une valeur réelle : retrouver une information, préparer ou reformuler un contenu, résumer certains échanges ou simplifier des tâches récurrentes. Elle s’appuie sur les informations auxquelles chaque utilisateur a accès et respecte les droits définis dans l’organisation.',
   },
   modular: {
@@ -113,7 +113,7 @@ const en: BusinessV2 = {
     b: ['Employee', 'Contract', 'Attendance', 'Payroll', 'Reporting'],
   },
   ai: {
-    o: 'Syn’IA', t: 'Assistance built into your working environment.',
+    o: 'Syn’IA', t: 'Your personal AI assistant, built into the platform.', sub: 'Personal AI assistant', orbit: ['Automatic minutes', 'Text drafting', 'Feed posts', 'Chat translation', 'Reply suggestions', 'Reports', 'Data on demand', 'Voice or text'],
     x: 'Syn’IA supports your teams in their daily work. Integrated across the areas of Synapse Business, it steps in when it adds real value: finding information, preparing or rephrasing content, summarising certain exchanges or simplifying recurring tasks. It relies on the information each user has access to and respects the rights defined in the organisation.',
   },
   modular: {
@@ -172,7 +172,7 @@ const no: BusinessV2 = {
     b: ['Medarbeider', 'Kontrakt', 'Tilstedeværelse', 'Lønn', 'Rapportering'],
   },
   ai: {
-    o: 'Syn’IA', t: 'Assistanse innebygd i arbeidsmiljøet ditt.',
+    o: 'Syn’IA', t: 'Din personlige AI-assistent, innebygd i plattformen.', sub: 'Personlig AI-assistent', orbit: ['Automatiske referater', 'Tekstskriving', 'Innlegg i feeden', 'Oversettelse i chat', 'Svarforslag', 'Rapporter', 'Data på forespørsel', 'Tale eller tekst'],
     x: 'Syn’IA støtter teamene i det daglige arbeidet. Integrert i de ulike delene av Synapse Business bidrar den når det gir reell verdi: å finne informasjon, forberede eller omformulere innhold, oppsummere enkelte samtaler eller forenkle gjentakende oppgaver. Den bygger på informasjonen hver bruker har tilgang til og respekterer rettighetene som er definert i organisasjonen.',
   },
   modular: {
@@ -231,7 +231,7 @@ const ar: BusinessV2 = {
     b: ['الموظف', 'العقد', 'الحضور', 'الأجور', 'التقارير'],
   },
   ai: {
-    o: 'Syn’IA', t: 'مساعدة مدمجة في بيئة عملكم.',
+    o: 'Syn’IA', t: 'مساعدكم الشخصي بالذكاء الاصطناعي، مدمج في المنصة.', sub: 'مساعد ذكاء اصطناعي شخصي', orbit: ['محاضر تلقائية', 'صياغة النصوص', 'منشورات الموجز', 'الترجمة في الدردشة', 'اقتراحات الردود', 'التقارير', 'بيانات عند الطلب', 'بالصوت أو الكتابة'],
     x: 'ترافق Syn’IA فرقكم في عملها اليومي. ومدمجة في مختلف فضاءات Synapse Business، تتدخل حين تضيف قيمة حقيقية: العثور على معلومة، أو إعداد محتوى أو إعادة صياغته، أو تلخيص بعض المبادلات، أو تبسيط المهام المتكررة. تعتمد على المعلومات المتاحة لكل مستخدم وتحترم الصلاحيات المحددة داخل المؤسسة.',
   },
   modular: {
