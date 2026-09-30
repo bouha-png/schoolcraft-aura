@@ -6,7 +6,7 @@ export interface BusinessCopy {
   hero: { label: string; title1: string; title2: string; subtitle: string; cta: string; cta2: string; imgAlt: string; nodes: string[]; hub: string };
   problem: { title: string; tools: string[]; result: string; text: string };
   universes: Universe[];
-  booking: { overline: string; title: string; text: string; steps: string[]; v: string[] };
+  booking: { overline: string; title: string; text: string; steps: string[]; v: string[]; app: { company: string; step: string; service: string; services: { n: string; d: string }[]; month: string; days: string[]; morning: string; afternoon: string; with: string; role: string; summary: string } };
   sell: { overline: string; title: string; text: string; tags: string[] };
   shop: { title: string; text: string; steps: string[]; v: string[] };
   events: { title: string; text: string; tags: string[]; v: string[] };
@@ -83,6 +83,7 @@ const fr: BusinessCopy = {
     text: 'Proposez des créneaux de rendez-vous en ligne et retrouvez automatiquement les réservations dans votre environnement de travail.',
     steps: ['Client', 'Service', 'Date', 'Heure', 'Confirmation', 'Calendrier & CRM'],
     v: ['Prendre rendez-vous', 'Consultation conseil', 'Mardi', 'Confirmer', 'Rendez-vous confirmé', 'Ajouté au calendrier de l’équipe'],
+    app: { company: 'Atlas Conseil', step: 'Étape 2 sur 3', service: 'Service', services: [{ n: 'Consultation conseil', d: '45 min · En agence' }, { n: 'Rendez-vous en visio', d: '30 min · En ligne' }], month: 'Septembre 2026', days: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven'], morning: 'Matin', afternoon: 'Après-midi', with: 'Avec', role: 'Conseillère', summary: 'Mar. 15 sept. · 10:30' },
   },
   sell: {
     overline: 'Vendre & proposer des services',
@@ -220,6 +221,7 @@ const en: BusinessCopy = {
     text: 'Offer online appointment slots and find bookings automatically in your work environment.',
     steps: ['Customer', 'Service', 'Date', 'Time', 'Confirmation', 'Calendar & CRM'],
     v: ['Book an appointment', 'Advisory session', 'Tuesday', 'Confirm', 'Appointment confirmed', 'Added to the team calendar'],
+    app: { company: 'Atlas Advisory', step: 'Step 2 of 3', service: 'Service', services: [{ n: 'Advisory session', d: '45 min · In office' }, { n: 'Video meeting', d: '30 min · Online' }], month: 'September 2026', days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], morning: 'Morning', afternoon: 'Afternoon', with: 'With', role: 'Advisor', summary: 'Tue 15 Sep · 10:30' },
   },
   sell: {
     overline: 'Sell & offer services',
@@ -357,6 +359,7 @@ const no: BusinessCopy = {
     text: 'Tilby ledige tider på nett, og finn bookingene automatisk igjen i arbeidsmiljøet.',
     steps: ['Kunde', 'Tjeneste', 'Dato', 'Tid', 'Bekreftelse', 'Kalender & CRM'],
     v: ['Bestill time', 'Rådgivningsmøte', 'Tirsdag', 'Bekreft', 'Timen er bekreftet', 'Lagt til i teamets kalender'],
+    app: { company: 'Atlas Rådgivning', step: 'Steg 2 av 3', service: 'Tjeneste', services: [{ n: 'Rådgivningsmøte', d: '45 min · På kontoret' }, { n: 'Videomøte', d: '30 min · På nett' }], month: 'September 2026', days: ['Man', 'Tir', 'Ons', 'Tor', 'Fre'], morning: 'Formiddag', afternoon: 'Ettermiddag', with: 'Med', role: 'Rådgiver', summary: 'Tir. 15. sep. · 10:30' },
   },
   sell: {
     overline: 'Selge & tilby tjenester',
@@ -494,6 +497,7 @@ const ar: BusinessCopy = {
     text: 'اعرض مواعيد متاحة عبر الإنترنت واعثر على الحجوزات تلقائيًا في بيئة عملك.',
     steps: ['العميل', 'الخدمة', 'التاريخ', 'الساعة', 'التأكيد', 'التقويم وCRM'],
     v: ['احجز موعدًا', 'جلسة استشارة', 'الثلاثاء', 'تأكيد', 'تم تأكيد الموعد', 'أُضيف إلى تقويم الفريق'],
+    app: { company: 'أطلس للاستشارات', step: 'الخطوة 2 من 3', service: 'الخدمة', services: [{ n: 'جلسة استشارة', d: '45 دقيقة · في الوكالة' }, { n: 'اجتماع بالفيديو', d: '30 دقيقة · عن بعد' }], month: 'شتنبر 2026', days: ['الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'], morning: 'صباحًا', afternoon: 'بعد الزوال', with: 'مع', role: 'مستشارة', summary: 'الثلاثاء 15 شتنبر · 10:30' },
   },
   sell: {
     overline: 'البيع وتقديم الخدمات',

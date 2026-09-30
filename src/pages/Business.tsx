@@ -317,19 +317,71 @@ const Business = () => {
                         <span className="ms-1 h-[11px] w-[22px] rounded-[3px] border border-[#14142B]/60 p-[1.5px]"><span className="block h-full w-[80%] rounded-[1px] bg-[#14142B]" /></span>
                       </span>
                     </div>
-                    <div dir={rtl ? 'rtl' : 'ltr'} className="px-5 pt-4">
-                      <p className="text-[17px] font-bold">{c.booking.v[0]}</p>
-                      <div className="mt-4 rounded-xl border border-[#E4E2EE] bg-white p-3 text-[13px] font-medium">{c.booking.v[1]}</div>
-                      <p className="mt-4 text-[12px] font-semibold text-[#5E5A75]">{c.booking.v[2]}</p>
-                      <div className="mt-2 grid grid-cols-3 gap-2">
-                        {['09:00', '10:30', '14:00', '15:30', '16:00', '17:30'].map((t) => (
-                          <span key={t} className={`text-center text-[12px] py-2 rounded-lg ${t === '10:30' ? 'bg-[#772F9F] text-white' : 'bg-[#EFEDF6]'}`}>{t}</span>
-                        ))}
+                    <div dir={rtl ? 'rtl' : 'ltr'} className="absolute inset-x-0 top-12 bottom-0 flex flex-col">
+                      {/* app header */}
+                      <div className="px-4 pt-1 flex items-center gap-2.5">
+                        <span className="h-8 w-8 rounded-full bg-white border border-[#E4E2EE] grid place-items-center"><ChevronRight className={`w-4 h-4 text-[#14142B] ${rtl ? '' : 'rotate-180'}`} /></span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[10px] font-medium text-[#8D89A0]">{c.booking.app.step}</p>
+                          <p className="text-[14px] font-bold leading-tight truncate">{c.booking.v[0]}</p>
+                        </div>
+                        <span className="h-8 w-8 rounded-full grid place-items-center text-[11px] font-bold text-white" style={{ background: 'linear-gradient(135deg,#3E1856,#772F9F)' }}>A</span>
                       </div>
-                      <div className="mt-4 rounded-xl bg-[#772F9F] text-white text-center text-[13px] font-semibold py-3">{c.booking.v[3]}</div>
-                      <div className="mt-4 flex items-start gap-2 rounded-xl bg-[#E9F6EF] p-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#1F8A55] mt-0.5 shrink-0" />
-                        <div><p className="text-[12px] font-semibold">{c.booking.v[4]}</p><p className="text-[11px] text-[#5E5A75]">{c.booking.v[5]}</p></div>
+                      <div className="mx-4 mt-2.5 h-1 rounded-full bg-[#E9E7F2] overflow-hidden"><div className="h-full w-2/3 rounded-full bg-[#772F9F]" /></div>
+
+                      <div className="flex-1 overflow-hidden px-4 pt-3 space-y-2.5">
+                        {/* services */}
+                        <div className="space-y-1.5">
+                          {c.booking.app.services.map((s, i) => (
+                            <div key={s.n} className={`flex items-center gap-2.5 rounded-2xl p-2 ${i === 0 ? 'bg-white ring-2 ring-[#772F9F] shadow-[0_6px_16px_-10px_rgba(119,47,159,0.6)]' : 'bg-white/70 border border-[#E9E7F2]'}`}>
+                              <span className={`h-8 w-8 rounded-xl grid place-items-center ${i === 0 ? 'bg-[#772F9F] text-white' : 'bg-[#EFEDF6] text-[#772F9F]'}`}>{i === 0 ? <Users className="w-4 h-4" /> : <Video className="w-4 h-4" />}</span>
+                              <div className="flex-1 min-w-0"><p className="text-[12px] font-semibold truncate">{s.n}</p><p className="text-[10px] text-[#8D89A0]">{s.d}</p></div>
+                              <span className={`h-4 w-4 rounded-full border-2 ${i === 0 ? 'border-[#772F9F] bg-[#772F9F] shadow-[inset_0_0_0_2px_white]' : 'border-[#CFCDDC]'}`} />
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* dates */}
+                        <div>
+                          <p className="text-[11px] font-semibold text-[#5E5A75]">{c.booking.app.month}</p>
+                          <div className="mt-1.5 grid grid-cols-5 gap-1.5">
+                            {c.booking.app.days.map((d, i) => (
+                              <div key={d} className={`rounded-xl py-1 text-center ${i === 1 ? 'bg-[#14142B] text-white' : 'bg-white border border-[#E9E7F2]'}`}>
+                                <p className={`text-[9px] truncate px-0.5 ${i === 1 ? 'text-white/70' : 'text-[#8D89A0]'}`}>{d}</p>
+                                <p className="text-[14px] font-bold leading-tight">{14 + i}</p>
+                                <span className={`mx-auto mt-0.5 block h-1 w-1 rounded-full ${i === 3 ? 'bg-transparent' : i === 1 ? 'bg-[#C9A9FF]' : 'bg-[#1F8A55]'}`} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* slots */}
+                        {[[c.booking.app.morning, ['09:00', '10:30', '11:15']], [c.booking.app.afternoon, ['14:00', '15:30', '16:45']]].map(([label, slots]) => (
+                          <div key={label as string}>
+                            <p className="text-[10px] font-semibold uppercase tracking-wide text-[#8D89A0]">{label as string}</p>
+                            <div className="mt-1 grid grid-cols-3 gap-1.5">
+                              {(slots as string[]).map((t) => (
+                                <span key={t} className={`text-center text-[11px] font-medium py-1.5 rounded-lg ${t === '10:30' ? 'bg-[#772F9F] text-white' : t === '15:30' ? 'bg-[#F1F0F5] text-[#B8B5C8] line-through' : 'bg-white border border-[#E9E7F2]'}`}>{t}</span>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* advisor */}
+                        <div className="flex items-center gap-2.5 rounded-2xl bg-white border border-[#E9E7F2] p-2">
+                          <span className="h-7 w-7 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[10px] font-semibold text-white">SI</span>
+                          <div className="flex-1"><p className="text-[10px] text-[#8D89A0]">{c.booking.app.with}</p><p className="text-[11px] font-semibold">Salma Idrissi · {c.booking.app.role}</p></div>
+                        </div>
+                      </div>
+
+                      {/* bottom sheet */}
+                      <div className="rounded-t-[22px] bg-white px-4 pt-3 pb-6 shadow-[0_-10px_24px_-16px_rgba(20,20,43,0.35)]">
+                        <div className="flex items-center gap-2 text-[11px]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1F8A55] shrink-0" />
+                          <span className="font-semibold truncate">{c.booking.app.summary}</span>
+                          <span className="ms-auto text-[#8D89A0] shrink-0">{c.booking.app.services[0].d.split('·')[0].trim()}</span>
+                        </div>
+                        <div className="mt-2.5 rounded-2xl text-white text-center text-[13px] font-semibold py-2.5" style={{ background: 'linear-gradient(135deg,#5E2580,#772F9F)' }}>{c.booking.v[3]}</div>
                       </div>
                     </div>
                     <span className="absolute bottom-2 left-1/2 -translate-x-1/2 h-[5px] w-[120px] rounded-full bg-[#14142B]" />
