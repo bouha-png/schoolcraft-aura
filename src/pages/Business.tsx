@@ -137,7 +137,7 @@ const APP_TINTS = ['#A78BFA', '#818CF8', '#C084FC', '#38BDF8', '#60A5FA', '#22D3
 const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users[]; photo?: string }) => (
   <div className="relative">
     <div className="absolute -inset-10 rounded-full bg-[#5E2580]/30 blur-3xl" aria-hidden />
-    <div className="relative hidden sm:grid grid-cols-4 gap-3.5">
+    <div className="relative hidden sm:grid grid-cols-4 lg:grid-cols-6 gap-3.5">
       {items.map((o, i) => {
         const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
         return (
@@ -155,15 +155,15 @@ const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users
       })}
     </div>
     {/* Mobile: app icons layered over a full-width photo */}
-    <div className="relative sm:hidden -mx-5 overflow-hidden rounded-none">
+    <div className={`relative sm:hidden overflow-hidden ${photo ? "-mx-5" : ""}`}>
       {photo && <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-top" />}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#07091D]/45 via-[#1A0B2E]/15 to-[#07091D]/80" />
+      {photo && <div className="absolute inset-0 bg-gradient-to-b from-[#07091D]/45 via-[#1A0B2E]/15 to-[#07091D]/80" />}
       <div className="relative grid grid-cols-4 gap-x-2 px-3 py-6 gap-y-10">
         {items.flatMap((o, i) => {
           const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
-          const spacer = i === 5 ? [<div key="sp" className="col-span-2 row-span-2" aria-hidden />] : [];
+          const spacer = photo && i === 5 ? [<div key="sp" className="col-span-2 row-span-2" aria-hidden />] : [];
           return [...spacer, (
-            <div key={o} className="flex flex-col items-center text-center" style={{ transform: `translateY(${({0: 18, 3: 18, 8: -18, 11: -18} as Record<number, number>)[i] ?? 0}px)` }}>
+            <div key={o} className="flex flex-col items-center text-center" style={{ transform: photo ? `translateY(${({0: 18, 3: 18, 8: -18, 11: -18} as Record<number, number>)[i] ?? 0}px)` : undefined }}>
               <span className="grid place-items-center w-[52px] h-[52px] rounded-[16px] border border-white/50 bg-gradient-to-br from-white/40 to-white/15 backdrop-blur-xl" style={{ boxShadow: `inset 0 1px 1px rgba(255,255,255,0.6), 0 8px 24px -8px rgba(0,0,0,0.5), 0 0 22px -8px ${c}` }}>
                 <Icon className="w-6 h-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" style={{ color: c, filter: "brightness(1.25) saturate(1.2)" }} strokeWidth={2} />
               </span>
@@ -294,17 +294,22 @@ const Business = () => {
         </section>
 
         {/* 2C. ORGANISEZ LE TRAVAIL */}
-        <section id="collaboration" className="relative py-20 md:py-28">
-          <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
+        <section id="collaboration" className="relative pb-20 md:pb-28">
+          <div className="relative overflow-hidden min-h-[520px] md:min-h-[560px] flex items-end">
+            <img src={collabPerson} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[75%_20%] md:object-[center_25%]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/70 to-[#07091D]/20 md:bg-gradient-to-r rtl:md:bg-gradient-to-l md:from-[#07091D] md:via-[#07091D]/75 md:to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07091D] to-transparent" />
+            <div className={`${container} relative py-16 md:py-24`}>
+              <div className="max-w-xl">
                 <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
                 <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
               </div>
-              <Reveal delay={150}>
-                <AppGrid photo={collabPerson} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
-              </Reveal>
             </div>
+          </div>
+          <div className={`${container} relative mt-4 md:mt-8`}>
+            <Reveal delay={150}>
+              <AppGrid items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
+            </Reveal>
           </div>
         </section>
 
