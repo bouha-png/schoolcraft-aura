@@ -190,8 +190,11 @@ const PhotoOrbit = ({ items, icons, photo }: { items: string[]; icons: typeof Us
     <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-top" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#07091D]/70 via-[#2A0F45]/20 to-[#3E1856]/35" />
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(26,11,46,0.55)_100%)]" />
-    <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden>
+    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: "visible" }} viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden>
       <defs>
+        {PHOTO_GRADS.map(([c1, c2], k) => (
+          <linearGradient key={k} id={`pg${k}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={c1} /><stop offset="1" stopColor={c2} /></linearGradient>
+        ))}
         <linearGradient id="arcG" x1="0" x2="1"><stop offset="0" stopColor="#C58BFF" stopOpacity="0.9" /><stop offset="1" stopColor="#6FA8FF" stopOpacity="0.6" /></linearGradient>
       </defs>
       <path d="M -5 20 Q 50 -12 105 30" fill="none" stroke="url(#arcG)" strokeWidth="0.5" style={{ filter: 'drop-shadow(0 0 1.5px #A76CFF)' }} />
@@ -202,12 +205,18 @@ const PhotoOrbit = ({ items, icons, photo }: { items: string[]; icons: typeof Us
       const Icon = icons[i]; const [x, y] = PHOTO_POS[i]; const [g1, g2] = PHOTO_GRADS[i % PHOTO_GRADS.length];
       return (
         <div key={o} className="absolute flex flex-col items-center w-[76px] -translate-x-1/2" style={{ left: `${x}%`, top: `${y}%` }}>
-          <span className="grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-2xl border border-white/35 bg-white/[0.14] backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.45),0_10px_25px_-8px_rgba(20,5,40,0.8),0_0_24px_-6px_rgba(167,108,255,0.8)]">
-            <span className="grid place-items-center w-8 h-8 md:w-9 md:h-9 rounded-[10px]" style={{ background: `linear-gradient(145deg, ${g1}, ${g2})`, boxShadow: `0 0 14px -2px ${g1}` }}>
-              <Icon className="w-[18px] h-[18px] md:w-5 md:h-5 text-white" strokeWidth={2.2} />
-            </span>
+          <span
+            className="relative grid place-items-center w-[44px] h-[44px] md:w-16 md:h-16 rounded-[16px] md:rounded-[18px] border border-[#C9A4FF]/55 backdrop-blur-md"
+            style={{
+              background: 'linear-gradient(150deg, rgba(120,70,190,0.55) 0%, rgba(52,22,90,0.72) 55%, rgba(30,12,60,0.8) 100%)',
+              boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.35), inset 0 -8px 16px rgba(20,5,45,0.5), 0 0 22px -2px rgba(167,108,255,0.75), 0 12px 28px -10px rgba(10,0,30,0.9)',
+              transform: `perspective(400px) rotateY(${x < 50 ? 14 : -14}deg)`,
+            }}
+          >
+            <span className="absolute inset-x-2 top-0 h-1/3 rounded-t-[14px] bg-gradient-to-b from-white/20 to-transparent" aria-hidden />
+            <Icon className="relative w-6 h-6 md:w-8 md:h-8" fill={`url(#pg${i % PHOTO_GRADS.length})`} stroke="rgba(255,255,255,0.85)" strokeWidth={1.1} style={{ filter: `drop-shadow(0 0 6px ${g1})` }} />
           </span>
-          <p className="mt-1 text-[10px] md:text-[11px] font-semibold leading-tight text-white text-center [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">{o}</p>
+          <p className="mt-0.5 text-[9.5px] md:text-[11px] font-semibold leading-tight text-white text-center [text-shadow:0_1px_6px_rgba(0,0,0,0.9)]">{o}</p>
         </div>
       );
     })}
