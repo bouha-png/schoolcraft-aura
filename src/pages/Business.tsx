@@ -136,7 +136,6 @@ const Business = () => {
   const Opt = ({ t }: { t: string }) => <span className="ms-3 align-middle text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/15 text-[#B8B5C8]">{t}</span>;
 
   return (
-  return (
     <div className="relative min-h-screen overflow-x-hidden bg-[#07091D] text-white">
       <header dir="ltr" className="absolute inset-x-0 top-0 z-30">
         <div className={`${container} h-24 md:h-28 flex items-center justify-between gap-4`}>
