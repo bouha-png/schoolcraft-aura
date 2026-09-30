@@ -356,7 +356,7 @@ const Business = () => {
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2">
               {v.partner.steps.map((st, i) => (
                 <div key={st} className="flex flex-col sm:flex-row items-center gap-3 sm:gap-2">
-                  <span className="inline-flex items-center gap-2.5 rounded-full border border-[#2DD4C4]/35 bg-gradient-to-r from-[#2DD4C4]/15 to-[#7B5CF0]/15 px-4 py-2 text-[13.5px] font-medium text-white">
+                  <span className="inline-flex items-center gap-2.5 rounded-full border border-[#2DD4C4]/35 bg-gradient-to-r from-[#2DD4C4]/15 to-[#7B5CF0]/15 px-4 py-2 text-[13.5px] font-medium text-white whitespace-nowrap">
                     <span className="grid place-items-center w-6 h-6 rounded-full bg-gradient-to-br from-[#2DD4C4] to-[#7B5CF0] text-[11px] font-bold">{i + 1}</span>{st}
                   </span>
                   {i < v.partner.steps.length - 1 && <ChevronRight className={`w-4 h-4 text-[#8D89A0] rotate-90 sm:rotate-0 ${rtl ? 'sm:rotate-180' : ''}`} />}
