@@ -11,8 +11,6 @@ import LanguageSelector from '@/components/portal/LanguageSelector';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
 import shopArgan from '@/assets/shop-argan.jpg';
-import shopTech from '@/assets/shop-tech.jpg';
-import shopLogistics from '@/assets/shop-logistics.jpg';
 import courseOnboarding from '@/assets/course-onboarding-v2.jpg';
 import courseCustomer from '@/assets/course-customer.jpg';
 import courseDigital from '@/assets/course-digital.jpg';
@@ -410,19 +408,39 @@ const Business = () => {
                 <span className={`${iconBox} w-10 h-10`} style={iconBg}><ShoppingBag className="w-5 h-5" strokeWidth={1.75} /></span>
                 <h3 className="mt-5 font-display text-[22px] font-semibold">{c.shop.title}</h3>
                 <p className="mt-2 text-[15px] leading-[1.65] text-[#B8B5C8]">{c.shop.text}</p>
-                <div className="mt-6 grid grid-cols-3 gap-2.5">
-                  {c.shop.v.slice(0, 3).map((p, i) => (
-                    <div key={p} className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
-                      <img src={[shopArgan, shopTech, shopLogistics][i]} alt={p} loading="lazy" width={944} height={704} className="h-20 w-full rounded-lg object-cover" />
-                      <p className="mt-2 text-[12px] text-[#E6E4F0] leading-snug">{p}</p>
+                <div className="mt-6 grid grid-cols-[1fr_auto] gap-4 md:gap-6 items-center">
+                  <ol className="space-y-4">
+                    {c.shop.flow.map((f, i) => (
+                      <li key={f.t} className="flex gap-3">
+                        <span className="shrink-0 grid place-items-center w-8 h-8 rounded-full text-[13px] font-bold text-white border border-[#A76CFF]/55" style={iconBg}>{i + 1}</span>
+                        <div>
+                          <p className="text-[14px] font-semibold text-white leading-snug">{f.t}</p>
+                          <p className="mt-0.5 text-[12.5px] leading-[1.5] text-[#B8B5C8]">{f.d}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  <div className="relative w-[132px] md:w-[150px] rounded-[26px] p-[5px] bg-gradient-to-b from-[#C9C6D2] via-[#6E6B78] to-[#3A3844] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.7)]">
+                    <div className="relative rounded-[21px] overflow-hidden bg-[#F7F5FA] text-[#1B1830] h-[270px] md:h-[300px] flex flex-col">
+                      <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-12 h-3.5 rounded-full bg-black z-10" />
+                      <div className="pt-7 px-3 pb-2 flex items-center justify-between">
+                        <span className="text-[10px] font-bold">{c.shop.phone[0]}</span>
+                        <ShoppingBag className="w-3.5 h-3.5" />
+                      </div>
+                      <img src={shopArgan} alt="" loading="lazy" width={944} height={704} className="mx-2 h-[110px] md:h-[125px] w-[calc(100%-16px)] rounded-xl object-cover" />
+                      <div className="px-3 pt-2">
+                        <p className="text-[10.5px] font-semibold leading-tight">{c.shop.phone[1]}</p>
+                        <div className="mt-1 flex gap-0.5">{[0,1,2,3,4].map(k => <span key={k} className="w-1.5 h-1.5 rounded-full bg-[#F5B83D]" />)}</div>
+                      </div>
+                      <div className="mt-auto px-2.5 pb-3 space-y-1.5">
+                        <div className="rounded-lg bg-[#772F9F] text-white text-[10px] font-semibold text-center py-1.5">{c.shop.phone[2]}</div>
+                        <div className="rounded-lg bg-[#E7F7EE] text-[#1F8A4C] text-[9.5px] font-semibold flex items-center justify-center gap-1 py-1"><CheckCircle2 className="w-3 h-3" />{c.shop.phone[3]}</div>
+                      </div>
                     </div>
-                  ))}
+                    <p className="absolute -bottom-6 inset-x-0 text-center text-[10px] text-[#8D89A0]">{c.shop.phone[4]}</p>
+                  </div>
                 </div>
-                <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-[12px] space-y-1.5">
-                  <p className="flex items-center justify-between"><span className="font-semibold">{c.shop.v[3]}</span><span className="px-2 py-0.5 rounded-full bg-[#3FA9F5]/15 text-[#7CC8FF]">{c.shop.v[4]}</span></p>
-                  <p className="flex items-center gap-2 text-[#B8B5C8]"><Dot />{c.shop.v[5]}</p>
-                </div>
-                <div className="mt-5"><Chain steps={c.shop.steps} rtl={rtl} /></div>
+                <div className="mt-10"><Chain steps={c.shop.steps} rtl={rtl} /></div>
               </Reveal>
 
               <Reveal delay={120} className={`${panel} p-6 md:p-7`}>
