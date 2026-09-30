@@ -277,7 +277,7 @@ const Business = () => {
                       <path d="M10 34 L24 24 L36 20 L52 8" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M45 8h7v7" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span className="absolute -bottom-2 -right-2 grid place-items-center w-9 h-9 rounded-xl border border-[#C9A9FF]/50 bg-[#2a1845]/90 backdrop-blur shadow-lg"><Wallet className="w-4.5 h-4.5 w-[18px] h-[18px] text-[#C9A9FF]" strokeWidth={1.8} /></span>
+                    <span className="absolute -bottom-2 -right-2 grid place-items-center w-9 h-9 rounded-xl border border-[#C9A9FF]/50 bg-[#2a1845]/90 backdrop-blur shadow-lg"><Wallet className="w-[18px] h-[18px] text-[#C9A9FF]" strokeWidth={1.8} /></span>
                   </span>}
                   name={v.fin.center} sub={v.fin.o} />
               </Reveal>
