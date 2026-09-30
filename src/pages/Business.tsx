@@ -470,7 +470,7 @@ const CapCard = ({ icon: Icon, t, d, children }: { icon: typeof Users; t: string
     <span className="inline-grid place-items-center w-11 h-11 rounded-[10px] border border-[#A76CFF]/50 text-white" style={{ background: 'linear-gradient(145deg, rgba(62,24,86,0.92), rgba(119,47,159,0.78))' }}><Icon className="w-5 h-5" strokeWidth={1.75} /></span>
     <h3 className="mt-5 font-display text-[19px] font-semibold text-white">{t}</h3>
     <p className="mt-2 text-[15px] leading-[1.65] text-[#B8B5C8]">{d}</p>
-    <div className="mt-6 pt-5 border-t border-white/[0.07] mt-auto">{children}</div>
+    <div className="mt-auto pt-6"><div className="pt-5 border-t border-white/[0.07]">{children}</div></div>
   </div>
 );
 
