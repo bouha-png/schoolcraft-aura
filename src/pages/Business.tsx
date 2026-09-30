@@ -204,7 +204,7 @@ const Business = () => {
               <Reveal delay={150}>
                 <Orbit items={v.grow.orbit} icons={[Users, TrendingUp, BarChart3, FileText, Mail, CalendarCheck, History, ShoppingBag]}
                   center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><Contact className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
-                  name={v.grow.client} sub={v.grow.tag} />
+                  name={v.grow.tag} sub={v.grow.o} />
               </Reveal>
             </div>
             <Reveal delay={100} className="mt-10">
@@ -226,8 +226,8 @@ const Business = () => {
           <div className={container}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
-                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp]}
-                  center={<img src={avatarSalma} alt="" className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]" />}
+                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><UserRound className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
                   name={teams.v[5]} sub={v.team.emp} />
               </Reveal>
               <div className="order-1 lg:order-2">
