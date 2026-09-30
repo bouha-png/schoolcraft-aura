@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import PortalChoice from "./pages/PortalChoice";
 import Associations from "./pages/Associations";
 import BusinessModule from './pages/BusinessModule';
+import BusinessCategory from './pages/BusinessCategory';
 import Business from "./pages/Business";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/education" element={<Index />} />
             <Route path="/associations" element={<Associations />} />
             <Route path="/business" element={<Business />} />
+            <Route path="/business/categorie/:id" element={<BusinessCategory />} />
             <Route path="/business/:slug" element={<BusinessModule />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
             <Route path="/privacy" element={<Confidentialite />} />
