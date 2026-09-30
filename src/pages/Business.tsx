@@ -120,11 +120,11 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
       return (
         <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + r * Math.cos(ang)}%`, top: `${50 + r * Math.sin(ang)}%` }}>
           <span className={`${dense ? 'w-10 h-10 md:w-12 md:h-12' : 'w-12 h-12 md:w-14 md:h-14'} rounded-xl border border-[#A76CFF]/50 p-px shadow-[0_10px_24px_-10px_rgba(94,37,128,0.9)]`}>
-            <span className="grid place-items-center w-full h-full rounded-[10px] backdrop-blur-sm text-white/90" style={{ background: 'linear-gradient(145deg, rgba(62,24,86,0.92) 0%, rgba(94,37,128,0.88) 40%, rgba(119,47,159,0.78) 100%)' }}>
+            <span className="grid place-items-center w-full h-full rounded-[10px] backdrop-blur-sm text-white" style={{ background: 'linear-gradient(145deg, rgba(62,24,86,0.92) 0%, rgba(94,37,128,0.88) 40%, rgba(119,47,159,0.78) 100%)' }}>
               <Icon className={dense ? 'w-4 h-4 md:w-5 md:h-5' : 'w-5 h-5 md:w-[22px] md:h-[22px]'} strokeWidth={1.6} />
             </span>
           </span>
-          <p className={`mt-2 text-center ${dense ? 'text-[9.5px] md:text-[11px]' : 'text-[10.5px] md:text-[11.5px]'} font-medium leading-tight text-[#D9CCF0]/75`}>{o}</p>
+          <p className={`mt-2 text-center ${dense ? 'text-[9.5px] md:text-[11px]' : 'text-[10.5px] md:text-[11.5px]'} font-medium leading-tight text-white`}>{o}</p>
         </div>
       );
     })}
