@@ -91,9 +91,9 @@ const Bar = ({ w, tone = 'violet' }: { w: string; tone?: 'violet' | 'cyan' }) =>
 const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-0" />;
 
 const Hub = ({ children, badge }: { children: ReactNode; badge: ReactNode }) => (
-  <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#E2D4FF]/60 bg-gradient-to-br from-[#C08AFF] via-[#8B4FE0] to-[#4F8DFF] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_0_60px_-5px_rgba(167,108,255,0.95)]">
+  <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-white/80 bg-gradient-to-br from-white to-[#EDE3FF] text-[#772F9F] shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_60px_-5px_rgba(167,108,255,0.95)]">
     {children}
-    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-[#1A1442]/90 backdrop-blur text-[#7CC8FF] shadow-lg">{badge}</span>
+    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-gradient-to-br from-[#A76CFF] to-[#5B8CFF] text-white shadow-lg">{badge}</span>
   </span>
 );
 
@@ -234,7 +234,7 @@ const Business = () => {
               <Reveal delay={150} className="order-2 lg:order-1">
                 <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
                   center={<Hub badge={<IdCard className="w-[18px] h-[18px]" strokeWidth={1.8} />}>
-                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16"><defs><linearGradient id="empg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#F3EBFF" /><stop offset="1" stopColor="#C9A9FF" /></linearGradient></defs><circle cx="32" cy="22" r="11" fill="url(#empg)" /><path d="M10 56c0-12 10-19 22-19s22 7 22 19z" fill="url(#empg)" opacity="0.9" /><path d="M28 37l4 7 4-7" fill="#772F9F" /></svg>
+                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16"><defs><linearGradient id="empg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#A76CFF" /><stop offset="1" stopColor="#772F9F" /></linearGradient></defs><circle cx="32" cy="22" r="11" fill="url(#empg)" /><path d="M10 56c0-12 10-19 22-19s22 7 22 19z" fill="url(#empg)" opacity="0.9" /><path d="M28 37l4 7 4-7" fill="#FFFFFF" /></svg>
 
                   </Hub>}
                   name={v.team.emp} sub={v.team.o} />
@@ -281,8 +281,8 @@ const Business = () => {
                       <rect x="24" y="30" width="8" height="22" rx="2" fill="currentColor" fillOpacity="0.5" />
                       <rect x="36" y="24" width="8" height="28" rx="2" fill="currentColor" fillOpacity="0.7" />
                       <rect x="48" y="14" width="8" height="38" rx="2" fill="currentColor" fillOpacity="0.9" />
-                      <path d="M10 34 L24 24 L36 20 L52 8" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M45 8h7v7" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10 34 L24 24 L36 20 L52 8" stroke="#3FA9F5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M45 8h7v7" stroke="#3FA9F5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </Hub>}
                   name={v.fin.center} sub={v.fin.o} />
