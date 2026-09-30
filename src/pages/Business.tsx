@@ -333,7 +333,7 @@ const Business = () => {
                         {/* services */}
                         <div className="space-y-1.5">
                           {c.booking.app.services.map((s, i) => (
-                            <div key={s.n} className={`flex items-center gap-2.5 rounded-2xl p-2.5 ${i === 0 ? 'bg-white ring-2 ring-[#772F9F] shadow-[0_6px_16px_-10px_rgba(119,47,159,0.6)]' : 'bg-white/70 border border-[#E9E7F2]'}`}>
+                            <div key={s.n} className={`flex items-center gap-2.5 rounded-2xl p-2 ${i === 0 ? 'bg-white ring-2 ring-[#772F9F] shadow-[0_6px_16px_-10px_rgba(119,47,159,0.6)]' : 'bg-white/70 border border-[#E9E7F2]'}`}>
                               <span className={`h-8 w-8 rounded-xl grid place-items-center ${i === 0 ? 'bg-[#772F9F] text-white' : 'bg-[#EFEDF6] text-[#772F9F]'}`}>{i === 0 ? <Users className="w-4 h-4" /> : <Video className="w-4 h-4" />}</span>
                               <div className="flex-1 min-w-0"><p className="text-[12px] font-semibold truncate">{s.n}</p><p className="text-[10px] text-[#8D89A0]">{s.d}</p></div>
                               <span className={`h-4 w-4 rounded-full border-2 ${i === 0 ? 'border-[#772F9F] bg-[#772F9F] shadow-[inset_0_0_0_2px_white]' : 'border-[#CFCDDC]'}`} />
@@ -346,7 +346,7 @@ const Business = () => {
                           <p className="text-[11px] font-semibold text-[#5E5A75]">{c.booking.app.month}</p>
                           <div className="mt-1.5 grid grid-cols-5 gap-1.5">
                             {c.booking.app.days.map((d, i) => (
-                              <div key={d} className={`rounded-xl py-1.5 text-center ${i === 1 ? 'bg-[#14142B] text-white' : 'bg-white border border-[#E9E7F2]'}`}>
+                              <div key={d} className={`rounded-xl py-1 text-center ${i === 1 ? 'bg-[#14142B] text-white' : 'bg-white border border-[#E9E7F2]'}`}>
                                 <p className={`text-[9px] truncate px-0.5 ${i === 1 ? 'text-white/70' : 'text-[#8D89A0]'}`}>{d}</p>
                                 <p className="text-[14px] font-bold leading-tight">{14 + i}</p>
                                 <span className={`mx-auto mt-0.5 block h-1 w-1 rounded-full ${i === 3 ? 'bg-transparent' : i === 1 ? 'bg-[#C9A9FF]' : 'bg-[#1F8A55]'}`} />
