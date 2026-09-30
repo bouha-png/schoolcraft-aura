@@ -12,7 +12,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, BookOpen, Landmark, SearchCheck } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -441,19 +441,10 @@ const Business = () => {
 
         {/* 2D. PILOTEZ VOS FINANCES */}
         <section id="finance" className="relative pb-20 md:pb-28">
-          <WideApps rtl={rtl} photo={financeWide} items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}>
+          <WideApps rtl={rtl} photo={financeWide} items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BookOpen, Landmark, SearchCheck, BarChart3, LayoutDashboard]}>
             <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
             <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
           </WideApps>
-        </section>
-
-        {/* 3. CONNECTED PLATFORM */}
-        <section id="flow" className="relative py-20 md:py-24">
-          <div className={container}>
-            <Title overline={v.flow.o} title={v.flow.t} center />
-            <TileRow cols={5} items={v.flow.a} icons={[Contact, CalendarCheck, FolderKanban, FileText, BarChart3]} />
-            <div className="opacity-80"><TileRow cols={5} items={v.flow.b} icons={[UserCog, FileText, Clock, Banknote, BarChart3]} /></div>
-          </div>
         </section>
 
         {/* 4. SYN'IA */}
