@@ -18,10 +18,11 @@ export default function ModuleCatalog({ lang }: { lang: string }) {
             const I = c.icon;
             return (
               <div key={c.id} className="rounded-[22px] border border-white/10 bg-[#0E1030]/75 backdrop-blur-md p-5">
-                <div className="flex items-center gap-3">
+                <Link to={`/business/categorie/${c.id}`} className="group flex items-center gap-3">
                   <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><I className="w-5 h-5 text-white" /></span>
-                  <h3 className="font-display text-[18px] font-bold text-white">{c.name[l]}</h3>
-                </div>
+                  <h3 className="flex-1 font-display text-[18px] font-bold text-white group-hover:text-[#C9A8FF]">{c.name[l]}</h3>
+                  <span className="text-[12px] text-[#C9A8FF] inline-flex items-center gap-1">{u.more}<ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" /></span>
+                </Link>
                 <div className="mt-4 space-y-1.5">
                   {c.mods.map((m) => (
                     <Link key={m.slug} to={`/business/${m.slug}`} className="group flex items-center gap-3 rounded-xl px-3 py-2.5 border border-transparent hover:border-[#A76CFF]/30 hover:bg-white/[0.04] transition">
