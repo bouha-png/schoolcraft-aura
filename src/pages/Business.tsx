@@ -223,7 +223,7 @@ const Business = () => {
               <Reveal delay={150}>
                 <Orbit dense items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}
                   center={<Hub badge={<Handshake className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Contact className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
-                  name={v.grow.tag} sub={v.grow.o} />
+                  name={v.grow.tag} sub={`CRM · ${v.grow.o}`} />
               </Reveal>
             </div>
           </div>
