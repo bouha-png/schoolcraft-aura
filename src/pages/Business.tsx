@@ -3,7 +3,7 @@ import collabTeam from "@/assets/collab-team-wide.jpg";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
-  ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, Video, Mail, MessageSquare, Cloud, Contact,
+  ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, FileSpreadsheet, Video, Mail, MessageSquare, Cloud, Contact,
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
@@ -427,7 +427,7 @@ const Business = () => {
         {/* 2C. ORGANISEZ LE TRAVAIL */}
         <section id="collaboration" className="relative pb-20 md:pb-28">
           <div>
-            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}>
+            <WideApps rtl={rtl} photo={collabTeam} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, FileText, FileSpreadsheet, FolderKanban, ListChecks, Vote]}>
               <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
               <Reveal delay={100}><p className="mt-6 text-[15.5px] md:text-base leading-relaxed text-white/85">{v.work.value}</p></Reveal>
             </WideApps>
