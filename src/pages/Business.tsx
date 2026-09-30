@@ -211,7 +211,7 @@ const Business = () => {
                     <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
                     <div><p className="text-[15px] font-semibold">{teams.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{teams.v[6]}</p></div>
                   </div>
-                  <ol className="mt-6 grid grid-cols-5 gap-1.5">
+                  <ol className="mt-6 grid grid-cols-3 sm:grid-cols-5 gap-x-1.5 gap-y-3">
                     {v.team.life.map((s, i) => (
                       <li key={s} className="text-center">
                         <span className="block h-1.5 rounded-full" style={{ background: 'linear-gradient(90deg,#772F9F,#3FA9F5)', opacity: 0.45 + i * 0.13 }} />
