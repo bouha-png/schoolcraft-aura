@@ -7,7 +7,7 @@ export type BusinessV2 = {
   crm: Sec & { points: string[]; cue: string };
   booking: Sec & { chain: string[] };
   hr: Sec & { life: string[]; cue: string };
-  collab: Sec & { points: string[]; ws: string; cue: string };
+  collab: Sec & { points: string[]; store: string[]; ws: string; cue: string };
   projects: Sec & { flow: string[]; cue: string };
   finance: Sec & { points: string[]; cue: string };
   shop: Sec & { opt: string };
@@ -24,16 +24,16 @@ const fr: BusinessV2 = {
   },
   problem: { t: 'Trop d’outils. Trop d’informations dispersées.', x: 'Synapse Business relie vos données clients, vos équipes, le travail et les décisions dans un même environnement.' },
   ai: {
-    o: 'Syn’IA · Intelligence intégrée', t: 'Une plateforme qui ne se contente pas de centraliser. Elle comprend, assiste et agit.',
-    x: 'Syn’IA est intégrée là où le travail se fait déjà. Elle s’appuie sur le contexte de votre organisation pour vous aider à préparer, résumer et retrouver l’information.',
+    o: 'Syn’IA · Intelligence intégrée', t: 'Un assistant intégré, là où vous travaillez déjà.',
+    x: 'Syn’IA vous aide à résumer, rédiger, rechercher et préparer, à partir de l’information à laquelle vous avez accès. Les décisions restent les vôtres.',
     note: 'Syn’IA respecte les droits et accès de chaque utilisateur. Vos équipes gardent la main sur chaque décision.', badge: 'Syn’IA',
     items: [
-      { a: 'CRM & Ventes', d: 'Prépare les relances, résume l’historique client et aide à rédiger offres et messages.' },
-      { a: 'Réunions & Collaboration', d: 'Résume les réunions, génère les PV et extrait les actions à suivre.' },
-      { a: 'Projets', d: 'Résume l’avancement, repère les actions en attente et prépare les points d’étape.' },
-      { a: 'RH', d: 'Aide à rédiger les documents, accompagne l’intégration et résume les informations autorisées.' },
-      { a: 'Finance', d: 'Aide à analyser les données disponibles et résume l’état des budgets et dépenses.' },
-      { a: 'Connaissances & Recherche', d: 'Retrouve l’information dans les documents et espaces auxquels vous avez accès.' },
+      { a: 'Résumés de réunions & PV automatiques', d: 'Résume les réunions enregistrées, rédige le PV et liste les actions à suivre.' },
+      { a: 'Rédaction & reformulation', d: 'Aide à rédiger emails et documents, ou à reformuler un texte existant.' },
+      { a: 'Recherche de documents', d: 'Retrouve l’information dans les documents et espaces auxquels vous avez accès.' },
+      { a: 'Réponses à partir de vos données', d: 'Répond à vos questions à partir des données disponibles dans la plateforme, selon vos droits.' },
+      { a: 'Suggestions d’actions', d: 'Propose des suites à donner et des relances, que vous validez.' },
+      { a: 'Création de contenu', d: 'Aide à préparer annonces, supports et contenus de formation.' },
     ],
   },
   crm: {
@@ -55,8 +55,9 @@ const fr: BusinessV2 = {
   },
   collab: {
     o: 'Communication & Collaboration', t: 'Votre bureau virtuel, pour toute l’équipe.',
-    x: 'Espaces de travail, fichiers partagés et co-édition sur le même document avec historique complet. Chat, email, forum, calendrier et réunions en ligne enregistrées, avec PV automatiques : la direction garde une vue claire.',
-    points: ['Espaces de travail virtuels', 'Co-édition & historique', 'Chat, email & forum', 'Calendrier partagé', 'Réunions enregistrées & PV', 'Visibilité direction'],
+    x: 'Tous vos documents sont stockés dans Synapse, organisés par dossiers et espaces, et accessibles selon les droits de chacun. Co-édition en direct, historique des versions, chat, email, forum, calendrier et réunions enregistrées avec PV automatiques.',
+    points: ['Stockage documentaire centralisé', 'Fichiers partagés', 'Dossiers / espaces organisés', 'Co-édition en direct', 'Historique des versions', 'Partage sécurisé', 'Recherche de documents', 'Accès selon les droits', 'Chat, email, forum', 'Calendrier partagé', 'Réunions en ligne', 'Enregistrement des réunions', 'PV automatiques'],
+    store: ['Stockage documentaire', 'Direction', 'Commercial', 'RH', 'Projets', 'Accès selon les droits'],
     ws: 'Un espace par équipe ou projet', cue: 'Syn’IA : PV généré, 3 actions extraites',
   },
   projects: {
@@ -89,16 +90,16 @@ const en: BusinessV2 = {
   },
   problem: { t: 'Too many tools. Too much scattered information.', x: 'Synapse Business connects your client data, your people, your work and your decisions in one environment.' },
   ai: {
-    o: 'Syn’IA · Built-in intelligence', t: 'A platform that does more than centralise. It understands, assists and acts.',
-    x: 'Syn’IA is built into the places where work already happens. It uses your organisation’s context to help you prepare, summarise and find information.',
+    o: 'Syn’IA · Built-in intelligence', t: 'A built-in assistant, where you already work.',
+    x: 'Syn’IA helps you summarise, draft, search and prepare, using the information you have access to. Decisions stay yours.',
     note: 'Syn’IA respects each user’s permissions and access. Your teams stay in control of every decision.', badge: 'Syn’IA',
     items: [
-      { a: 'CRM & Sales', d: 'Prepares follow-ups, summarises client history and helps draft offers and messages.' },
-      { a: 'Meetings & Collaboration', d: 'Summarises meetings, generates minutes and extracts follow-up actions.' },
-      { a: 'Projects', d: 'Summarises progress, spots pending actions and prepares status updates.' },
-      { a: 'HR', d: 'Helps draft documents, supports onboarding and summarises permitted information.' },
-      { a: 'Finance', d: 'Helps analyse available data and summarises budget and expense status.' },
-      { a: 'Knowledge & Search', d: 'Finds information across the documents and workspaces you can access.' },
+      { a: 'Meeting summaries & automatic minutes', d: 'Summarises recorded meetings, drafts the minutes and lists follow-up actions.' },
+      { a: 'Drafting & rewording', d: 'Helps draft emails and documents, or reword existing text.' },
+      { a: 'Document search', d: 'Finds information across the documents and workspaces you can access.' },
+      { a: 'Answers from your data', d: 'Answers questions from the data available in the platform, within your permissions.' },
+      { a: 'Action suggestions', d: 'Suggests next steps and follow-ups for you to approve.' },
+      { a: 'Content creation', d: 'Helps prepare announcements, materials and training content.' },
     ],
   },
   crm: {
@@ -120,8 +121,9 @@ const en: BusinessV2 = {
   },
   collab: {
     o: 'Communication & Collaboration', t: 'Your virtual office, for the whole team.',
-    x: 'Workspaces, shared files and co-editing on the same document with full history. Chat, email, forum, calendar and recorded online meetings with automatic minutes: management keeps a clear view.',
-    points: ['Virtual workspaces', 'Co-editing & history', 'Chat, email & forum', 'Shared calendar', 'Recorded meetings & minutes', 'Management visibility'],
+    x: 'All your documents are stored in Synapse, organised in folders and spaces, and accessible according to each person’s rights. Live co-editing, version history, chat, email, forum, calendar and recorded meetings with automatic minutes.',
+    points: ['Centralised document storage', 'Shared files', 'Organised folders / spaces', 'Live co-editing', 'Version history', 'Secure sharing', 'Document search', 'Permission-based access', 'Chat, email, forum', 'Shared calendar', 'Online meetings', 'Meeting recording', 'Automatic minutes'],
+    store: ['Document storage', 'Management', 'Sales', 'HR', 'Projects', 'Access by permissions'],
     ws: 'One space per team or project', cue: 'Syn’IA: minutes generated, 3 actions extracted',
   },
   projects: {
@@ -154,16 +156,16 @@ const no: BusinessV2 = {
   },
   problem: { t: 'For mange verktøy. For mye spredt informasjon.', x: 'Synapse Business kobler kundedata, mennesker, arbeid og beslutninger i ett miljø.' },
   ai: {
-    o: 'Syn’IA · Innebygd intelligens', t: 'En plattform som gjør mer enn å samle. Den forstår, hjelper og handler.',
-    x: 'Syn’IA er bygget inn der arbeidet allerede skjer. Den bruker konteksten i organisasjonen for å hjelpe deg å forberede, oppsummere og finne informasjon.',
+    o: 'Syn’IA · Innebygd intelligens', t: 'En innebygd assistent, der du allerede jobber.',
+    x: 'Syn’IA hjelper deg å oppsummere, skrive, søke og forberede, basert på informasjonen du har tilgang til. Beslutningene er dine.',
     note: 'Syn’IA respekterer hver brukers rettigheter og tilganger. Teamene beholder kontrollen over hver beslutning.', badge: 'Syn’IA',
     items: [
-      { a: 'CRM & salg', d: 'Forbereder oppfølging, oppsummerer kundehistorikk og hjelper med tilbud og meldinger.' },
-      { a: 'Møter & samarbeid', d: 'Oppsummerer møter, lager referater og henter ut oppgaver.' },
-      { a: 'Prosjekter', d: 'Oppsummerer fremdrift, finner ventende oppgaver og forbereder statusoppdateringer.' },
-      { a: 'HR', d: 'Hjelper med dokumenter, støtter onboarding og oppsummerer tillatt informasjon.' },
-      { a: 'Økonomi', d: 'Hjelper å analysere tilgjengelige data og oppsummerer budsjett og utgifter.' },
-      { a: 'Kunnskap & søk', d: 'Finner informasjon i dokumentene og rommene du har tilgang til.' },
+      { a: 'Møteoppsummering & automatiske referater', d: 'Oppsummerer innspilte møter, skriver referat og lister oppfølgingspunkter.' },
+      { a: 'Skriving & omformulering', d: 'Hjelper med e-poster og dokumenter, eller omformulerer eksisterende tekst.' },
+      { a: 'Dokumentsøk', d: 'Finner informasjon i dokumentene og rommene du har tilgang til.' },
+      { a: 'Svar fra dine data', d: 'Svarer på spørsmål ut fra data i plattformen, innenfor dine tilganger.' },
+      { a: 'Forslag til handlinger', d: 'Foreslår neste steg og oppfølging som du godkjenner.' },
+      { a: 'Innholdsproduksjon', d: 'Hjelper med kunngjøringer, materiell og opplæringsinnhold.' },
     ],
   },
   crm: {
@@ -185,8 +187,9 @@ const no: BusinessV2 = {
   },
   collab: {
     o: 'Kommunikasjon & samarbeid', t: 'Ditt virtuelle kontor, for hele teamet.',
-    x: 'Arbeidsrom, delte filer og samtidig redigering i samme dokument med full historikk. Chat, e-post, forum, kalender og innspilte nettmøter med automatiske referater: ledelsen har full oversikt.',
-    points: ['Virtuelle arbeidsrom', 'Samtidig redigering & historikk', 'Chat, e-post & forum', 'Delt kalender', 'Innspilte møter & referater', 'Oversikt for ledelsen'],
+    x: 'Alle dokumentene lagres i Synapse, organisert i mapper og rom, og tilgjengelige etter hver enkelts rettigheter. Samtidig redigering, versjonshistorikk, chat, e-post, forum, kalender og innspilte møter med automatiske referater.',
+    points: ['Sentral dokumentlagring', 'Delte filer', 'Organiserte mapper / rom', 'Samtidig redigering', 'Versjonshistorikk', 'Sikker deling', 'Dokumentsøk', 'Tilgang etter rettigheter', 'Chat, e-post, forum', 'Delt kalender', 'Nettmøter', 'Opptak av møter', 'Automatiske referater'],
+    store: ['Dokumentlagring', 'Ledelse', 'Salg', 'HR', 'Prosjekter', 'Tilgang etter rettigheter'],
     ws: 'Ett rom per team eller prosjekt', cue: 'Syn’IA: referat laget, 3 oppgaver hentet ut',
   },
   projects: {
@@ -219,16 +222,16 @@ const ar: BusinessV2 = {
   },
   problem: { t: 'أدوات كثيرة. معلومات مشتتة.', x: 'تربط Synapse Business بيانات العملاء والفرق والعمل والقرارات في بيئة واحدة.' },
   ai: {
-    o: 'Syn’IA · ذكاء مدمج', t: 'منصة لا تكتفي بالتجميع. إنها تفهم وتساعد وتتحرك.',
-    x: 'Syn’IA مدمجة حيث يتم العمل أصلًا، وتعتمد على سياق مؤسستكم لمساعدتكم على التحضير والتلخيص والعثور على المعلومات.',
+    o: 'Syn’IA · ذكاء مدمج', t: 'مساعد مدمج، حيث تعملون أصلًا.',
+    x: 'تساعدكم Syn’IA على التلخيص والصياغة والبحث والتحضير، انطلاقًا من المعلومات المتاحة لكم. القرار يبقى لكم.',
     note: 'تحترم Syn’IA صلاحيات كل مستخدم وحقوق وصوله. وتبقى القرارات بيد فرقكم.', badge: 'Syn’IA',
     items: [
-      { a: 'العملاء والمبيعات', d: 'تحضّر المتابعات، وتلخص سجل العميل، وتساعد في صياغة العروض والرسائل.' },
-      { a: 'الاجتماعات والتعاون', d: 'تلخص الاجتماعات، وتنشئ المحاضر، وتستخرج المهام.' },
-      { a: 'المشاريع', d: 'تلخص التقدم، وترصد المهام المعلقة، وتحضّر تقارير المرحلة.' },
-      { a: 'الموارد البشرية', d: 'تساعد في صياغة الوثائق، وترافق الإدماج، وتلخص المعلومات المسموح بها.' },
-      { a: 'المالية', d: 'تساعد في تحليل البيانات المتاحة وتلخص وضع الميزانيات والمصاريف.' },
-      { a: 'المعرفة والبحث', d: 'تعثر على المعلومات في الوثائق والفضاءات المتاحة لكم.' },
+      { a: 'ملخصات الاجتماعات والمحاضر التلقائية', d: 'تلخص الاجتماعات المسجلة، وتصوغ المحضر، وتسرد المهام المطلوبة.' },
+      { a: 'الصياغة وإعادة الصياغة', d: 'تساعد في كتابة الرسائل والوثائق، أو إعادة صياغة نص موجود.' },
+      { a: 'البحث في الوثائق', d: 'تعثر على المعلومات في الوثائق والفضاءات المتاحة لكم.' },
+      { a: 'إجابات من بياناتكم', d: 'تجيب عن أسئلتكم من البيانات المتاحة في المنصة، وفق صلاحياتكم.' },
+      { a: 'اقتراح الإجراءات', d: 'تقترح الخطوات التالية والمتابعات لتوافقوا عليها.' },
+      { a: 'إنشاء المحتوى', d: 'تساعد في إعداد الإعلانات والمواد ومحتوى التكوين.' },
     ],
   },
   crm: {
@@ -250,8 +253,9 @@ const ar: BusinessV2 = {
   },
   collab: {
     o: 'التواصل والتعاون', t: 'مكتبكم الافتراضي، لكل الفريق.',
-    x: 'فضاءات عمل وملفات مشتركة وتحرير مشترك على نفس الوثيقة مع سجل كامل. دردشة وبريد ومنتدى وتقويم واجتماعات مسجلة مع محاضر تلقائية: الإدارة ترى الصورة كاملة.',
-    points: ['فضاءات عمل افتراضية', 'تحرير مشترك وسجل', 'دردشة وبريد ومنتدى', 'تقويم مشترك', 'اجتماعات مسجلة ومحاضر', 'رؤية للإدارة'],
+    x: 'تُخزَّن كل وثائقكم في Synapse، منظمة في مجلدات وفضاءات، ومتاحة حسب صلاحيات كل شخص. تحرير مشترك مباشر، سجل النسخ، دردشة وبريد ومنتدى وتقويم واجتماعات مسجلة مع محاضر تلقائية.',
+    points: ['تخزين مركزي للوثائق', 'ملفات مشتركة', 'مجلدات وفضاءات منظمة', 'تحرير مشترك مباشر', 'سجل النسخ', 'مشاركة آمنة', 'البحث في الوثائق', 'وصول حسب الصلاحيات', 'دردشة وبريد ومنتدى', 'تقويم مشترك', 'اجتماعات عبر الإنترنت', 'تسجيل الاجتماعات', 'محاضر تلقائية'],
+    store: ['تخزين الوثائق', 'الإدارة', 'المبيعات', 'الموارد البشرية', 'المشاريع', 'وصول حسب الصلاحيات'],
     ws: 'فضاء لكل فريق أو مشروع', cue: 'Syn’IA: تم إنشاء المحضر واستخراج 3 مهام',
   },
   projects: {
