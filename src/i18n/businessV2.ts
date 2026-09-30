@@ -5,7 +5,7 @@ export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
   grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
   team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string };
-  work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string };
+  work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string; value: string };
   fin: Outcome & { orbit: string[]; center: string };
   flow: { o: string; t: string; a: string[]; b: string[] };
   ai: { o: string; t: string; x: string; orbit: string[]; sub: string };
@@ -40,6 +40,7 @@ const fr: BusinessV2 = {
     orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Drive partagé', 'Suite bureautique', 'Gestion de projet', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail et la collaboration.',
     x: 'Communication, documents et projets réunis dans un bureau virtuel structuré par équipe.',
     points: ['Messagerie, email, forum et calendrier', 'Réunions en ligne et co-édition', 'Stockage documentaire, versions et droits d’accès', 'Projets, tâches, jalons et validations'],
+    value: 'Vos équipes gagnent du temps au quotidien : chacun retrouve immédiatement les bons échanges, documents et priorités, les décisions avancent plus vite et le travail se poursuit sans rupture, au bureau comme à distance.',
     store: ['Stockage documentaire', 'Direction', 'Commercial', 'RH', 'Projets', 'Accès selon les droits'],
     cue: 'Syn’IA : PV rédigé, 3 actions identifiées',
   },
@@ -99,6 +100,7 @@ const en: BusinessV2 = {
     orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Shared drive', 'Productivity suite', 'Project management', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise work and collaboration.',
     x: 'Communication, documents and projects in a virtual office structured by team.',
     points: ['Messaging, email, forum and calendar', 'Online meetings and co-editing', 'Document storage, versions and access rights', 'Projects, tasks, milestones and approvals'],
+    value: 'Your teams save time every day: everyone finds the right conversations, documents and priorities instantly, decisions move faster and work continues seamlessly, in the office or remotely.',
     store: ['Document storage', 'Management', 'Sales', 'HR', 'Projects', 'Access by permissions'],
     cue: 'Syn’IA: minutes drafted, 3 actions identified',
   },
@@ -158,6 +160,7 @@ const no: BusinessV2 = {
     orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Delt disk', 'Kontorpakke', 'Prosjektstyring', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeid og samarbeid.',
     x: 'Kommunikasjon, dokumenter og prosjekter i et virtuelt kontor organisert per team.',
     points: ['Meldinger, e-post, forum og kalender', 'Nettmøter og samtidig redigering', 'Dokumentlagring, versjoner og tilgang', 'Prosjekter, oppgaver, milepæler og godkjenninger'],
+    value: 'Teamene sparer tid hver dag: alle finner riktige samtaler, dokumenter og prioriteringer med en gang, beslutninger tas raskere og arbeidet flyter uten brudd, på kontoret eller eksternt.',
     store: ['Dokumentlagring', 'Ledelse', 'Salg', 'HR', 'Prosjekter', 'Tilgang etter rettigheter'],
     cue: 'Syn’IA: referat skrevet, 3 tiltak identifisert',
   },
@@ -217,6 +220,7 @@ const ar: BusinessV2 = {
     orbit: ['الدردشة', 'البريد', 'آخر المستجدات', 'المجموعات', 'فضاءات العمل', 'اجتماعات عبر الإنترنت', 'التخزين', 'مساحة مشتركة', 'أدوات مكتبية', 'تدبير المشاريع', 'المهام', 'استطلاعات'], team: 'فريقكم', teamSub: 'مكتب افتراضي', o: 'العمل والتعاون', t: 'نظّموا العمل والتعاون.',
     x: 'التواصل والوثائق والمشاريع في مكتب افتراضي منظم حسب الفريق.',
     points: ['المراسلة والبريد والمنتدى والتقويم', 'اجتماعات عبر الإنترنت وتحرير مشترك', 'تخزين الوثائق والنسخ وصلاحيات الوصول', 'المشاريع والمهام والمراحل والموافقات'],
+    value: 'توفر فرقكم الوقت يوميًا: يجد كل فرد المحادثات والوثائق والأولويات المناسبة فورًا، وتُتخذ القرارات بسرعة أكبر، ويستمر العمل دون انقطاع، في المكتب أو عن بُعد.',
     store: ['تخزين الوثائق', 'الإدارة', 'المبيعات', 'الموارد البشرية', 'المشاريع', 'وصول حسب الصلاحيات'],
     cue: 'Syn’IA: تمت صياغة المحضر وتحديد 3 مهام',
   },
