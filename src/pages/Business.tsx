@@ -93,15 +93,23 @@ const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-
 const Hub = ({ children, badge }: { children: ReactNode; badge: ReactNode }) => (
   <span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#A5F3EC]/60 bg-gradient-to-br from-[#2DD4C4] via-[#1FB5C9] to-[#7B5CF0] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_0_60px_-5px_rgba(45,212,196,0.8)]">
     {children}
-    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#E2D4FF]/50 bg-gradient-to-br from-[#8B4FE0] to-[#5B3FC8] text-white shadow-lg">{badge}</span>
+    <span className="absolute -bottom-2 -end-2 grid place-items-center w-9 h-9 rounded-xl border border-[#A76CFF]/50 bg-gradient-to-br from-[#3E1856] via-[#5E2580] to-[#772F9F] text-white shadow-lg">{badge}</span>
   </span>
 );
 
-const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string; dense?: boolean }) => (
+const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string; dense?: boolean }) => {
+  const r = dense ? 39 : 36;
+  return (
   <div className={`relative mx-auto aspect-square w-full ${dense ? 'max-w-[540px]' : 'max-w-[460px]'}`}>
-    <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
-    <div className="absolute inset-[30%] rounded-full bg-[#772F9F]/20 blur-2xl" aria-hidden />
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center">
+    <div className="absolute inset-[6%] rounded-full border border-[#A76CFF]/10" />
+    <div className="absolute inset-[18%] rounded-full border border-[#A76CFF]/[0.06]" />
+    <div className="absolute inset-[30%] rounded-full bg-[#5E2580]/25 blur-3xl" aria-hidden />
+    <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" aria-hidden>
+      {items.map((o, i) => { const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2; return (
+        <line key={o} x1="50" y1="50" x2={50 + (r - 6) * Math.cos(ang)} y2={50 + (r - 6) * Math.sin(ang)} stroke="#A76CFF" strokeOpacity="0.14" strokeWidth="0.3" strokeDasharray="0.8 1.2" />
+      ); })}
+    </svg>
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-10">
       {center}
       <p className="mt-3 text-[14px] font-semibold">{name}</p>
       <p className="text-[11.5px] text-[#B8B5C8]">{sub}</p>
@@ -110,14 +118,19 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
       const Icon = icons[i];
       const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
       return (
-        <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + (dense ? 39 : 36) * Math.cos(ang)}%`, top: `${50 + (dense ? 39 : 36) * Math.sin(ang)}%` }}>
-          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#D9C2FF]/60 bg-gradient-to-br from-[#B57CFF]/85 via-[#8B4FE0]/75 to-[#5B8CFF]/70 backdrop-blur-xl text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_10px_30px_-10px_rgba(167,108,255,1)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
-          <p className={`mt-1.5 text-center ${dense ? "text-[9.5px] md:text-[11px]" : "text-[10.5px] md:text-[11.5px]"} leading-tight text-[#E6E4F0]`}>{o}</p>
+        <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + r * Math.cos(ang)}%`, top: `${50 + r * Math.sin(ang)}%` }}>
+          <span className={`${dense ? 'w-10 h-10 md:w-12 md:h-12' : 'w-12 h-12 md:w-14 md:h-14'} rounded-xl border border-[#A76CFF]/50 p-px shadow-[0_10px_24px_-10px_rgba(94,37,128,0.9)]`}>
+            <span className="grid place-items-center w-full h-full rounded-[10px] backdrop-blur-sm text-white/90" style={{ background: 'linear-gradient(145deg, rgba(62,24,86,0.92) 0%, rgba(94,37,128,0.88) 40%, rgba(119,47,159,0.78) 100%)' }}>
+              <Icon className={dense ? 'w-4 h-4 md:w-5 md:h-5' : 'w-5 h-5 md:w-[22px] md:h-[22px]'} strokeWidth={1.6} />
+            </span>
+          </span>
+          <p className={`mt-2 text-center ${dense ? 'text-[9.5px] md:text-[11px]' : 'text-[10.5px] md:text-[11.5px]'} font-medium leading-tight text-[#D9CCF0]/75`}>{o}</p>
         </div>
       );
     })}
   </div>
-);
+  );
+};
 
 const Business = () => {
   const { lang } = useLanguage();
