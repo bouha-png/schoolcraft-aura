@@ -13,7 +13,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import ClientCard from '@/components/business/ClientCard';
-import PilotDashboard from '@/components/business/PilotDashboard';
+import FinanceDashboard from '@/components/business/FinanceDashboard';
 import businessV2 from '@/i18n/businessV2';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
@@ -306,7 +306,7 @@ const Business = () => {
                 <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
                 <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
               </div>
-              <Reveal delay={150}><PilotDashboard lang={lang} rtl={rtl} /></Reveal>
+              <Reveal delay={150}><FinanceDashboard lang={lang} /></Reveal>
             </div>
           </div>
         </section>
