@@ -369,7 +369,6 @@ const Business = () => {
                   <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
                   <div><p className="text-[15px] font-semibold">{teams.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{teams.v[6]}</p></div>
                 </div>
-                <div className="mt-6"><Chain steps={teams.v.slice(0, 5)} rtl={rtl} /></div>
                 <div className="mt-6 rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.07] p-4 flex items-center gap-3">
                   <Banknote className="w-5 h-5 text-[#7CC8FF]" />
                   <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="90%" tone="cyan" /></div></div>
@@ -385,7 +384,14 @@ const Business = () => {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <Title overline={v.collab.o} title={v.collab.t} intro={v.collab.x} />
-                <Reveal delay={100}><Points items={v.collab.points} /></Reveal>
+                <Reveal delay={100} className="mt-7 grid sm:grid-cols-3 gap-4">
+                  {v.collab.groups.map((g) => (
+                    <div key={g.h} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#A76CFF]">{g.h}</p>
+                      <ul className="mt-3 space-y-2">{g.items.map((p) => <li key={p} className="flex items-start gap-2 text-[13.5px] leading-snug text-[#E6E4F0]"><CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-[#7CC8FF] shrink-0" />{p}</li>)}</ul>
+                    </div>
+                  ))}
+                </Reveal>
               </div>
               <Reveal delay={150}>
               <div className={`${panel} p-5 space-y-3`}>
@@ -496,8 +502,13 @@ const Business = () => {
         <section id="finance" className="relative py-20 md:py-28 bg-[#0A0C24]">
           <div className={container}>
             <Title overline={v.finance.o} title={v.finance.t} intro={v.finance.x} center />
-            <Reveal delay={80} className="mt-7 flex flex-wrap justify-center gap-2">
-              {v.finance.points.map((p) => <span key={p} className="text-[13px] px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-[#D6D3E4]">{p}</span>)}
+            <Reveal delay={80} className="mt-8 mx-auto max-w-[900px] grid sm:grid-cols-2 gap-4">
+              {[v.finance.ops, v.finance.rep].map((g, k) => (
+                <div key={g.h} className={`rounded-2xl border p-4 ${k ? 'border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.06]' : 'border-white/10 bg-white/[0.03]'}`}>
+                  <p className="flex items-center gap-2 text-[13px] font-semibold">{k ? <BarChart3 className="w-4 h-4 text-[#7CC8FF]" /> : <Wallet className="w-4 h-4 text-[#C9A8FF]" />}{g.h}</p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">{g.items.map((p) => <span key={p} className="text-[12.5px] px-2.5 py-1 rounded-lg bg-white/[0.05] text-[#D6D3E4]">{p}</span>)}</div>
+                </div>
+              ))}
             </Reveal>
             <Reveal delay={150} className="mt-12 mx-auto max-w-[900px] relative">
               <PilotDashboard lang={lang} rtl={rtl} />
@@ -616,7 +627,7 @@ const Business = () => {
             <Reveal delay={100} className="mt-12 mx-auto max-w-[1000px] rounded-[24px] border border-[#A76CFF]/30 p-3 md:p-4 bg-gradient-to-b from-[#772F9F]/20 to-[#0E1030]/60">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-2 rounded-2xl border border-[#A76CFF]/40 bg-[#772F9F]/20 px-4 py-3">
                 <span className="flex items-center gap-2 text-[14px] font-semibold"><Sparkles className="w-4 h-4 text-[#C9A9FF]" />Syn’IA<span className="text-[#8D89A0]">+</span><BarChart3 className="w-4 h-4 text-[#7CC8FF]" />{v.modular.pilot}</span>
-                <span className="text-[12px] text-[#CFCDDC]">{v.modular.layers} · {v.modular.layerX}</span>
+                <span className="text-[12px] text-[#CFCDDC]">{v.modular.layers}</span>
               </div>
               <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {v.modular.groups.map((g, i) => { const I = groupIcons[i]; return (
@@ -634,12 +645,12 @@ const Business = () => {
           <div className="absolute inset-0" style={{ background: 'radial-gradient(60% 70% at 50% 100%, rgba(119,47,159,0.4) 0%, rgba(7,9,29,0) 70%)' }} aria-hidden />
           <Reveal className={`relative ${container} text-center`}>
             <h2 className="font-display font-bold tracking-[-0.03em] leading-[1.02] text-[clamp(2.6rem,7.5vw,5.4rem)]">
-              {c.final.title1}<br />
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(100deg,#F7F7FB 0%,#C9A9FF 55%,#7CC8FF 100%)' }}>{c.final.title2}</span>
+              {v.final.t1}<br />
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(100deg,#F7F7FB 0%,#C9A9FF 55%,#7CC8FF 100%)' }}>{v.final.t2}</span>
             </h2>
-            <p className="mx-auto mt-7 max-w-[620px] text-[16px] md:text-[19px] leading-[1.65] text-[#CFCDDC]">{c.final.text}</p>
+            <p className="mx-auto mt-7 max-w-[620px] text-[16px] md:text-[19px] leading-[1.65] text-[#CFCDDC]">{v.final.x}</p>
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{c.final.cta}{arrow}</a>
+              <a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{v.final.cta}{arrow}</a>
             </div>
           </Reveal>
         </section>
