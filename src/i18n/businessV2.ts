@@ -36,7 +36,7 @@ const fr: BusinessV2 = {
     life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Suivi', 'Mon portail'], emp: 'Employé',
   },
   work: {
-    orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Drive partagé', 'Suite bureautique', 'Gestion de projet', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail.',
+    orbit: ['Chat', 'Email', 'Fil d’actualité', 'Groupes', 'Espaces de travail', 'Réunions en ligne', 'Stockage', 'Drive partagé', 'Suite bureautique', 'Gestion de projet', 'Tâches', 'Sondages'], team: 'Votre équipe', teamSub: 'Bureau virtuel', o: 'Travail & Collaboration', t: 'Organisez le travail et la collaboration.',
     x: 'Communication, documents et projets réunis dans un bureau virtuel structuré par équipe.',
     points: ['Messagerie, email, forum et calendrier', 'Réunions en ligne et co-édition', 'Stockage documentaire, versions et droits d’accès', 'Projets, tâches, jalons et validations'],
     store: ['Stockage documentaire', 'Direction', 'Commercial', 'RH', 'Projets', 'Accès selon les droits'],
@@ -94,7 +94,7 @@ const en: BusinessV2 = {
     life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training', orbit: ['Payroll', 'Payslips', 'Time tracking', 'Attendance & absence', 'Leave', 'Training', 'Certificates', 'Follow-up', 'My portal'], emp: 'Employee',
   },
   work: {
-    orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Shared drive', 'Productivity suite', 'Project management', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise the work.',
+    orbit: ['Chat', 'Email', 'Feed', 'Groups', 'Workspaces', 'Online meetings', 'Storage', 'Shared drive', 'Productivity suite', 'Project management', 'Tasks', 'Polls'], team: 'Your team', teamSub: 'Virtual office', o: 'Work & Collaboration', t: 'Organise work and collaboration.',
     x: 'Communication, documents and projects in a virtual office structured by team.',
     points: ['Messaging, email, forum and calendar', 'Online meetings and co-editing', 'Document storage, versions and access rights', 'Projects, tasks, milestones and approvals'],
     store: ['Document storage', 'Management', 'Sales', 'HR', 'Projects', 'Access by permissions'],
@@ -152,7 +152,7 @@ const no: BusinessV2 = {
     life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Oppfølging', 'Min portal'], emp: 'Ansatt',
   },
   work: {
-    orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Delt disk', 'Kontorpakke', 'Prosjektstyring', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeidet.',
+    orbit: ['Chat', 'E-post', 'Feed', 'Grupper', 'Arbeidsrom', 'Nettmøter', 'Lagring', 'Delt disk', 'Kontorpakke', 'Prosjektstyring', 'Oppgaver', 'Avstemninger'], team: 'Teamet ditt', teamSub: 'Virtuelt kontor', o: 'Arbeid & samarbeid', t: 'Organiser arbeid og samarbeid.',
     x: 'Kommunikasjon, dokumenter og prosjekter i et virtuelt kontor organisert per team.',
     points: ['Meldinger, e-post, forum og kalender', 'Nettmøter og samtidig redigering', 'Dokumentlagring, versjoner og tilgang', 'Prosjekter, oppgaver, milepæler og godkjenninger'],
     store: ['Dokumentlagring', 'Ledelse', 'Salg', 'HR', 'Prosjekter', 'Tilgang etter rettigheter'],
@@ -210,7 +210,7 @@ const ar: BusinessV2 = {
     life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'المتابعة', 'بوابتي'], emp: 'موظف',
   },
   work: {
-    orbit: ['الدردشة', 'البريد', 'آخر المستجدات', 'المجموعات', 'فضاءات العمل', 'اجتماعات عبر الإنترنت', 'التخزين', 'مساحة مشتركة', 'أدوات مكتبية', 'تدبير المشاريع', 'المهام', 'استطلاعات'], team: 'فريقكم', teamSub: 'مكتب افتراضي', o: 'العمل والتعاون', t: 'نظّموا العمل.',
+    orbit: ['الدردشة', 'البريد', 'آخر المستجدات', 'المجموعات', 'فضاءات العمل', 'اجتماعات عبر الإنترنت', 'التخزين', 'مساحة مشتركة', 'أدوات مكتبية', 'تدبير المشاريع', 'المهام', 'استطلاعات'], team: 'فريقكم', teamSub: 'مكتب افتراضي', o: 'العمل والتعاون', t: 'نظّموا العمل والتعاون.',
     x: 'التواصل والوثائق والمشاريع في مكتب افتراضي منظم حسب الفريق.',
     points: ['المراسلة والبريد والمنتدى والتقويم', 'اجتماعات عبر الإنترنت وتحرير مشترك', 'تخزين الوثائق والنسخ وصلاحيات الوصول', 'المشاريع والمهام والمراحل والموافقات'],
     store: ['تخزين الوثائق', 'الإدارة', 'المبيعات', 'الموارد البشرية', 'المشاريع', 'وصول حسب الصلاحيات'],
