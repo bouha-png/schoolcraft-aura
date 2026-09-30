@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
+import { Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -206,31 +206,27 @@ const Business = () => {
           <div className={container}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
-                <div className={`${panel} p-6`}>
-                  <div className="flex items-center gap-3">
-                    <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
-                    <div><p className="text-[15px] font-semibold">{teams.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{teams.v[6]}</p></div>
-                  </div>
-                  <ol className="mt-6 grid grid-cols-3 sm:grid-cols-5 gap-x-1.5 gap-y-3">
-                    {v.team.life.map((s, i) => (
-                      <li key={s} className="text-center">
-                        <span className="block h-1.5 rounded-full" style={{ background: 'linear-gradient(90deg,#772F9F,#3FA9F5)', opacity: 0.45 + i * 0.13 }} />
-                        <p className="mt-2 text-[11px] leading-tight text-[#D6D3E4]">{s}</p>
-                      </li>
-                    ))}
-                  </ol>
-                  <div className="mt-6 rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.07] p-4 flex items-center gap-3">
-                    <Banknote className="w-5 h-5 text-[#7CC8FF]" />
-                    <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="90%" tone="cyan" /></div></div>
-                  </div>
-                  <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="flex items-center gap-2 text-[13px] font-semibold"><GraduationCap className="w-4 h-4 text-[#C9A8FF]" />{v.team.training}</p>
-                    <div className="mt-3 space-y-2">
-                      {[0, 1].map((i) => (
-                        <div key={i} className="grid grid-cols-[1fr_80px] items-center gap-3 text-[12.5px] text-[#E6E4F0]"><span className="truncate">{c.training.v[i]}</span><Bar w={`${[100, 65][i]}%`} tone={i === 0 ? 'cyan' : 'violet'} /></div>
-                      ))}
+                <div className="relative mx-auto aspect-square w-full max-w-[460px]">
+                  <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
+                  <div className="absolute inset-[30%] rounded-full bg-[#772F9F]/20 blur-2xl" aria-hidden />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <div className="relative">
+                      <img src={avatarSalma} alt="" className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]" />
                     </div>
+                    <p className="mt-3 text-[14px] font-semibold">{teams.v[5]}</p>
+                    <p className="text-[11.5px] text-[#B8B5C8]">{v.team.emp}</p>
                   </div>
+                  {v.team.orbit.map((o, i) => {
+                    const Icon = [Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp][i];
+                    const ang = (i / v.team.orbit.length) * 2 * Math.PI - Math.PI / 2;
+                    const x = 50 + 36 * Math.cos(ang), y = 50 + 36 * Math.sin(ang);
+                    return (
+                      <div key={o} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[84px] md:w-[96px]" style={{ left: `${x}%`, top: `${y}%` }}>
+                        <span className="grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]" style={iconBg}><Icon className="w-5 h-5" strokeWidth={1.75} /></span>
+                        <p className="mt-1.5 text-center text-[10.5px] md:text-[11.5px] leading-tight text-[#E6E4F0]">{o}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </Reveal>
               <div className="order-1 lg:order-2">
