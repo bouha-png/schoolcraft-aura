@@ -15,7 +15,6 @@ import ClientCard from '@/components/business/ClientCard';
 import PilotDashboard from '@/components/business/PilotDashboard';
 import SecuritySection from '@/components/business/SecuritySection';
 import ModuleCatalog from '@/components/business/ModuleCatalog';
-import ExploreGroup from '@/components/business/ExploreGroup';
 import HrPayrollSection from '@/components/business/HrPayrollSection';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
@@ -117,14 +116,13 @@ const Business = () => {
 
   const nodeIcons = [Users, FolderKanban, UserRound, Wallet, FileText, Video];
   const toolIcons = [Mail, MessageSquare, Video, Cloud, FolderKanban, Contact, UserCog, Wallet, GraduationCap, CalendarCheck];
-  const [collab, organise, teams, pilot, crm] = c.universes;
+  const [collab, organise, teams, finance, pilot, crm] = c.universes;
 
-  const Universe = ({ u, visual, flip, cat }: { u: typeof collab; visual: ReactNode; flip?: boolean; cat?: string }) => (
+  const Universe = ({ u, visual, flip }: { u: typeof collab; visual: ReactNode; flip?: boolean }) => (
     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div className={flip ? 'lg:order-2' : ''}>
         <Title overline={u.overline} title={u.title} intro={u.text} />
         <Reveal delay={100}><Tags items={u.tags} /></Reveal>
-        {cat && <ExploreGroup id={cat} lang={lang} />}
       </div>
       <Reveal delay={150} className={flip ? 'lg:order-1' : ''}>{visual}</Reveal>
     </div>
@@ -160,7 +158,6 @@ const Business = () => {
               <p className="hero-animate hero-delay-2 mt-7 max-w-[560px] text-[16px] md:text-[18px] leading-[1.65] text-[#CFCDDC]">{c.hero.subtitle}</p>
               <div className="hero-animate hero-delay-3 mt-10 flex flex-col sm:flex-row gap-4">
                 <a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{c.hero.cta}{arrow}</a>
-                <a href="#problem" className={ghostBtn}>{c.hero.cta2}</a>
               </div>
             </div>
             {/* Connected environment */}
@@ -214,7 +211,7 @@ const Business = () => {
         {/* UNIVERSES */}
         <section className="relative py-16 md:py-24 bg-[#0A0C24]">
           <div className={`${container} space-y-24 md:space-y-32`}>
-            <Universe cat="collaboration" u={collab} visual={
+            <Universe u={collab} visual={
               <div className={`${panel} p-5 space-y-3`}>
                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-4">
                   <div className="flex items-center justify-between gap-2">
@@ -263,7 +260,7 @@ const Business = () => {
               </div>
             } />
 
-            <Universe cat="gestion-projet" flip u={organise} visual={
+            <Universe flip u={organise} visual={
               <div className={`${panel} p-6`}>
                 <div className="flex items-center justify-between">
                   <p className="text-[14px] font-semibold">{organise.v[6]}</p>
@@ -280,24 +277,32 @@ const Business = () => {
               </div>
             } />
 
-            <Universe cat="rh-paie" u={teams} visual={
+            <Universe u={teams} visual={
               <div className={`${panel} p-6`}>
                 <div className="flex items-center gap-3">
                   <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">SI</span>
                   <div><p className="text-[15px] font-semibold">{teams.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{teams.v[6]}</p></div>
                 </div>
-                <div className="mt-6"><Chain steps={teams.v.slice(0, 5)} rtl={rtl} /></div>
+                <div className="mt-6"><Chain steps={teams.v.slice(0, 5)} rtl={rtl} />
+
+            <Universe flip u={finance} visual={
+              <div className={`${panel} p-6`}>
+                <div className="flex items-center gap-3">
+                  <span className="h-11 w-11 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] grid place-items-center text-[14px] font-semibold">AC</span>
+                  <div><p className="text-[15px] font-semibold">{finance.v[5]}</p><p className="text-[12px] text-[#B8B5C8]">{finance.v[6]}</p></div>
+                </div>
+                <div className="mt-6"><Chain steps={finance.v.slice(0, 5)} rtl={rtl} /></div>
                 <div className="mt-6 rounded-2xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/[0.07] p-4 flex items-center gap-3">
-                  <GraduationCap className="w-5 h-5 text-[#7CC8FF]" />
+                  <Banknote className="w-5 h-5 text-[#7CC8FF]" />
                   <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="60%" tone="cyan" /></div></div>
                 </div>
               </div>
             } />
 
-            <Universe cat="pilotage" flip u={pilot} visual={<PilotDashboard lang={lang} rtl={rtl} />} />
+            <Universe u={pilot} visual={<PilotDashboard lang={lang} rtl={rtl} />} />
 
 
-            <Universe cat="ventes-clients" u={crm} visual={<ClientCard v={crm.v} rtl={rtl} />} />
+            <Universe flip u={crm} visual={<ClientCard v={crm.v} rtl={rtl} />} />
           </div>
         </section>
 
@@ -307,7 +312,6 @@ const Business = () => {
             <div>
               <Title overline={c.booking.overline} title={c.booking.title} intro={c.booking.text} />
               <Reveal delay={100} className="mt-8"><Chain steps={c.booking.steps} rtl={rtl} tone="cyan" /></Reveal>
-              <ExploreGroup id="ventes-clients" lang={lang} />
             </div>
             <Reveal delay={150} className="flex justify-center">
               <div dir="ltr" className="relative w-[300px] aspect-[9/19.5] rounded-[54px] p-[3px] shadow-[0_50px_100px_-40px_rgba(0,0,0,0.95)]" style={{ background: 'linear-gradient(145deg,#8E8A96 0%,#3A3842 30%,#1C1B22 55%,#5A5763 100%)' }}>
@@ -407,7 +411,6 @@ const Business = () => {
           <div className={container}>
             <Title overline={c.sell.overline} title={c.sell.title} intro={c.sell.text} center />
             <Reveal delay={100} className="flex justify-center"><div className="max-w-[760px] [&>div]:justify-center"><Tags items={c.sell.tags} /></div></Reveal>
-            <ExploreGroup id="reunions-conferences" lang={lang} center />
 
             <div className="mt-16 grid lg:grid-cols-2 gap-6">
               <Reveal className={`${panel} p-6 md:p-7`}>
@@ -515,7 +518,6 @@ const Business = () => {
             <div className="lg:order-1">
               <Title overline={c.training.overline} title={c.training.title} intro={c.training.text} />
               <Reveal delay={100}><Tags items={c.training.tags} /></Reveal>
-              <ExploreGroup id="formation" lang={lang} />
             </div>
           </div>
         </section>
@@ -525,7 +527,6 @@ const Business = () => {
           <div className={container}>
             <Title overline={c.workspaces.overline} title={c.workspaces.title} intro={c.workspaces.text} center />
             <Workspaces c={c.workspaces} lang={lang} />
-            <ExploreGroup id="collaboration" lang={lang} center />
           </div>
         </section>
 
@@ -571,7 +572,6 @@ const Business = () => {
                 </Reveal>
               ))}
             </div>
-            <ExploreGroup id="synia" lang={lang} center />
           </div>
         </section>
 
