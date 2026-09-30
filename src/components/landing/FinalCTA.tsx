@@ -11,7 +11,7 @@ const FinalCTA = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(
-      `Demande de démo — ${form.school || form.name}\n\nNom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\nÉtablissement: ${form.school}\n\nMessage:\n${form.message}`
+      `Demande de démo Synapse Education — ${form.school || form.name}\n\nNom: ${form.name}\nEmail: ${form.email}\nTéléphone: ${form.phone}\nÉtablissement: ${form.school}\n\nMessage:\n${form.message}`
     );
     const whatsappUrl = `https://wa.me/212614615816?text=${text}`;
     const openedWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
