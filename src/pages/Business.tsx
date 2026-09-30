@@ -249,7 +249,7 @@ const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
   );
 };
 
-const WideApps = ({ items, icons, photo, children, rtl, full }: { items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean; full?: boolean }) => (
+const WideApps = ({ items, icons, photo, children, rtl, full, pos }: { pos?: string; items: string[]; icons: typeof Users[]; photo: string; children?: ReactNode; rtl?: boolean; full?: boolean }) => (
   <div>
     <svg width="0" height="0" className="absolute" aria-hidden>
       <defs>
@@ -259,7 +259,7 @@ const WideApps = ({ items, icons, photo, children, rtl, full }: { items: string[
       </defs>
     </svg>
     <div className="relative overflow-hidden lg:min-h-[600px] flex flex-col lg:flex-row lg:items-center">
-      <img src={photo} alt="" loading="lazy" width={1920} height={912} className={`relative block w-full h-auto ${full ? "aspect-auto" : "aspect-[4/3] sm:aspect-[2/1] object-[80%_center]"} object-cover lg:absolute lg:inset-0 lg:h-full lg:aspect-auto lg:object-right`} style={{ filter: 'brightness(0.8) saturate(0.95)', ...(rtl && !full ? { transform: 'scaleX(-1)' } : {}) }} />
+      <img src={photo} alt="" loading="lazy" width={1920} height={912} className={`relative block w-full h-auto ${full ? "aspect-auto" : "aspect-[4/3] sm:aspect-[2/1] object-[80%_center]"} object-cover lg:absolute lg:inset-0 lg:h-full lg:aspect-auto lg:object-right`} style={{ ...(pos ? { objectPosition: pos } : {}), filter: 'brightness(0.8) saturate(0.95)', ...(rtl && !full ? { transform: 'scaleX(-1)' } : {}) }} />
       <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] from-5% via-[#07091D]/60 via-35% to-transparent to-60% hidden lg:block`} />
       <div className="absolute inset-x-0 top-0 aspect-[4/3] sm:aspect-[2/1] bg-gradient-to-t from-[#07091D] via-transparent via-40% to-transparent lg:hidden" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07091D] to-transparent" />
@@ -430,7 +430,7 @@ const Business = () => {
 
         {/* 2A. DÉVELOPPEZ VOTRE ACTIVITÉ */}
         <section id="clients" className="relative pt-6 pb-20 md:pb-28">
-          <WideApps rtl={rtl} photo={clientsWide} items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}>
+          <WideApps rtl={rtl} pos="100% center" photo={clientsWide} items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}>
             <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
             <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
           </WideApps>
