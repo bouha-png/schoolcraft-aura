@@ -7,7 +7,7 @@ import educationAsset from '@/assets/portal-education-wide.png.asset.json';
 import associationsAsset from '@/assets/portal-associations-wide.png.asset.json';
 import educationAssetAr from '@/assets/portal-education-wide-ar.png.asset.json';
 import associationsAssetAr from '@/assets/portal-associations-wide-ar.png.asset.json';
-import businessImage from '@/assets/portal-business-wide-v2.jpg';
+import businessImage from '@/assets/business-option-b.jpg';
 
 const ProductGateway = () => {
   const { lang } = useLanguage();
