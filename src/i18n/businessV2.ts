@@ -31,8 +31,8 @@ const fr: BusinessV2 = {
     x: 'Ressaisies, versions multiples, suivi incomplet. Synapse Business assure la continuité de l’information, du premier contact client jusqu’au reporting.',
   },
   ai: {
-    o: "Syn’IA", t: "Votre assistant personnel, intégré à Synapse Business.",
-    x: "Syn’IA vous accompagne dans votre travail quotidien et intervient, lorsque c’est utile, dans différents espaces de la plateforme pour vous aider à gagner du temps, retrouver l’information, préparer vos contenus et simplifier certaines tâches.",
+    o: "Syn’IA", t: "Une assistance intégrée à votre environnement de travail.",
+    x: "Syn’IA est intégrée aux différents espaces de Synapse Business et intervient là où elle apporte une valeur réelle : pour retrouver une information, préparer ou reformuler un contenu, résumer certains échanges et simplifier des tâches récurrentes. Elle s’appuie sur les informations auxquelles chaque utilisateur a accès et respecte les droits définis dans l’organisation.",
     note: "Elle s’appuie sur les informations auxquelles vous avez accès et respecte les droits définis dans votre organisation.", badge: 'Syn’IA', role: "Assistant personnel",
     chips: ["Réunion", "Document", "Recherche", "Projet"], ex: ["Résumer cette réunion", "Retrouver ce document"],
   },
@@ -98,8 +98,8 @@ const en: BusinessV2 = {
     x: 'Re-entry, multiple versions, incomplete follow-up. Synapse Business keeps information continuous, from first customer contact to reporting.',
   },
   ai: {
-    o: "Syn’IA", t: "Your personal assistant, built into Synapse Business.",
-    x: "Syn’IA supports your day-to-day work and steps in, when useful, across different areas of the platform to help you save time, find information, prepare content and simplify certain tasks.",
+    o: "Syn’IA", t: "Assistance built into your working environment.",
+    x: "Syn’IA is integrated across the relevant areas of Synapse Business and steps in where it adds real value: finding information, preparing or rephrasing content, summarising certain exchanges and simplifying recurring tasks. It relies on the information each user has access to and respects the rights defined in the organisation.",
     note: "It relies on the information you have access to and respects the rights defined in your organisation.", badge: 'Syn’IA', role: "Personal assistant",
     chips: ["Meeting", "Document", "Search", "Project"], ex: ["Summarise this meeting", "Find this document"],
   },
@@ -165,8 +165,8 @@ const no: BusinessV2 = {
     x: 'Dobbeltregistrering, flere versjoner, mangelfull oppfølging. Synapse Business sikrer sammenhengende informasjon, fra første kundekontakt til rapportering.',
   },
   ai: {
-    o: "Syn’IA", t: "Din personlige assistent, innebygd i Synapse Business.",
-    x: "Syn’IA følger deg i det daglige arbeidet og bidrar, når det er nyttig, i ulike deler av plattformen for å hjelpe deg å spare tid, finne informasjon, forberede innhold og forenkle enkelte oppgaver.",
+    o: "Syn’IA", t: "Assistanse innebygd i arbeidsmiljøet ditt.",
+    x: "Syn’IA er integrert i de ulike delene av Synapse Business og bidrar der den gir reell verdi: å finne informasjon, forberede eller omformulere innhold, oppsummere enkelte samtaler og forenkle gjentakende oppgaver. Den bygger på informasjonen hver bruker har tilgang til og respekterer rettighetene som er definert i organisasjonen.",
     note: "Den bygger på informasjonen du har tilgang til og respekterer rettighetene som er definert i organisasjonen din.", badge: 'Syn’IA', role: "Personlig assistent",
     chips: ["Møte", "Dokument", "Søk", "Prosjekt"], ex: ["Oppsummer dette møtet", "Finn dette dokumentet"],
   },
@@ -232,8 +232,8 @@ const ar: BusinessV2 = {
     x: 'إعادة إدخال، ونسخ متعددة، ومتابعة ناقصة. تضمن Synapse Business استمرارية المعلومة، من أول اتصال بالعميل إلى التقارير.',
   },
   ai: {
-    o: "Syn’IA", t: "مساعدكم الشخصي، مدمج في Synapse Business.",
-    x: "ترافقكم Syn’IA في عملكم اليومي وتتدخل، عند الحاجة، في مختلف فضاءات المنصة لمساعدتكم على ربح الوقت، والعثور على المعلومات، وإعداد محتوياتكم، وتبسيط بعض المهام.",
+    o: "Syn’IA", t: "مساعدة مدمجة في بيئة عملكم.",
+    x: "Syn’IA مدمجة في مختلف فضاءات Synapse Business وتتدخل حيث تضيف قيمة حقيقية: للعثور على معلومة، وإعداد محتوى أو إعادة صياغته، وتلخيص بعض المبادلات، وتبسيط المهام المتكررة. تعتمد على المعلومات المتاحة لكل مستخدم وتحترم الصلاحيات المحددة داخل المؤسسة.",
     note: "تعتمد على المعلومات المتاحة لكم وتحترم الصلاحيات المحددة داخل مؤسستكم.", badge: 'Syn’IA', role: "مساعد شخصي",
     chips: ["اجتماع", "وثيقة", "بحث", "مشروع"], ex: ["لخّص هذا الاجتماع", "ابحث عن هذه الوثيقة"],
   },
