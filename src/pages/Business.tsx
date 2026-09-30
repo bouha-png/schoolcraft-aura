@@ -156,9 +156,9 @@ const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users
     </div>
     {/* Mobile: app icons layered over a full-width photo */}
     <div className="relative sm:hidden -mx-5 overflow-hidden rounded-none">
-      {photo && <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[70%_center]" />}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#07091D]/80 via-[#1A0B2E]/55 to-[#07091D]/85" />
-      <div className="relative grid grid-cols-4 gap-x-2 gap-y-5 px-4 py-8">
+      {photo && <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-top" />}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#07091D]/10 via-[#1A0B2E]/50 to-[#07091D]/90" />
+      <div className="relative grid grid-cols-4 gap-x-2 gap-y-5 px-4 pt-60 pb-8">
         {items.map((o, i) => {
           const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
           return (
