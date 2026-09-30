@@ -464,7 +464,7 @@ const Business = () => {
 
         {/* 2A2. EVENTS & LIVE */}
         <section id="live" className="relative pb-20 md:pb-28">
-          <WideApps rtl={rtl} photo={liveImg} items={lv.items} icons={[MonitorPlay, Mic, Radio, CalendarDays, ClipboardCheck, PlayCircle]}>
+          <WideApps rtl={rtl} full photo={liveImg} items={lv.items} icons={[MonitorPlay, Mic, Radio, CalendarDays, ClipboardCheck, PlayCircle]}>
             <Title overline={lv.o} title={lv.t} intro={lv.x} />
           </WideApps>
         </section>
