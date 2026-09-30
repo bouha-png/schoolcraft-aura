@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import PortalChoice from "./pages/PortalChoice";
 import Associations from "./pages/Associations";
+import Business from "./pages/Business";
 import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<PortalChoice />} />
             <Route path="/education" element={<Index />} />
             <Route path="/associations" element={<Associations />} />
+            <Route path="/business" element={<Business />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
             <Route path="/privacy" element={<Confidentialite />} />
             <Route path="/cgu" element={<CGU />} />

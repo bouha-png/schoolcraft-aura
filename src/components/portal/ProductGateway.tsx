@@ -1,4 +1,4 @@
-import { GraduationCap, Users } from 'lucide-react';
+import { GraduationCap, Users, Briefcase } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import portalChoice from '@/i18n/portalChoice';
 import ProductCard from './ProductCard';
@@ -7,6 +7,7 @@ import educationAsset from '@/assets/portal-education-wide.png.asset.json';
 import associationsAsset from '@/assets/portal-associations-wide.png.asset.json';
 import educationAssetAr from '@/assets/portal-education-wide-ar.png.asset.json';
 import associationsAssetAr from '@/assets/portal-associations-wide-ar.png.asset.json';
+import businessImage from '@/assets/portal-business-wide.jpg';
 
 const ProductGateway = () => {
   const { lang } = useLanguage();
@@ -47,6 +48,23 @@ const ProductGateway = () => {
             href="/associations"
             status="active"
             isRtl={isRtl}
+          />
+        </SpotlightItem>
+        <SpotlightItem className="hero-animate hero-delay-3 lg:col-span-2">
+          <ProductCard
+            category={c.business.category}
+            brand="Synapse"
+            productName={c.business.shortName}
+            description={c.business.description}
+            image={businessImage}
+            imageAlt={c.business.name}
+            icon={Briefcase}
+            ctaLabel={c.business.cta}
+            ctaShort={c.business.ctaShort}
+            href="/business"
+            status="active"
+            isRtl={isRtl}
+            mirrorImage={isRtl}
           />
         </SpotlightItem>
       </div>
