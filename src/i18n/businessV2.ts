@@ -21,7 +21,7 @@ const fr: BusinessV2 = {
     ai: 'Avec Syn’IA, votre assistant intégré.', cta2: 'Découvrir la plateforme',
   },
   grow: {
-    orbit: ['Contacts', 'Opportunités', 'Pipeline', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Commandes', 'Boutique en ligne'], client: 'Atlas Distribution', tag: 'Client', o: 'Clients & Ventes', t: 'Développez votre activité.',
+    orbit: ['Contacts', 'Opportunités', 'Pipeline', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Commandes', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Atlas Distribution', tag: 'Client', o: 'Clients & Ventes', t: 'Développez votre activité.',
     x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
     points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
@@ -79,7 +79,7 @@ const en: BusinessV2 = {
     ai: 'With Syn’IA, your built-in assistant.', cta2: 'Explore the platform',
   },
   grow: {
-    orbit: ['Contacts', 'Opportunities', 'Pipeline', 'Quotes', 'Follow-ups', 'Online booking', 'History', 'Orders', 'Online shop'], client: 'Atlas Distribution', tag: 'Customer', o: 'Customers & Sales', t: 'Grow your business.',
+    orbit: ['Contacts', 'Opportunities', 'Pipeline', 'Quotes', 'Follow-ups', 'Online booking', 'History', 'Orders', 'Online shop', 'Webinars', 'Event management'], client: 'Atlas Distribution', tag: 'Customer', o: 'Customers & Sales', t: 'Grow your business.',
     x: 'Acquisition, conversion and customer follow-up, shared across the sales team.',
     points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
     booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
@@ -137,7 +137,7 @@ const no: BusinessV2 = {
     ai: 'Med Syn’IA, din innebygde assistent.', cta2: 'Utforsk plattformen',
   },
   grow: {
-    orbit: ['Kontakter', 'Muligheter', 'Pipeline', 'Tilbud', 'Oppfølging', 'Nettbooking', 'Historikk', 'Ordrer', 'Nettbutikk'], client: 'Atlas Distribution', tag: 'Kunde', o: 'Kunder & salg', t: 'Utvikle virksomheten.',
+    orbit: ['Kontakter', 'Muligheter', 'Pipeline', 'Tilbud', 'Oppfølging', 'Nettbooking', 'Historikk', 'Ordrer', 'Nettbutikk', 'Webinarer', 'Arrangementer'], client: 'Atlas Distribution', tag: 'Kunde', o: 'Kunder & salg', t: 'Utvikle virksomheten.',
     x: 'Kundeanskaffelse, konvertering og oppfølging, delt i hele salgsteamet.',
     points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'],
     booking: 'Timebestilling', chain: ['Nettbestilling', 'Kalender', 'Kundekort'],
@@ -195,7 +195,7 @@ const ar: BusinessV2 = {
     ai: 'مع Syn’IA، مساعدكم المدمج.', cta2: 'اكتشفوا المنصة',
   },
   grow: {
-    orbit: ['جهات الاتصال', 'الفرص', 'مسار المبيعات', 'عروض الأسعار', 'المتابعات', 'الحجز عبر الإنترنت', 'السجل', 'الطلبات', 'المتجر الإلكتروني'], client: 'Atlas Distribution', tag: 'عميل', o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
+    orbit: ['جهات الاتصال', 'الفرص', 'مسار المبيعات', 'عروض الأسعار', 'المتابعات', 'الحجز عبر الإنترنت', 'السجل', 'الطلبات', 'المتجر الإلكتروني', 'الندوات عبر الإنترنت', 'تدبير الفعاليات'], client: 'Atlas Distribution', tag: 'عميل', o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
     x: 'الاستقطاب والتحويل ومتابعة العملاء، مشتركة داخل فريق المبيعات.',
     points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'],
     booking: 'حجز المواعيد', chain: ['حجز إلكتروني', 'الأجندة', 'بطاقة العميل'],
