@@ -16,6 +16,7 @@ export interface ProductCardProps {
   isRtl?: boolean;
   eager?: boolean;
   mirrorImage?: boolean;
+  imagePosition?: string;
 }
 
 const ProductCard = ({
@@ -33,6 +34,7 @@ const ProductCard = ({
   isRtl = false,
   eager = false,
   mirrorImage = false,
+  imagePosition,
 }: ProductCardProps) => {
   const active = status === 'active' && !!href;
 
@@ -47,7 +49,7 @@ const ProductCard = ({
         src={image}
         alt={imageAlt}
         loading={eager ? 'eager' : 'lazy'}
-        style={{ objectPosition: isRtl ? 'center' : 'center right' }}
+        style={{ objectPosition: imagePosition ?? (isRtl ? 'center' : 'center right') }}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
       />
       </div>
