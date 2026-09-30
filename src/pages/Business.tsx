@@ -486,7 +486,7 @@ const Business = () => {
 
         {/* 6B. PARTNER */}
         <section id="partenaire" className="relative pb-16 md:pb-20">
-          <WideApps rtl={rtl} full photo={partnerWide} items={v.partner.steps} icons={[MessageSquare, Layers, Handshake]}>
+          <WideApps rtl={rtl} full photo={partnerWide} items={v.partner.steps} icons={[MessageSquare, Layers, Handshake, Headset, UserCheck, Ticket]}>
             <Title overline={v.partner.o} title={v.partner.t} intro={v.partner.x} />
           </WideApps>
         </section>
