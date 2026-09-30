@@ -241,7 +241,6 @@ const Business = () => {
             </div>
             <Reveal delay={150} className="relative">
               <ClientCard v={crm.v} rtl={rtl} />
-              <AiCue text={v.crm.cue} className="mt-3 lg:mt-0 lg:absolute lg:-bottom-6 lg:-start-6 lg:max-w-[320px]" />
             </Reveal>
           </div>
         </section>
@@ -376,7 +375,6 @@ const Business = () => {
                   <div className="flex-1"><p className="text-[13px] text-[#E6E4F0]">{teams.v[7]}</p><div className="mt-2"><Bar w="90%" tone="cyan" /></div></div>
                 </div>
               </div>
-              <AiCue text={v.hr.cue} className="mt-3" />
             </Reveal>
           </div>
         </section>
@@ -490,7 +488,6 @@ const Business = () => {
                   ))}
                 </div>
               </div>
-              <AiCue text={v.projects.cue} className="mt-3" />
             </Reveal>
           </div>
         </section>
@@ -504,7 +501,6 @@ const Business = () => {
             </Reveal>
             <Reveal delay={150} className="mt-12 mx-auto max-w-[900px] relative">
               <PilotDashboard lang={lang} rtl={rtl} />
-              <AiCue text={v.finance.cue} className="mt-3 lg:mt-0 lg:absolute lg:-top-5 lg:-end-8 lg:max-w-[300px]" />
             </Reveal>
           </div>
         </section>
