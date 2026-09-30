@@ -12,7 +12,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, BookOpen, Landmark, SearchCheck } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, Smartphone, BookOpen, Landmark, SearchCheck } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -363,6 +363,13 @@ const Business = () => {
     ar: { o: 'الفعاليات والبث المباشر', t: 'تفاعلوا مع جمهوركم.', x: 'ندوات عبر الإنترنت، بودكاست، بث مباشر وفعاليات، تُنظَّم وتُتابَع من المنصة، مع ربط التسجيلات والمشاركين بجهات اتصالكم.', items: ['الندوات عبر الإنترنت', 'البودكاست', 'البث المباشر', 'تدبير الفعاليات', 'التسجيلات', 'إعادة المشاهدة'] },
   };
   const lv = LIVE[lang as keyof typeof LIVE] ?? LIVE.fr;
+  const SEC = {
+    fr: { o: 'Sécurité & conformité', t: 'Vos données protégées, vos accès maîtrisés.', x: 'Chaque accès est régi par les rôles définis dans votre organisation. Une solution pensée mobile d’abord, accessible partout, sur mobile comme sur ordinateur.', items: ['Données chiffrées', 'RGPD', 'Loi 09-08', 'Double authentification', 'Accès par rôle', 'Mobile & PC'] },
+    en: { o: 'Security & compliance', t: 'Your data protected, your access controlled.', x: 'Every access is governed by the roles defined in your organisation. A mobile-first solution, available everywhere, on mobile and desktop.', items: ['Encrypted data', 'GDPR', 'Law 09-08', 'Two-factor authentication', 'Role-based access', 'Mobile & desktop'] },
+    no: { o: 'Sikkerhet & etterlevelse', t: 'Dataene beskyttet, tilgangene under kontroll.', x: 'All tilgang styres av rollene som er definert i organisasjonen. En mobil-først-løsning, tilgjengelig overalt, på mobil og PC.', items: ['Krypterte data', 'GDPR', 'Lov 09-08', 'Tofaktorautentisering', 'Rollebasert tilgang', 'Mobil & PC'] },
+    ar: { o: 'الأمان والامتثال', t: 'بياناتكم محمية، وصلاحياتكم تحت السيطرة.', x: 'يخضع كل وصول للأدوار المحددة داخل مؤسستكم. حل مصمم للهاتف أولاً، متاح في كل مكان، على الهاتف والحاسوب.', items: ['بيانات مشفرة', 'اللائحة الأوروبية لحماية البيانات', 'القانون 09-08', 'المصادقة الثنائية', 'الوصول حسب الدور', 'الهاتف والحاسوب'] },
+  };
+  const sec = SEC[lang as keyof typeof SEC] ?? SEC.fr;
   const arrow = <ArrowRight className={`w-[18px] h-[18px] ${rtl ? 'rotate-180' : ''}`} />;
 
 
@@ -468,19 +475,11 @@ const Business = () => {
           </WideApps>
         </section>
 
-        {/* 5. MODULARITY */}
-        <section id="modules" className="relative py-16 md:py-20">
-          <div className={container}>
-            <Title title={v.modular.t} intro={v.modular.x} center />
-            <TileRow items={v.modular.items} icons={[Contact, UserCog, Users, FolderKanban, Wallet, GraduationCap, CalendarCheck, Store, CalendarDays]} />
-          </div>
-        </section>
-
         {/* 6. TRUST */}
         <section id="trust" className="relative py-16 md:py-20">
           <div className={container}>
-            <Title overline={v.trust.o} title={v.trust.t} center />
-            <TileRow cols={4} items={v.trust.items.map(([h]) => h)} icons={[KeyRound, ShieldCheck, Layers, Headphones]} />
+            <Title overline={sec.o} title={sec.t} intro={sec.x} center />
+            <TileRow items={sec.items} icons={[Lock, ShieldCheck, FileCheck2, KeyRound, UserCog, Smartphone]} />
           </div>
         </section>
 
