@@ -230,13 +230,13 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
         ))}
       </defs>
     </svg>
-    <div className="relative overflow-hidden min-h-[640px] md:min-h-[620px] lg:min-h-[600px] flex items-end lg:items-center">
-      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={{ filter: 'brightness(0.8) saturate(0.95)', ...(rtl ? { transform: 'scaleX(-1)' } : {}) }} />
+    <div className="relative overflow-hidden lg:min-h-[600px] flex flex-col lg:flex-row lg:items-center">
+      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="relative block w-full h-auto aspect-[4/3] sm:aspect-[2/1] object-cover object-[80%_center] lg:absolute lg:inset-0 lg:h-full lg:aspect-auto lg:object-right" style={{ filter: 'brightness(0.8) saturate(0.95)', ...(rtl ? { transform: 'scaleX(-1)' } : {}) }} />
       <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] from-5% via-[#07091D]/60 via-35% to-transparent to-60% hidden lg:block`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/70 via-45% to-transparent to-65% lg:hidden" />
+      <div className="absolute inset-x-0 top-0 aspect-[4/3] sm:aspect-[2/1] bg-gradient-to-t from-[#07091D] via-transparent via-40% to-transparent lg:hidden" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07091D] to-transparent" />
       <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#07091D] to-transparent" />
-      <div className="relative w-full mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 pt-72 pb-16 lg:py-24">
+      <div className="relative w-full mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 -mt-6 lg:mt-0 pb-16 lg:py-24">
         <div className="max-w-[560px]">{children}</div>
       </div>
     </div>
