@@ -605,7 +605,7 @@ const Business = () => {
         <section id="modules" className="relative py-20 md:py-28 bg-[#0A0C24]">
           <div className={container}>
             <Title title={v.modular.t} intro={v.modular.x} center />
-            <Reveal delay={100} className="mt-12 mx-auto max-w-[1000px] rounded-[24px] border border-[#A76CFF]/30 p-3 md:p-4" style={{ background: 'linear-gradient(180deg,rgba(119,47,159,0.18),rgba(14,16,48,0.6))' }}>
+            <Reveal delay={100} className="mt-12 mx-auto max-w-[1000px] rounded-[24px] border border-[#A76CFF]/30 p-3 md:p-4 bg-gradient-to-b from-[#772F9F]/20 to-[#0E1030]/60">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-2 rounded-2xl border border-[#A76CFF]/40 bg-[#772F9F]/20 px-4 py-3">
                 <span className="flex items-center gap-2 text-[14px] font-semibold"><Sparkles className="w-4 h-4 text-[#C9A9FF]" />Syn’IA<span className="text-[#8D89A0]">+</span><BarChart3 className="w-4 h-4 text-[#7CC8FF]" />{v.modular.pilot}</span>
                 <span className="text-[12px] text-[#CFCDDC]">{v.modular.layers} · {v.modular.layerX}</span>
