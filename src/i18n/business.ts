@@ -97,7 +97,7 @@ const fr: BusinessCopy = {
     steps: ['Catalogue', 'Client', 'Commande', 'Statut', 'Suivi interne'],
     v: ['Cosmétiques à l’argan', 'High-tech & informatique', 'Emballage & livraison', 'Nouvelle commande', 'En préparation', 'Tâche créée pour l’équipe'],
     flow: [{ t: 'Ajoutez vos produits', d: 'Photos, descriptions et stock, en quelques minutes.' }, { t: 'Partagez votre boutique', d: 'Un lien à envoyer sur WhatsApp, Instagram ou Facebook.' }, { t: 'Vos clients commandent', d: 'Depuis leur téléphone. La commande arrive chez votre équipe.' }],
-    phone: ['Maison Atlas', 'Huile d’argan bio', 'Ajouter au panier', 'Commande envoyée', 'Exemple de boutique', 'Montre signature', 'Sérum éclat', 'Bagagerie cuir', 'Parfum'],
+    phone: ['Maison Atlas', 'Huile d’argan bio', 'Ajouter au panier', 'Commande envoyée', 'Exemple de boutique', 'Montre signature', 'Art & déco', 'Bagagerie cuir', 'Salon & fauteuils'],
   },
   events: {
     title: 'Du rendez-vous au grand événement.',
@@ -237,7 +237,7 @@ const en: BusinessCopy = {
     steps: ['Catalogue', 'Customer', 'Order', 'Status', 'Internal follow-up'],
     v: ['Argan cosmetics', 'Tech & computers', 'Packing & delivery', 'New order', 'In preparation', 'Task created for the team'],
     flow: [{ t: 'Add your products', d: 'Photos, descriptions and stock, in minutes.' }, { t: 'Share your shop', d: 'One link to send on WhatsApp, Instagram or Facebook.' }, { t: 'Customers order', d: 'From their phone. The order reaches your team.' }],
-    phone: ['Maison Atlas', 'Organic argan oil', 'Add to cart', 'Order sent', 'Example shop', 'Signature watch', 'Glow serum', 'Leather luggage', 'Perfume'],
+    phone: ['Maison Atlas', 'Organic argan oil', 'Add to cart', 'Order sent', 'Example shop', 'Signature watch', 'Art & decor', 'Leather luggage', 'Sofas & armchairs'],
   },
   events: {
     title: 'From meetings to major events.',
@@ -377,7 +377,7 @@ const no: BusinessCopy = {
     steps: ['Katalog', 'Kunde', 'Bestilling', 'Status', 'Intern oppfølging'],
     v: ['Arganoljeprodukter', 'PC & teknologi', 'Pakking & frakt', 'Ny bestilling', 'Under behandling', 'Oppgave opprettet for teamet'],
     flow: [{ t: 'Legg inn produktene', d: 'Bilder, beskrivelser og lager, på få minutter.' }, { t: 'Del butikken', d: 'Én lenke å sende på WhatsApp, Instagram eller Facebook.' }, { t: 'Kundene bestiller', d: 'Fra telefonen. Bestillingen går rett til teamet.' }],
-    phone: ['Maison Atlas', 'Økologisk arganolje', 'Legg i handlekurv', 'Bestilling sendt', 'Eksempelbutikk', 'Signaturklokke', 'Glød-serum', 'Koffert & veske', 'Parfyme'],
+    phone: ['Maison Atlas', 'Økologisk arganolje', 'Legg i handlekurv', 'Bestilling sendt', 'Eksempelbutikk', 'Signaturklokke', 'Kunst & dekor', 'Koffert & veske', 'Sofaer & lenestoler'],
   },
   events: {
     title: 'Fra møtet til det store arrangementet.',
@@ -517,7 +517,7 @@ const ar: BusinessCopy = {
     steps: ['الكتالوج', 'العميل', 'الطلب', 'الحالة', 'المتابعة الداخلية'],
     v: ['مستحضرات الأركان', 'الإلكترونيات والحواسيب', 'التغليف والتوصيل', 'طلب جديد', 'قيد التحضير', 'أُنشئت مهمة للفريق'],
     flow: [{ t: 'أضف منتجاتك', d: 'صور وأوصاف ومخزون، في دقائق.' }, { t: 'شارك متجرك', d: 'رابط واحد ترسله عبر واتساب أو إنستغرام أو فيسبوك.' }, { t: 'عملاؤك يطلبون', d: 'من هواتفهم، ويصل الطلب مباشرة إلى فريقك.' }],
-    phone: ['Maison Atlas', 'زيت الأركان العضوي', 'أضف إلى السلة', 'تم إرسال الطلب', 'مثال لمتجر', 'ساعة مميزة', 'سيروم النضارة', 'حقائب سفر جلدية', 'عطر'],
+    phone: ['Maison Atlas', 'زيت الأركان العضوي', 'أضف إلى السلة', 'تم إرسال الطلب', 'مثال لمتجر', 'ساعة مميزة', 'لوحات وديكور', 'حقائب سفر جلدية', 'أرائك ومقاعد'],
   },
   events: {
     title: 'من الموعد إلى الحدث الكبير.',
