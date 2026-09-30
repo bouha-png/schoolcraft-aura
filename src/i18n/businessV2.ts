@@ -23,7 +23,7 @@ const fr: BusinessV2 = {
   },
   grow: {
     orbit: ['Contacts', 'Opportunités', 'CRM', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Atlas Distribution', tag: 'Vos clients', o: 'Clients & Ventes', t: 'Développez votre activité.',
-    x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
+    x: 'Suivez vos clients à chaque étape, du premier contact à la fidélisation, avec toute votre équipe commerciale.',
     points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
     opts: 'Options', optL: 'Optionnel',
@@ -82,7 +82,7 @@ const en: BusinessV2 = {
   },
   grow: {
     orbit: ['Contacts', 'Opportunities', 'CRM', 'Quotes', 'Follow-ups', 'Online booking', 'History', 'Online shop', 'Webinars', 'Event management'], client: 'Atlas Distribution', tag: 'Your customers', o: 'Customers & Sales', t: 'Grow your business.',
-    x: 'Acquisition, conversion and customer follow-up, shared across the sales team.',
+    x: 'Follow your customers at every stage, from first contact to loyalty, with your whole sales team.',
     points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
     booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
     opts: 'Options', optL: 'Optional',
@@ -141,7 +141,7 @@ const no: BusinessV2 = {
   },
   grow: {
     orbit: ['Kontakter', 'Muligheter', 'CRM', 'Tilbud', 'Oppfølging', 'Nettbooking', 'Historikk', 'Nettbutikk', 'Webinarer', 'Arrangementer'], client: 'Atlas Distribution', tag: 'Dine kunder', o: 'Kunder & salg', t: 'Utvikle virksomheten.',
-    x: 'Kundeanskaffelse, konvertering og oppfølging, delt i hele salgsteamet.',
+    x: 'Følg kundene deres gjennom hele reisen, fra første kontakt til lojalitet, sammen med hele salgsteamet.',
     points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'],
     booking: 'Timebestilling', chain: ['Nettbestilling', 'Kalender', 'Kundekort'],
     opts: 'Tillegg', optL: 'Valgfritt',
@@ -200,7 +200,7 @@ const ar: BusinessV2 = {
   },
   grow: {
     orbit: ['جهات الاتصال', 'الفرص', 'CRM', 'عروض الأسعار', 'المتابعات', 'الحجز عبر الإنترنت', 'السجل', 'المتجر الإلكتروني', 'الندوات عبر الإنترنت', 'تدبير الفعاليات'], client: 'Atlas Distribution', tag: 'عملاؤكم', o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
-    x: 'الاستقطاب والتحويل ومتابعة العملاء، مشتركة داخل فريق المبيعات.',
+    x: 'تابعوا عملاءكم في كل مرحلة، من أول تواصل إلى الولاء، مع كامل فريقكم التجاري.',
     points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'],
     booking: 'حجز المواعيد', chain: ['حجز إلكتروني', 'الأجندة', 'بطاقة العميل'],
     opts: 'خيارات', optL: 'اختياري',
