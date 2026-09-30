@@ -8,6 +8,7 @@ import {
 import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
+import ClientCard from '@/components/business/ClientCard';
 import PilotDashboard from '@/components/business/PilotDashboard';
 import SecuritySection from '@/components/business/SecuritySection';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
@@ -267,20 +268,7 @@ const Business = () => {
             <Universe flip u={pilot} visual={<PilotDashboard lang={lang} rtl={rtl} />} />
 
 
-            <Universe u={crm} visual={
-              <div className={`${panel} p-6`}>
-                <div className="mx-auto w-fit rounded-2xl border border-[#A76CFF]/55 px-6 py-4 text-center" style={iconBg}>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-[#E0CCFF]">{crm.v[1]}</p>
-                  <p className="mt-1 font-display text-[18px] font-semibold">{crm.v[0]}</p>
-                </div>
-                <div className="mx-auto h-6 w-px bg-[#A76CFF]/50" />
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  {crm.v.slice(2).map((s) => (
-                    <div key={s} className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2.5 text-[13px] text-center text-[#E6E4F0]">{s}</div>
-                  ))}
-                </div>
-              </div>
-            } />
+            <Universe u={crm} visual={<ClientCard v={crm.v} rtl={rtl} />} />
           </div>
         </section>
 
