@@ -267,7 +267,18 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
                 <Orbit items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}
-                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><Coins className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                  center={<span className="relative grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]">
+                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16" fill="none" aria-hidden="true">
+                      <path d="M8 54h48" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
+                      <rect x="12" y="38" width="8" height="14" rx="2" fill="currentColor" fillOpacity="0.35" />
+                      <rect x="24" y="30" width="8" height="22" rx="2" fill="currentColor" fillOpacity="0.5" />
+                      <rect x="36" y="24" width="8" height="28" rx="2" fill="currentColor" fillOpacity="0.7" />
+                      <rect x="48" y="14" width="8" height="38" rx="2" fill="currentColor" fillOpacity="0.9" />
+                      <path d="M10 34 L24 24 L36 20 L52 8" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M45 8h7v7" stroke="#7FD4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="absolute -bottom-2 -right-2 grid place-items-center w-9 h-9 rounded-xl border border-[#C9A9FF]/50 bg-[#2a1845]/90 backdrop-blur shadow-lg"><Wallet className="w-4.5 h-4.5 w-[18px] h-[18px] text-[#C9A9FF]" strokeWidth={1.8} /></span>
+                  </span>}
                   name={v.fin.center} sub={v.fin.o} />
               </Reveal>
             </div>
