@@ -209,28 +209,50 @@ const Business = () => {
         <section className="relative py-16 md:py-24 bg-[#0A0C24]">
           <div className={`${container} space-y-24 md:space-y-32`}>
             <Universe u={collab} visual={
-              <div className={`${panel} p-5`}>
-                <div className="grid sm:grid-cols-[1fr_170px] gap-4">
+              <div className={`${panel} p-5 space-y-3`}>
+                <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="flex items-center gap-2 text-[13px] font-semibold min-w-0"><FileText className="w-4 h-4 text-[#3FA9F5] shrink-0" /><span className="truncate">{collab.v[8]}</span></p>
+                    <div className="flex -space-x-2 rtl:space-x-reverse shrink-0">
+                      <img src={avatarSalma} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#772F9F]" />
+                      <img src={avatarYoussef} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#3FA9F5]" />
+                      <img src={avatarKarim} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#6EE7A0]" />
+                    </div>
+                  </div>
+                  <div className="mt-3 space-y-2">
+                    <div className="h-2 w-[90%] rounded bg-white/10" />
+                    <div className="relative h-2 w-[75%] rounded bg-[#772F9F]/40"><span className="absolute -top-1 end-0 h-4 w-0.5 bg-[#A76CFF] animate-pulse" /></div>
+                    <div className="h-2 w-[82%] rounded bg-white/10" />
+                    <div className="relative h-2 w-[55%] rounded bg-[#3FA9F5]/30"><span className="absolute -top-1 end-0 h-4 w-0.5 bg-[#3FA9F5] animate-pulse" /></div>
+                  </div>
+                  <p className="mt-3 flex items-center gap-1.5 text-[11px] text-[#8D89A0]"><History className="w-3.5 h-3.5" />{collab.v[9]} · {collab.v[10]}</p>
+                </div>
+                <div className="grid sm:grid-cols-[1fr_170px] gap-3">
                   <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-4">
                     <p className="flex items-center gap-1.5 text-[13px] font-semibold"><Hash className="w-4 h-4 text-[#A76CFF]" />{collab.v[0]}</p>
-                    <div className="mt-4 space-y-3 text-[13px]">
-                      <div className="flex gap-2.5"><span className="h-7 w-7 rounded-full bg-[#772F9F]/60 grid place-items-center text-[11px]">SI</span><p className="rounded-xl rounded-ss-none bg-white/[0.06] px-3 py-2 text-[#E6E4F0]">{collab.v[1]}</p></div>
-                      <div className="ms-9 inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-[12px] text-[#CFCDDC]"><Paperclip className="w-3.5 h-3.5" />{collab.v[3]}</div>
-                      <div className="flex gap-2.5"><span className="h-7 w-7 rounded-full bg-[#3FA9F5]/40 grid place-items-center text-[11px]">YB</span><p className="rounded-xl rounded-ss-none bg-white/[0.06] px-3 py-2 text-[#E6E4F0]">{collab.v[2]}</p></div>
+                    <div className="mt-3 space-y-2.5 text-[12.5px]">
+                      <div className="flex gap-2.5"><img src={avatarSalma} alt="" className="h-7 w-7 rounded-full object-cover shrink-0" /><p className="rounded-xl rounded-ss-none bg-white/[0.06] px-3 py-2 text-[#E6E4F0]">{collab.v[1]}</p></div>
+                      <div className="ms-9 inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-1.5 text-[12px] text-[#CFCDDC]"><Paperclip className="w-3.5 h-3.5" />{collab.v[3]}</div>
+                      <div className="flex gap-2.5"><img src={avatarYoussef} alt="" className="h-7 w-7 rounded-full object-cover shrink-0" /><p className="rounded-xl rounded-ss-none bg-white/[0.06] px-3 py-2 text-[#E6E4F0]">{collab.v[2]}</p></div>
                     </div>
+                    <p className="mt-3 flex items-center gap-1.5 text-[11.5px] text-[#C9A8FF]"><MessagesSquare className="w-3.5 h-3.5" />{collab.v[11]} · {collab.v[12]}</p>
                   </div>
                   <div className="space-y-3">
                     <div className="rounded-2xl border border-[#A76CFF]/35 bg-[#772F9F]/15 p-4">
-                      <Video className="w-4 h-4 text-[#C9A9FF]" />
+                      <div className="flex items-center justify-between"><Video className="w-4 h-4 text-[#C9A9FF]" /><span className="flex items-center gap-1 text-[10px] text-[#FF8A8A]"><span className="w-1.5 h-1.5 rounded-full bg-[#FF5A5A] animate-pulse" />REC {collab.v[16]}</span></div>
                       <p className="mt-2 text-[13px] font-semibold">{collab.v[4]}</p>
                       <p className="text-[12px] text-[#B8B5C8]">{collab.v[5]}</p>
                       <span className="mt-3 inline-block text-[12px] px-3 py-1 rounded-full bg-white/10">{collab.v[6]}</span>
                     </div>
-                    <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4">
-                      <p className="flex items-center gap-1.5 text-[12px] text-[#B8B5C8]"><Calendar className="w-3.5 h-3.5" />{collab.v[7]}</p>
-                      <div className="mt-2 space-y-1.5"><Bar w="70%" tone="cyan" /><Bar w="45%" /></div>
+                    <div className="rounded-2xl border border-[#6EE7A0]/25 bg-[#1F8A4C]/10 p-3.5">
+                      <p className="flex items-center gap-1.5 text-[12px] font-semibold text-[#A7F3C8]"><FileCheck2 className="w-3.5 h-3.5" />{collab.v[13]}</p>
+                      <p className="mt-1 text-[11px] text-[#B8B5C8]">{collab.v[14]}</p>
                     </div>
                   </div>
+                </div>
+                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4">
+                  <div className="flex items-center justify-between text-[12px]"><span className="flex items-center gap-1.5 text-[#B8B5C8]"><Eye className="w-3.5 h-3.5 text-[#3FA9F5]" />{collab.v[17]} · {collab.v[18]}</span><span className="font-semibold text-white">82%</span></div>
+                  <div className="mt-2"><Bar w="82%" tone="cyan" /></div>
                 </div>
               </div>
             } />
