@@ -230,7 +230,7 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
       </defs>
     </svg>
     <div className="relative overflow-hidden min-h-[640px] md:min-h-[620px] lg:min-h-[600px] flex items-end lg:items-center">
-      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={{ filter: 'brightness(1.05)', ...(rtl ? { transform: 'scaleX(-1)' } : {}) }} />
+      <img src={photo} alt="" loading="lazy" width={1920} height={912} className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-right" style={{ filter: 'brightness(0.8) saturate(0.95)', ...(rtl ? { transform: 'scaleX(-1)' } : {}) }} />
       <div className={`absolute inset-0 ${rtl ? 'bg-gradient-to-l' : 'bg-gradient-to-r'} from-[#07091D] from-5% via-[#07091D]/60 via-35% to-transparent to-60% hidden lg:block`} />
       <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/70 via-45% to-transparent to-65% lg:hidden" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07091D] to-transparent" />
