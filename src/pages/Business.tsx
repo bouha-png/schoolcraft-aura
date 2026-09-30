@@ -13,7 +13,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, Smartphone, BookOpen, Landmark, SearchCheck } from 'lucide-react';
+import { IdCard, Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones, Package, Store, MonitorPlay, CalendarDays, Handshake, ClipboardCheck, PenLine, Languages, MessageSquareReply, Mic, Bot, Smartphone, BookOpen, Landmark, SearchCheck, Headset, UserCheck, Ticket } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -486,7 +486,7 @@ const Business = () => {
 
         {/* 6B. PARTNER */}
         <section id="partenaire" className="relative pb-16 md:pb-20">
-          <WideApps rtl={rtl} full photo={partnerWide} items={v.partner.steps} icons={[MessageSquare, Layers, Handshake]}>
+          <WideApps rtl={rtl} full photo={partnerWide} items={v.partner.steps} icons={[MessageSquare, Layers, Handshake, Headset, UserCheck, Ticket]}>
             <Title overline={v.partner.o} title={v.partner.t} intro={v.partner.x} />
           </WideApps>
         </section>
