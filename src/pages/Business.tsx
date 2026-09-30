@@ -356,6 +356,13 @@ const Business = () => {
     const win = window.open(url, '_blank', 'noopener,noreferrer');
     if (!win) window.location.href = url;
   };
+  const LIVE = {
+    fr: { o: 'Événements & Live', t: 'Animez votre audience.', x: 'Webinaires, podcasts, diffusions en direct et événements, organisés et suivis depuis la plateforme, avec inscriptions et participants reliés à vos contacts.', items: ['Webinaires', 'Podcasts', 'Live streaming', 'Gestion d’événements', 'Inscriptions', 'Replays'] },
+    en: { o: 'Events & Live', t: 'Engage your audience.', x: 'Webinars, podcasts, live streams and events, organised and followed up from the platform, with registrations and attendees linked to your contacts.', items: ['Webinars', 'Podcasts', 'Live streaming', 'Event management', 'Registrations', 'Replays'] },
+    no: { o: 'Arrangementer & live', t: 'Engasjer publikummet deres.', x: 'Webinarer, podkaster, direktesendinger og arrangementer, organisert og fulgt opp fra plattformen, med påmeldinger og deltakere koblet til kontaktene deres.', items: ['Webinarer', 'Podkaster', 'Direktesending', 'Arrangementsstyring', 'Påmeldinger', 'Opptak'] },
+    ar: { o: 'الفعاليات والبث المباشر', t: 'تفاعلوا مع جمهوركم.', x: 'ندوات عبر الإنترنت، بودكاست، بث مباشر وفعاليات، تُنظَّم وتُتابَع من المنصة، مع ربط التسجيلات والمشاركين بجهات اتصالكم.', items: ['الندوات عبر الإنترنت', 'البودكاست', 'البث المباشر', 'تدبير الفعاليات', 'التسجيلات', 'إعادة المشاهدة'] },
+  }[lang as 'fr'] ?? null;
+  const lv = LIVE!;
   const arrow = <ArrowRight className={`w-[18px] h-[18px] ${rtl ? 'rotate-180' : ''}`} />;
 
 
@@ -418,6 +425,13 @@ const Business = () => {
           <WideApps rtl={rtl} photo={clientsWide} items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}>
             <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
             <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
+          </WideApps>
+        </section>
+
+        {/* 2A2. EVENTS & LIVE */}
+        <section id="live" className="relative pb-20 md:pb-28">
+          <WideApps rtl={rtl} photo={liveImg} items={lv.items} icons={[MonitorPlay, Mic, Radio, CalendarDays, ClipboardCheck, PlayCircle]}>
+            <Title overline={lv.o} title={lv.t} intro={lv.x} />
           </WideApps>
         </section>
 
