@@ -6,7 +6,7 @@ export type BusinessV2 = {
   grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
   team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string };
   work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string };
-  fin: Outcome;
+  fin: Outcome & { orbit: string[]; center: string };
   flow: { o: string; t: string; a: string[]; b: string[] };
   ai: { o: string; t: string; x: string };
   modular: { t: string; x: string; items: string[] };
@@ -43,7 +43,7 @@ const fr: BusinessV2 = {
     cue: 'Syn’IA : PV rédigé, 3 actions identifiées',
   },
   fin: {
-    o: 'Finance & Pilotage', t: 'Pilotez vos finances.',
+    orbit: ['Factures', 'Notes de frais', 'Budgets', 'Coûts par projet', 'Validations', 'Paiements', 'Reporting', 'Tableaux de bord'], center: 'Finance', o: 'Finance & Pilotage', t: 'Pilotez vos finances.',
     x: 'Les opérations financières au quotidien et une vue de direction consolidée.',
     points: ['Factures et notes de frais', 'Budgets et coûts par projet', 'Circuits de validation', 'Tableaux de bord de direction'],
   },
@@ -101,7 +101,7 @@ const en: BusinessV2 = {
     cue: 'Syn’IA: minutes drafted, 3 actions identified',
   },
   fin: {
-    o: 'Finance & Steering', t: 'Steer your finances.',
+    orbit: ['Invoices', 'Expense claims', 'Budgets', 'Project costs', 'Approvals', 'Payments', 'Reporting', 'Dashboards'], center: 'Finance', o: 'Finance & Steering', t: 'Steer your finances.',
     x: 'Day-to-day financial operations and a consolidated management view.',
     points: ['Invoices and expense claims', 'Budgets and project costs', 'Approval workflows', 'Management dashboards'],
   },
@@ -159,7 +159,7 @@ const no: BusinessV2 = {
     cue: 'Syn’IA: referat skrevet, 3 tiltak identifisert',
   },
   fin: {
-    o: 'Økonomi & styring', t: 'Styr økonomien.',
+    orbit: ['Fakturaer', 'Utlegg', 'Budsjetter', 'Prosjektkostnader', 'Godkjenninger', 'Betalinger', 'Rapportering', 'Dashboards'], center: 'Økonomi', o: 'Økonomi & styring', t: 'Styr økonomien.',
     x: 'Daglig økonomidrift og en samlet ledervisning.',
     points: ['Fakturaer og utlegg', 'Budsjetter og prosjektkostnader', 'Godkjenningsflyt', 'Ledelsesdashboards'],
   },
@@ -217,7 +217,7 @@ const ar: BusinessV2 = {
     cue: 'Syn’IA: تمت صياغة المحضر وتحديد 3 مهام',
   },
   fin: {
-    o: 'المالية والقيادة', t: 'قودوا ماليتكم.',
+    orbit: ['الفواتير', 'مذكرات المصاريف', 'الميزانيات', 'تكاليف المشاريع', 'الموافقات', 'الأداءات', 'التقارير', 'لوحات القيادة'], center: 'المالية', o: 'المالية والقيادة', t: 'قودوا ماليتكم.',
     x: 'العمليات المالية اليومية ورؤية موحّدة للإدارة.',
     points: ['الفواتير ومذكرات المصاريف', 'الميزانيات وتكاليف المشاريع', 'مسارات الموافقة', 'لوحات قيادة الإدارة'],
   },

@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
+import { Receipt, PiggyBank, CreditCard, Coins, LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -13,7 +13,6 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import business from '@/i18n/business';
 import LanguageSelector from '@/components/portal/LanguageSelector';
 import ClientCard from '@/components/business/ClientCard';
-import FinanceDashboard from '@/components/business/FinanceDashboard';
 import businessV2 from '@/i18n/businessV2';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
@@ -105,7 +104,7 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
       const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
       return (
         <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + (dense ? 39 : 36) * Math.cos(ang)}%`, top: `${50 + (dense ? 39 : 36) * Math.sin(ang)}%` }}>
-          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]`} style={iconBg}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
+          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-[30%] border border-[#C9A9FF]/35 bg-gradient-to-br from-[#A76CFF]/35 to-[#772F9F]/15 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_10px_28px_-12px_rgba(167,108,255,0.8)]`}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
           <p className={`mt-1.5 text-center ${dense ? "text-[9.5px] md:text-[11px]" : "text-[10.5px] md:text-[11.5px]"} leading-tight text-[#E6E4F0]`}>{o}</p>
         </div>
       );
@@ -258,12 +257,16 @@ const Business = () => {
         {/* 2D. PILOTEZ VOS FINANCES */}
         <section id="finance" className="relative py-20 md:py-28 bg-[#0A0C24]">
           <div className={container}>
-            <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
                 <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
               </div>
-              <Reveal delay={150}><FinanceDashboard lang={lang} /></Reveal>
+              <Reveal delay={150}>
+                <Orbit items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><Coins className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                  name={v.fin.center} sub={v.fin.o} />
+              </Reveal>
             </div>
           </div>
         </section>
