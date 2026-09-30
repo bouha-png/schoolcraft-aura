@@ -1,291 +1,249 @@
-// Copy for the /business page (SME priority order). Each section carries one message; no idea is repeated across sections.
-type Sec = { o: string; t: string; x: string };
-type Group = { h: string; items: string[] };
+// Copy for the /business page: outcome-based structure (4 outcomes → data flow → Syn'IA → modularity → trust → CTA).
+type Outcome = { o: string; t: string; x: string; points: string[] };
+type Opt = { o: string; x: string };
 export type BusinessV2 = {
-  hero: { t1: string; t2: string; sub: string; nodes: string[]; ai: string };
-  problem: { t: string; x: string };
-  ai: Sec & { note: string; badge: string; role: string; chips: string[]; ex: string[] };
-  crm: Sec & { points: string[] };
-  booking: Sec & { chain: string[] };
-  hr: Sec & { life: string[] };
-  collab: Sec & { groups: Group[]; store: string[]; ws: string; cue: string };
-  projects: Sec & { flow: string[] };
-  finance: Sec & { ops: Group; rep: Group };
-  shop: Sec & { opt: string };
-  training: Sec;
-  events: Sec & { opt: string };
-  modular: { t: string; x: string; groups: string[]; layers: string; pilot: string; optL: string };
-  opts: string;
-  mid: { t: string; cta: string };
-  final: { t1: string; t2: string; x: string; cta: string };
+  hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
+  grow: Outcome & { booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
+  team: Outcome & { life: string[]; training: string };
+  work: Outcome & { store: string[]; cue: string };
+  fin: Outcome;
+  flow: { o: string; t: string; a: string[]; b: string[] };
+  ai: { o: string; t: string; x: string };
+  modular: { t: string; x: string; items: string[] };
+  trust: { o: string; t: string; items: [string, string][] };
+  final: { t: string; cta: string };
 };
 
 const fr: BusinessV2 = {
   hero: {
-    t1: 'Votre entreprise.', t2: 'Plus connectée. Plus intelligente.',
-    sub: 'La plateforme de gestion intégrée des PME, avec un assistant IA au service de vos équipes.',
-    nodes: ['Clients & Ventes', 'Équipes & RH', 'Travail & Collaboration', 'Finance & Pilotage'], ai: 'Syn’IA intégrée',
+    t1: 'Pilotez votre entreprise', t2: 'dans un environnement connecté.',
+    sub: 'Clients, équipes, opérations et finance réunis pour simplifier le travail quotidien et donner à la direction une vision plus claire.',
+    ai: 'Avec Syn’IA, votre assistant intégré.', cta2: 'Découvrir la plateforme',
   },
-  problem: {
-    t: 'Des outils dispersés, des informations fragmentées.',
-    x: 'Ressaisies, versions multiples, suivi incomplet. Synapse Business assure la continuité de l’information, du premier contact client jusqu’au reporting.',
+  grow: {
+    o: 'Clients & Ventes', t: 'Développez votre activité.',
+    x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
+    points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
+    booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
+    opts: 'Options', optL: 'Optionnel',
+    shop: { o: 'Boutique en ligne', x: 'Commandes rattachées à la fiche client.' },
+    events: { o: 'Événements & Live', x: 'Webinaires, diffusions et replays.' },
+  },
+  team: {
+    o: 'Équipes & RH', t: 'Gérez vos équipes.',
+    x: 'Le cycle collaborateur, du recrutement à la paie, et la montée en compétences.',
+    points: ['Dossier salarié et contrats', 'Présence, congés et absences', 'Paie et bulletins', 'Intégration et formation'],
+    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation',
+  },
+  work: {
+    o: 'Travail & Collaboration', t: 'Organisez le travail.',
+    x: 'Communication, documents et projets réunis dans un bureau virtuel structuré par équipe.',
+    points: ['Messagerie, email, forum et calendrier', 'Réunions en ligne et co-édition', 'Stockage documentaire, versions et droits d’accès', 'Projets, tâches, jalons et validations'],
+    store: ['Stockage documentaire', 'Direction', 'Commercial', 'RH', 'Projets', 'Accès selon les droits'],
+    cue: 'Syn’IA : PV rédigé, 3 actions identifiées',
+  },
+  fin: {
+    o: 'Finance & Pilotage', t: 'Pilotez vos finances.',
+    x: 'Les opérations financières au quotidien et une vue de direction consolidée.',
+    points: ['Factures et notes de frais', 'Budgets et coûts par projet', 'Circuits de validation', 'Tableaux de bord de direction'],
+  },
+  flow: {
+    o: 'Plateforme connectée', t: 'Une information saisie une fois, disponible là où elle est utile.',
+    a: ['Client', 'Rendez-vous', 'Projet', 'Facturation', 'Reporting'],
+    b: ['Collaborateur', 'Contrat', 'Présence', 'Paie', 'Reporting'],
   },
   ai: {
-    o: "Syn’IA", t: "Une assistance intégrée à votre environnement de travail.",
-    x: "Syn’IA est intégrée aux différents espaces de Synapse Business et intervient là où elle apporte une valeur réelle : pour retrouver une information, préparer ou reformuler un contenu, résumer certains échanges et simplifier des tâches récurrentes. Elle s’appuie sur les informations auxquelles chaque utilisateur a accès et respecte les droits définis dans l’organisation.",
-    note: "Elle s’appuie sur les informations auxquelles vous avez accès et respecte les droits définis dans votre organisation.", badge: 'Syn’IA', role: "Assistant personnel",
-    chips: ["Réunion", "Document", "Recherche", "Projet"], ex: ["Résumer cette réunion", "Retrouver ce document"],
+    o: 'Syn’IA', t: 'Une assistance intégrée à votre environnement de travail.',
+    x: 'Syn’IA accompagne vos équipes dans leur travail quotidien. Intégrée aux différents espaces de Synapse Business, elle intervient lorsque cela apporte une valeur réelle : retrouver une information, préparer ou reformuler un contenu, résumer certains échanges ou simplifier des tâches récurrentes. Elle s’appuie sur les informations auxquelles chaque utilisateur a accès et respecte les droits définis dans l’organisation.',
   },
-  crm: {
-    o: 'Clients & Ventes', t: 'De la prospection au rendez-vous, chaque relation client est suivie.',
-    x: 'Historique client, pipeline et relances partagés par l’équipe commerciale. Les rendez-vous réservés en ligne rejoignent directement l’agenda et la fiche client.',
-    points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis', 'Relances et prochaines actions', 'Prise de rendez-vous en ligne'],
-  },
-  booking: {
-    o: 'Prise de rendez-vous', t: 'La réservation en ligne, reliée à vos agendas.',
-    x: 'Vos clients réservent un créneau disponible. Le rendez-vous s’inscrit dans l’agenda du collaborateur et sur la fiche client.',
-    chain: ['Réservation en ligne', 'Agenda de l’équipe', 'Fiche client', 'Rendez-vous confirmé'],
-  },
-  hr: {
-    o: 'Équipes & RH', t: 'Le cycle collaborateur, du recrutement à la paie, et la montée en compétences.',
-    x: 'Les données saisies à l’embauche alimentent chaque étape suivante, jusqu’au bulletin de paie.',
-    life: ['Recrutement', 'Contrat', 'Dossier salarié', 'Pointage', 'Congés et absences', 'Évaluations et primes', 'Paie', 'Bulletins'],
-  },
-  collab: {
-    o: 'Travail & Collaboration', t: 'Communication, documents et projets, organisés par équipe.',
-    x: 'Le bureau virtuel où vos équipes échangent, produisent, archivent et suivent l’exécution des projets.',
-    groups: [
-      { h: 'Communication', items: ['Messagerie et email', 'Forum', 'Calendrier partagé'] },
-      { h: 'Collaboration', items: ['Co-édition en direct', 'Réunions en ligne enregistrées', 'PV automatiques'] },
-      { h: 'Gestion documentaire', items: ['Stockage centralisé et dossiers', 'Historique des versions', 'Recherche et droits d’accès'] },
-      { h: 'Gestion de projet', items: ['Projets et jalons', 'Tâches et responsables', 'Validations et avancement'] },
-    ],
-    store: ['Stockage documentaire', 'Direction', 'Commercial', 'RH', 'Projets', 'Accès selon les droits'],
-    ws: 'Un espace par équipe ou par projet', cue: 'Syn’IA : PV rédigé, 3 actions identifiées',
-  },
-  projects: {
-    o: 'Gestion de projet', t: 'Des projets pilotés jalon par jalon.',
-    x: 'Jalons, tâches et responsables définis. Documents et validations rattachés au projet, avancement mesuré en continu.',
-    flow: ['Projet', 'Jalons', 'Tâches', 'Responsables', 'Validations', 'Avancement'],
-  },
-  finance: {
-    o: 'Finance & Pilotage', t: 'Maîtrisez vos dépenses. Pilotez sur des chiffres consolidés.',
-    x: 'Les opérations financières au quotidien, et une vue de direction qui consolide les données de l’ensemble des modules.',
-    ops: { h: 'Opérations financières', items: ['Factures', 'Notes de frais', 'Budgets', 'Coûts par projet', 'Circuits de validation'] },
-    rep: { h: 'Reporting de direction', items: ['Indicateurs consolidés', 'Activité commerciale', 'Avancement des projets'] },
-  },
-  shop: { o: 'Boutique en ligne', t: 'Vendez vos produits et services en ligne.', x: 'Chaque commande est rattachée à la fiche client et transmise à l’équipe concernée.', opt: 'Optionnel' },
-  training: { o: 'Formation', t: 'Intégration et développement des compétences.', x: 'Parcours d’intégration, formations internes, suivi de la progression et attestations de réussite.' },
-  events: { o: 'Événements & Live', t: 'Webinaires et diffusions en direct.', x: 'Inscriptions, diffusion et replays pour vos événements internes et clients.', opt: 'Optionnel' },
   modular: {
-    t: 'Démarrez avec vos priorités.', x: 'Activez les modules nécessaires, puis étendez la plateforme selon votre croissance.',
-    groups: ['Clients & Ventes', 'Équipes & RH', 'Travail & Collaboration', 'Finance & Pilotage'],
-    layers: 'Transversal à tous les modules', pilot: 'Reporting', optL: 'En option',
+    t: 'Adaptez Synapse à votre entreprise.', x: 'Commencez avec vos priorités. Ajoutez de nouvelles fonctions à mesure que vos besoins évoluent.',
+    items: ['CRM', 'RH & Paie', 'Collaboration', 'Projets', 'Finance', 'Formation', 'Réservation', 'Boutique', 'Événements'],
   },
-  opts: 'Options',
-  mid: { t: 'Découvrez comment Synapse Business s’adapte à votre organisation.', cta: 'Demander une démo' },
-  final: { t1: 'Voyez Synapse Business', t2: 'appliqué à votre activité.', x: 'Une démonstration adaptée à vos processus et à vos priorités.', cta: 'Demander une démo' },
+  trust: {
+    o: 'Confiance & déploiement', t: 'Un déploiement maîtrisé.',
+    items: [
+      ['Gestion des droits', 'Chaque utilisateur accède aux espaces et données qui le concernent.'],
+      ['Données et accès', 'Les accès sont définis par l’organisation, par rôle et par équipe.'],
+      ['Déploiement progressif', 'Mise en service par étapes, selon vos priorités.'],
+      ['Accompagnement', 'Paramétrage et prise en main avec l’équipe ScandiTek.'],
+    ],
+  },
+  final: { t: 'Découvrez comment Synapse Business peut s’adapter à votre organisation.', cta: 'Demander une démo' },
 };
 
 const en: BusinessV2 = {
   hero: {
-    t1: 'Your business.', t2: 'More connected. More intelligent.',
-    sub: 'The integrated management platform for SMEs, with an AI assistant working for your teams.',
-    nodes: ['Customers & Sales', 'Teams & HR', 'Work & Collaboration', 'Finance & Steering'], ai: 'Syn’IA built in',
+    t1: 'Run your business', t2: 'in a connected environment.',
+    sub: 'Customers, teams, operations and finance brought together to simplify daily work and give management a clearer view.',
+    ai: 'With Syn’IA, your built-in assistant.', cta2: 'Explore the platform',
   },
-  problem: {
-    t: 'Scattered tools, fragmented information.',
-    x: 'Re-entry, multiple versions, incomplete follow-up. Synapse Business keeps information continuous, from first customer contact to reporting.',
+  grow: {
+    o: 'Customers & Sales', t: 'Grow your business.',
+    x: 'Acquisition, conversion and customer follow-up, shared across the sales team.',
+    points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
+    booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
+    opts: 'Options', optL: 'Optional',
+    shop: { o: 'Online shop', x: 'Orders linked to the customer record.' },
+    events: { o: 'Events & Live', x: 'Webinars, broadcasts and replays.' },
+  },
+  team: {
+    o: 'Teams & HR', t: 'Manage your teams.',
+    x: 'The employee lifecycle, from recruitment to payroll, and skills development.',
+    points: ['Employee file and contracts', 'Attendance, leave and absence', 'Payroll and payslips', 'Onboarding and training'],
+    life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training',
+  },
+  work: {
+    o: 'Work & Collaboration', t: 'Organise the work.',
+    x: 'Communication, documents and projects in a virtual office structured by team.',
+    points: ['Messaging, email, forum and calendar', 'Online meetings and co-editing', 'Document storage, versions and access rights', 'Projects, tasks, milestones and approvals'],
+    store: ['Document storage', 'Management', 'Sales', 'HR', 'Projects', 'Access by permissions'],
+    cue: 'Syn’IA: minutes drafted, 3 actions identified',
+  },
+  fin: {
+    o: 'Finance & Steering', t: 'Steer your finances.',
+    x: 'Day-to-day financial operations and a consolidated management view.',
+    points: ['Invoices and expense claims', 'Budgets and project costs', 'Approval workflows', 'Management dashboards'],
+  },
+  flow: {
+    o: 'Connected platform', t: 'Information entered once, available wherever it is useful.',
+    a: ['Customer', 'Appointment', 'Project', 'Invoicing', 'Reporting'],
+    b: ['Employee', 'Contract', 'Attendance', 'Payroll', 'Reporting'],
   },
   ai: {
-    o: "Syn’IA", t: "Assistance built into your working environment.",
-    x: "Syn’IA is integrated across the relevant areas of Synapse Business and steps in where it adds real value: finding information, preparing or rephrasing content, summarising certain exchanges and simplifying recurring tasks. It relies on the information each user has access to and respects the rights defined in the organisation.",
-    note: "It relies on the information you have access to and respects the rights defined in your organisation.", badge: 'Syn’IA', role: "Personal assistant",
-    chips: ["Meeting", "Document", "Search", "Project"], ex: ["Summarise this meeting", "Find this document"],
+    o: 'Syn’IA', t: 'Assistance built into your working environment.',
+    x: 'Syn’IA supports your teams in their daily work. Integrated across the areas of Synapse Business, it steps in when it adds real value: finding information, preparing or rephrasing content, summarising certain exchanges or simplifying recurring tasks. It relies on the information each user has access to and respects the rights defined in the organisation.',
   },
-  crm: {
-    o: 'Customers & Sales', t: 'From prospect to appointment, every customer relationship is followed up.',
-    x: 'Customer history, pipeline and follow-ups shared by the sales team. Appointments booked online go straight to the calendar and the customer record.',
-    points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes', 'Follow-ups and next actions', 'Online appointment booking'],
-  },
-  booking: {
-    o: 'Appointment booking', t: 'Online booking, connected to your calendars.',
-    x: 'Customers book an available slot. The appointment is added to the employee’s calendar and to the customer record.',
-    chain: ['Online booking', 'Team calendar', 'Customer record', 'Confirmed appointment'],
-  },
-  hr: {
-    o: 'Teams & HR', t: 'The employee lifecycle, from recruitment to payroll, and skills development.',
-    x: 'Data entered at hiring feeds every following step, through to the payslip.',
-    life: ['Recruitment', 'Contract', 'Employee file', 'Time tracking', 'Leave and absence', 'Reviews and bonuses', 'Payroll', 'Payslips'],
-  },
-  collab: {
-    o: 'Work & Collaboration', t: 'Communication, documents and projects, organised by team.',
-    x: 'The virtual office where your teams communicate, produce, store documents and track project delivery.',
-    groups: [
-      { h: 'Communication', items: ['Messaging and email', 'Forum', 'Shared calendar'] },
-      { h: 'Collaboration', items: ['Live co-editing', 'Recorded online meetings', 'Automatic minutes'] },
-      { h: 'Document management', items: ['Central storage and folders', 'Version history', 'Search and access rights'] },
-      { h: 'Project management', items: ['Projects and milestones', 'Tasks and owners', 'Approvals and progress'] },
-    ],
-    store: ['Document storage', 'Management', 'Sales', 'HR', 'Projects', 'Access by permissions'],
-    ws: 'One space per team or project', cue: 'Syn’IA: minutes drafted, 3 actions identified',
-  },
-  projects: {
-    o: 'Project management', t: 'Projects managed milestone by milestone.',
-    x: 'Defined milestones, tasks and owners. Documents and approvals attached to the project, progress measured continuously.',
-    flow: ['Project', 'Milestones', 'Tasks', 'Owners', 'Approvals', 'Progress'],
-  },
-  finance: {
-    o: 'Finance & Steering', t: 'Control spending. Steer on consolidated figures.',
-    x: 'Day-to-day financial operations, and a management view consolidating data from every module.',
-    ops: { h: 'Financial operations', items: ['Invoices', 'Expense claims', 'Budgets', 'Project costs', 'Approval workflows'] },
-    rep: { h: 'Management reporting', items: ['Consolidated indicators', 'Sales activity', 'Project progress'] },
-  },
-  shop: { o: 'Online shop', t: 'Sell your products and services online.', x: 'Each order is attached to the customer record and passed to the relevant team.', opt: 'Optional' },
-  training: { o: 'Training', t: 'Onboarding and skills development.', x: 'Onboarding paths, internal courses, progress tracking and completion certificates.' },
-  events: { o: 'Events & Live', t: 'Webinars and live broadcasts.', x: 'Registrations, streaming and replays for internal and customer events.', opt: 'Optional' },
   modular: {
-    t: 'Start with your priorities.', x: 'Activate the modules you need, then extend the platform as you grow.',
-    groups: ['Customers & Sales', 'Teams & HR', 'Work & Collaboration', 'Finance & Steering'],
-    layers: 'Across all modules', pilot: 'Reporting', optL: 'Optional',
+    t: 'Adapt Synapse to your business.', x: 'Start with your priorities. Add new functions as your needs evolve.',
+    items: ['CRM', 'HR & Payroll', 'Collaboration', 'Projects', 'Finance', 'Training', 'Booking', 'Shop', 'Events'],
   },
-  opts: 'Options',
-  mid: { t: 'See how Synapse Business fits your organisation.', cta: 'Request a demo' },
-  final: { t1: 'See Synapse Business', t2: 'applied to your business.', x: 'A demonstration tailored to your processes and priorities.', cta: 'Request a demo' },
+  trust: {
+    o: 'Trust & deployment', t: 'A controlled rollout.',
+    items: [
+      ['Rights management', 'Each user accesses the spaces and data relevant to them.'],
+      ['Data and access', 'Access is defined by the organisation, by role and by team.'],
+      ['Gradual deployment', 'Rollout in stages, according to your priorities.'],
+      ['Guidance', 'Configuration and onboarding with the ScandiTek team.'],
+    ],
+  },
+  final: { t: 'See how Synapse Business can adapt to your organisation.', cta: 'Request a demo' },
 };
 
 const no: BusinessV2 = {
   hero: {
-    t1: 'Din bedrift.', t2: 'Mer tilkoblet. Mer intelligent.',
-    sub: 'Den integrerte styringsplattformen for SMB-er, med en AI-assistent som jobber for teamene dine.',
-    nodes: ['Kunder & salg', 'Team & HR', 'Arbeid & samarbeid', 'Økonomi & styring'], ai: 'Syn’IA innebygd',
+    t1: 'Styr bedriften', t2: 'i et sammenkoblet miljø.',
+    sub: 'Kunder, team, drift og økonomi samlet for å forenkle hverdagen og gi ledelsen et klarere bilde.',
+    ai: 'Med Syn’IA, din innebygde assistent.', cta2: 'Utforsk plattformen',
   },
-  problem: {
-    t: 'Spredte verktøy, fragmentert informasjon.',
-    x: 'Dobbeltregistrering, flere versjoner, mangelfull oppfølging. Synapse Business sikrer sammenhengende informasjon, fra første kundekontakt til rapportering.',
+  grow: {
+    o: 'Kunder & salg', t: 'Utvikle virksomheten.',
+    x: 'Kundeanskaffelse, konvertering og oppfølging, delt i hele salgsteamet.',
+    points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'],
+    booking: 'Timebestilling', chain: ['Nettbestilling', 'Kalender', 'Kundekort'],
+    opts: 'Tillegg', optL: 'Valgfritt',
+    shop: { o: 'Nettbutikk', x: 'Ordrer knyttet til kundekortet.' },
+    events: { o: 'Arrangementer & live', x: 'Webinarer, sendinger og opptak.' },
+  },
+  team: {
+    o: 'Team & HR', t: 'Led teamene.',
+    x: 'Medarbeiderløpet fra rekruttering til lønn, og kompetanseutvikling.',
+    points: ['Personalmappe og kontrakter', 'Tilstedeværelse, ferie og fravær', 'Lønn og lønnsslipper', 'Onboarding og opplæring'],
+    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring',
+  },
+  work: {
+    o: 'Arbeid & samarbeid', t: 'Organiser arbeidet.',
+    x: 'Kommunikasjon, dokumenter og prosjekter i et virtuelt kontor organisert per team.',
+    points: ['Meldinger, e-post, forum og kalender', 'Nettmøter og samtidig redigering', 'Dokumentlagring, versjoner og tilgang', 'Prosjekter, oppgaver, milepæler og godkjenninger'],
+    store: ['Dokumentlagring', 'Ledelse', 'Salg', 'HR', 'Prosjekter', 'Tilgang etter rettigheter'],
+    cue: 'Syn’IA: referat skrevet, 3 tiltak identifisert',
+  },
+  fin: {
+    o: 'Økonomi & styring', t: 'Styr økonomien.',
+    x: 'Daglig økonomidrift og en samlet ledervisning.',
+    points: ['Fakturaer og utlegg', 'Budsjetter og prosjektkostnader', 'Godkjenningsflyt', 'Ledelsesdashboards'],
+  },
+  flow: {
+    o: 'Sammenkoblet plattform', t: 'Informasjon registreres én gang og er tilgjengelig der den trengs.',
+    a: ['Kunde', 'Avtale', 'Prosjekt', 'Fakturering', 'Rapportering'],
+    b: ['Medarbeider', 'Kontrakt', 'Tilstedeværelse', 'Lønn', 'Rapportering'],
   },
   ai: {
-    o: "Syn’IA", t: "Assistanse innebygd i arbeidsmiljøet ditt.",
-    x: "Syn’IA er integrert i de ulike delene av Synapse Business og bidrar der den gir reell verdi: å finne informasjon, forberede eller omformulere innhold, oppsummere enkelte samtaler og forenkle gjentakende oppgaver. Den bygger på informasjonen hver bruker har tilgang til og respekterer rettighetene som er definert i organisasjonen.",
-    note: "Den bygger på informasjonen du har tilgang til og respekterer rettighetene som er definert i organisasjonen din.", badge: 'Syn’IA', role: "Personlig assistent",
-    chips: ["Møte", "Dokument", "Søk", "Prosjekt"], ex: ["Oppsummer dette møtet", "Finn dette dokumentet"],
+    o: 'Syn’IA', t: 'Assistanse innebygd i arbeidsmiljøet ditt.',
+    x: 'Syn’IA støtter teamene i det daglige arbeidet. Integrert i de ulike delene av Synapse Business bidrar den når det gir reell verdi: å finne informasjon, forberede eller omformulere innhold, oppsummere enkelte samtaler eller forenkle gjentakende oppgaver. Den bygger på informasjonen hver bruker har tilgang til og respekterer rettighetene som er definert i organisasjonen.',
   },
-  crm: {
-    o: 'Kunder & salg', t: 'Fra prospekt til avtale, hvert kundeforhold følges opp.',
-    x: 'Kundehistorikk, pipeline og oppfølging delt i salgsteamet. Timer bestilt på nett går rett inn i kalenderen og på kundekortet.',
-    points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud', 'Oppfølging og neste steg', 'Timebestilling på nett'],
-  },
-  booking: {
-    o: 'Timebestilling', t: 'Nettbestilling koblet til kalenderne deres.',
-    x: 'Kunden bestiller en ledig tid. Avtalen legges i den ansattes kalender og på kundekortet.',
-    chain: ['Nettbestilling', 'Teamkalender', 'Kundekort', 'Bekreftet avtale'],
-  },
-  hr: {
-    o: 'Team & HR', t: 'Medarbeiderløpet fra rekruttering til lønn, og kompetanseutvikling.',
-    x: 'Data registrert ved ansettelse brukes i hvert steg, helt til lønnsslippen.',
-    life: ['Rekruttering', 'Kontrakt', 'Personalmappe', 'Tidsregistrering', 'Ferie og fravær', 'Evaluering og bonus', 'Lønn', 'Lønnsslipper'],
-  },
-  collab: {
-    o: 'Arbeid & samarbeid', t: 'Kommunikasjon, dokumenter og prosjekter, organisert per team.',
-    x: 'Det virtuelle kontoret der teamene kommuniserer, produserer, lagrer dokumenter og følger prosjektgjennomføringen.',
-    groups: [
-      { h: 'Kommunikasjon', items: ['Meldinger og e-post', 'Forum', 'Delt kalender'] },
-      { h: 'Samarbeid', items: ['Samtidig redigering', 'Innspilte nettmøter', 'Automatiske referater'] },
-      { h: 'Dokumenthåndtering', items: ['Sentral lagring og mapper', 'Versjonshistorikk', 'Søk og tilgangsstyring'] },
-      { h: 'Prosjektstyring', items: ['Prosjekter og milepæler', 'Oppgaver og ansvarlige', 'Godkjenninger og fremdrift'] },
-    ],
-    store: ['Dokumentlagring', 'Ledelse', 'Salg', 'HR', 'Prosjekter', 'Tilgang etter rettigheter'],
-    ws: 'Ett rom per team eller prosjekt', cue: 'Syn’IA: referat skrevet, 3 tiltak identifisert',
-  },
-  projects: {
-    o: 'Prosjektstyring', t: 'Prosjekter styrt milepæl for milepæl.',
-    x: 'Definerte milepæler, oppgaver og ansvarlige. Dokumenter og godkjenninger knyttet til prosjektet, fremdrift målt fortløpende.',
-    flow: ['Prosjekt', 'Milepæler', 'Oppgaver', 'Ansvarlige', 'Godkjenninger', 'Fremdrift'],
-  },
-  finance: {
-    o: 'Økonomi & styring', t: 'Kontroll på kostnadene. Styring på konsoliderte tall.',
-    x: 'Daglig økonomidrift, og en ledervisning som samler data fra alle moduler.',
-    ops: { h: 'Økonomidrift', items: ['Fakturaer', 'Utlegg', 'Budsjetter', 'Prosjektkostnader', 'Godkjenningsflyt'] },
-    rep: { h: 'Lederrapportering', items: ['Konsoliderte nøkkeltall', 'Salgsaktivitet', 'Prosjektfremdrift'] },
-  },
-  shop: { o: 'Nettbutikk', t: 'Selg produkter og tjenester på nett.', x: 'Hver ordre knyttes til kundekortet og sendes til riktig team.', opt: 'Valgfritt' },
-  training: { o: 'Opplæring', t: 'Onboarding og kompetanseutvikling.', x: 'Onboardingløp, interne kurs, fremdriftsoppfølging og kursbevis.' },
-  events: { o: 'Arrangementer & live', t: 'Webinarer og direktesendinger.', x: 'Påmelding, sending og opptak for interne og eksterne arrangementer.', opt: 'Valgfritt' },
   modular: {
-    t: 'Start med prioriteringene deres.', x: 'Aktiver modulene dere trenger, og utvid plattformen i takt med veksten.',
-    groups: ['Kunder & salg', 'Team & HR', 'Arbeid & samarbeid', 'Økonomi & styring'],
-    layers: 'På tvers av alle moduler', pilot: 'Rapportering', optL: 'Valgfritt',
+    t: 'Tilpass Synapse til bedriften.', x: 'Start med prioriteringene. Legg til nye funksjoner etter hvert som behovene endrer seg.',
+    items: ['CRM', 'HR & lønn', 'Samarbeid', 'Prosjekter', 'Økonomi', 'Opplæring', 'Timebestilling', 'Nettbutikk', 'Arrangementer'],
   },
-  opts: 'Tillegg',
-  mid: { t: 'Se hvordan Synapse Business passer deres organisasjon.', cta: 'Be om en demo' },
-  final: { t1: 'Se Synapse Business', t2: 'i deres virksomhet.', x: 'En demonstrasjon tilpasset deres prosesser og prioriteringer.', cta: 'Be om en demo' },
+  trust: {
+    o: 'Tillit & utrulling', t: 'En kontrollert utrulling.',
+    items: [
+      ['Rettighetsstyring', 'Hver bruker får tilgang til rommene og dataene som gjelder dem.'],
+      ['Data og tilgang', 'Tilgang defineres av organisasjonen, per rolle og team.'],
+      ['Gradvis utrulling', 'Oppstart i trinn, etter deres prioriteringer.'],
+      ['Oppfølging', 'Oppsett og opplæring sammen med ScandiTek-teamet.'],
+    ],
+  },
+  final: { t: 'Se hvordan Synapse Business kan tilpasses deres organisasjon.', cta: 'Be om en demo' },
 };
 
 const ar: BusinessV2 = {
   hero: {
-    t1: 'مؤسستكم.', t2: 'أكثر ترابطًا. أكثر ذكاءً.',
-    sub: 'منصة التسيير المتكاملة للمقاولات الصغرى والمتوسطة، مع مساعد ذكي في خدمة فرقكم.',
-    nodes: ['العملاء والمبيعات', 'الفرق والموارد البشرية', 'العمل والتعاون', 'المالية والقيادة'], ai: 'Syn’IA مدمجة',
+    t1: 'قودوا مؤسستكم', t2: 'في بيئة مترابطة.',
+    sub: 'العملاء والفرق والعمليات والمالية مجتمعة لتبسيط العمل اليومي ومنح الإدارة رؤية أوضح.',
+    ai: 'مع Syn’IA، مساعدكم المدمج.', cta2: 'اكتشفوا المنصة',
   },
-  problem: {
-    t: 'أدوات متفرقة ومعلومات مجزأة.',
-    x: 'إعادة إدخال، ونسخ متعددة، ومتابعة ناقصة. تضمن Synapse Business استمرارية المعلومة، من أول اتصال بالعميل إلى التقارير.',
+  grow: {
+    o: 'العملاء والمبيعات', t: 'طوّروا نشاطكم.',
+    x: 'الاستقطاب والتحويل ومتابعة العملاء، مشتركة داخل فريق المبيعات.',
+    points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'],
+    booking: 'حجز المواعيد', chain: ['حجز إلكتروني', 'الأجندة', 'بطاقة العميل'],
+    opts: 'خيارات', optL: 'اختياري',
+    shop: { o: 'متجر إلكتروني', x: 'طلبات مرتبطة ببطاقة العميل.' },
+    events: { o: 'الفعاليات والبث', x: 'ندوات وبث مباشر وإعادة المشاهدة.' },
+  },
+  team: {
+    o: 'الفرق والموارد البشرية', t: 'دبّروا فرقكم.',
+    x: 'مسار الموظف من التوظيف إلى الأجور، وتطوير الكفاءات.',
+    points: ['ملف الموظف والعقود', 'الحضور والعطل والغياب', 'الأجور وأوراق الأجر', 'الإدماج والتكوين'],
+    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين',
+  },
+  work: {
+    o: 'العمل والتعاون', t: 'نظّموا العمل.',
+    x: 'التواصل والوثائق والمشاريع في مكتب افتراضي منظم حسب الفريق.',
+    points: ['المراسلة والبريد والمنتدى والتقويم', 'اجتماعات عبر الإنترنت وتحرير مشترك', 'تخزين الوثائق والنسخ وصلاحيات الوصول', 'المشاريع والمهام والمراحل والموافقات'],
+    store: ['تخزين الوثائق', 'الإدارة', 'المبيعات', 'الموارد البشرية', 'المشاريع', 'وصول حسب الصلاحيات'],
+    cue: 'Syn’IA: تمت صياغة المحضر وتحديد 3 مهام',
+  },
+  fin: {
+    o: 'المالية والقيادة', t: 'قودوا ماليتكم.',
+    x: 'العمليات المالية اليومية ورؤية موحّدة للإدارة.',
+    points: ['الفواتير ومذكرات المصاريف', 'الميزانيات وتكاليف المشاريع', 'مسارات الموافقة', 'لوحات قيادة الإدارة'],
+  },
+  flow: {
+    o: 'منصة مترابطة', t: 'معلومة تُدخل مرة واحدة، ومتاحة حيث تكون مفيدة.',
+    a: ['العميل', 'الموعد', 'المشروع', 'الفوترة', 'التقارير'],
+    b: ['الموظف', 'العقد', 'الحضور', 'الأجور', 'التقارير'],
   },
   ai: {
-    o: "Syn’IA", t: "مساعدة مدمجة في بيئة عملكم.",
-    x: "Syn’IA مدمجة في مختلف فضاءات Synapse Business وتتدخل حيث تضيف قيمة حقيقية: للعثور على معلومة، وإعداد محتوى أو إعادة صياغته، وتلخيص بعض المبادلات، وتبسيط المهام المتكررة. تعتمد على المعلومات المتاحة لكل مستخدم وتحترم الصلاحيات المحددة داخل المؤسسة.",
-    note: "تعتمد على المعلومات المتاحة لكم وتحترم الصلاحيات المحددة داخل مؤسستكم.", badge: 'Syn’IA', role: "مساعد شخصي",
-    chips: ["اجتماع", "وثيقة", "بحث", "مشروع"], ex: ["لخّص هذا الاجتماع", "ابحث عن هذه الوثيقة"],
+    o: 'Syn’IA', t: 'مساعدة مدمجة في بيئة عملكم.',
+    x: 'ترافق Syn’IA فرقكم في عملها اليومي. ومدمجة في مختلف فضاءات Synapse Business، تتدخل حين تضيف قيمة حقيقية: العثور على معلومة، أو إعداد محتوى أو إعادة صياغته، أو تلخيص بعض المبادلات، أو تبسيط المهام المتكررة. تعتمد على المعلومات المتاحة لكل مستخدم وتحترم الصلاحيات المحددة داخل المؤسسة.',
   },
-  crm: {
-    o: 'العملاء والمبيعات', t: 'من الاستقطاب إلى الموعد، كل علاقة عميل متابَعة.',
-    x: 'سجل العميل ومسار المبيعات والمتابعات مشتركة داخل فريق المبيعات. والمواعيد المحجوزة إلكترونيًا تُضاف مباشرة إلى الأجندة وبطاقة العميل.',
-    points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار', 'المتابعات والخطوات التالية', 'حجز المواعيد إلكترونيًا'],
-  },
-  booking: {
-    o: 'حجز المواعيد', t: 'حجز إلكتروني مرتبط بأجنداتكم.',
-    x: 'يحجز العميل موعدًا متاحًا، فيُضاف إلى أجندة الموظف وإلى بطاقة العميل.',
-    chain: ['حجز إلكتروني', 'أجندة الفريق', 'بطاقة العميل', 'موعد مؤكد'],
-  },
-  hr: {
-    o: 'الفرق والموارد البشرية', t: 'مسار الموظف من التوظيف إلى الأجور، وتطوير الكفاءات.',
-    x: 'البيانات المدخلة عند التوظيف تغذي كل مرحلة لاحقة، حتى ورقة الأجر.',
-    life: ['التوظيف', 'العقد', 'ملف الموظف', 'تسجيل الحضور', 'العطل والغياب', 'التقييم والمكافآت', 'الأجور', 'أوراق الأجر'],
-  },
-  collab: {
-    o: 'العمل والتعاون', t: 'التواصل والوثائق والمشاريع، منظمة حسب الفريق.',
-    x: 'المكتب الافتراضي حيث تتواصل فرقكم وتنتج وتحفظ الوثائق وتتابع تنفيذ المشاريع.',
-    groups: [
-      { h: 'التواصل', items: ['المراسلة والبريد', 'المنتدى', 'تقويم مشترك'] },
-      { h: 'التعاون', items: ['تحرير مشترك مباشر', 'اجتماعات مسجلة عبر الإنترنت', 'محاضر تلقائية'] },
-      { h: 'التدبير الوثائقي', items: ['تخزين مركزي ومجلدات', 'سجل النسخ', 'البحث وصلاحيات الوصول'] },
-      { h: 'تدبير المشاريع', items: ['المشاريع والمراحل', 'المهام والمسؤولون', 'الموافقات والتقدم'] },
-    ],
-    store: ['تخزين الوثائق', 'الإدارة', 'المبيعات', 'الموارد البشرية', 'المشاريع', 'وصول حسب الصلاحيات'],
-    ws: 'فضاء لكل فريق أو مشروع', cue: 'Syn’IA: تمت صياغة المحضر وتحديد 3 مهام',
-  },
-  projects: {
-    o: 'تدبير المشاريع', t: 'مشاريع تُقاد مرحلة بمرحلة.',
-    x: 'مراحل ومهام ومسؤولون محددون. الوثائق والموافقات مرتبطة بالمشروع، والتقدم يُقاس باستمرار.',
-    flow: ['المشروع', 'المراحل', 'المهام', 'المسؤولون', 'الموافقات', 'التقدم'],
-  },
-  finance: {
-    o: 'المالية والقيادة', t: 'تحكّموا في النفقات. قودوا بأرقام موحّدة.',
-    x: 'العمليات المالية اليومية، ورؤية للإدارة تجمع بيانات كل الوحدات.',
-    ops: { h: 'العمليات المالية', items: ['الفواتير', 'مذكرات المصاريف', 'الميزانيات', 'تكاليف المشاريع', 'مسارات الموافقة'] },
-    rep: { h: 'تقارير الإدارة', items: ['مؤشرات موحّدة', 'النشاط التجاري', 'تقدم المشاريع'] },
-  },
-  shop: { o: 'متجر إلكتروني', t: 'بيعوا منتجاتكم وخدماتكم عبر الإنترنت.', x: 'كل طلب مرتبط ببطاقة العميل ويُحال إلى الفريق المعني.', opt: 'اختياري' },
-  training: { o: 'التكوين', t: 'الإدماج وتطوير الكفاءات.', x: 'مسارات إدماج، تكوينات داخلية، تتبع التقدم وشهادات الإتمام.' },
-  events: { o: 'الفعاليات والبث', t: 'ندوات عبر الإنترنت وبث مباشر.', x: 'التسجيل والبث وإعادة المشاهدة للفعاليات الداخلية وفعاليات العملاء.', opt: 'اختياري' },
   modular: {
-    t: 'ابدؤوا بأولوياتكم.', x: 'فعّلوا الوحدات التي تحتاجونها، ثم وسّعوا المنصة مع نموكم.',
-    groups: ['العملاء والمبيعات', 'الفرق والموارد البشرية', 'العمل والتعاون', 'المالية والقيادة'],
-    layers: 'عبر كل الوحدات', pilot: 'التقارير', optL: 'اختياري',
+    t: 'كيّفوا Synapse مع مؤسستكم.', x: 'ابدؤوا بأولوياتكم، وأضيفوا وظائف جديدة كلما تطورت احتياجاتكم.',
+    items: ['CRM', 'الموارد البشرية والأجور', 'التعاون', 'المشاريع', 'المالية', 'التكوين', 'الحجز', 'المتجر', 'الفعاليات'],
   },
-  opts: 'خيارات',
-  mid: { t: 'اكتشفوا كيف تتكيف Synapse Business مع مؤسستكم.', cta: 'اطلب عرضًا توضيحيًا' },
-  final: { t1: 'شاهدوا Synapse Business', t2: 'مطبّقة على نشاطكم.', x: 'عرض توضيحي مكيّف مع مساطركم وأولوياتكم.', cta: 'اطلب عرضًا توضيحيًا' },
+  trust: {
+    o: 'الثقة والنشر', t: 'نشر متحكَّم فيه.',
+    items: [
+      ['تدبير الصلاحيات', 'كل مستخدم يصل إلى الفضاءات والبيانات التي تخصه.'],
+      ['البيانات والوصول', 'تحدد المؤسسة الوصول حسب الدور والفريق.'],
+      ['نشر تدريجي', 'تشغيل على مراحل حسب أولوياتكم.'],
+      ['مواكبة', 'إعداد وتملّك المنصة مع فريق ScandiTek.'],
+    ],
+  },
+  final: { t: 'اكتشفوا كيف يمكن أن تتكيف Synapse Business مع مؤسستكم.', cta: 'اطلب عرضًا توضيحيًا' },
 };
 
 const businessV2: Record<string, BusinessV2> = { fr, en, no, ar };
