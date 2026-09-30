@@ -602,30 +602,26 @@ const Business = () => {
 };
 
 const Workspaces = ({ c, lang }: { c: { names: string[]; inside: string[]; v: string[] }; lang: string }) => {
-  const [active, setActive] = useState(0);
-  const role = (WORKSPACE_ROLES[lang as keyof typeof WORKSPACE_ROLES] ?? WORKSPACE_ROLES.fr)[active];
+  const roles = WORKSPACE_ROLES[lang as keyof typeof WORKSPACE_ROLES] ?? WORKSPACE_ROLES.fr;
   return (
-    <Reveal className="mt-12">
-      <div className="flex flex-wrap justify-center gap-2">
-        {c.names.map((n, i) => (
-          <button key={n} onClick={() => setActive(i)} className={`text-[14px] px-4 py-2 rounded-full border transition-colors ${active === i ? 'border-[#A76CFF]/60 bg-[#772F9F]/35 text-white' : 'border-white/10 bg-white/[0.03] text-[#B8B5C8] hover:text-white'}`}>{n}</button>
-        ))}
-      </div>
-      <div className={`${panel} mt-6 mx-auto max-w-[960px] p-5 md:p-6`}>
-        <div className="flex items-center justify-between">
-          <p className="font-display text-[18px] font-semibold">{c.names[active]}</p>
-          <div className="flex items-center gap-2">
-            <div className="flex -space-x-2 rtl:space-x-reverse">{['#772F9F', '#3FA9F5', '#A76CFF', '#5CE1E6'].map((col) => <span key={col} className="h-7 w-7 rounded-full border-2 border-[#0E1030]" style={{ background: col }} />)}</div>
-            <span className="text-[12px] text-[#8D89A0]">{4 + active * 2} {c.v[0]}</span>
+    <Reveal className="mt-12 mx-auto max-w-[960px] space-y-4">
+      {roles.map((role, i) => (
+        <div key={c.names[i]} className={`${panel} p-5 md:p-6`}>
+          <div className="flex items-center justify-between">
+            <p className="font-display text-[18px] font-semibold">{c.names[i]}</p>
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2 rtl:space-x-reverse">{['#772F9F', '#3FA9F5', '#A76CFF', '#5CE1E6'].map((col) => <span key={col} className="h-7 w-7 rounded-full border-2 border-[#0E1030]" style={{ background: col }} />)}</div>
+              <span className="text-[12px] text-[#8D89A0]">{4 + i * 2} {c.v[0]}</span>
+            </div>
+          </div>
+          <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            {role.tiles.map((x) => <div key={x} className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-[13px] text-[#E6E4F0]">{x}</div>)}
+          </div>
+          <div className="mt-5 pt-4 border-t border-white/10 grid sm:grid-cols-3 gap-2">
+            {role.activity.map((a) => <p key={a} className="flex items-center gap-2 text-[12px] text-[#CFCDDC]"><Dot />{a}</p>)}
           </div>
         </div>
-        <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          {role.tiles.map((x) => <div key={x} className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-3 text-[13px] text-[#E6E4F0]">{x}</div>)}
-        </div>
-        <div className="mt-5 pt-4 border-t border-white/10 grid sm:grid-cols-3 gap-2">
-          {role.activity.map((a) => <p key={a} className="flex items-center gap-2 text-[12px] text-[#CFCDDC]"><Dot />{a}</p>)}
-        </div>
-      </div>
+      ))}
     </Reveal>
   );
 };
