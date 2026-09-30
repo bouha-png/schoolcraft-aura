@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
+import { LayoutDashboard, Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -203,8 +203,8 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
                 <Orbit items={v.grow.orbit} icons={[Users, TrendingUp, BarChart3, FileText, Mail, CalendarCheck, History, ShoppingBag]}
-                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><svg viewBox="0 0 40 28" className="w-14"><path d="M2 26 L14 8 L22 18 L28 10 L38 26 Z" fill="#1F5F5B" /><path d="M14 8 L22 18 L28 10 L32 16" stroke="#E0A93B" strokeWidth="3" fill="none" /></svg></span>}
-                  name={v.grow.client} sub={v.grow.tag} />
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><Contact className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                  name={v.grow.tag} sub={v.grow.o} />
               </Reveal>
             </div>
             <Reveal delay={100} className="mt-10">
@@ -226,9 +226,9 @@ const Business = () => {
           <div className={container}>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <Reveal delay={150} className="order-2 lg:order-1">
-                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp]}
-                  center={<img src={avatarSalma} alt="" className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#A76CFF]/60 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]" />}
-                  name={teams.v[5]} sub={v.team.emp} />
+                <Orbit items={v.team.orbit} icons={[Banknote, FileText, Clock, CalendarCheck, Plane, GraduationCap, Award, TrendingUp, LayoutDashboard]}
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#772F9F] to-[#3FA9F5] ring-4 ring-[#A76CFF]/50 shadow-[0_0_50px_-5px_rgba(167,108,255,0.7)]"><UserRound className="w-11 h-11 md:w-12 md:h-12" strokeWidth={1.5} /></span>}
+                  name={v.team.emp} sub={v.team.o} />
               </Reveal>
               <div className="order-1 lg:order-2">
                 <Title overline={v.team.o} title={v.team.t} intro={v.team.x} />
