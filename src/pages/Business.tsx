@@ -425,7 +425,7 @@ const Business = () => {
               </h1>
               <p className="hero-animate hero-delay-2 mt-7 max-w-[600px] text-[16px] md:text-[18px] leading-[1.65] text-[#CFCDDC]">{v.hero.sub}</p>
               <div className="hero-animate hero-delay-3 mt-10 flex flex-col sm:flex-row gap-4">
-                <a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{v.final.cta}{arrow}</a>
+                <a href={waUrl(c.waDemo)} target="_blank" rel="noopener noreferrer" className={glassBtn} style={glow}>{v.final.cta}{arrow}</a>
                 <a href="#clients" className={ghostBtn}>{v.hero.cta2}</a>
               </div>
               <p className="hero-animate hero-delay-3 mt-8 flex items-center gap-2 text-[13.5px] text-[#B8B5C8]"><Sparkles className="w-4 h-4 text-[#C9A9FF]" />{v.hero.ai}</p>
@@ -501,7 +501,7 @@ const Business = () => {
           <div className="absolute inset-0" style={{ background: 'radial-gradient(60% 70% at 50% 100%, rgba(119,47,159,0.4) 0%, rgba(7,9,29,0) 70%)' }} aria-hidden />
           <Reveal className={`relative ${container} text-center`}>
             <h2 className="mx-auto max-w-[820px] font-display font-bold tracking-[-0.02em] leading-[1.12] text-[clamp(1.8rem,4.4vw,3rem)]">{v.final.t}</h2>
-            <div className="mt-9 flex justify-center"><a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{v.final.cta}{arrow}</a></div>
+            <div className="mt-9 flex justify-center"><a href={waUrl(c.waDemo)} target="_blank" rel="noopener noreferrer" className={glassBtn} style={glow}>{v.final.cta}{arrow}</a></div>
           </Reveal>
         </section>
       </main>
