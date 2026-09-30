@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, Video, Mail, MessageSquare, Cloud, Contact,
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
-  PlayCircle, Calendar, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote,
+  PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
@@ -14,8 +14,7 @@ import LanguageSelector from '@/components/portal/LanguageSelector';
 import ClientCard from '@/components/business/ClientCard';
 import PilotDashboard from '@/components/business/PilotDashboard';
 import SecuritySection from '@/components/business/SecuritySection';
-import ModuleCatalog from '@/components/business/ModuleCatalog';
-import HrPayrollSection from '@/components/business/HrPayrollSection';
+import businessV2 from '@/i18n/businessV2';
 import { WORKSPACE_ROLES } from '@/components/business/workspaceRoles';
 import scanditekLogo from '@/assets/scanditek-logo.png.asset.json';
 import heroImg from '@/assets/business-hero.jpg';
@@ -96,6 +95,9 @@ const Business = () => {
   const { lang } = useLanguage();
   const c = business[lang as keyof typeof business] ?? business.fr;
   const rtl = lang === 'ar';
+  const v = businessV2[lang] ?? businessV2.fr;
+  const wsRoles = WORKSPACE_ROLES[lang as keyof typeof WORKSPACE_ROLES] ?? WORKSPACE_ROLES.fr;
+  const groupIcons = [Contact, CalendarCheck, UserCog, Users, FolderKanban, Wallet, ShoppingBag, GraduationCap, Radio];
   const [showFloating, setShowFloating] = useState(false);
 
   useEffect(() => {
