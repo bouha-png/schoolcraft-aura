@@ -1,3 +1,4 @@
+import collabPerson from "@/assets/collab-person.jpg";
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
@@ -133,10 +134,10 @@ const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; ic
 };
 
 const APP_TINTS = ['#A78BFA', '#818CF8', '#C084FC', '#38BDF8', '#60A5FA', '#22D3EE', '#2DD4BF', '#FB923C', '#E879F9', '#6366F1', '#34D399', '#F472B6'];
-const AppGrid = ({ items, icons }: { items: string[]; icons: typeof Users[] }) => (
+const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users[]; photo?: string }) => (
   <div className="relative">
     <div className="absolute -inset-10 rounded-full bg-[#5E2580]/30 blur-3xl" aria-hidden />
-    <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-2.5 md:gap-3.5">
+    <div className="relative hidden sm:grid grid-cols-4 gap-3.5">
       {items.map((o, i) => {
         const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
         return (
@@ -151,6 +152,27 @@ const AppGrid = ({ items, icons }: { items: string[]; icons: typeof Users[] }) =
             <span className="mt-2 block h-1 w-2/3 rounded-full" style={{ background: `linear-gradient(90deg, ${c}80, transparent)` }} />
           </div>
         );
+      })}
+    </div>
+    {/* Mobile: app icons around a photo */}
+    <div className="relative sm:hidden grid grid-cols-4 gap-x-2 gap-y-4 items-start">
+      {items.map((o, i) => {
+        const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
+        const tile = (
+          <div key={o} className="flex flex-col items-center text-center">
+            <span className="grid place-items-center w-14 h-14 rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]" style={{ boxShadow: `0 0 20px -6px ${c}` }}>
+              <Icon className="w-6 h-6" style={{ color: c }} strokeWidth={1.8} />
+            </span>
+            <p className="mt-1.5 text-[10.5px] font-medium leading-tight text-white">{o}</p>
+          </div>
+        );
+        if (i === 4) return [tile, photo && (
+          <div key="photo" className="col-span-2 row-span-2 self-stretch relative rounded-2xl overflow-hidden border border-[#A76CFF]/40 shadow-[0_0_30px_-8px_rgba(119,47,159,0.8)]">
+            <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07091D]/60 to-transparent" />
+          </div>
+        )];
+        return tile;
       })}
     </div>
   </div>
@@ -282,7 +304,7 @@ const Business = () => {
                 <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
               </div>
               <Reveal delay={150}>
-                <AppGrid items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
+                <AppGrid photo={collabPerson} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
               </Reveal>
             </div>
           </div>
