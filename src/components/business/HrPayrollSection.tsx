@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-import ExploreGroup from './ExploreGroup';
-import { Users, UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Users, UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint, CheckCircle2 } from 'lucide-react';
 
 type Tab = { n: string; h: string; d: string; steps: string[]; rows: [string, string, string][] };
 type Copy = { o: string; t: string; i: string; save: string; tabs: Tab[] };
@@ -48,8 +46,6 @@ const T: Record<string, Copy> = {
   },
 };
 const icons = [UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint];
-const slugs = ['recrutement', 'paie', 'performance', 'conges-absences', 'pointage'];
-const more: Record<string, string> = { fr: 'En savoir plus', en: 'Learn more', no: 'Les mer', ar: 'اعرف المزيد' };
 
 export default function HrPayrollSection({ lang }: { lang: string }) {
   const c = T[lang] ?? T.fr;
@@ -61,20 +57,18 @@ export default function HrPayrollSection({ lang }: { lang: string }) {
           <span className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-[#A76CFF]"><Users className="w-4 h-4" />{c.o}</span>
           <h2 className="mt-4 font-display text-[30px] md:text-[44px] font-bold leading-tight text-white">{c.t}</h2>
           <p className="mt-4 text-[16px] text-[#B8B5C8]">{c.i}</p>
-          <ExploreGroup id="rh-paie" lang={lang} center />
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {c.tabs.map((t, k) => {
             const TI = icons[k];
             return (
-              <Link key={t.n} to={`/business/${slugs[k]}`} className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur p-5 hover:border-[#A76CFF]/45 hover:-translate-y-1 transition">
+              <div key={t.n} className="h-full flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur p-5">
                 <span className="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#772F9F] to-[#A76CFF]"><TI className="w-5 h-5 text-white" /></span>
                 <p className="mt-4 font-semibold text-[15px] text-white">{t.n}</p>
                 <p className="mt-1.5 text-[13px] leading-[1.6] text-[#B8B5C8] flex-1">{t.d}</p>
                 <div className="mt-4 flex items-center gap-1.5 text-[11px] text-[#8D89A0]"><CheckCircle2 className="w-3.5 h-3.5 text-[#6EE7A0]" />{t.rows[0][0].split(' · ')[0]} · {t.rows[0][2]}</div>
-                <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-[#C9A8FF]">{more[lang] ?? more.fr}<ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 rtl:rotate-180" /></span>
-              </Link>
+              </div>
             );
           })}
         </div>
