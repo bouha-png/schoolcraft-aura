@@ -207,16 +207,39 @@ const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
 );
 const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: string }) => {
   const [a, b] = GLASS_GRADS[i % GLASS_GRADS.length];
+  const ref = useRef<HTMLDivElement>(null);
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setOn(true); return; }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setOn(true); io.disconnect(); } }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  const delay = `${(i % 6) * 90 + Math.floor(i / 6) * 60}ms`;
   return (
-    <div className={`group flex flex-col items-center text-center ${i % 2 === 1 ? 'lg:translate-y-4' : ''}`}>
-      <span
-        className="relative grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-[12px] md:rounded-[14px] border border-white/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/50"
-        style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 22px -4px ${b}CC, 0 10px 20px -10px rgba(0,0,0,0.7)` }}
+    <div ref={ref} className={`group flex flex-col items-center text-center ${i % 2 === 1 ? 'lg:translate-y-4' : ''}`}>
+      <div
+        className="flex flex-col items-center"
+        style={{
+          transition: 'opacity 700ms ease-out, transform 900ms cubic-bezier(0.22,1.4,0.36,1), filter 700ms ease-out',
+          transitionDelay: delay,
+          opacity: on ? 1 : 0,
+          transform: on ? 'none' : 'translateY(48px) scale(0.6) rotate(-8deg)',
+          filter: on ? 'blur(0)' : 'blur(8px)',
+        }}
       >
-        <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[11px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
-        <Icon className="relative w-6 h-6 md:w-7 md:h-7" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 6px ${b})` }} />
-      </span>
-      <p className="mt-2 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{label}</p>
+        <span
+          className="relative grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-[12px] md:rounded-[14px] border border-white/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/50"
+          style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 22px -4px ${b}CC, 0 10px 20px -10px rgba(0,0,0,0.7)` }}
+        >
+          <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[11px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
+          {on && <span className="absolute inset-0 rounded-[inherit] animate-ping opacity-0 [animation-iteration-count:1] [animation-duration:1.2s]" style={{ boxShadow: `0 0 0 2px ${b}`, animationDelay: delay }} aria-hidden />}
+          <Icon className="relative w-6 h-6 md:w-7 md:h-7" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 6px ${b})` }} />
+        </span>
+        <p className="mt-2 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{label}</p>
+      </div>
     </div>
   );
 };
