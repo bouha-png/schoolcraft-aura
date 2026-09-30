@@ -1,5 +1,6 @@
 import collabPerson from "@/assets/collab-person.jpg";
-import clientsWide from '@/assets/clients-wide-v5.jpg';
+import clientsAsset from '@/assets/clients-office.png.asset.json';
+const clientsWide = clientsAsset.url;
 import financeWide from '@/assets/finance-wide.jpg';
 import hrTalk from '@/assets/hr-talk-wide.jpg';
 import collabAsset from "@/assets/collab-office.png.asset.json";
