@@ -250,7 +250,7 @@ const Business = () => {
               </div>
               <Reveal delay={150}>
                 <Orbit dense items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}
-                  center={<div className="flex -space-x-4 rtl:space-x-reverse">{[avatarSalma, avatarYoussef, avatarKarim].map((a, i) => <img key={i} src={a} alt="" className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover ring-4 ring-[#0B0E26] shadow-[0_0_40px_-5px_rgba(167,108,255,0.7)]" />)}</div>}
+                  center={<span className="grid place-items-center w-24 h-24 md:w-28 md:h-28 rounded-[30%] border border-[#C9A9FF]/40 bg-gradient-to-br from-[#A76CFF]/40 to-[#3FA9F5]/20 backdrop-blur-xl text-[#F3EBFF] shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_50px_-5px_rgba(167,108,255,0.7)]"><Users className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></span>}
                   name={v.work.team} sub={v.work.teamSub} />
               </Reveal>
             </div>
