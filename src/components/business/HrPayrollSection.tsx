@@ -46,8 +46,6 @@ const T: Record<string, Copy> = {
   },
 };
 const icons = [UserPlus, Wallet, TrendingUp, CalendarCheck, Fingerprint];
-const slugs = ['recrutement', 'paie', 'performance', 'conges-absences', 'pointage'];
-const more: Record<string, string> = { fr: 'En savoir plus', en: 'Learn more', no: 'Les mer', ar: 'اعرف المزيد' };
 
 export default function HrPayrollSection({ lang }: { lang: string }) {
   const c = T[lang] ?? T.fr;
