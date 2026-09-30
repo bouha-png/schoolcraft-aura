@@ -95,7 +95,7 @@ const fr: BusinessCopy = {
     title: 'Une boutique reliée au reste de l’entreprise.',
     text: 'Du catalogue au suivi interne, chaque commande reste connectée à vos clients et à vos équipes.',
     steps: ['Catalogue', 'Client', 'Commande', 'Statut', 'Suivi interne'],
-    v: ['Cosmétiques à l’argan', 'Séjour en riad', 'Caftans & textile', 'Nouvelle commande', 'En préparation', 'Tâche créée pour l’équipe'],
+    v: ['Cosmétiques à l’argan', 'High-tech & informatique', 'Emballage & livraison', 'Nouvelle commande', 'En préparation', 'Tâche créée pour l’équipe'],
   },
   events: {
     title: 'Du rendez-vous au grand événement.',
@@ -233,7 +233,7 @@ const en: BusinessCopy = {
     title: 'A shop connected to the rest of the company.',
     text: 'From catalogue to internal follow-up, every order stays linked to your customers and teams.',
     steps: ['Catalogue', 'Customer', 'Order', 'Status', 'Internal follow-up'],
-    v: ['Argan cosmetics', 'Riad stay', 'Caftans & textiles', 'New order', 'In preparation', 'Task created for the team'],
+    v: ['Argan cosmetics', 'Tech & computers', 'Packing & delivery', 'New order', 'In preparation', 'Task created for the team'],
   },
   events: {
     title: 'From meetings to major events.',
@@ -371,7 +371,7 @@ const no: BusinessCopy = {
     title: 'En butikk koblet til resten av bedriften.',
     text: 'Fra katalog til intern oppfølging er hver bestilling knyttet til kundene og teamene.',
     steps: ['Katalog', 'Kunde', 'Bestilling', 'Status', 'Intern oppfølging'],
-    v: ['Arganoljeprodukter', 'Opphold i riad', 'Kaftaner & tekstil', 'Ny bestilling', 'Under behandling', 'Oppgave opprettet for teamet'],
+    v: ['Arganoljeprodukter', 'PC & teknologi', 'Pakking & frakt', 'Ny bestilling', 'Under behandling', 'Oppgave opprettet for teamet'],
   },
   events: {
     title: 'Fra møtet til det store arrangementet.',
@@ -509,7 +509,7 @@ const ar: BusinessCopy = {
     title: 'متجر مرتبط بباقي المقاولة.',
     text: 'من الكتالوج إلى المتابعة الداخلية، يبقى كل طلب مرتبطًا بعملائك وفرقك.',
     steps: ['الكتالوج', 'العميل', 'الطلب', 'الحالة', 'المتابعة الداخلية'],
-    v: ['مستحضرات الأركان', 'إقامة في رياض', 'القفاطين والنسيج', 'طلب جديد', 'قيد التحضير', 'أُنشئت مهمة للفريق'],
+    v: ['مستحضرات الأركان', 'الإلكترونيات والحواسيب', 'التغليف والتوصيل', 'طلب جديد', 'قيد التحضير', 'أُنشئت مهمة للفريق'],
   },
   events: {
     title: 'من الموعد إلى الحدث الكبير.',
