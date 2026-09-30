@@ -206,27 +206,16 @@ const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: s
 );
 const FloatTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: string }) => {
   const [a, b] = GLASS_GRADS[i % GLASS_GRADS.length];
-  const stagger = i % 2 === 1 ? 'lg:translate-y-6' : '';
   return (
-    <div className={`group ${stagger}`}>
-      <div
-        className="relative flex flex-col items-center gap-3 rounded-[26px] px-3 pt-5 pb-4 border border-[#CDB6FF]/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-[#D9C8FF]/60"
-        style={{
-          background: 'linear-gradient(160deg, rgba(120,70,200,0.28) 0%, rgba(52,22,96,0.42) 55%, rgba(22,12,52,0.6) 100%)',
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.22), inset 0 0 24px -8px rgba(167,108,255,0.45), 0 20px 40px -18px rgba(0,0,0,0.8), 0 0 34px -12px rgba(140,90,255,0.6)',
-        }}
+    <div className={`group flex flex-col items-center text-center ${i % 2 === 1 ? 'lg:translate-y-4' : ''}`}>
+      <span
+        className="relative grid place-items-center w-12 h-12 md:w-14 md:h-14 rounded-[15px] md:rounded-[17px] border border-white/25 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-white/50"
+        style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 22px -4px ${b}CC, 0 10px 20px -10px rgba(0,0,0,0.7)` }}
       >
-        <span className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" aria-hidden />
-        <span className="absolute inset-0 rounded-[26px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: `0 0 40px -6px ${b}AA` }} aria-hidden />
-        <span
-          className="relative grid place-items-center w-14 h-14 md:w-16 md:h-16 rounded-[18px] border border-white/25"
-          style={{ background: `linear-gradient(150deg, ${a}55, ${b}25)`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), 0 0 26px -4px ${b}CC` }}
-        >
-          <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[16px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
-          <Icon className="relative w-7 h-7 md:w-8 md:h-8" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 8px ${b})` }} />
-        </span>
-        <p className="text-[12.5px] md:text-[13px] font-medium leading-tight text-white text-center">{label}</p>
-      </div>
+        <span className="absolute inset-x-1.5 top-0 h-1/2 rounded-t-[14px] bg-gradient-to-b from-white/25 to-transparent" aria-hidden />
+        <Icon className="relative w-6 h-6 md:w-7 md:h-7" fill={`url(#gg${i % GLASS_GRADS.length})`} stroke="#FFFFFF" strokeWidth={1.4} style={{ filter: `drop-shadow(0 0 6px ${b})` }} />
+      </span>
+      <p className="mt-2 text-[11px] md:text-[12.5px] font-medium leading-tight text-white">{label}</p>
     </div>
   );
 };
@@ -253,7 +242,7 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
     <div className="relative -mt-6 px-5">
       <div className="absolute inset-x-6 top-10 h-64 bg-[#5E2580]/30 blur-[90px]" aria-hidden />
       <div className="absolute right-1/4 top-24 h-40 w-72 bg-[#2DD4C4]/10 blur-[80px]" aria-hidden />
-      <div className="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-5 max-w-[1100px] mx-auto">
+      <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-2 gap-y-6 md:gap-y-8 max-w-[860px] mx-auto">
         {items.map((o, i) => <FloatTile key={o} Icon={icons[i]} i={i} label={o} />)}
       </div>
     </div>
