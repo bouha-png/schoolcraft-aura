@@ -1,4 +1,6 @@
 import collabPerson from "@/assets/collab-person.jpg";
+import clientsWide from '@/assets/clients-wide.jpg';
+import financeWide from '@/assets/finance-wide.jpg';
 import hrTalk from '@/assets/hr-talk-wide.jpg';
 import collabTeam from "@/assets/collab-team-wide.jpg";
 import { Link } from 'react-router-dom';
@@ -401,20 +403,11 @@ const Business = () => {
         </section>
 
         {/* 2A. DÉVELOPPEZ VOTRE ACTIVITÉ */}
-        <section id="clients" className="relative pt-10 pb-20 md:py-28">
-          <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
-                <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
-              </div>
-              <Reveal delay={150}>
-                <Orbit dense items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}
-                  center={<Hub badge={<Handshake className="w-[18px] h-[18px]" strokeWidth={1.8} />}><Contact className="w-12 h-12 md:w-14 md:h-14" strokeWidth={1.5} /></Hub>}
-                  name={v.grow.tag} sub={`CRM · ${v.grow.o}`} />
-              </Reveal>
-            </div>
-          </div>
+        <section id="clients" className="relative pt-6 pb-20 md:pb-28">
+          <WideApps rtl={rtl} photo={clientsWide} items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}>
+            <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
+            <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
+          </WideApps>
         </section>
 
         {/* 2B. GÉREZ VOS ÉQUIPES */}
@@ -436,30 +429,11 @@ const Business = () => {
         </section>
 
         {/* 2D. PILOTEZ VOS FINANCES */}
-        <section id="finance" className="relative py-20 md:py-28 bg-[#0A0C24]">
-          <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
-                <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
-              </div>
-              <Reveal delay={150}>
-                <Orbit items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}
-                  center={<Hub badge={<Wallet className="w-[18px] h-[18px]" strokeWidth={1.8} />}>
-                    <svg viewBox="0 0 64 64" className="w-14 h-14 md:w-16 md:h-16" fill="none" aria-hidden="true">
-                      <path d="M8 54h48" stroke="currentColor" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
-                      <rect x="12" y="38" width="8" height="14" rx="2" fill="currentColor" fillOpacity="0.35" />
-                      <rect x="24" y="30" width="8" height="22" rx="2" fill="currentColor" fillOpacity="0.5" />
-                      <rect x="36" y="24" width="8" height="28" rx="2" fill="currentColor" fillOpacity="0.7" />
-                      <rect x="48" y="14" width="8" height="38" rx="2" fill="currentColor" fillOpacity="0.9" />
-                      <path d="M10 34 L24 24 L36 20 L52 8" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M45 8h7v7" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Hub>}
-                  name={v.fin.center} sub={v.fin.o} />
-              </Reveal>
-            </div>
-          </div>
+        <section id="finance" className="relative pb-20 md:pb-28">
+          <WideApps rtl={rtl} photo={financeWide} items={v.fin.orbit} icons={[FileText, Receipt, PiggyBank, FolderKanban, CheckCircle2, CreditCard, BarChart3, LayoutDashboard]}>
+            <Title overline={v.fin.o} title={v.fin.t} intro={v.fin.x} />
+            <Reveal delay={100}><Points items={v.fin.points} single /></Reveal>
+          </WideApps>
         </section>
 
         {/* 3. CONNECTED PLATFORM */}
