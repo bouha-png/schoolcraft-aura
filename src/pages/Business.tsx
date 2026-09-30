@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowRight, Users, FolderKanban, UserRound, Wallet, FileText, Video, Mail, MessageSquare, Cloud, Contact,
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
-  PlayCircle, Calendar, ChevronRight, History, MessagesSquare, FileCheck2, Eye,
+  PlayCircle, Calendar, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote,
 } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
@@ -588,7 +588,6 @@ const Business = () => {
             <p className="mx-auto mt-7 max-w-[620px] text-[16px] md:text-[19px] leading-[1.65] text-[#CFCDDC]">{c.final.text}</p>
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <a href="#" onClick={openWa(c.waDemo)} className={glassBtn} style={glow}>{c.final.cta}{arrow}</a>
-              <a href="#" onClick={openWa(c.waContact)} className={ghostBtn}>{c.final.cta2}</a>
             </div>
           </Reveal>
         </section>
