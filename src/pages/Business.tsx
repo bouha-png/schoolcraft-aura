@@ -432,7 +432,7 @@ const Business = () => {
         <section id="clients" className="relative pt-6 pb-20 md:pb-28">
           <WideApps rtl={rtl} pos="100% center" photo={clientsWide} items={v.grow.orbit} icons={[Users, TrendingUp, LayoutDashboard, FileText, Mail, CalendarCheck, History, Store, MonitorPlay, CalendarDays]}>
             <Title overline={v.grow.o} title={v.grow.t} intro={v.grow.x} />
-            <Reveal delay={100}><Points items={v.grow.points} /></Reveal>
+            <Reveal delay={100}><p className="mt-6 max-w-xl text-[16px] md:text-[17px] leading-relaxed text-[#C9C6D9]">{v.grow.body}</p></Reveal>
           </WideApps>
         </section>
 
