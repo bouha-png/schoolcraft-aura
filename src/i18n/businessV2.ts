@@ -23,7 +23,7 @@ const fr: BusinessV2 = {
   },
   grow: {
     orbit: ['Contacts', 'Opportunités', 'CRM', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Atlas Distribution', tag: 'Vos clients', o: 'Clients & Ventes', t: 'Développez votre activité.',
-    x: 'Acquisition, conversion et suivi client, partagés par toute l’équipe commerciale.',
+    x: 'Suivez vos clients à chaque étape, du premier contact à la fidélisation, avec toute votre équipe commerciale.',
     points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
     opts: 'Options', optL: 'Optionnel',
