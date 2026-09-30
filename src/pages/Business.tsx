@@ -300,20 +300,39 @@ const Business = () => {
               <Reveal delay={100} className="mt-8"><Chain steps={c.booking.steps} rtl={rtl} tone="cyan" /></Reveal>
             </div>
             <Reveal delay={150} className="flex justify-center">
-              <div className="w-[280px] rounded-[40px] border border-white/15 bg-[#0B0E26] p-3 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.95)]">
-                <div className="rounded-[30px] bg-[#F7F7FB] text-[#14142B] p-5">
-                  <p className="text-[15px] font-bold">{c.booking.v[0]}</p>
-                  <div className="mt-4 rounded-xl border border-[#E4E2EE] p-3 text-[13px] font-medium">{c.booking.v[1]}</div>
-                  <p className="mt-4 text-[12px] font-semibold text-[#5E5A75]">{c.booking.v[2]}</p>
-                  <div className="mt-2 grid grid-cols-3 gap-2">
-                    {['09:00', '10:30', '14:00', '15:30', '16:00', '17:30'].map((t) => (
-                      <span key={t} className={`text-center text-[12px] py-2 rounded-lg ${t === '10:30' ? 'bg-[#772F9F] text-white' : 'bg-[#EFEDF6]'}`}>{t}</span>
-                    ))}
-                  </div>
-                  <div className="mt-4 rounded-xl bg-[#772F9F] text-white text-center text-[13px] font-semibold py-2.5">{c.booking.v[3]}</div>
-                  <div className="mt-4 flex items-start gap-2 rounded-xl bg-[#E9F6EF] p-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#1F8A55] mt-0.5" />
-                    <div><p className="text-[12px] font-semibold">{c.booking.v[4]}</p><p className="text-[11px] text-[#5E5A75]">{c.booking.v[5]}</p></div>
+              <div dir="ltr" className="relative w-[300px] aspect-[9/19.5] rounded-[54px] p-[3px] shadow-[0_50px_100px_-40px_rgba(0,0,0,0.95)]" style={{ background: 'linear-gradient(145deg,#8E8A96 0%,#3A3842 30%,#1C1B22 55%,#5A5763 100%)' }}>
+                {/* side buttons */}
+                <span className="absolute -left-[3px] top-[110px] h-7 w-[3px] rounded-l bg-[#4A4852]" />
+                <span className="absolute -left-[3px] top-[155px] h-12 w-[3px] rounded-l bg-[#4A4852]" />
+                <span className="absolute -left-[3px] top-[215px] h-12 w-[3px] rounded-l bg-[#4A4852]" />
+                <span className="absolute -right-[3px] top-[170px] h-20 w-[3px] rounded-r bg-[#4A4852]" />
+                <div className="h-full w-full rounded-[51px] bg-black p-[9px]">
+                  <div className="relative h-full w-full overflow-hidden rounded-[43px] bg-[#F7F7FB] text-[#14142B]">
+                    {/* status bar + dynamic island */}
+                    <div className="relative h-12 flex items-center justify-between px-7 text-[13px] font-semibold">
+                      <span>9:41</span>
+                      <span className="absolute left-1/2 top-2.5 -translate-x-1/2 h-[30px] w-[96px] rounded-full bg-black" />
+                      <span className="flex items-center gap-1">
+                        <span className="flex items-end gap-[2px]">{[4, 6, 8, 10].map((h) => <span key={h} className="w-[3px] rounded-sm bg-[#14142B]" style={{ height: h }} />)}</span>
+                        <span className="ms-1 h-[11px] w-[22px] rounded-[3px] border border-[#14142B]/60 p-[1.5px]"><span className="block h-full w-[80%] rounded-[1px] bg-[#14142B]" /></span>
+                      </span>
+                    </div>
+                    <div dir={rtl ? 'rtl' : 'ltr'} className="px-5 pt-4">
+                      <p className="text-[17px] font-bold">{c.booking.v[0]}</p>
+                      <div className="mt-4 rounded-xl border border-[#E4E2EE] bg-white p-3 text-[13px] font-medium">{c.booking.v[1]}</div>
+                      <p className="mt-4 text-[12px] font-semibold text-[#5E5A75]">{c.booking.v[2]}</p>
+                      <div className="mt-2 grid grid-cols-3 gap-2">
+                        {['09:00', '10:30', '14:00', '15:30', '16:00', '17:30'].map((t) => (
+                          <span key={t} className={`text-center text-[12px] py-2 rounded-lg ${t === '10:30' ? 'bg-[#772F9F] text-white' : 'bg-[#EFEDF6]'}`}>{t}</span>
+                        ))}
+                      </div>
+                      <div className="mt-4 rounded-xl bg-[#772F9F] text-white text-center text-[13px] font-semibold py-3">{c.booking.v[3]}</div>
+                      <div className="mt-4 flex items-start gap-2 rounded-xl bg-[#E9F6EF] p-3">
+                        <CheckCircle2 className="w-4 h-4 text-[#1F8A55] mt-0.5 shrink-0" />
+                        <div><p className="text-[12px] font-semibold">{c.booking.v[4]}</p><p className="text-[11px] text-[#5E5A75]">{c.booking.v[5]}</p></div>
+                      </div>
+                    </div>
+                    <span className="absolute bottom-2 left-1/2 -translate-x-1/2 h-[5px] w-[120px] rounded-full bg-[#14142B]" />
                   </div>
                 </div>
               </div>
