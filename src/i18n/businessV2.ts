@@ -3,7 +3,7 @@ type Outcome = { o: string; t: string; x: string; points: string[] };
 type Opt = { o: string; x: string };
 export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
-  grow: Outcome & { orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
+  grow: Outcome & { body: string; orbit: string[]; client: string; tag: string; booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
   team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string; value: string };
   work: Outcome & { store: string[]; cue: string; orbit: string[]; team: string; teamSub: string; value: string };
   fin: Outcome & { body: string; orbit: string[]; center: string };
@@ -24,7 +24,7 @@ const fr: BusinessV2 = {
   grow: {
     orbit: ['Contacts', 'Opportunités', 'CRM', 'Devis', 'Relances', 'Réservation en ligne', 'Historique', 'Boutique en ligne', 'Webinaires', 'Événements'], client: 'Atlas Distribution', tag: 'Vos clients', o: 'Clients & Ventes', t: 'Développez votre relation client.',
     x: 'Suivez vos clients à chaque étape, du premier contact à la fidélisation, avec toute votre équipe commerciale.',
-    points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'],
+    points: ['Fiche client et historique', 'Pipeline et opportunités', 'Devis et relances', 'Prise de rendez-vous en ligne'], body: 'Chaque client dispose d’une fiche complète avec tout son historique. Votre équipe suit les opportunités dans le pipeline, envoie devis et relances au bon moment, et vos clients peuvent prendre rendez-vous en ligne en quelques clics.',
     booking: 'Prise de rendez-vous', chain: ['Réservation en ligne', 'Agenda', 'Fiche client'],
     opts: 'Options', optL: 'Optionnel',
     shop: { o: 'Boutique en ligne', x: 'Commandes rattachées à la fiche client.' },
@@ -84,7 +84,7 @@ const en: BusinessV2 = {
   grow: {
     orbit: ['Contacts', 'Opportunities', 'CRM', 'Quotes', 'Follow-ups', 'Online booking', 'History', 'Online shop', 'Webinars', 'Event management'], client: 'Atlas Distribution', tag: 'Your customers', o: 'Customers & Sales', t: 'Grow your customer relationships.',
     x: 'Follow your customers at every stage, from first contact to loyalty, with your whole sales team.',
-    points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
+    points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'], body: 'Every customer has a complete record with their full history. Your team tracks opportunities in the pipeline, sends quotes and follow-ups at the right time, and customers can book appointments online in just a few clicks.',
     booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
     opts: 'Options', optL: 'Optional',
     shop: { o: 'Online shop', x: 'Orders linked to the customer record.' },
@@ -144,7 +144,7 @@ const no: BusinessV2 = {
   grow: {
     orbit: ['Kontakter', 'Muligheter', 'CRM', 'Tilbud', 'Oppfølging', 'Nettbooking', 'Historikk', 'Nettbutikk', 'Webinarer', 'Arrangementer'], client: 'Atlas Distribution', tag: 'Dine kunder', o: 'Kunder & salg', t: 'Styrk kunderelasjonene deres.',
     x: 'Følg kundene deres gjennom hele reisen, fra første kontakt til lojalitet, sammen med hele salgsteamet.',
-    points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'],
+    points: ['Kundekort og historikk', 'Pipeline og muligheter', 'Tilbud og oppfølging', 'Timebestilling på nett'], body: 'Hver kunde har et komplett kundekort med hele historikken. Teamet ditt følger mulighetene i pipelinen, sender tilbud og oppfølging til rett tid, og kundene kan bestille time på nett med noen få klikk.',
     booking: 'Timebestilling', chain: ['Nettbestilling', 'Kalender', 'Kundekort'],
     opts: 'Tillegg', optL: 'Valgfritt',
     shop: { o: 'Nettbutikk', x: 'Ordrer knyttet til kundekortet.' },
@@ -204,7 +204,7 @@ const ar: BusinessV2 = {
   grow: {
     orbit: ['جهات الاتصال', 'الفرص', 'CRM', 'عروض الأسعار', 'المتابعات', 'الحجز عبر الإنترنت', 'السجل', 'المتجر الإلكتروني', 'الندوات عبر الإنترنت', 'تدبير الفعاليات'], client: 'Atlas Distribution', tag: 'عملاؤكم', o: 'العملاء والمبيعات', t: 'طوّروا علاقتكم بعملائكم.',
     x: 'تابعوا عملاءكم في كل مرحلة، من أول تواصل إلى الولاء، مع كامل فريقكم التجاري.',
-    points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'],
+    points: ['بطاقة العميل وسجله', 'مسار المبيعات والفرص', 'عروض الأسعار والمتابعات', 'حجز المواعيد إلكترونيًا'], body: 'لكل عميل بطاقة كاملة تضم سجله بالكامل. يتابع فريقك الفرص في مسار المبيعات، ويرسل عروض الأسعار والمتابعات في الوقت المناسب، ويمكن لعملائك حجز المواعيد إلكترونيًا ببضع نقرات.',
     booking: 'حجز المواعيد', chain: ['حجز إلكتروني', 'الأجندة', 'بطاقة العميل'],
     opts: 'خيارات', optL: 'اختياري',
     shop: { o: 'متجر إلكتروني', x: 'طلبات مرتبطة ببطاقة العميل.' },
