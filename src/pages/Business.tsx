@@ -5,7 +5,7 @@ import hrTalk from '@/assets/hr-talk-wide.jpg';
 import collabAsset from "@/assets/collab-office.png.asset.json";
 const collabTeam = collabAsset.url;
 import syniaWide from '@/assets/synia-wide.jpg';
-import partnerWide from '@/assets/partner-wide.jpg';
+import partnerWide from '@/assets/partner-wide-logo.jpg';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
