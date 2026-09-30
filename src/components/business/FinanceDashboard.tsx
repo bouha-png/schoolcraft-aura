@@ -42,7 +42,7 @@ export default function FinanceDashboard({ lang }: { lang: string }) {
               <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#A76CFF]" />{c.exp}</span>
             </div>
           </div>
-          <svg dir="ltr" viewBox={`0 -6 ${W} ${H + 12}`} className="mt-3 w-full h-[130px]" preserveAspectRatio="none">
+          <svg viewBox={`0 -6 ${W} ${H + 12}`} className="mt-3 w-full h-[130px]" preserveAspectRatio="none">
             <defs><linearGradient id="fg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#3FA9F5" stopOpacity="0.35" /><stop offset="1" stopColor="#3FA9F5" stopOpacity="0" /></linearGradient></defs>
             {[0, 1, 2, 3].map((g) => <line key={g} x1="0" x2={W} y1={g * (H / 3)} y2={g * (H / 3)} stroke="rgba(255,255,255,0.06)" />)}
             <path d={`${line(rev)} L${W},${H} L0,${H} Z`} fill="url(#fg)" />
