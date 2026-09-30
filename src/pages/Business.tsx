@@ -226,17 +226,6 @@ const Business = () => {
                   name={v.grow.tag} sub={v.grow.o} />
               </Reveal>
             </div>
-            <Reveal delay={100} className="mt-10">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#8D89A0]">{v.grow.opts}</p>
-              <div className="mt-3 grid sm:grid-cols-2 gap-3">
-                {([[v.grow.shop, ShoppingBag], [v.grow.events, Radio]] as const).map(([o, Icon]) => (
-                  <div key={o.o} className="flex items-center gap-3 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-4">
-                    <span className="grid place-items-center w-9 h-9 rounded-xl border border-white/15 text-[#B8B5C8] shrink-0"><Icon className="w-4 h-4" /></span>
-                    <div className="min-w-0"><p className="text-[14px] font-semibold">{o.o}<Opt t={v.grow.optL} /></p><p className="mt-1 text-[12.5px] text-[#9D99B2]">{o.x}</p></div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </div>
         </section>
 
