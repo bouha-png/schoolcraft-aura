@@ -353,9 +353,12 @@ const Business = () => {
 
   const openWa = (msg: string) => (e: React.MouseEvent) => {
     e.preventDefault();
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    const win = window.open(url, '_blank', 'noopener,noreferrer');
-    if (!win) window.location.href = url;
+    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
+    // Note: 'noopener' makes window.open return null even on success, which previously
+    // also redirected the (framed) page to WhatsApp and got blocked.
+    const win = window.open(url, '_blank');
+    if (win) { win.opener = null; return; }
+    try { (window.top ?? window).location.href = url; } catch { window.location.href = url; }
   };
   const LIVE = {
     fr: { o: 'Événements & Live', t: 'Animez votre audience.', x: 'Webinaires, podcasts, diffusions en direct et événements, organisés et suivis depuis la plateforme, avec inscriptions et participants reliés à vos contacts.', items: ['Webinaires', 'Podcasts', 'Live streaming', 'Gestion d’événements', 'Inscriptions', 'Replays'] },
