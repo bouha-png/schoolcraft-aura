@@ -154,26 +154,23 @@ const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users
         );
       })}
     </div>
-    {/* Mobile: app icons around a photo */}
-    <div className="relative sm:hidden grid grid-cols-4 gap-x-2 gap-y-4 items-start">
-      {items.map((o, i) => {
-        const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
-        const tile = (
-          <div key={o} className="flex flex-col items-center text-center">
-            <span className="grid place-items-center w-14 h-14 rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]" style={{ boxShadow: `0 0 20px -6px ${c}` }}>
-              <Icon className="w-6 h-6" style={{ color: c }} strokeWidth={1.8} />
-            </span>
-            <p className="mt-1.5 text-[10.5px] font-medium leading-tight text-white">{o}</p>
-          </div>
-        );
-        if (i === 4) return [tile, photo && (
-          <div key="photo" className="col-span-2 row-span-2 self-stretch relative rounded-2xl overflow-hidden border border-[#A76CFF]/40 shadow-[0_0_30px_-8px_rgba(119,47,159,0.8)]">
-            <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07091D]/60 to-transparent" />
-          </div>
-        )];
-        return tile;
-      })}
+    {/* Mobile: app icons layered over a full-width photo */}
+    <div className="relative sm:hidden -mx-5 overflow-hidden rounded-none">
+      {photo && <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[70%_center]" />}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#07091D]/80 via-[#1A0B2E]/55 to-[#07091D]/85" />
+      <div className="relative grid grid-cols-4 gap-x-2 gap-y-5 px-4 py-8">
+        {items.map((o, i) => {
+          const Icon = icons[i]; const c = APP_TINTS[i % APP_TINTS.length];
+          return (
+            <div key={o} className="flex flex-col items-center text-center">
+              <span className="grid place-items-center w-14 h-14 rounded-2xl border border-white/20 bg-white/[0.10] backdrop-blur-md" style={{ boxShadow: `inset 0 1px 0 rgba(255,255,255,0.15), 0 0 20px -6px ${c}` }}>
+                <Icon className="w-6 h-6" style={{ color: c }} strokeWidth={1.8} />
+              </span>
+              <p className="mt-1.5 text-[10.5px] font-medium leading-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.8)]">{o}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   </div>
 );
