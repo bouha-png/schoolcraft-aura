@@ -176,6 +176,59 @@ const AppGrid = ({ items, icons, photo }: { items: string[]; icons: typeof Users
   </div>
 );
 
+/* Reference-style glass app tile: frosted lavender glass, thin light edge, violet halo, filled gradient glyph */
+const GLASS_GRADS = [
+  ['#C9A6FF', '#8B5CF6'], ['#7FB2FF', '#6D5DF6'], ['#B794FF', '#6A7CFF'], ['#9AA8FF', '#7C5CFF'],
+  ['#D78CFF', '#8B5CF6'], ['#5EE6E0', '#4F9BFF'], ['#8FB8FF', '#7B61FF'], ['#7FD4FF', '#5A7CFF'],
+  ['#9FE3FF', '#6A8CFF'], ['#E08CFF', '#9B5CFF'], ['#FFB5E0', '#C06CFF'], ['#C3A0FF', '#6F7BFF'],
+];
+const GlassTile = ({ Icon, i, label }: { Icon: typeof Users; i: number; label: string }) => (
+  <div className="flex flex-col items-center text-center">
+    <span
+      className="relative grid place-items-center w-[62px] h-[62px] md:w-[76px] md:h-[76px] rounded-[18px] md:rounded-[22px] border border-[#D9C8FF]/35 backdrop-blur-xl"
+      style={{
+        background: 'linear-gradient(160deg, rgba(196,176,255,0.24) 0%, rgba(128,96,210,0.12) 55%, rgba(70,40,130,0.18) 100%)',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.28), inset 0 -8px 16px -10px rgba(40,10,80,0.6), 0 0 26px -6px rgba(160,100,255,0.75), 0 14px 28px -14px rgba(0,0,0,0.7)',
+      }}
+    >
+      <span className="absolute inset-x-2 top-0 h-1/2 rounded-t-[18px] bg-gradient-to-b from-white/[0.10] to-transparent" aria-hidden />
+      <Icon
+        className="relative w-7 h-7 md:w-8 md:h-8"
+        fill={`url(#gg${i % GLASS_GRADS.length})`}
+        stroke="rgba(255,255,255,0.9)"
+        strokeWidth={1.3}
+        style={{ filter: `drop-shadow(0 0 6px ${GLASS_GRADS[i % GLASS_GRADS.length][1]}AA)` }}
+      />
+    </span>
+    <p className="mt-2.5 text-[11px] md:text-[12.5px] font-medium leading-tight text-white/90">{label}</p>
+  </div>
+);
+const WideApps = ({ items, icons, photo }: { items: string[]; icons: typeof Users[]; photo: string }) => (
+  <div>
+    <svg width="0" height="0" className="absolute" aria-hidden>
+      <defs>
+        {GLASS_GRADS.map(([a, b], k) => (
+          <linearGradient key={k} id={`gg${k}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor={a} /><stop offset="1" stopColor={b} /></linearGradient>
+        ))}
+      </defs>
+    </svg>
+    <div className="relative -mx-5 sm:mx-0 aspect-[4/3] md:aspect-[21/8] sm:rounded-3xl overflow-hidden border-y sm:border border-[#A76CFF]/25 shadow-[0_30px_80px_-30px_rgba(119,47,159,0.7)]">
+      <img src={photo} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[center_28%]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#2A0F45]/10 to-[#3E1856]/30" />
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden>
+        <path d="M -5 8 Q 40 -6 105 14" fill="none" stroke="#B98BFF" strokeOpacity="0.7" strokeWidth="0.25" style={{ filter: 'drop-shadow(0 0 1px #A76CFF)' }} />
+        <path d="M -5 36 Q 55 24 105 34" fill="none" stroke="#8FA8FF" strokeOpacity="0.5" strokeWidth="0.2" />
+      </svg>
+    </div>
+    <div className="relative -mt-10 md:-mt-16 px-1">
+      <div className="absolute inset-x-10 top-4 h-40 bg-[#5E2580]/35 blur-3xl" aria-hidden />
+      <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-3 gap-y-7 md:gap-y-9 max-w-[980px] mx-auto">
+        {items.map((o, i) => <GlassTile key={o} Icon={icons[i]} i={i} label={o} />)}
+      </div>
+    </div>
+  </div>
+);
+
 const PHOTO_POS: [number, number][] = [
   [15, 7], [9, 21], [11, 36], [9, 51], [13, 66], [20, 81],
   [85, 7], [91, 21], [89, 36], [91, 51], [87, 66], [80, 81],
@@ -343,15 +396,13 @@ const Business = () => {
         {/* 2C. ORGANISEZ LE TRAVAIL */}
         <section id="collaboration" className="relative py-20 md:py-28">
           <div className={container}>
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
-                <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
-              </div>
-              <Reveal delay={150}>
-                <PhotoOrbit photo={collabPerson} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
-              </Reveal>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-10 md:mb-12">
+              <Title overline={v.work.o} title={v.work.t} intro={v.work.x} />
+              <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
             </div>
+            <Reveal delay={150}>
+              <WideApps photo={collabPerson} items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]} />
+            </Reveal>
           </div>
         </section>
 
