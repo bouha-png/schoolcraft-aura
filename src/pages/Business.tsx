@@ -295,9 +295,9 @@ const Business = () => {
 
         {/* 2C. ORGANISEZ LE TRAVAIL */}
         <section id="collaboration" className="relative pb-20 md:pb-28">
-          <div className="relative overflow-hidden min-h-[520px] md:min-h-[560px] flex items-end">
+          <div className="relative overflow-hidden min-h-[720px] md:min-h-[560px] flex items-end">
             <img src={collabPerson} alt="" loading="lazy" width={768} height={960} className="absolute inset-0 w-full h-full object-cover object-[75%_20%] md:object-[center_25%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/70 to-[#07091D]/20 md:bg-gradient-to-r rtl:md:bg-gradient-to-l md:from-[#07091D] md:via-[#07091D]/75 md:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07091D] via-[#07091D]/80 via-40% to-transparent md:bg-gradient-to-r rtl:md:bg-gradient-to-l md:from-[#07091D] md:via-[#07091D]/75 md:to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07091D] to-transparent" />
             <div className={`${container} relative py-16 md:py-24`}>
               <div className="max-w-xl">
