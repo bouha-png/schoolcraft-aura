@@ -13,6 +13,9 @@ import heroImg from '@/assets/business-hero.jpg';
 import shopArgan from '@/assets/shop-argan.jpg';
 import shopRiad from '@/assets/shop-riad.jpg';
 import shopTextile from '@/assets/shop-textile.jpg';
+import courseOnboarding from '@/assets/course-onboarding-v2.jpg';
+import courseCustomer from '@/assets/course-customer.jpg';
+import courseDigital from '@/assets/course-digital.jpg';
 import liveImg from '@/assets/business-live-podcast-v2.jpg';
 
 const WHATSAPP_NUMBER = '212614615816';
@@ -448,19 +451,36 @@ const Business = () => {
         <section className="relative py-20 md:py-28">
           <div className={`${container} grid lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
             <Reveal delay={150} className="lg:order-2">
-              <div className={`${panel} p-6`}>
-                <div className="space-y-3">
-                  {c.training.v.slice(0, 3).map((t, i) => (
-                    <div key={t} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 flex items-center gap-4">
-                      <span className={`${iconBox} w-10 h-10`} style={iconBg}><GraduationCap className="w-5 h-5" strokeWidth={1.75} /></span>
-                      <div className="flex-1">
-                        <p className="text-[14px] font-medium">{t}</p>
-                        <div className="mt-2 flex items-center gap-3"><Bar w={`${[100, 65, 30][i]}%`} tone={i === 0 ? 'cyan' : 'violet'} /><span className="text-[11px] text-[#8D89A0] shrink-0">{c.training.v[3]}</span></div>
-                      </div>
+              <div className={`${panel} p-5 md:p-6`}>
+                {(() => { const covers = [courseOnboarding, courseCustomer, courseDigital]; const pct = [100, 65, 30]; const t = c.training.v; return (<>
+                  <div className="rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03]">
+                    <div className="relative h-40 md:h-48">
+                      <img src={covers[1]} alt="" loading="lazy" width={992} height={672} className="absolute inset-0 w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D26] via-[#0B0D26]/30 to-transparent" />
+                      <span className="absolute top-3 start-3 rounded-full bg-black/45 backdrop-blur px-2.5 py-1 text-[11px] text-white flex items-center gap-1.5"><GraduationCap className="w-3.5 h-3.5" />{t[3]}</span>
+                      <span className="absolute bottom-3 end-3 grid place-items-center w-11 h-11 rounded-full bg-[#772F9F]/80 border border-[#A76CFF]/60 backdrop-blur"><PlayCircle className="w-5 h-5 text-white" /></span>
                     </div>
-                  ))}
-                </div>
-                <div className="mt-4 flex items-center gap-2 rounded-xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/10 px-4 py-3 text-[13px] text-[#CDEBFF]"><Award className="w-4 h-4" />{c.training.v[4]}</div>
+                    <div className="p-4">
+                      <p className="text-[15px] font-semibold">{t[1]}</p>
+                      <div className="mt-3 flex items-center gap-3"><Bar w={`${pct[1]}%`} tone="violet" /><span className="text-[12px] font-semibold text-[#C9A8FF] shrink-0">{pct[1]}%</span></div>
+                    </div>
+                  </div>
+                  <div className="mt-3 grid grid-cols-2 gap-3">
+                    {[0, 2].map((i) => (
+                      <div key={i} className="rounded-2xl overflow-hidden border border-white/[0.08] bg-white/[0.03]">
+                        <div className="relative h-24">
+                          <img src={covers[i]} alt="" loading="lazy" width={992} height={672} className="absolute inset-0 w-full h-full object-cover" />
+                          {pct[i] === 100 && <span className="absolute top-2 end-2 grid place-items-center w-6 h-6 rounded-full bg-[#3FA9F5]"><CheckCircle2 className="w-4 h-4 text-white" /></span>}
+                        </div>
+                        <div className="p-3">
+                          <p className="text-[12.5px] font-medium leading-snug min-h-[2.2em]">{t[i]}</p>
+                          <div className="mt-2 flex items-center gap-2"><Bar w={`${pct[i]}%`} tone={pct[i] === 100 ? 'cyan' : 'violet'} /><span className="text-[11px] text-[#B8B4CC] shrink-0">{pct[i]}%</span></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 flex items-center gap-2 rounded-xl border border-[#3FA9F5]/30 bg-[#3FA9F5]/10 px-4 py-3 text-[13px] text-[#CDEBFF]"><Award className="w-4 h-4" />{t[4]}</div>
+                </>); })()}
               </div>
             </Reveal>
             <div className="lg:order-1">
