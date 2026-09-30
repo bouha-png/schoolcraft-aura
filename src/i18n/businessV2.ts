@@ -82,7 +82,7 @@ const en: BusinessV2 = {
   },
   grow: {
     orbit: ['Contacts', 'Opportunities', 'CRM', 'Quotes', 'Follow-ups', 'Online booking', 'History', 'Online shop', 'Webinars', 'Event management'], client: 'Atlas Distribution', tag: 'Your customers', o: 'Customers & Sales', t: 'Grow your business.',
-    x: 'Acquisition, conversion and customer follow-up, shared across the sales team.',
+    x: 'Follow your customers at every stage, from first contact to loyalty, with your whole sales team.',
     points: ['Customer record and history', 'Pipeline and opportunities', 'Quotes and follow-ups', 'Online appointment booking'],
     booking: 'Appointment booking', chain: ['Online booking', 'Calendar', 'Customer record'],
     opts: 'Options', optL: 'Optional',
