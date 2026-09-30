@@ -8,7 +8,7 @@ export interface BusinessCopy {
   universes: Universe[];
   booking: { overline: string; title: string; text: string; steps: string[]; v: string[]; app: { company: string; step: string; service: string; services: { n: string; d: string }[]; month: string; days: string[]; morning: string; afternoon: string; with: string; role: string; summary: string } };
   sell: { overline: string; title: string; text: string; tags: string[] };
-  shop: { title: string; text: string; steps: string[]; v: string[] };
+  shop: { title: string; text: string; steps: string[]; v: string[]; flow: { t: string; d: string }[]; phone: string[] };
   events: { title: string; text: string; tags: string[]; v: string[] };
   training: { overline: string; title: string; text: string; tags: string[]; v: string[] };
   workspaces: { overline: string; title: string; text: string; names: string[]; inside: string[]; v: string[] };
@@ -96,6 +96,8 @@ const fr: BusinessCopy = {
     text: 'Du catalogue au suivi interne, chaque commande reste connectée à vos clients et à vos équipes.',
     steps: ['Catalogue', 'Client', 'Commande', 'Statut', 'Suivi interne'],
     v: ['Cosmétiques à l’argan', 'High-tech & informatique', 'Emballage & livraison', 'Nouvelle commande', 'En préparation', 'Tâche créée pour l’équipe'],
+    flow: [{ t: 'Ajoutez vos produits', d: 'Photos, descriptions et stock, en quelques minutes.' }, { t: 'Partagez votre boutique', d: 'Un lien à envoyer sur WhatsApp, Instagram ou Facebook.' }, { t: 'Vos clients commandent', d: 'Depuis leur téléphone. La commande arrive chez votre équipe.' }],
+    phone: ['Atlas Beauty', 'Huile d’argan bio', 'Ajouter au panier', 'Commande envoyée', 'Exemple de boutique'],
   },
   events: {
     title: 'Du rendez-vous au grand événement.',
@@ -234,6 +236,8 @@ const en: BusinessCopy = {
     text: 'From catalogue to internal follow-up, every order stays linked to your customers and teams.',
     steps: ['Catalogue', 'Customer', 'Order', 'Status', 'Internal follow-up'],
     v: ['Argan cosmetics', 'Tech & computers', 'Packing & delivery', 'New order', 'In preparation', 'Task created for the team'],
+    flow: [{ t: 'Add your products', d: 'Photos, descriptions and stock, in minutes.' }, { t: 'Share your shop', d: 'One link to send on WhatsApp, Instagram or Facebook.' }, { t: 'Customers order', d: 'From their phone. The order reaches your team.' }],
+    phone: ['Atlas Beauty', 'Organic argan oil', 'Add to cart', 'Order sent', 'Example shop'],
   },
   events: {
     title: 'From meetings to major events.',
@@ -372,6 +376,8 @@ const no: BusinessCopy = {
     text: 'Fra katalog til intern oppfølging er hver bestilling knyttet til kundene og teamene.',
     steps: ['Katalog', 'Kunde', 'Bestilling', 'Status', 'Intern oppfølging'],
     v: ['Arganoljeprodukter', 'PC & teknologi', 'Pakking & frakt', 'Ny bestilling', 'Under behandling', 'Oppgave opprettet for teamet'],
+    flow: [{ t: 'Legg inn produktene', d: 'Bilder, beskrivelser og lager, på få minutter.' }, { t: 'Del butikken', d: 'Én lenke å sende på WhatsApp, Instagram eller Facebook.' }, { t: 'Kundene bestiller', d: 'Fra telefonen. Bestillingen går rett til teamet.' }],
+    phone: ['Atlas Beauty', 'Økologisk arganolje', 'Legg i handlekurv', 'Bestilling sendt', 'Eksempelbutikk'],
   },
   events: {
     title: 'Fra møtet til det store arrangementet.',
@@ -510,6 +516,8 @@ const ar: BusinessCopy = {
     text: 'من الكتالوج إلى المتابعة الداخلية، يبقى كل طلب مرتبطًا بعملائك وفرقك.',
     steps: ['الكتالوج', 'العميل', 'الطلب', 'الحالة', 'المتابعة الداخلية'],
     v: ['مستحضرات الأركان', 'الإلكترونيات والحواسيب', 'التغليف والتوصيل', 'طلب جديد', 'قيد التحضير', 'أُنشئت مهمة للفريق'],
+    flow: [{ t: 'أضف منتجاتك', d: 'صور وأوصاف ومخزون، في دقائق.' }, { t: 'شارك متجرك', d: 'رابط واحد ترسله عبر واتساب أو إنستغرام أو فيسبوك.' }, { t: 'عملاؤك يطلبون', d: 'من هواتفهم، ويصل الطلب مباشرة إلى فريقك.' }],
+    phone: ['Atlas Beauty', 'زيت الأركان العضوي', 'أضف إلى السلة', 'تم إرسال الطلب', 'مثال لمتجر'],
   },
   events: {
     title: 'من الموعد إلى الحدث الكبير.',
