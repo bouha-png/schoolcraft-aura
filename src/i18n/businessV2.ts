@@ -4,7 +4,7 @@ type Opt = { o: string; x: string };
 export type BusinessV2 = {
   hero: { t1: string; t2: string; sub: string; ai: string; cta2: string };
   grow: Outcome & { booking: string; chain: string[]; opts: string; optL: string; shop: Opt; events: Opt };
-  team: Outcome & { life: string[]; training: string };
+  team: Outcome & { life: string[]; training: string; orbit: string[]; emp: string };
   work: Outcome & { store: string[]; cue: string };
   fin: Outcome;
   flow: { o: string; t: string; a: string[]; b: string[] };
@@ -32,8 +32,8 @@ const fr: BusinessV2 = {
   team: {
     o: 'Équipes & RH', t: 'Gérez vos équipes.',
     x: 'Le cycle collaborateur, du recrutement à la paie, et la montée en compétences.',
-    points: ['Dossier salarié et contrats', 'Présence, congés et absences', 'Paie et bulletins', 'Intégration et formation'],
-    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation',
+    points: ['Dossier salarié et contrats', 'Présence, congés et absences', 'RH & Paie : paie et bulletins', 'Intégration et formation'],
+    life: ['Recrutement', 'Contrat', 'Présence', 'Congés', 'Paie'], training: 'Formation', orbit: ['Paie', 'Bulletins', 'Pointage', 'Présence & absences', 'Congés', 'Formation', 'Certificats', 'Développement'], emp: 'Collaborateur',
   },
   work: {
     o: 'Travail & Collaboration', t: 'Organisez le travail.',
@@ -90,8 +90,8 @@ const en: BusinessV2 = {
   team: {
     o: 'Teams & HR', t: 'Manage your teams.',
     x: 'The employee lifecycle, from recruitment to payroll, and skills development.',
-    points: ['Employee file and contracts', 'Attendance, leave and absence', 'Payroll and payslips', 'Onboarding and training'],
-    life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training',
+    points: ['Employee file and contracts', 'Attendance, leave and absence', 'HR & Payroll: payroll and payslips', 'Onboarding and training'],
+    life: ['Recruitment', 'Contract', 'Attendance', 'Leave', 'Payroll'], training: 'Training', orbit: ['Payroll', 'Payslips', 'Time tracking', 'Attendance & absence', 'Leave', 'Training', 'Certificates', 'Development'], emp: 'Employee',
   },
   work: {
     o: 'Work & Collaboration', t: 'Organise the work.',
@@ -148,8 +148,8 @@ const no: BusinessV2 = {
   team: {
     o: 'Team & HR', t: 'Led teamene.',
     x: 'Medarbeiderløpet fra rekruttering til lønn, og kompetanseutvikling.',
-    points: ['Personalmappe og kontrakter', 'Tilstedeværelse, ferie og fravær', 'Lønn og lønnsslipper', 'Onboarding og opplæring'],
-    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring',
+    points: ['Personalmappe og kontrakter', 'Tilstedeværelse, ferie og fravær', 'HR & lønn: lønn og lønnsslipper', 'Onboarding og opplæring'],
+    life: ['Rekruttering', 'Kontrakt', 'Tilstedeværelse', 'Ferie', 'Lønn'], training: 'Opplæring', orbit: ['Lønn', 'Lønnsslipper', 'Tidsregistrering', 'Tilstedeværelse & fravær', 'Ferie', 'Opplæring', 'Kursbevis', 'Utvikling'], emp: 'Medarbeider',
   },
   work: {
     o: 'Arbeid & samarbeid', t: 'Organiser arbeidet.',
@@ -206,8 +206,8 @@ const ar: BusinessV2 = {
   team: {
     o: 'الفرق والموارد البشرية', t: 'دبّروا فرقكم.',
     x: 'مسار الموظف من التوظيف إلى الأجور، وتطوير الكفاءات.',
-    points: ['ملف الموظف والعقود', 'الحضور والعطل والغياب', 'الأجور وأوراق الأجر', 'الإدماج والتكوين'],
-    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين',
+    points: ['ملف الموظف والعقود', 'الحضور والعطل والغياب', 'الموارد البشرية والأجور: الأجور وأوراق الأجر', 'الإدماج والتكوين'],
+    life: ['التوظيف', 'العقد', 'الحضور', 'العطل', 'الأجور'], training: 'التكوين', orbit: ['الأجور', 'أوراق الأجر', 'تسجيل الحضور', 'الحضور والغياب', 'العطل', 'التكوين', 'الشهادات', 'التطوير'], emp: 'الموظف',
   },
   work: {
     o: 'العمل والتعاون', t: 'نظّموا العمل.',
