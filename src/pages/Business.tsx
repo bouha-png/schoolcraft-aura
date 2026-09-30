@@ -351,15 +351,7 @@ const Business = () => {
     return () => io.disconnect();
   }, []);
 
-  const openWa = (msg: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
-    // Note: 'noopener' makes window.open return null even on success, which previously
-    // also redirected the (framed) page to WhatsApp and got blocked.
-    const win = window.open(url, '_blank');
-    if (win) { win.opener = null; return; }
-    try { (window.top ?? window).location.href = url; } catch { window.location.href = url; }
-  };
+  const waUrl = (msg: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   const LIVE = {
     fr: { o: 'Événements & Live', t: 'Animez votre audience.', x: 'Webinaires, podcasts, diffusions en direct et événements, organisés et suivis depuis la plateforme, avec inscriptions et participants reliés à vos contacts.', items: ['Webinaires', 'Podcasts', 'Live streaming', 'Gestion d’événements', 'Inscriptions', 'Replays'] },
     en: { o: 'Events & Live', t: 'Engage your audience.', x: 'Webinars, podcasts, live streams and events, organised and followed up from the platform, with registrations and attendees linked to your contacts.', items: ['Webinars', 'Podcasts', 'Live streaming', 'Event management', 'Registrations', 'Replays'] },
@@ -509,8 +501,9 @@ const Business = () => {
       <footer className="border-t border-white/10 py-8 text-center text-[13px] text-[#8D89A0]">© ScandiTek — Casablanca & Oslo</footer>
 
       <a
-        href="#"
-        onClick={openWa(c.waDemo)}
+        href={waUrl(c.waDemo)}
+        target="_blank"
+        rel="noopener noreferrer"
         className={`fixed z-40 bottom-8 md:bottom-10 ${rtl ? 'left-5 md:left-8' : 'right-5 md:right-8'} inline-flex items-center gap-2 h-12 px-5 rounded-full text-[14px] font-semibold text-white border border-[#A76CFF]/50 backdrop-blur-xl whitespace-nowrap transition-all duration-500 ${showFloating ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
         style={{ background: 'linear-gradient(145deg, rgba(62,24,86,0.92) 0%, rgba(94,37,128,0.88) 40%, rgba(119,47,159,0.78) 100%)', ...glow }}
       >
