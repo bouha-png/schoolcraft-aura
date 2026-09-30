@@ -120,7 +120,6 @@ const Business = () => {
 
   const nodeIcons = [Contact, UserCog, Users, Wallet];
   const toolIcons = [Mail, MessageSquare, Video, Cloud, FolderKanban, Contact, UserCog, Wallet, GraduationCap, CalendarCheck];
-  const aiIcons = [Video, PenLine, Search, Database, ListChecks, Lightbulb];
   const [collab, organise, teams, , , crm] = c.universes;
 
   const Points = ({ items }: { items: string[] }) => (
