@@ -5,7 +5,7 @@ import {
   UserCog, GraduationCap, CalendarCheck, Sparkles, CheckCircle2, Hash, Paperclip, Radio, Award, ShoppingBag,
   PlayCircle, ChevronRight, History, MessagesSquare, FileCheck2, Eye, Banknote, Search, ShieldCheck, BarChart3,
 } from 'lucide-react';
-import { Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
+import { Rss, LayoutGrid, ListChecks, Vote, Clock, Plane, TrendingUp, FolderOpen, Lock, Database, KeyRound, Layers, Headphones } from 'lucide-react';
 import avatarSalma from '@/assets/avatar-salma.jpg';
 import avatarYoussef from '@/assets/avatar-youssef.jpg';
 import avatarKarim from '@/assets/avatar-karim.jpg';
@@ -91,8 +91,8 @@ const Bar = ({ w, tone = 'violet' }: { w: string; tone?: 'violet' | 'cyan' }) =>
 
 const Dot = () => <span className="h-1.5 w-1.5 rounded-full bg-[#A76CFF] shrink-0" />;
 
-const Orbit = ({ items, icons, center, name, sub }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string }) => (
-  <div className="relative mx-auto aspect-square w-full max-w-[460px]">
+const Orbit = ({ items, icons, center, name, sub, dense }: { items: string[]; icons: typeof Users[]; center: ReactNode; name: string; sub: string; dense?: boolean }) => (
+  <div className={`relative mx-auto aspect-square w-full ${dense ? 'max-w-[540px]' : 'max-w-[460px]'}`}>
     <div className="absolute inset-[14%] rounded-full border border-dashed border-[#A76CFF]/30" />
     <div className="absolute inset-[30%] rounded-full bg-[#772F9F]/20 blur-2xl" aria-hidden />
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center">
@@ -104,9 +104,9 @@ const Orbit = ({ items, icons, center, name, sub }: { items: string[]; icons: ty
       const Icon = icons[i];
       const ang = (i / items.length) * 2 * Math.PI - Math.PI / 2;
       return (
-        <div key={o} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center w-[84px] md:w-[96px]" style={{ left: `${50 + 36 * Math.cos(ang)}%`, top: `${50 + 36 * Math.sin(ang)}%` }}>
-          <span className="grid place-items-center w-11 h-11 md:w-12 md:h-12 rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]" style={iconBg}><Icon className="w-5 h-5" strokeWidth={1.75} /></span>
-          <p className="mt-1.5 text-center text-[10.5px] md:text-[11.5px] leading-tight text-[#E6E4F0]">{o}</p>
+        <div key={o} className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center ${dense ? 'w-[66px] md:w-[92px]' : 'w-[84px] md:w-[96px]'}`} style={{ left: `${50 + (dense ? 39 : 36) * Math.cos(ang)}%`, top: `${50 + (dense ? 39 : 36) * Math.sin(ang)}%` }}>
+          <span className={`grid place-items-center ${dense ? 'w-9 h-9 md:w-11 md:h-11' : 'w-11 h-11 md:w-12 md:h-12'} rounded-full border border-[#A76CFF]/50 shadow-[0_8px_24px_-10px_rgba(119,47,159,0.9)]`} style={iconBg}><Icon className={dense ? "w-4 h-4 md:w-5 md:h-5" : "w-5 h-5"} strokeWidth={1.75} /></span>
+          <p className={`mt-1.5 text-center ${dense ? "text-[9.5px] md:text-[11px]" : "text-[10.5px] md:text-[11.5px]"} leading-tight text-[#E6E4F0]`}>{o}</p>
         </div>
       );
     })}
@@ -247,49 +247,9 @@ const Business = () => {
                 <Reveal delay={100}><Points items={v.work.points} single /></Reveal>
               </div>
               <Reveal delay={150}>
-                <div className={`${panel} p-5 space-y-3`}>
-                  <div className="rounded-2xl border border-[#3FA9F5]/25 bg-[#3FA9F5]/[0.06] p-4">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="flex items-center gap-2 text-[13px] font-semibold"><Database className="w-4 h-4 text-[#7CC8FF]" />{v.work.store[0]}</p>
-                      <span className="flex items-center gap-1 text-[10.5px] text-[#B8B5C8]"><Lock className="w-3 h-3" />{v.work.store[5]}</span>
-                    </div>
-                    <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {v.work.store.slice(1, 5).map((f) => (
-                        <div key={f} className="flex items-center gap-1.5 rounded-lg bg-white/[0.05] border border-white/[0.07] px-2.5 py-2 text-[11.5px] text-[#E6E4F0] min-w-0"><FolderOpen className="w-3.5 h-3.5 text-[#C9A8FF] shrink-0" /><span className="truncate">{f}</span></div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-4">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="flex items-center gap-2 text-[13px] font-semibold min-w-0"><FileText className="w-4 h-4 text-[#3FA9F5] shrink-0" /><span className="truncate">{collab.v[8]}</span></p>
-                      <div className="flex -space-x-2 rtl:space-x-reverse shrink-0">
-                        <img src={avatarSalma} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#772F9F]" />
-                        <img src={avatarYoussef} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#3FA9F5]" />
-                        <img src={avatarKarim} alt="" className="w-6 h-6 rounded-full object-cover ring-2 ring-[#6EE7A0]" />
-                      </div>
-                    </div>
-                    <div className="mt-3 space-y-2">
-                      <div className="h-2 w-[90%] rounded bg-white/10" />
-                      <div className="relative h-2 w-[75%] rounded bg-[#772F9F]/40"><span className="absolute -top-1 end-0 h-4 w-0.5 bg-[#A76CFF] animate-pulse" /></div>
-                      <div className="h-2 w-[60%] rounded bg-white/10" />
-                    </div>
-                    <p className="mt-3 flex items-center gap-1.5 text-[11px] text-[#8D89A0]"><History className="w-3.5 h-3.5" />{collab.v[9]} · {collab.v[10]}</p>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <div className="rounded-2xl border border-[#A76CFF]/35 bg-[#772F9F]/15 p-4">
-                      <div className="flex items-center justify-between"><Video className="w-4 h-4 text-[#C9A9FF]" /><span className="flex items-center gap-1 text-[10px] text-[#FF8A8A]"><span className="w-1.5 h-1.5 rounded-full bg-[#FF5A5A] animate-pulse" />REC</span></div>
-                      <p className="mt-2 text-[13px] font-semibold">{collab.v[4]}</p>
-                      <p className="mt-2 flex items-center gap-1.5 text-[11.5px] text-[#E0CCFF]"><Sparkles className="w-3.5 h-3.5 shrink-0" />{v.work.cue}</p>
-                    </div>
-                    <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4">
-                      <p className="flex items-center gap-2 text-[13px] font-semibold"><FolderKanban className="w-4 h-4 text-[#7CC8FF]" />{organise.v[6]}</p>
-                      <div className="mt-3 space-y-2">
-                        {[100, 70, 35].map((w, i) => <Bar key={i} w={`${w}%`} tone={i ? 'violet' : 'cyan'} />)}
-                      </div>
-                      <p className="mt-2 text-[11px] text-[#8D89A0]">{organise.v[7]}</p>
-                    </div>
-                  </div>
-                </div>
+                <Orbit dense items={v.work.orbit} icons={[MessageSquare, Mail, Rss, Users, LayoutGrid, Video, Database, Cloud, FileText, FolderKanban, ListChecks, Vote]}
+                  center={<div className="flex -space-x-4 rtl:space-x-reverse">{[avatarSalma, avatarYoussef, avatarKarim].map((a, i) => <img key={i} src={a} alt="" className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover ring-4 ring-[#0B0E26] shadow-[0_0_40px_-5px_rgba(167,108,255,0.7)]" />)}</div>}
+                  name={v.work.team} sub={v.work.teamSub} />
               </Reveal>
             </div>
           </div>
