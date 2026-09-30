@@ -243,7 +243,7 @@ const WideApps = ({ items, icons, photo, children, rtl }: { items: string[]; ico
     <div className="relative -mt-6 px-5">
       <div className="absolute inset-x-6 top-10 h-64 bg-[#5E2580]/30 blur-[90px]" aria-hidden />
       <div className="absolute right-1/4 top-24 h-40 w-72 bg-[#2DD4C4]/10 blur-[80px]" aria-hidden />
-      <div className="relative grid grid-cols-4 md:grid-cols-6 gap-x-2 gap-y-6 md:gap-y-8 max-w-[860px] mx-auto">
+      <div className="relative flex flex-wrap justify-center gap-y-6 md:gap-y-8 max-w-[860px] mx-auto [&>*]:basis-1/4 md:[&>*]:basis-1/6">
         {items.map((o, i) => <FloatTile key={o} Icon={icons[i]} i={i} label={o} />)}
       </div>
     </div>
