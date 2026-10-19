@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound";
 import Confidentialite from "./pages/Confidentialite";
 import CGU from "./pages/CGU";
 import SynclasseLegal from "./pages/SynclasseLegal";
+import DrKhalil from "./pages/DrKhalil";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/synclasse-legal" element={<SynclasseLegal />} />
             <Route path="/synclasse/privacy" element={<SynclasseLegal />} />
             <Route path="/synclasse/terms" element={<SynclasseLegal />} />
+            <Route path="/dr-khalil" element={<DrKhalil />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

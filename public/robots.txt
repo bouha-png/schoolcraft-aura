@@ -1,14 +1,19 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /dr-khalil
 
 User-agent: Bingbot
 Allow: /
+Disallow: /dr-khalil
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /dr-khalil
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /dr-khalil
 
 User-agent: *
 Allow: /
+Disallow: /dr-khalil
