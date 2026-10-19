@@ -61,6 +61,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cabinet Dr Khalil (/dr-khalil) — tokens only defined inside .khalil
+        honey: { DEFAULT: "hsl(var(--honey) / <alpha-value>)", deep: "hsl(var(--honey-deep) / <alpha-value>)" },
+        sand: "hsl(var(--sand) / <alpha-value>)",
+        espresso: { DEFAULT: "hsl(var(--espresso) / <alpha-value>)", foreground: "hsl(var(--espresso-foreground) / <alpha-value>)" },
+        wall: { DEFAULT: "hsl(var(--wall) / <alpha-value>)", foreground: "hsl(var(--wall-foreground) / <alpha-value>)" },
+        gold: "hsl(var(--gold) / <alpha-value>)",
+        bird: "hsl(var(--bird) / <alpha-value>)",
+        blossom: "hsl(var(--blossom) / <alpha-value>)",
+        notice: { DEFAULT: "hsl(var(--notice) / <alpha-value>)", foreground: "hsl(var(--notice-foreground) / <alpha-value>)" },
+        sage: { DEFAULT: "hsl(var(--sage) / <alpha-value>)", deep: "hsl(var(--sage-deep) / <alpha-value>)", foreground: "hsl(var(--sage-foreground) / <alpha-value>)", soft: "hsl(var(--sage-soft) / <alpha-value>)" },
       },
       borderRadius: {
         lg: "var(--radius)",
