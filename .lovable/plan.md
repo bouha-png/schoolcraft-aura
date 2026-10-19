@@ -1,89 +1,33 @@
-# /business: simpler page structure (proposal only, nothing changed)
+# scanditek.net incident — read-only diagnostic (no changes made)
 
-## 1. Current major blocks (15)
+Checked 2026-10-19 16:35 UTC with the project domain tool, plus public lookups (1.1.1.1, .net parent servers) and HTTPS requests from the sandbox. The sandbox is not in Morocco.
 
-```text
-1  Hero (hub with 6 modules + Syn'IA badge)
-2  Problem (scattered tools -> Synapse Business)
-3  Syn'IA (6 AI capabilities)
-4  CRM & Ventes (client card)
-5  Prise de rendez-vous (phone mockup)
-6  RH & Paie (8-step lifecycle + employee card)
-7  Communication & Collaboration (3 groups, storage panel, 5 workspace cards)
-8  Gestion de projet (steps + progress bars)
-9  Finance & Reporting (2 blocks + full dashboard)
-10 Boutique en ligne (optional)
-11 Formation
-12 Événements & Live (optional)
-13 Sécurité
-14 Modules (9 groups + Syn'IA/Reporting layers)
-15 Final CTA
-```
+## Observed facts
+- Primary domain: **www.scanditek.net**, status **Active** for 226 days, ownership verified. The project is published.
+- www.scanditek.net: A = 185.158.133.1 (matches what Lovable expects). TXT `_lovable.www` matches. No AAAA, no CNAME.
+- Apex scanditek.net: status **initiated** for 7d20h ("Action required" in the UI). It has no A record, and its `_lovable` TXT is missing. It redirects to www once set up. The apex has MX (Google) and SPF/Google TXT records.
+- scanditek.ma and www.scanditek.ma: Active. Both redirect to www.scanditek.net.
+- NS: ns14/ns15.wixdns.net. The parent .net servers agree, so delegation is OK.
+- DNSSEC: **enabled**. The parent DS is `43034 8 2 BC0279…F151F1C1`, and the DNSKEYs are published. Cloudflare's resolver sets the **AD flag** (signatures validate) for www.scanditek.net, so the DNSSEC chain is valid right now.
+- HTTPS from the sandbox: www.scanditek.net returns 200 via 185.158.133.1.
+- Comparison address: **https://schoolcraft-aura.lovable.app**, which resolves to 185.41.148.1/.2 (a different network from 185.158.133.1). It currently returns 302, which redirects to the primary www.scanditek.net.
 
-The problem: 9 separate module sections, each with its own heading, visual and list. A buyer has to switch business domains nine times.
+## Support's claims vs. evidence
+- "www Live, A/TXT correct": confirmed.
+- "DNSSEC enabled at Wix": confirmed.
+- "DNSSEC should be disabled": not supported here. The signatures validate. A broken DNSSEC chain gives DNS failures (SERVFAIL / "server not found"), not ERR_CONNECTION_TIMED_OUT. This is untested from Moroccan resolvers.
+- "Apex is Action required": confirmed. It explains failures for people who type the address without www, not timeouts on www.
 
-## 2. Proposed architecture: 4 core domains
+## Untested hypotheses
+- A network path problem between Moroccan ISPs and 185.158.133.1 (routing, filtering). This fits a timeout after DNS works, but it has not been tested from Morocco.
+- If the Moroccan test devices use DNS resolvers that fail DNSSEC validation, the error would be a DNS error, not a timeout.
 
-```text
-A  CLIENTS & VENTES       win and serve customers (revenue)
-B  ÉQUIPES & RH           people: HR, payroll, training
-C  TRAVAIL & COLLABORATION  daily work: communication, documents, projects
-D  FINANCE & PILOTAGE     money and management view
-```
+## Tests to request from someone in Morocco (no changes needed)
+1. `nslookup www.scanditek.net`: does it return 185.158.133.1?
+2. Open https://schoolcraft-aura.lovable.app. Because of the redirect, a successful load ends on www. Note whether the first hop connects.
+3. `ping 185.158.133.1` and `tracert 185.158.133.1` (Windows), and send the output to support.
+4. Same tests on mobile data with a different ISP (Maroc Telecom / Orange / inwi).
 
-Syn'IA runs across all four: one dedicated section early on, plus at most one small note per domain where the feature really exists (meeting minutes, drafting, search).
-
-## 3. What merges into each domain
-
-| Domain | Merges | Main visual (only one) | Key points (max 5) |
-|---|---|---|---|
-| A Clients & Ventes | CRM, Booking, Shop (optional), Events & Live (optional) | Client card, with booking phone as a small inset | Client history, pipeline & quotes, online booking, follow-ups; "also available: shop, events" |
-| B Équipes & RH | RH & Paie, Formation | Lifecycle strip (8 steps) | Recruitment to contract, time & leave, payroll & payslips, onboarding & training |
-| C Travail & Collaboration | Communication, Collaboration, Gestion documentaire, Projects, Workspaces | Virtual office panel with storage | Chat/email/calendar, meetings & minutes, document storage & versions, projects & milestones |
-| D Finance & Pilotage | Finance, Reporting / dashboard | Management dashboard | Invoices & expenses, budgets & project costs, approvals, consolidated reporting |
-
-Each domain uses one layout: title, one-line outcome, up to 5 points, one visual. On desktop the tabs or sub-labels inside a domain are only small labels, never separate sections.
-
-## 4. Removed from the main story, moved to compact or secondary
-
-- **Shop and Events & Live:** a small "Options" row at the end of domain A (two cards, no phone mockups, no photo).
-- **Training:** a sub-block in domain B, shorter visual (1 course card, not 3).
-- **Workspace role cards (5):** removed; the storage folders already show the teams.
-- **Projects steps and progress bars:** reduced to a small inset in domain C.
-- **Booking phone mockup:** reduced to an inset inside domain A (or dropped on mobile).
-- **Modules grid (9 groups):** replaced by a 4-domain strip plus "Options: Boutique, Événements".
-- **Hero hub:** shows the 4 domains around Synapse Business, not 6 modules.
-- **Security:** kept, shortened to one strip of 3 to 4 facts.
-
-## 5. Recommended order (8 blocks)
-
-```text
-1 Hero            Headline + 4 domains around the hub + Syn'IA badge + CTA
-2 Problem         One line + short tool-to-hub visual
-3 Syn'IA          Assistant capabilities (the differentiator, shown early)
-4 A Clients & Ventes     (+ Options: shop, events)
-5 B Équipes & RH         (+ training)
-   -> mid-page CTA "Demander une démo"
-6 C Travail & Collaboration  (+ documents, projects)
-7 D Finance & Pilotage      (dashboard = view across A to C)
-8 Trust + modular start + final CTA (one combined closing block)
-```
-
-About 8 screens on desktop instead of 15, and 10 to 12 on mobile instead of more than 20.
-
-## 6. Rationale
-
-- **Buyer logic:** SME owners think in 4 questions: how do I sell more, how do I manage my staff, how does my team work, how do I control money. One domain per question.
-- **Revenue first:** Clients & Ventes stays first; HR second because it is the biggest time-saver; collaboration third; finance last because it summarises the others.
-- **Less switching:** 4 headings instead of 9, and one visual per domain.
-- **Optional things stay optional:** shop and events no longer look like core modules.
-- **AI stays credible:** one strong section, plus notes only where the feature exists.
-- **Closing is one decision point:** trust, "start with one domain" and the demo button together.
-
-## Technical notes (for a later build step)
-
-- Page: `src/pages/Business.tsx`; copy in `src/i18n/businessV2.ts` (fr/en/no/ar, RTL for ar).
-- Add a shared `Domain` layout (title, outcome, points, visual, optional sub-blocks).
-- Merge copy keys into `domains: { clients, equipes, travail, finance }`, keep `ai`, `problem`, `final`.
-- Remove the workspace cards, the 9-item module grid and the separate shop/training/events sections.
-- Every copy change needs all 4 languages.
+## Not available to me
+- I have no test point in Morocco.
+- I cannot see the Wix DNS panel, Lovable edge/network logs, or the DCV/TLS certificate records.
