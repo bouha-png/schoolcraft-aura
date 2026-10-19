@@ -1,5 +1,5 @@
 import { BookingButton } from "./booking-button";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useState, type ReactNode } from "react";
 import { ArrowLeft, CalendarDays, Menu, X } from "lucide-react";
 import { CABINET, phonesConfirmed } from "./cabinet";
@@ -8,7 +8,7 @@ import { CABINET, phonesConfirmed } from "./cabinet";
 export function Branch({ className = "", bird = true }: { className?: string; bird?: boolean }) {
   return (
     <svg viewBox="0 0 320 200" className={className} aria-hidden="true" fill="none">
-      <g stroke="var(--espresso)" strokeLinecap="round" opacity="0.75">
+      <g stroke="hsl(var(--espresso))" strokeLinecap="round" opacity="0.75">
         <path d="M0 150 C60 140 110 110 170 96 S260 70 318 40" strokeWidth="1.6" />
         <path d="M92 124 C100 100 96 82 110 62" strokeWidth="1" />
         <path d="M170 96 C190 112 214 116 236 128" strokeWidth="1" />
@@ -18,22 +18,22 @@ export function Branch({ className = "", bird = true }: { className?: string; bi
       {[[110, 62], [124, 104], [236, 128], [270, 44], [196, 88], [66, 172], [300, 48], [150, 102]].map(([x, y], i) => (
         <g key={i} transform={`translate(${x} ${y})`}>
           {[0, 72, 144, 216, 288].map((r) => (
-            <ellipse key={r} rx="2.6" ry="5" cy="-4.5" transform={`rotate(${r})`} fill="var(--blossom)" stroke="var(--sand)" strokeWidth="0.5" />
+            <ellipse key={r} rx="2.6" ry="5" cy="-4.5" transform={`rotate(${r})`} fill="hsl(var(--blossom))" stroke="hsl(var(--sand))" strokeWidth="0.5" />
           ))}
-          <circle r="1.6" fill="var(--honey)" />
+          <circle r="1.6" fill="hsl(var(--honey))" />
         </g>
       ))}
       {bird && (
         <g transform="translate(206 78)">
-          <path d="M0 0 C6 -8 18 -8 22 -2 C26 2 22 8 14 8 C8 8 2 5 0 0Z" fill="var(--sand)" stroke="var(--espresso)" strokeWidth="0.6" />
-          <path d="M14 1 C18 2 20 5 18 7 C15 7 13 5 14 1Z" fill="var(--bird)" />
-          <path d="M22 -2 L27 -1 L22 1Z" fill="var(--espresso)" />
-          <path d="M0 0 L-9 -3 L-7 3Z" fill="var(--espresso)" opacity="0.8" />
-          <circle cx="20" cy="-2" r="0.9" fill="var(--espresso)" />
+          <path d="M0 0 C6 -8 18 -8 22 -2 C26 2 22 8 14 8 C8 8 2 5 0 0Z" fill="hsl(var(--sand))" stroke="hsl(var(--espresso))" strokeWidth="0.6" />
+          <path d="M14 1 C18 2 20 5 18 7 C15 7 13 5 14 1Z" fill="hsl(var(--bird))" />
+          <path d="M22 -2 L27 -1 L22 1Z" fill="hsl(var(--espresso))" />
+          <path d="M0 0 L-9 -3 L-7 3Z" fill="hsl(var(--espresso))" opacity="0.8" />
+          <circle cx="20" cy="-2" r="0.9" fill="hsl(var(--espresso))" />
         </g>
       )}
-      <ellipse cx="280" cy="150" rx="2.4" ry="4.4" transform="rotate(30 280 150)" fill="var(--blossom)" />
-      <ellipse cx="250" cy="176" rx="2" ry="3.8" transform="rotate(-20 250 176)" fill="var(--blossom)" />
+      <ellipse cx="280" cy="150" rx="2.4" ry="4.4" transform="rotate(30 280 150)" fill="hsl(var(--blossom))" />
+      <ellipse cx="250" cy="176" rx="2" ry="3.8" transform="rotate(-20 250 176)" fill="hsl(var(--blossom))" />
     </svg>
   );
 }
@@ -63,10 +63,10 @@ export function APreciser({ children }: { children: ReactNode }) {
 }
 
 const NAV = [
-  { to: "/", label: "Accueil" },
-  { to: "/le-cabinet", label: "Le cabinet" },
-  { to: "/medecins", label: "Les médecins" },
-  { to: "/contact", label: "Accès & contact" },
+  { to: "#top", label: "Accueil" },
+  { to: "#le-cabinet", label: "Le cabinet" },
+  { to: "#medecins", label: "Les médecins" },
+  { to: "#contact", label: "Accès & contact" },
 ] as const;
 
 /** Chaque spécialité est signalée par un losange doré, sur sa propre ligne. */
@@ -98,7 +98,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:h-20 sm:px-6">
-        <Link to="/" className="flex min-w-0 items-center gap-3" aria-label={`${CABINET.name}, accueil`}>
+        <Link to="/dr-khalil" className="flex min-w-0 items-center gap-3" aria-label={`${CABINET.name}, accueil`}>
           <Monogram />
           <span className="min-w-0">
             <span className="block truncate font-display text-xl leading-none text-primary sm:text-2xl">{CABINET.name}</span>
@@ -107,9 +107,9 @@ export function SiteHeader() {
         </Link>
         <nav className="mx-auto hidden items-center gap-7 text-sm lg:flex" aria-label="Navigation principale">
           {NAV.map((n) => (
-            <Link key={n.to} to={n.to} activeOptions={{ exact: true }} className="text-muted-foreground transition-colors hover:text-primary data-[status=active]:text-primary data-[status=active]:font-medium">
+            <a key={n.to} href={n.to} className="text-muted-foreground transition-colors hover:text-primary">
               {n.label}
-            </Link>
+            </a>
           ))}
         </nav>
         <BookingButton className="ms-auto hidden items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5 sm:inline-flex">
@@ -122,9 +122,9 @@ export function SiteHeader() {
       {open && (
         <nav id="menu-mobile" className="border-t border-border bg-background px-4 pb-6 pt-2 lg:hidden" aria-label="Navigation mobile">
           {NAV.map((n) => (
-            <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="block border-b border-border/60 py-4 font-display text-2xl text-primary">
+            <a key={n.to} href={n.to} onClick={() => setOpen(false)} className="block border-b border-border/60 py-4 font-display text-2xl text-primary">
               {n.label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}
@@ -158,7 +158,7 @@ export function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] opacity-70">Navigation</p>
           <ul className="mt-4 space-y-2 text-sm">
-            {NAV.map((n) => <li key={n.to}><Link to={n.to} className="opacity-85 hover:opacity-100 hover:underline">{n.label}</Link></li>)}
+            {NAV.map((n) => <li key={n.to}><a href={n.to} className="opacity-85 hover:opacity-100 hover:underline">{n.label}</a></li>)}
             <li><BookingButton className="opacity-85 hover:opacity-100 hover:underline">Prendre rendez-vous</BookingButton></li>
           </ul>
         </div>
@@ -179,27 +179,9 @@ export function SiteFooter() {
   );
 }
 
-/** Flèche de retour visible en haut de page : historique du navigateur si disponible, sinon la page d'accueil. */
-export function BackButton({ fallback = "/", label = "Retour" }: { fallback?: string; label?: string }) {
-  const navigate = useNavigate();
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        const st = window.history.state as { __TSR_index?: number } | null;
-        if ((st?.__TSR_index ?? 0) > 0) window.history.back();
-        else navigate({ to: fallback });
-      }}
-      className="-ms-2 inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-    >
-      <ArrowLeft className="h-4 w-4" /> {label}
-    </button>
-  );
-}
-
 export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col overflow-x-clip">
+    <div id="top" className="khalil flex min-h-screen flex-col overflow-x-clip bg-background text-foreground">
       <a href="#contenu" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground">Aller au contenu</a>
       <SiteHeader />
       <main id="contenu" className="flex-1">{children}</main>
@@ -209,15 +191,3 @@ export function PageShell({ children }: { children: ReactNode }) {
   );
 }
 
-export function seo(title: string, description: string) {
-  return {
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  };
-}
