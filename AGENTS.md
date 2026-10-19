@@ -1,0 +1,1 @@
+- /dr-khalil is a hidden copy of the Cabinet Dr Khalil site: code in src/components/khalil, styles scoped under `.khalil`, noindex + robots Disallow, not linked anywhere — keeps it isolated from ScandiTek.
